@@ -1,0 +1,50 @@
+{
+    "name": "DeviceNameExample",
+    "os": "ExampleOS",
+    "os_version": "0.1",
+    "manufacturer": "Example inc.",
+    "model": "Example model",
+    "memory": 65536,
+    "uptime": 0,
+    "interfaces": [
+        {
+            "type": "wireless",
+            "name": "wifi0",
+            "mac_address": "de:9f:db:30:c9:c5",
+            "mtu": 1500,
+            "standard": "802.11n",
+            "channel": 5745,
+            "channel_width": 20,
+            "mode": "ap",
+            "output_power": 18,
+            "dbm": -27,
+            "noise": -97,
+            "ip": [
+                "192.168.1.1/24",
+                "fe80::216:44ff:fe60:32d2/64"
+            ],
+            "vap": [
+                {
+                    "essid": "ExampleESSID",
+                    "encryption": "none"
+                }
+            ]
+        },
+        {
+            "type": "ethernet",
+            "name": "eth0",
+            "mac_address": "de:9f:db:30:c9:c4",
+            "mtu": 1500,
+            "ip": [
+                "192.168.1.2/24",
+                "2001:4c00:893b:fede::2/64"
+            ]
+        }
+    ],
+    "routing_protocols": [
+        {
+            "name": "olsr",
+            "version": "dummy version"
+        }
+    ]
+}
