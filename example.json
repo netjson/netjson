@@ -1,11 +1,9 @@
 {
-    "name": "DeviceNameExample",
-    "os": "ExampleOS",
-    "os_version": "0.1",
-    "manufacturer": "Example inc.",
-    "model": "Example model",
-    "memory": 65536,
-    "uptime": 0,
+    "general": {
+        "name": "DeviceNameExample",
+        "owner": "FooBar",
+        "hostname": "hostname.domain.org",
+    },
     "interfaces": [
         {
             "type": "wireless",
