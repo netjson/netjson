@@ -80,9 +80,7 @@
             "channel": 149,
             "channel_width": 20,
             "frequency": 5745,
-            "output_power": 18,
-            "dbm": -27,
-            "noise": -97,
+            "output_power": 18
         }
     ],
     "routing_protocols": [
