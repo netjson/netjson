@@ -4,6 +4,11 @@
         "owner": "FooBar",
         "hostname": "hostname.domain.org",
     },
+    "hardware": {
+        "manufacturer": "Example inc.",
+        "model": "Example model",
+        "memory": 65536,
+    },
     "interfaces": [
         {
             "type": "wireless",
