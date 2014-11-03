@@ -9,6 +9,10 @@
         "model": "Example model",
         "memory": 65536,
     },
+    "software": {
+        "os": "ExampleOS",
+        "os_version": "0.1",
+    },
     "interfaces": [
         {
             "type": "wireless",
