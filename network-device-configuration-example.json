@@ -1,17 +1,21 @@
 {
     "general": {
         "name": "DeviceNameExample",
-        "owner": "FooBar",
-        "hostname": "hostname.domain.org",
+        "maintainer": "email@example.org",
+        "description": "general info here"
     },
     "hardware": {
         "manufacturer": "Example inc.",
         "model": "Example model",
-        "memory": 65536,
+        "model_revision": 1,
+        "ram": 67108864,
+        "cpu_frequency": 400,
+        "flash_memory": 8388608
     },
-    "software": {
-        "os": "ExampleOS",
-        "os_version": "0.1",
+    "os": {
+        "name": "OpenWRT",
+        "release": "Barrier Breaker",
+        "version": "<vcs>:<id>|<stable_version_number>"
     },
     "interfaces": [
         {
@@ -20,33 +24,46 @@
             "mac": "de:9f:db:30:c9:c5",
             "mtu": 1500,
             "device": "radio0",
-            "bitrate": 54,
-            "ack_distance": 1000,
-            "rts_threshold": 1400,
-            "frag_threshold": 1400,
+            "wireless": {
+                "bitrate": 54,
+                "ack_distance": 1000,
+                "rts_threshold": 1400,
+                "frag_threshold": 1400,
+                "mode": "ap",
+                "essid": "ap-ssid-example",
+                "encryption": "none"
+            },
             "ip": [
                 {
                     "address": "192.168.1.1/24",
-                    "scope": "link",
                     "proto": "static"
                 },
                 {
                     "address": "fe80::216:44ff:fe60:32d2/64",
-                    "scope": "global",
                     "proto": "static"
                 }
             ],
-            "vif": [
+        },
+        {
+            "type": "wireless",
+            "name": "adhoc0",
+            "mac": "02:CA:FF:EE:BA:BE",
+            "mtu": 1500,
+            "device": "radio0",
+            "wireless": {
+                "bitrate": 54,
+                "ack_distance": 1000,
+                "rts_threshold": 1400,
+                "frag_threshold": 1400,
+                "mode": "adhoc",
+                "essid": "adhoc-ssid-example",
+                "bssid": "02:CA:FF:EE:BA:BE",
+                "encryption": "none"
+            },
+            "ip": [
                 {
-                    "mode": "adhoc",
-                    "essid": "adhoc-ssid-example",
-                    "bssid": "02:CA:FF:EE:BA:BE",
-                    "encryption": "none"
-                },
-                {
-                    "mode": "ap",
-                    "essid": "ap-ssid-example",
-                    "encryption": "none"
+                    "address": "10.0.1.1/24",
+                    "proto": "static"
                 }
             ]
         },
@@ -58,17 +75,14 @@
             "ip": [
                 {
                     "address": "176.9.211.214/28",
-                    "scope": "global",
                     "proto": "static"
                 },
                 {
                     "address": "2a01:4f8:150:8ffc::214/64",
-                    "scope": "global",
                     "proto": "static"
                 },
                 {
                     "address": "fe80::5054:ff:fe56:46d0/64",
-                    "scope": "link",
                     "proto": "static"
                 }
             ]
@@ -79,18 +93,19 @@
             "name": "radio0",
             "channel": 149,
             "channel_width": 20,
-            "frequency": 5745,
-            "output_power": 18
+            "tx_power": 18
         }
     ],
     "routing_protocols": [
         {
             "name": "olsr",
-            "version": "0.6.3"
+            "version": "0.6.3",
+            "router": "192.168.1.1"
         },
         {
             "name": "batman-adv",
-            "version": "2014.3.0"
+            "version": "2014.3.0",
+            "router": "de:9f:db:30:c9:c5"
         }
     ],
     "dns": [
