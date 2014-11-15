@@ -12,7 +12,7 @@
         "cpu_frequency": 400,
         "flash_memory": 8388608
     },
-    "os": {
+    "operating_system": {
         "name": "OpenWRT",
         "release": "Barrier Breaker",
         "version": "<vcs>:<id>|<stable_version_number>"
@@ -42,7 +42,7 @@
                     "address": "fe80::216:44ff:fe60:32d2/64",
                     "proto": "static"
                 }
-            ],
+            ]
         },
         {
             "type": "wireless",
