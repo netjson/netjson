@@ -100,12 +100,12 @@
         {
             "name": "olsr",
             "version": "0.6.3",
-            "router": "192.168.1.1"
+            "router_id": "192.168.1.1"
         },
         {
             "name": "batman-adv",
             "version": "2014.3.0",
-            "router": "de:9f:db:30:c9:c5"
+            "router_id": "de:9f:db:30:c9:c5"
         }
     ],
     "dns": [
