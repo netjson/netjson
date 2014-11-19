@@ -97,7 +97,40 @@
                     "proto": "dhcp"
                 }
             ]
-        }
+        },
+        {
+            "type": "wireless",
+            "name": "wifi2",
+            "mac": "de:9f:db:30:c9:c4",
+            "mtu": 1500,
+            "device": "radio0",
+            "wireless": {
+                "bitrate": 54,
+                "rts_threshold": 1400,
+                "frag_threshold": 1400,
+                "mode": "ap",
+                "essid": "private-network-example",
+                "encryption": {
+                    "enabled": true,
+                    "wpa": [
+                        1,
+                        2
+                    ],
+                    "authentication": [
+                        "psk"
+                    ],
+                    "ciphers": [
+                        "tkip",
+                        "ccmp"
+                    ]
+                }
+            },
+            "ip": [
+                {
+                    "proto": "dhcp"
+                }
+            ]
+        },
     ],
     "physical_devices": [
         {
