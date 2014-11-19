@@ -86,6 +86,17 @@
                     "proto": "static"
                 }
             ]
+        },
+        {
+            "type": "ethernet",
+            "name": "eth2",
+            "mac": "52:54:00:56:46:c0",
+            "mtu": 1500,
+            "ip": [
+                {
+                    "proto": "dhcp"
+                }
+            ]
         }
     ],
     "physical_devices": [
