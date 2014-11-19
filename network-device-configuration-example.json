@@ -31,7 +31,9 @@
                 "frag_threshold": 1400,
                 "mode": "ap",
                 "essid": "ap-ssid-example",
-                "encryption": "none"
+                "encryption": {
+                    "enabled": false
+                }
             },
             "ip": [
                 {
@@ -58,7 +60,9 @@
                 "mode": "adhoc",
                 "essid": "adhoc-ssid-example",
                 "bssid": "02:CA:FF:EE:BA:BE",
-                "encryption": "none"
+                "encryption": {
+                    "enabled": false
+                }
             },
             "ip": [
                 {
