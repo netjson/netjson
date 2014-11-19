@@ -1,0 +1,19 @@
+{
+    "type": "<routing_protocol_name>",
+    "route" : [
+        {
+            "destination": "<ip/prefix>",
+            "source": "<ip/prefix>",
+            "next" : "<ip>",
+            "device": "<dev>",
+            "cost": "<value>",
+        },
+        {
+            "destination": "<ip/prefix>",
+            "source": "<ip/prefix>",
+            "next" : "<ip>",
+            "device": "<dev>",
+            "cost": "<value>",
+        }
+    ]
+}
