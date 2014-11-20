@@ -154,6 +154,11 @@
             "name": "batman-adv",
             "version": "2014.3.0",
             "router_id": "de:9f:db:30:c9:c5"
+        },
+        {
+            "name": "cjdns",
+            "version": "c7eed6b14688458e16fab368f68904e530651a30",
+            "router_id": "4upjugvc9rmtw08uy61tg17zm66wtxswxsfbr2z30fc9urtdvnm0.k"
         }
     ],
     "dns": [
