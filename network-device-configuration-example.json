@@ -1,4 +1,8 @@
 {
+    "meta": {
+        "type": "device-configuration",
+        "version": 0
+    },
     "general": {
         "name": "DeviceNameExample",
         "maintainer": "email@example.org",
