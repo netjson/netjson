@@ -1,6 +1,10 @@
 {
     "type": "<routing_protocol_name>",
     "route" : [
+    "meta": {
+        "type": "topology",
+        "version": 0
+    },
         {
             "destination": "<ip/prefix>",
             "source": "<ip/prefix>",
