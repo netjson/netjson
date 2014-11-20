@@ -10,7 +10,7 @@
             "source": "<ip/prefix>",
             "next" : "<ip>",
             "device": "<dev>",
-            "cost": "<value>",
+            "metric": "<metric value>",  // generic metric value
         }
     ]
 }
