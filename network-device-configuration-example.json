@@ -29,7 +29,7 @@
             "mtu": 1500,
             "device": "radio0",
             "wireless": {
-                "bitrate": 54,
+                "bitrate": 54000000,
                 "ack_distance": 1000,
                 "rts_threshold": 1400,
                 "frag_threshold": 1400,
