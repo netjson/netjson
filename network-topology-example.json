@@ -1,17 +1,10 @@
 {
-    "route" : [
     "meta": {
         "type": "topology",
         "version": 0
     },
     "routing_protocol": "<routing protocol name>",
-        {
-            "destination": "<ip/prefix>",
-            "source": "<ip/prefix>",
-            "next" : "<ip>",
-            "device": "<dev>",
-            "cost": "<value>",
-        },
+    "routes" : [
         {
             "destination": "<ip/prefix>",
             "source": "<ip/prefix>",
