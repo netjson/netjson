@@ -11,6 +11,7 @@
             "next" : "<ip>",
             "device": "<dev>",
             "metric": "<metric value>",  // generic metric value
+            "metric_name": "<name of algorithm>"  // metric name
         }
     ]
 }
