@@ -6,10 +6,11 @@
     "routing_protocol": "<routing protocol name>",
     "routes" : [
         {
-            "destination": "<ip/prefix>",
-            "source": "<ip/prefix>",
-            "next" : "<ip>",
-            "device": "<dev>",
+            "destination": "<id>",  // ip|prefix in layer3, mac address in layer2
+            "source": "<id>",  // omitted in batman-adv
+            "next" : "<id>",  // ip|prefix in layer3, mac address in layer2
+            "device": "<device>",  // the interface the traffic will be going to
+            "table": "<routing table>",
             "metric": "<metric value>",  // generic metric value
             "metric_name": "<name of algorithm>"  // metric name
         }
