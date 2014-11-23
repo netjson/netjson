@@ -65,3 +65,13 @@ once the standard JSON structures are defined and adopted it will be easier to
 write systems that work together, instead of creating silos.
 
 .. _GeoJSON: http://en.wikipedia.org/wiki/GeoJSON
+
+Definitions
+-----------
+
+* JavaScript Object Notation (JSON), and the terms object, name, value, array, and number, are defined in `IETF RTC 4627`_.
+
+* The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in `IETF RFC 2119`_.
+
+.. _IETF RTC 4627: http://www.ietf.org/rfc/rfc4627.txt
+.. _IETF RFC 2119: http://www.ietf.org/rfc/rfc2119.txt
