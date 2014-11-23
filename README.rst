@@ -75,3 +75,32 @@ Definitions
 
 .. _IETF RTC 4627: http://www.ietf.org/rfc/rfc4627.txt
 .. _IETF RFC 2119: http://www.ietf.org/rfc/rfc2119.txt
+
+Network Device Configuration
+============================
+
+**Definition**: configuration and properties of a network device
+
+**Example**: `network-device-configuration-example.json`_
+
+A ``Network Device Configuration`` object should be composed of the following members:
+
+* ``general``
+* ``hardware``
+* ``operating_system``
+* ``interfaces``
+* ``physical_devices``
+* ``routing_protocols``
+* ``dns``
+
+All the values of each member must be objects which further describe each component of a network device.
+
+Software providing this JSON format to should return all the information it able to access from the system,
+according to security and privacy rules defined by the device owner or network administrator.
+
+Software consuming this JSON format must be able to handle missing attributes.
+
+Software consuming this JSON format must ignore unrecognized attributes.
+
+.. _network-device-configuration-example.json: https://github.com/interop-dev/network-device-schema/blob/master/network-device-configuration-example.json
+
