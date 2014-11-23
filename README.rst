@@ -104,3 +104,10 @@ Software consuming this JSON format must ignore unrecognized attributes.
 
 .. _network-device-configuration-example.json: https://github.com/interop-dev/network-device-schema/blob/master/network-device-configuration-example.json
 
+Device Monitoring Data
+======================
+
+**Definition**: TODO
+
+**Example**: TODO
+
