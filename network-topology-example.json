@@ -3,16 +3,17 @@
         "type": "topology",
         "version": 0
     },
-    "routing_protocol": "<routing protocol name>",
-    "routes" : [
-        {
-            "destination": "<id>",
-            "source": "<id>",
-            "next" : "<id>",
-            "device": "<device>",
-            "table": "<routing table>",
-            "metric": "<metric value>",
-            "metric_name": "<name of algorithm>"
-        }
-    ]
+    "routing_protocol": {
+        "name": "olsr1",
+        "routing_metric": "etx",
+        "routes": [
+            {
+                "destination": "ID",
+                "source": "ID",
+                "next" : "ID",
+                "device": "DEVICE",
+                "cost": "VALUE"
+            }
+        ]
+    }
 }
