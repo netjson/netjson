@@ -111,3 +111,26 @@ Device Monitoring Data
 
 **Example**: TODO
 
+Routing Protocol Routes
+=======================
+
+**Definition**: routes representing a network topology
+
+**Example**: `network-topology-example.json`_
+
+A ``routing_protocol`` object must define the following members:
+
+* ``name``: a string which indicates the routing protocol name
+* ``routing_metric``: a string which indicates the name of main routing metric used by the routing protocol to determine the best routes when sending packets
+* ``routes``: an array containing a list of routes
+
+A ``route`` object must define the following members:
+
+* ``destination``: a string indicating the ip address, prefix or mac address that will be matched to the destination of the traffic
+* ``next``: a string indicating the ip address, prefix or mac address of the next hop
+* ``device``: a string indicating the interface the traffic will be going to
+* ``cost``: the numeric value of the routing metric; if it's positive it means that a lower cost is better; if it's negative it means that a higher cost is better
+
+A ``route`` object may also define a ``source`` member indicating the source (necessary for source-specific routing).
+
+.. _network-topology-example.json: https://github.com/interop-dev/network-device-schema/blob/master/network-topology-example.json?short_path=63d45fc
