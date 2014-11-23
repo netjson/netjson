@@ -4,15 +4,15 @@
         "version": 0
     },
     "routing_protocol": {
-        "name": "olsr1",
-        "routing_metric": "etx",
+        "name": "NAME",
+        "routing_metric": "METRIC",
         "routes": [
             {
                 "destination": "ID",
                 "source": "ID",
                 "next" : "ID",
                 "device": "DEVICE",
-                "cost": "VALUE"
+                "cost": 1
             }
         ]
     }
