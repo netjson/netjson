@@ -249,12 +249,11 @@
             "router_id": "4upjugvc9rmtw08uy61tg17zm66wtxswxsfbr2z30fc9urtdvnm0.k"
         }
     ],
-    "dns": [
-        {
-            "address": "10.254.0.1"
-        },
-        {
-            "address": "10.254.0.2"
-        }
+    "dns_servers": [
+        "10.254.0.1",
+        "10.254.0.2"
+    ],
+    "dns_search": [
+        "domain.com"
     ]
 }

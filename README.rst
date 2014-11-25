@@ -93,7 +93,8 @@ The object should be composed of the following members:
 * ``interfaces``
 * ``physical_devices``
 * ``routing_protocols``
-* ``dns``
+* ``dns_servers``
+* ``dns_search``
 
 All the values of each member must be objects which further describe each component of a network device.
 
