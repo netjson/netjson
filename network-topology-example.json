@@ -1,19 +1,14 @@
 {
-    "meta": {
-        "type": "topology",
-        "version": 0
-    },
-    "routing_protocol": {
-        "name": "NAME",
-        "routing_metric": "METRIC",
-        "routes": [
-            {
-                "destination": "ID",
-                "source": "ID",
-                "next" : "ID",
-                "device": "DEVICE",
-                "cost": 1
-            }
-        ]
-    }
+    "type": "NetworkRoutes",
+    "routing_protocol": "PROTOCOL-NAME",
+    "routing_metric": "PROTOCOL-METRIC",
+    "routes": [
+        {
+            "destination": "ID",
+            "source": "ID",
+            "next" : "ID",
+            "device": "DEVICE",
+            "cost": 1
+        }
+    ]
 }

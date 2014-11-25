@@ -118,13 +118,15 @@ Routing Protocol Routes
 
 **Example**: `network-topology-example.json`_
 
-A ``routing_protocol`` object must define the following members:
+A ``Network Routes`` object must have a member with the name ``type`` and value ``NetworkRoutes``.
 
-* ``name``: a string which indicates the routing protocol name
+It must also define the following members:
+
+* ``routing_protocol`` the name of the routing protocol
 * ``routing_metric``: a string which indicates the name of main routing metric used by the routing protocol to determine the best routes when sending packets
 * ``routes``: an array containing a list of routes
 
-A ``route`` object must define the following members:
+Each ``route`` object must define the following members:
 
 * ``destination``: a string indicating the ip address, prefix or mac address that will be matched to the destination of the traffic
 * ``next``: a string indicating the ip address, prefix or mac address of the next hop
