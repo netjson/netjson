@@ -10,6 +10,7 @@
         "model": "Example model",
         "model_revision": 1,
         "ram": 67108864,
+        "cpu": "Atheros AR2317",
         "cpu_frequency": 400000000,
         "flash_memory": 8388608
     },
