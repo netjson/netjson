@@ -24,11 +24,14 @@
     "interfaces": [
         {
             "type": "wireless",
-            "name": "wifi0",
+            "name": "wlan0",
             "mac": "de:9f:db:30:c9:c5",
             "mtu": 1500,
-            "device": "radio0",
+            "txqueuelen": 1000,
+            "carrier": true,
+            "autostart": true,
             "wireless": {
+                "physical_device": "phy0",
                 "bitrate": 54000000,
                 "ack_distance": 1000,
                 "rts_threshold": 1400,
@@ -39,13 +42,17 @@
                     "enabled": false
                 }
             },
-            "ip": [
+            "addresses": [
                 {
                     "address": "192.168.1.1/24",
+                    "mask": 24,
+                    "family": "ipv4",
                     "proto": "static"
                 },
                 {
-                    "address": "fe80::216:44ff:fe60:32d2/64",
+                    "address": "fe80::216:44ff:fe60:32d2",
+                    "mask": 64,
+                    "family": "ipv6",
                     "proto": "static"
                 }
             ]
@@ -55,9 +62,12 @@
             "name": "adhoc0",
             "mac": "02:CA:FF:EE:BA:BE",
             "mtu": 1500,
-            "device": "radio0",
+            "txqueuelen": 1000,
+            "carrier": true,
+            "autostart": true,
             "wireless": {
-                "bitrate": 54,
+                "physical_device": "phy0",
+                "bitrate": 54000000,
                 "ack_distance": 1000,
                 "rts_threshold": 1400,
                 "frag_threshold": 1400,
@@ -68,9 +78,11 @@
                     "enabled": false
                 }
             },
-            "ip": [
+            "addresses": [
                 {
-                    "address": "10.0.1.1/24",
+                    "address": "10.0.1.1",
+                    "mask": 24,
+                    "family": "ipv4",
                     "proto": "static"
                 }
             ]
@@ -80,40 +92,60 @@
             "name": "eth0",
             "mac": "52:54:00:56:46:d0",
             "mtu": 1500,
+            "txqueuelen": 1000,
+            "carrier": true,
+            "autostart": true,
             "ip": [
                 {
-                    "address": "176.9.211.214/28",
+                    "address": "176.9.211.214",
+                    "mask": 28,
+                    "family": "ipv4",
                     "proto": "static"
                 },
                 {
-                    "address": "2a01:4f8:150:8ffc::214/64",
+                    "address": "2a01:4f8:150:8ffc::214",
+                    "mask": 64,
+                    "family": "ipv6",
                     "proto": "static"
                 },
                 {
-                    "address": "fe80::5054:ff:fe56:46d0/64",
+                    "address": "fe80::5054:ff:fe56:46d0",
+                    "mask": 64,
+                    "family": "ipv6",
                     "proto": "static"
                 }
             ]
         },
         {
             "type": "ethernet",
-            "name": "eth2",
+            "name": "eth1",
             "mac": "52:54:00:56:46:c0",
             "mtu": 1500,
-            "ip": [
+            "txqueuelen": 1000,
+            "carrier": true,
+            "autostart": true,
+            "addresses": [
                 {
-                    "proto": "dhcp"
+                    "proto": "dhcp",
+                    "family": "ipv4"
+                },
+                {
+                    "proto": "dhcp",
+                    "family": "ipv6"
                 }
             ]
         },
         {
             "type": "wireless",
-            "name": "wifi2",
+            "name": "wlan1",
             "mac": "de:9f:db:30:c9:c4",
             "mtu": 1500,
-            "device": "radio0",
+            "txqueuelen": 1000,
+            "carrier": true,
+            "autostart": true,
             "wireless": {
-                "bitrate": 54,
+                "physical_device": "phy0",
+                "bitrate": 54000000,
                 "rts_threshold": 1400,
                 "frag_threshold": 1400,
                 "mode": "ap",
@@ -133,12 +165,17 @@
                     ]
                 }
             },
-            "ip": [
+            "addresses": [
                 {
-                    "proto": "dhcp"
+                    "proto": "dhcp",
+                    "family": "ipv4"
+                },
+                {
+                    "proto": "dhcp",
+                    "family": "ipv6"
                 }
             ]
-        }
+        },
     ],
     "physical_devices": [
         {
