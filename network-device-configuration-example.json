@@ -16,8 +16,10 @@
     },
     "operating_system": {
         "name": "OpenWRT",
-        "release": "Barrier Breaker",
-        "version": "<vcs>:<id>|<stable_version_number>"
+        "kernel": "3.10.49",
+        "version": "Barrier Breaker",
+        "revision": "r43321",
+        "description": "OpenWrt Barrier Breaker 14.07"
     },
     "interfaces": [
         {
