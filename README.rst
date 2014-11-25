@@ -116,9 +116,21 @@ Software consuming this JSON format must ignore unrecognized attributes.
 Device Monitoring Data
 ======================
 
-**Definition**: TODO
+**Definition**: information that indicates the behaviour of a device that changes constantly
 
-**Example**: TODO
+**Example**: `monitoring-data.json`_
+
+A ``Device Monitoring`` object must have a member with the name ``type`` and value ``DeviceMonitoring``.
+
+The object should be composed of the following members:
+
+* ``general``
+* ``interfaces``
+* ``resources``
+
+**Each object will be described more in detail in the future iterations of this project**.
+
+.. _monitoring-data.json: https://github.com/interop-dev/network-device-schema/blob/master/examples/monitoring-data.json
 
 Routing Protocol Routes
 =======================
@@ -131,7 +143,7 @@ A ``Network Routes`` object must have a member with the name ``type`` and value 
 
 It must also define the following members:
 
-* ``routing_protocol`` the name of the routing protocol
+* ``routing_protocol``: the name of the routing protocol
 * ``routing_metric``: a string which indicates the name of main routing metric used by the routing protocol to determine the best routes when sending packets
 * ``routes``: an array containing a list of routes
 
