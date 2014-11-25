@@ -8,6 +8,10 @@ building blocks of networking:
 * monitoring data
 * routes
 
+`Reach us on the Mailing List`_
+
+.. _Reach us on the Mailing List: https://lists.funkfeuer.at/mailman/listinfo/interop-dev
+
 Goals
 -----
 
