@@ -81,7 +81,7 @@ Network Device Configuration
 
 **Definition**: configuration and properties of a network device
 
-**Example**: `network-device-configuration-example.json`_
+**Example**: `device-configuration.json`_
 
 A ``Network Device Configuration`` object must have a member with the name ``type`` and value ``DeviceConfiguration``.
 
@@ -107,7 +107,7 @@ Software consuming this JSON format must be able to handle missing attributes.
 
 Software consuming this JSON format must ignore unrecognized attributes.
 
-.. _network-device-configuration-example.json: https://github.com/interop-dev/network-device-schema/blob/master/network-device-configuration-example.json
+.. _device-configuration.json: https://github.com/interop-dev/network-device-schema/blob/master/examples/device-configuration.json
 
 Device Monitoring Data
 ======================
@@ -121,7 +121,7 @@ Routing Protocol Routes
 
 **Definition**: routes representing a network topology
 
-**Example**: `network-topology-example.json`_
+**Example**: `network-routes.json`_
 
 A ``Network Routes`` object must have a member with the name ``type`` and value ``NetworkRoutes``.
 
@@ -140,4 +140,4 @@ Each ``route`` object must define the following members:
 
 A ``route`` object may also define a ``source`` member indicating the source (necessary for source-specific routing).
 
-.. _network-topology-example.json: https://github.com/interop-dev/network-device-schema/blob/master/network-topology-example.json?short_path=63d45fc
+.. _network-routes.json: https://github.com/interop-dev/network-device-schema/blob/master/examples/network-routes.json?short_path=63d45fc
