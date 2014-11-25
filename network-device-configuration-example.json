@@ -179,7 +179,7 @@
     ],
     "physical_devices": [
         {
-            "name": "radio0",
+            "name": "phy0",
             "channel": 149,
             "channel_width": 20,
             "tx_power": 18
