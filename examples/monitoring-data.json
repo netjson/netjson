@@ -1,0 +1,140 @@
+{
+    "type": "DeviceMonitoring",
+    "general": {
+        "local_time": 1414305354,
+        "uptime": 3501937,
+    },
+    "interfaces": [
+        {
+            "name": "lo",
+            "uptime": 1404305354,
+            "statistics": {
+               "collisions": 0,
+               "rx_frame_errors": 0,
+               "tx_compressed": 0,
+               "multicast": 0,
+               "rx_length_errors": 0,
+               "tx_dropped": 0,
+               "rx_bytes": 9287737,
+               "rx_missed_errors": 0,
+               "tx_errors": 0,
+               "rx_compressed": 0,
+               "rx_over_errors": 0,
+               "tx_fifo_errors": 0,
+               "rx_crc_errors": 0,
+               "rx_packets": 57624,
+               "tx_heartbeat_errors": 0,
+               "rx_dropped": 0,
+               "tx_aborted_errors": 0,
+               "tx_packets": 57624,
+               "rx_errors": 0,
+               "tx_bytes": 9287737,
+               "tx_window_errors": 0,
+               "rx_fifo_errors": 0,
+               "tx_carrier_errors": 0
+            }
+        },
+        {
+            "name": "wlan0",
+            "uptime": 1304305354,
+            "statistics": {
+               "collisions": 0,
+               "rx_frame_errors": 0,
+               "tx_compressed": 0,
+               "multicast": 0,
+               "rx_length_errors": 0,
+               "tx_dropped": 0,
+               "rx_bytes": 2434,
+               "rx_missed_errors": 0,
+               "tx_errors": 0,
+               "rx_compressed": 0,
+               "rx_over_errors": 0,
+               "tx_fifo_errors": 0,
+               "rx_crc_errors": 0,
+               "rx_packets": 5,
+               "tx_heartbeat_errors": 0,
+               "rx_dropped": 0,
+               "tx_aborted_errors": 0,
+               "tx_packets": 2169666,
+               "rx_errors": 0,
+               "tx_bytes": 583692816,
+               "tx_window_errors": 0,
+               "rx_fifo_errors": 0,
+               "tx_carrier_errors": 0
+            }
+        },
+        {
+            "name": "eth0",
+            "uptime": 1294305354,
+            "statistics": {
+                "collisions": 0,
+                "rx_frame_errors": 0,
+                "tx_compressed": 0,
+                "multicast": 0,
+                "rx_length_errors": 0,
+                "tx_dropped": 0,
+                "rx_bytes": 3542783708,
+                "rx_missed_errors": 0,
+                "tx_errors": 0,
+                "rx_compressed": 0,
+                "rx_over_errors": 0,
+                "tx_fifo_errors": 0,
+                "rx_crc_errors": 0,
+                "rx_packets": 35118502,
+                "tx_heartbeat_errors": 0,
+                "rx_dropped": 14,
+                "tx_aborted_errors": 0,
+                "tx_packets": 11761973,
+                "rx_errors": 0,
+                "tx_bytes": 2952333765,
+                "tx_window_errors": 0,
+                "rx_fifo_errors": 0,
+                "tx_carrier_errors": 0
+            }
+        }
+    ],
+    "resources": {
+        "load_average": [
+           "0.08",
+           "0.04",
+           "0.05"
+        ],
+        "memory": {
+            "total": 28980,
+            "free": 3156,
+            "buffered": 2072,
+            "cache": 6884
+        },
+        "swap": {
+            "total": 0,
+            "free": 0
+        },
+        "connections": {
+            "ipv4": {
+                "tcp": 4,
+                "udp": 18
+            },
+            "ipv6": {
+                "tcp": 2,
+                "udp": 1
+            }
+        },
+        "processes": {
+            "running": 2,
+            "sleeping": 36,
+            "blocked": 0,
+            "zombie": 0,
+            "stopped": 0,
+            "paging": 0
+        },
+        "cpu": {
+            "user": 13,
+            "system": 0,
+            "nice": 4,
+            "idle": 83,
+            "iowait": 0,
+            "irq": 0,
+            "softirq": 0
+        }
+    }
+}
