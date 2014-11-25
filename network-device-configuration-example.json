@@ -1,7 +1,7 @@
 {
     "type": "DeviceConfiguration",
     "general": {
-        "name": "DeviceNameExample",
+        "hostname": "DeviceNameExample",
         "maintainer": "email@example.org",
         "description": "general info here"
     },
