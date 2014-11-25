@@ -83,7 +83,9 @@ Network Device Configuration
 
 **Example**: `network-device-configuration-example.json`_
 
-A ``Network Device Configuration`` object should be composed of the following members:
+A ``Network Device Configuration`` object must have a member with the name ``type`` and value ``DeviceConfiguration``.
+
+The object should be composed of the following members:
 
 * ``general``
 * ``hardware``
@@ -94,6 +96,8 @@ A ``Network Device Configuration`` object should be composed of the following me
 * ``dns``
 
 All the values of each member must be objects which further describe each component of a network device.
+
+**Each object will be described more in detail in the future iterations of this project**.
 
 Software providing this JSON format to should return all the information it is able to access from the system,
 according to security and privacy rules defined by the device owner or network administrator.
