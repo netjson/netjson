@@ -176,6 +176,23 @@
                 }
             ]
         },
+        {
+            "type": "virtual",
+            "name": "vpn",
+            "mac": "82:29:23:7d:c2:14",
+            "mtu": 1500,
+            "txqueuelen": 100,
+            "carrier": true,
+            "autostart": true,
+            "addresses": [
+                {
+                    "address": "fe80::8029:23ff:fe7d:c214",
+                    "mask": "64",
+                    "family": "ipv6",
+                    "proto": "static",
+                }
+            ]
+        },
     ],
     "physical_devices": [
         {
