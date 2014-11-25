@@ -202,6 +202,27 @@
             "carrier": true,
             "autostart": true
         },
+        {
+            "type": "bridge",
+            "name": "brwifi",
+            "mac": "82:29:23:7d:c2:14",
+            "mtu": 1500,
+            "txqueuelen": 0,
+            "carrier": true,
+            "autostart": true,
+            "bridge-members": [
+                "wlan0",
+                "vpn.40"
+            ],
+            "addresses": [
+                {
+                    "address": "fe80::8029:23ff:fe7d:c214",
+                    "mask": "64",
+                    "family": "ipv6",
+                    "proto": "static",
+                }
+            ]
+        }
     ],
     "physical_devices": [
         {
