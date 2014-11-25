@@ -1,5 +1,5 @@
-JSON schemas for networkers
-===========================
+JSON formats for networks
+=========================
 
 This repository is an attempt to define standard JSON schemas for the most basic
 building blocks of networking:
