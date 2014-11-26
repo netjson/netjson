@@ -1,8 +1,8 @@
 JSON formats for networks
 =========================
 
-This repository is an attempt to define standard JSON schemas for the most basic
-building blocks of networking:
+This repository is an attempt to define an open standard JSON format for
+encoding the most basic building blocks of networking:
 
 * devices
 * monitoring data
@@ -28,7 +28,7 @@ The resulting JSON structures should follow these general principles:
 * `Principle of least astonishment`_: use accepted terminology
 * **Explicit names**: prefer verbose explicit names, eg: "operating_system" is better than "os"
 
-Once we get to a first version, we should implement these formats in softwares like:
+Once we get to a first version, we should implement these formats in software like:
 
 * Firwmares and linux modules
 * Routing protocols
