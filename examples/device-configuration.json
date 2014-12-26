@@ -35,6 +35,14 @@
             "total": null
         }
     },
+    "physical_devices": [
+        {
+            "name": "phy0",
+            "channel": 149,
+            "channel_width": 20,
+            "tx_power": 18
+        }
+    ],
     "interfaces": [
         {
             "type": "wireless",
@@ -238,27 +246,33 @@
             ]
         }
     ],
-    "physical_devices": [
+    "routing": [
         {
-            "name": "phy0",
-            "channel": 149,
-            "channel_width": 20,
-            "tx_power": 18
-        }
-    ],
-    "routing_protocols": [
+            "type": "NetworkRoutes",
+            "protocol": "static",
+            "version": null,
+            "routes": [
+                {
+                    "destination": "ID",
+                    "next" : "ID"
+                }
+            ]
+        },
         {
-            "name": "olsr",
+            "type": "NetworkRoutes",
+            "protocol": "olsr",
             "version": "0.6.3",
             "router_id": "192.168.1.1"
         },
         {
-            "name": "batman-adv",
+            "type": "NetworkRoutes",
+            "protocol": "batman-adv",
             "version": "2014.3.0",
             "router_id": "de:9f:db:30:c9:c5"
         },
         {
-            "name": "cjdns",
+            "type": "NetworkRoutes",
+            "protocol": "cjdns",
             "version": "c7eed6b14688458e16fab368f68904e530651a30",
             "router_id": "4upjugvc9rmtw08uy61tg17zm66wtxswxsfbr2z30fc9urtdvnm0.k"
         }

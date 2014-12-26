@@ -98,7 +98,7 @@ The object should be composed of the following members:
 * ``resources``
 * ``interfaces``
 * ``physical_devices``
-* ``routing_protocols``
+* ``routing``
 * ``dns_servers``
 * ``dns_search``
 
@@ -137,24 +137,30 @@ The object should be composed of the following members:
 Routing Protocol Routes
 =======================
 
-**Definition**: routes representing a network topology
+**Definition**: routes representing a network topology or indicating the presence of a routing protocol running on a device (in a ``DeviceConfiguration`` object)
 
 **Example**: `network-routes.json`_
 
 A ``Network Routes`` object must have a member with the name ``type`` and value ``NetworkRoutes``.
 
-It must also define the following members:
+It must define the following members:
 
-* ``routing_protocol``: the name of the routing protocol
-* ``routing_metric``: a string which indicates the name of main routing metric used by the routing protocol to determine the best routes when sending packets
+* ``protocol``: the name of the routing protocol, can be ``static`` when representing static routes
+* ``version``: the version of the routing protocol, can be ``null`` when representing static routes
+
+It might also define the optional member ``router_id``, which represent the ID of the router on which the protocol is running.
+
+When representing a network topology, a ``Network Routes`` object  must define the following members:
+
+* ``metric``: a string which indicates the name of main routing metric used by the routing protocol to determine the best routes when sending packets
 * ``routes``: an array containing a list of routes
 
 Each ``route`` object must define the following members:
 
 * ``destination``: a string indicating the ip address, prefix or mac address that will be matched to the destination of the traffic
 * ``next``: a string indicating the ip address, prefix or mac address of the next hop
-* ``device``: a string indicating the interface the traffic will be going to
-* ``cost``: the numeric value of the routing metric; lower cost is better
+* ``device``: a string indicating the interface the traffic will be going to, **it can be omitted when representing static routes**
+* ``cost``: the numeric value of the routing metric; lower cost is better, **it can be omitted when representing static routes**
 
 A ``route`` object may also define a ``source`` member indicating the source (necessary for source-specific routing).
 

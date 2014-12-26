@@ -1,7 +1,9 @@
 {
     "type": "NetworkRoutes",
-    "routing_protocol": "PROTOCOL-NAME",
-    "routing_metric": "PROTOCOL-METRIC",
+    "protocol": "PROTOCOL-NAME",
+    "version": "PROTOCOL-VERSION",
+    "metric": "PROTOCOL-METRIC",
+    "router_id": "ROUTER-ID",
     "routes": [
         {
             "destination": "ID",
