@@ -95,6 +95,7 @@ The object should be composed of the following members:
 * ``general``
 * ``hardware``
 * ``operating_system``
+* ``resources``
 * ``interfaces``
 * ``physical_devices``
 * ``routing_protocols``

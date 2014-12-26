@@ -4,6 +4,59 @@
         "local_time": 1414305354,
         "uptime": 3501937,
     },
+    "resources": {
+        "load_average": [
+           "0.08",
+           "0.04",
+           "0.05"
+        ],
+        "memory": {
+            "total": 67108864,
+            "free": 3156,
+            "buffered": 2072,
+            "cache": 6884
+        },
+        "swap": {
+            "total": 0,
+            "free": 0
+        },
+        "connections": {
+            "ipv4": {
+                "tcp": 4,
+                "udp": 18
+            },
+            "ipv6": {
+                "tcp": 2,
+                "udp": 1
+            }
+        },
+        "processes": {
+            "running": 2,
+            "sleeping": 36,
+            "blocked": 0,
+            "zombie": 0,
+            "stopped": 0,
+            "paging": 0
+        },
+        "cpu": {
+            "frequency": 400000000,
+            "user": 13,
+            "system": 0,
+            "nice": 4,
+            "idle": 83,
+            "iowait": 0,
+            "irq": 0,
+            "softirq": 0
+        },
+        "flash": {
+            "total": 8388608,
+            "free": 1388608,
+        },
+        "storage": {
+            "total": null,
+            "free": null,
+        }
+    },
     "interfaces": [
         {
             "name": "lo",
@@ -92,49 +145,5 @@
                 "tx_carrier_errors": 0
             }
         }
-    ],
-    "resources": {
-        "load_average": [
-           "0.08",
-           "0.04",
-           "0.05"
-        ],
-        "memory": {
-            "total": 28980,
-            "free": 3156,
-            "buffered": 2072,
-            "cache": 6884
-        },
-        "swap": {
-            "total": 0,
-            "free": 0
-        },
-        "connections": {
-            "ipv4": {
-                "tcp": 4,
-                "udp": 18
-            },
-            "ipv6": {
-                "tcp": 2,
-                "udp": 1
-            }
-        },
-        "processes": {
-            "running": 2,
-            "sleeping": 36,
-            "blocked": 0,
-            "zombie": 0,
-            "stopped": 0,
-            "paging": 0
-        },
-        "cpu": {
-            "user": 13,
-            "system": 0,
-            "nice": 4,
-            "idle": 83,
-            "iowait": 0,
-            "irq": 0,
-            "softirq": 0
-        }
-    }
+    ]
 }
