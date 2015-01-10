@@ -1,7 +1,7 @@
-JSON formats for networks
-=========================
+JSON data interchange format for networks
+=========================================
 
-This repository is an attempt to define an open standard JSON format for
+This repository is an attempt to define an open standard JSON data interchange format for
 encoding the most basic building blocks of networking:
 
 * devices
