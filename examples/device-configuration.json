@@ -250,7 +250,7 @@
         {
             "type": "NetworkRoutes",
             "protocol": "static",
-            "version": null,
+            "version": "0",
             "routes": [
                 {
                     "destination": "ID",
