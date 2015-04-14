@@ -1,25 +1,25 @@
 {
-  "type": "NetworkTopology",
-  "protocol": "PROTOCOL-NAME",
-  "version": "PROTOCOL-VERSION",
-  "metric": "PROTOCOL-METRIC",
-  "router_id": "ROUTER-ID",
-  "topology": [
-    {
-      "primary": "<node-ID>",
-      "secondary": [
-        "<id1>",
-        "<id2>",
-        "<id3>"
-      ],
-      "neighbors": [
+    "type": "NetworkTopology",
+    "protocol": "PROTOCOL-NAME",
+    "version": "PROTOCOL-VERSION",
+    "metric": "PROTOCOL-METRIC",
+    "router_id": "ROUTER-ID",
+    "topology": [
         {
-          "source": "IDx",
-          "interface": "IFx",
-          "neighbor" : "IDn",
-          "weight": 1
+            "primary": "<node-ID>",
+            "secondary": [
+                "<id1>",
+                "<id2>",
+                "<id3>"
+            ],
+            "neighbors": [
+                {
+                    "source": "IDx",
+                    "interface": "IFx",
+                    "neighbor": "IDn",
+                    "weight": 1
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }
