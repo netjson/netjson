@@ -84,7 +84,7 @@ Definitions
 Network Device Configuration
 ============================
 
-**Definition**: configuration and properties of a network device
+**Definition**: configuration and properties of a network device.
 
 **Example**: `device-configuration.json`_
 
@@ -118,7 +118,7 @@ Software consuming this JSON format must ignore unrecognized attributes.
 Device Monitoring Data
 ======================
 
-**Definition**: information that indicates the behaviour of a device that changes over time
+**Definition**: information that indicates the behaviour of a device that changes over time.
 
 **Example**: `monitoring-data.json`_
 
@@ -147,16 +147,14 @@ It must define the following members:
 
 * ``protocol``: the name of the routing protocol, can be ``static`` when representing static routes
 * ``version``: the version of the routing protocol, can be ``null`` when representing static routes
+* ``metric``: a string which indicates the name of main routing metric used by the routing protocol to determine the best routes when sending packets, can be ``null`` when representing static routes
 
 It may also define the optional member ``router_id``, which represent the ID of the router on which the protocol is running.
 
 When contained in a ``DeviceConfiguration``, a ``Network Routes`` object indicates
 either that a routing protocol is running on the device or that static routes have been set; in this case the member ``routes`` is required only for static routes.
 
-When self contained, a ``Network Routes`` object represents a routing table and must define the following members:
-
-* ``metric``: a string which indicates the name of main routing metric used by the routing protocol to determine the best routes when sending packets **it can be omitted when representing static routes**
-* ``routes``: an array containing a list of routes
+When self contained, a ``NetworkRoutes`` object represents a routing table and must define a ``routes`` member, which contains a list of route objects.
 
 Each ``route`` object must define the following members:
 
