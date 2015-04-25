@@ -8,7 +8,6 @@
         {
             "id": "172.16.40.24",
             "label": "node-A",
-            "type": "router",
             "properties": {
                 "hostname": "node1.my.net"
             }
@@ -16,13 +15,12 @@
         {
             "id": "172.16.40.60",
             "label": "node-B",
-            "type": "radio",
             "properties": {
                 "hostname": "node2.my.net"
             }
         }
     ],
-    "edges": [
+    "links": [
         [
             {
                 "source": "172.16.40.24",
