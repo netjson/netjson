@@ -2,7 +2,7 @@
     "type": "DeviceMonitoring",
     "general": {
         "local_time": 1414305354,
-        "uptime": 3501937,
+        "uptime": 3501937
     },
     "resources": {
         "load_average": [
@@ -50,11 +50,11 @@
         },
         "flash": {
             "total": 8388608,
-            "free": 1388608,
+            "free": 1388608
         },
         "storage": {
             "total": null,
-            "free": null,
+            "free": null
         }
     },
     "interfaces": [

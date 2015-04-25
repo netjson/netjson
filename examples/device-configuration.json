@@ -117,7 +117,7 @@
             "txqueuelen": 1000,
             "carrier": true,
             "autostart": true,
-            "ip": [
+            "addresses": [
                 {
                     "address": "176.9.211.214",
                     "mask": 28,
@@ -211,7 +211,7 @@
                     "address": "fe80::8029:23ff:fe7d:c214",
                     "mask": "64",
                     "family": "ipv6",
-                    "proto": "static",
+                    "proto": "static"
                 }
             ]
         },
@@ -241,7 +241,7 @@
                     "address": "fe80::8029:23ff:fe7d:c214",
                     "mask": "64",
                     "family": "ipv6",
-                    "proto": "static",
+                    "proto": "static"
                 }
             ]
         }
