@@ -134,10 +134,10 @@ The object should be composed of the following members:
 
 .. _monitoring-data.json: https://github.com/interop-dev/network-device-schema/blob/master/examples/monitoring-data.json
 
-Routing Protocol Routes
-=======================
+Network Routes
+==============
 
-**Definition**: routes representing a network topology or indicating the presence of a routing protocol running on a device (in a ``DeviceConfiguration`` object)
+**Definition**: a list of routes of a dynamic routing protocol or statically configured on the device. May be contained in a ``DeviceConfiguration`` object.
 
 **Example**: `network-routes.json`_
 
@@ -150,9 +150,12 @@ It must define the following members:
 
 It might also define the optional member ``router_id``, which represent the ID of the router on which the protocol is running.
 
-When representing a network topology, a ``Network Routes`` object  must define the following members:
+When contained in a ``DeviceConfiguration``, a ``Network Routes`` object indicates
+either that a routing protocol is running on the device or that static routes have been set; in this case the member ``routes`` is required only for static routes.
 
-* ``metric``: a string which indicates the name of main routing metric used by the routing protocol to determine the best routes when sending packets
+When self contained, a ``Network Routes`` object represents a routing table and must define the following members:
+
+* ``metric``: a string which indicates the name of main routing metric used by the routing protocol to determine the best routes when sending packets **it can be omitted when representing static routes**
 * ``routes``: an array containing a list of routes
 
 Each ``route`` object must define the following members:
