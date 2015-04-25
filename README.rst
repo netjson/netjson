@@ -148,7 +148,7 @@ It must define the following members:
 * ``protocol``: the name of the routing protocol, can be ``static`` when representing static routes
 * ``version``: the version of the routing protocol, can be ``null`` when representing static routes
 
-It might also define the optional member ``router_id``, which represent the ID of the router on which the protocol is running.
+It may also define the optional member ``router_id``, which represent the ID of the router on which the protocol is running.
 
 When contained in a ``DeviceConfiguration``, a ``Network Routes`` object indicates
 either that a routing protocol is running on the device or that static routes have been set; in this case the member ``routes`` is required only for static routes.
