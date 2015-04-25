@@ -118,7 +118,7 @@ Software consuming this JSON format must ignore unrecognized attributes.
 Device Monitoring Data
 ======================
 
-**Definition**: information that indicates the behaviour of a device that changes constantly
+**Definition**: information that indicates the behaviour of a device that changes over time
 
 **Example**: `monitoring-data.json`_
 
