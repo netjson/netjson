@@ -168,3 +168,38 @@ Each ``route`` object must define the following members:
 A ``route`` object may also define a ``source`` member indicating the source (necessary for source-specific routing).
 
 .. _network-routes.json: https://github.com/interop-dev/network-device-schema/blob/master/examples/network-routes.json
+
+
+Network Graph
+=============
+
+**Definition**: a list of nodes and links that represent the network topology.
+
+**Example**: `network-graph.json`_
+
+A ``Network Graph`` object must have a member with the name ``type`` and value ``NetworkGraph``.
+
+It must define the following members:
+
+* ``protocol``: the name of the routing protocol, can be ``static`` when representing static routes
+* ``version``: the version of the routing protocol, can be ``null`` when representing static routes
+* ``metric``: a string which indicates the name of main routing metric used by the routing protocol to determine the best routes when sending packets, can be ``null`` when representing static routes
+* ``nodes``: a list of nodes
+* ``links``: a list of links
+
+It may also define the optional member ``router_id``, which represent the ID of the router on which the protocol is running.
+
+Each ``node`` object must define an ``id`` member and may define the following optional members:
+
+* ``label``: a label for the node
+* ``properties``: an object to store additional / custom metadata
+
+Each ``link`` object must define the following members:
+
+* ``source``: id of the ``target`` node
+* ``target``: id of the ``source`` node
+* ``weight``: metric value for the link
+
+Each ``link`` object may also define a ``properties`` object to store additional / custom metadata.
+
+.. _network-graph.json: https://github.com/interop-dev/network-device-schema/blob/master/examples/network-graph.json
