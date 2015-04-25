@@ -167,4 +167,4 @@ Each ``route`` object must define the following members:
 
 A ``route`` object may also define a ``source`` member indicating the source (necessary for source-specific routing).
 
-.. _network-routes.json: https://github.com/interop-dev/network-device-schema/blob/master/examples/network-routes.json?short_path=63d45fc
+.. _network-routes.json: https://github.com/interop-dev/network-device-schema/blob/master/examples/network-routes.json
