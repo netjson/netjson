@@ -171,7 +171,7 @@ A ``route`` object may also define a ``source`` member indicating the source (ne
 Network Graph
 =============
 
-**Definition**: a list of nodes and links that represent the network topology.
+**Definition**: a list of nodes and links that represent the topology of a network.
 
 **Example**: `network-graph.json`_
 
