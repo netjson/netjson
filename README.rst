@@ -201,3 +201,19 @@ Each ``link`` object must define the following members:
 Each ``link`` object may also define a ``properties`` object to store additional / custom metadata.
 
 .. _network-graph.json: https://github.com/interop-dev/network-device-schema/blob/master/examples/network-graph.json
+
+FAQs
+====
+
+Frequentedly Asked Questions.
+
+Is this some kind of new SNMP?
+------------------------------
+
+Not exactly. Think about NetJSON as a possible common language that libraries and applications
+can adopt in order to interoperate on different levels.
+
+NetJSON does not aim to define how the data is exchanged, it could be exposed via an HTTP API,
+it could be sent through UDP packets, it could be copied from application A and pasted into application B.
+
+
