@@ -42,11 +42,11 @@ Once we get to a first version, we should implement these formats in software li
 Motivations
 -----------
 
-Developing software that deal with networks is harder than it should.
+Developing software that deals with networks is harder than it should.
 
-One has to take into account all the differences between vendors, operating systems,
-routing protocols, hardware and, when dealing with community networks, one has to
-deal even with the different approaches of each community.
+Developers have to take into account all the differences between vendors,
+operating systems, routing protocols, hardware and (when working with
+community networks) with the different approaches of each community.
 
 Very often, each vendor develops an entire stack that works exclusively with its
 own hardware and software.
