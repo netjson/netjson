@@ -149,7 +149,10 @@ It must define the following members:
 * ``version``: the version of the routing protocol, can be ``null`` when representing static routes
 * ``metric``: a string which indicates the name of main routing metric used by the routing protocol to determine the best routes when sending packets, can be ``null`` when representing static routes
 
-It may also define the optional member ``router_id``, which represent the ID of the router on which the protocol is running.
+It may also define the following optional members:
+
+* ``revision``: the revision from which the routing protocol binary was built (eg: git hash, svn revision)
+* ``router_id``: ID of the router on which the protocol is running
 
 When contained in a ``DeviceConfiguration``, a ``Network Routes`` object indicates
 either that a routing protocol is running on the device or that static routes have been set; in this case the member ``routes`` is required only for static routes.
@@ -185,7 +188,10 @@ It must define the following members:
 * ``nodes``: a list of nodes
 * ``links``: a list of links
 
-It may also define the optional member ``router_id``, which represent the ID of the router on which the protocol is running.
+It may also define the following optional members:
+
+* ``revision``: the revision from which the routing protocol binary was built (eg: git hash, svn revision)
+* ``router_id``: ID of the router on which the protocol is running
 
 Each ``node`` object must define an ``id`` member and may define the following optional members:
 
@@ -215,5 +221,3 @@ can adopt in order to interoperate on different levels.
 
 NetJSON does not aim to define how the data is exchanged, it could be exposed via an HTTP API,
 it could be sent through UDP packets, it could be copied from application A and pasted into application B.
-
-

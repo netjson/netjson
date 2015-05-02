@@ -2,6 +2,7 @@
     "type": "NetworkRoutes",
     "protocol": "PROTOCOL-NAME",
     "version": "PROTOCOL-VERSION",
+    "revision": "PROTOCOL-REVISION",
     "metric": "PROTOCOL-METRIC",
     "router_id": "ROUTER-ID",
     "routes": [
