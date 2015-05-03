@@ -5,10 +5,10 @@ NetJSON: data interchange format for networks
 
 NetJSON is a data interchange format for encoding the basic building blocks of networking:
 
-* devices
-* monitoring data
-* routes
-* network topology
+* `devices <https://github.com/interop-dev/json-for-networks#network-device-configuration>`__
+* `monitoring data <https://github.com/interop-dev/json-for-networks#device-monitoring-data>`__
+* `routes <https://github.com/interop-dev/json-for-networks#network-routes>`__
+* `network topology <https://github.com/interop-dev/json-for-networks#network-graph>`__
 
 `Reach us on the Mailing List`_ - `Consult the ML Archives`_
 
