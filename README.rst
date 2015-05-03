@@ -1,6 +1,8 @@
 NetJSON: data interchange format for networks
 =============================================
 
+.. image:: https://raw.githubusercontent.com/interop-dev/json-for-networks/master/static/netjson-logo.png
+
 This repository is an attempt to define an open standard JSON data interchange format for
 encoding the most basic building blocks of networking:
 
