@@ -210,6 +210,12 @@ Each ``link`` object may also define a ``properties`` object to store additional
 
 .. _network-graph.json: https://github.com/interop-dev/network-device-schema/blob/master/examples/network-graph.json
 
+Implementations
+===============
+
+* `netdiff <https://github.com/ninuxorg/netdiff#netjson-output>`__ (network topoogy parser)
+* `netengine-utils <http://netengine.readthedocs.org/en/latest/topics/netengine-utils.html#ifconfig-netjson-option>`__ (utilities for parsing the output from ``ifconfig``, ``iwconfig``, ecc.)
+
 FAQs
 ====
 
