@@ -229,3 +229,19 @@ can adopt in order to interoperate on different levels.
 
 NetJSON does not aim to define how the data is exchanged, it could be exposed via an HTTP API,
 it could be sent through UDP packets, it could be copied from application A and pasted into application B.
+
+Can we avoid to expose sensitive data in order to protect privacy?
+------------------------------------------------------------------
+
+Yes definitely.
+
+NetJSON should not impose to expose, send or collect sensitive information.
+
+It should just describes how to represent data, each implementation will decide:
+
+* which parts to expose (sensitive data can be omitted)
+* how to expose it (public, basic auth, token auth, ecc.)
+* how to collect it
+* which parts should be collected
+
+The important part is to find a way to output and parse this data in a standard and (possibly) easy way.
