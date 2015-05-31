@@ -210,6 +210,13 @@ Each ``link`` object may also define a ``properties`` object to store additional
 
 .. _network-graph.json: https://github.com/interop-dev/network-device-schema/blob/master/examples/network-graph.json
 
+Network Collection
+==================
+
+**Definition**: a collection of `NetworkGraph` and/or `NetworkRoutes` object.
+
+TODO
+
 Implementations
 ===============
 
