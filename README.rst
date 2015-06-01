@@ -92,7 +92,7 @@ Network Device Configuration
 
 A ``Network Device Configuration`` object must have a member with the name ``type`` and value ``DeviceConfiguration``.
 
-The object should be composed of the following members:
+The object should be composed of the following **optional** members:
 
 * ``general``
 * ``hardware``
@@ -107,6 +107,8 @@ The object should be composed of the following members:
 All the values of each member must be objects which further describe each component of a network device.
 
 **Each object will be described more in detail in the future iterations of this project**.
+
+**Most blocks will be optional**, for the reason that each implementation will return what it is able to retrieve or what is willing to expose.
 
 Software providing this JSON format to should return all the information it is able to access from the system,
 according to security and privacy rules defined by the device owner or network administrator.
@@ -126,13 +128,15 @@ Device Monitoring Data
 
 A ``Device Monitoring`` object must have a member with the name ``type`` and value ``DeviceMonitoring``.
 
-The object should be composed of the following members:
+The object should be composed of the following **optional** members:
 
 * ``general``
 * ``interfaces``
 * ``resources``
 
 **Each object will be described more in detail in the future iterations of this project**.
+
+**Most blocks will be optional**, for the reason that each implementation will return what it is able to retrieve or what is willing to expose.
 
 .. _monitoring-data.json: https://github.com/interop-dev/network-device-schema/blob/master/examples/monitoring-data.json
 
@@ -171,7 +175,6 @@ Each ``route`` object must define the following members:
 A ``route`` object may also define a ``source`` member indicating the source (necessary for source-specific routing).
 
 .. _network-routes.json: https://github.com/interop-dev/network-device-schema/blob/master/examples/network-routes.json
-
 
 Network Graph
 =============
