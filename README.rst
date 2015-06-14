@@ -89,6 +89,8 @@ Network Device Configuration
 
 **Definition**: configuration and properties of a network device.
 
+**Goals**: configuration management & deployment, import & export configurations between different monitoring tools / network controllers.
+
 **Example**: `device-configuration.json`_
 
 A ``Network Device Configuration`` object must have a member with the name ``type`` and value ``DeviceConfiguration``.
@@ -125,6 +127,8 @@ Device Monitoring Data
 
 **Definition**: information that indicates the behaviour of a device that changes over time.
 
+**Goals**: ouput, collect, parse and visualize monitoring data of a network device.
+
 **Example**: `monitoring-data.json`_
 
 A ``Device Monitoring`` object must have a member with the name ``type`` and value ``DeviceMonitoring``.
@@ -145,6 +149,8 @@ Network Routes
 ==============
 
 **Definition**: a list of routes of a dynamic routing protocol or statically configured on the device. May be contained in a ``DeviceConfiguration`` object.
+
+**Goals**: show internal information of a routing protocol for monitoring and debugging purposes.
 
 **Example**: `network-routes.json`_
 
@@ -181,6 +187,8 @@ Network Graph
 =============
 
 **Definition**: a list of nodes and links that represent the topology of a network.
+
+**Goals**: visualize and detect changes in the topology for informational and monitoring purposes.
 
 **Example**: `network-graph.json`_
 
@@ -219,7 +227,7 @@ Network Collection
 
 **Definition**: a collection of ``NetworkGraph`` and / or ``NetworkRoutes`` object.
 
-**Motivation**: allow listing different groups of topologies or routes, eg: multiple routing protocols running on the same device, a multitopology capable routing protocol
+**Goals**: allow listing different groups of topologies or routes, eg: multiple routing protocols running on the same device, a multitopology capable routing protocol
 
 **Example**: `network-collection.json <https://github.com/interop-dev/netjson/blob/master/examples/network-collection.json>`__
 
