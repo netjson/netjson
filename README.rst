@@ -1,14 +1,14 @@
 NetJSON: data interchange format for networks
 =============================================
 
-.. image:: https://raw.githubusercontent.com/interop-dev/json-for-networks/master/static/netjson-logo.png
+.. image:: https://raw.githubusercontent.com/interop-dev/netjson/master/static/netjson-logo.png
 
 NetJSON is a data interchange format for encoding the basic building blocks of networking:
 
-* `devices <https://github.com/interop-dev/json-for-networks#network-device-configuration>`__
-* `monitoring data <https://github.com/interop-dev/json-for-networks#device-monitoring-data>`__
-* `routes <https://github.com/interop-dev/json-for-networks#network-routes>`__
-* `network topology <https://github.com/interop-dev/json-for-networks#network-graph>`__
+* `devices <https://github.com/interop-dev/netjson#network-device-configuration>`__
+* `monitoring data <https://github.com/interop-dev/netjson#device-monitoring-data>`__
+* `routes <https://github.com/interop-dev/netjson#network-routes>`__
+* `network topology <https://github.com/interop-dev/netjson#network-graph>`__
 
 `Reach us on the Mailing List`_ - `Consult the ML Archives`_
 
