@@ -177,7 +177,7 @@ Each ``route`` object must define the following members:
 * ``destination``: a string indicating the ip address, prefix or mac address that will be matched to the destination of the traffic
 * ``next``: a string indicating the ip address, prefix or mac address of the next hop
 * ``device``: a string indicating the interface the traffic will be going to, **it can be omitted when representing static routes**
-* ``cost``: the numeric value of the routing metric; lower cost is better, **it can be omitted when representing static routes**
+* ``cost``: the numeric value of the routing metric indicating the outgoing cost to reach the destination; lower cost is better, **it can be omitted when representing static routes**
 
 A ``route`` object may also define a ``source`` member indicating the source (necessary for source-specific routing).
 
