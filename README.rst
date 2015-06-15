@@ -238,6 +238,7 @@ It must define a ``collection`` member, which is a list of ``NetworkGraph`` and 
 Implementations
 ===============
 
+* `OLSR.org Network Framework <http://www.olsr.org/mediawiki/index.php/NetJson_Info_Plugin>`__ (OLSRd v2)
 * `netdiff <https://github.com/ninuxorg/netdiff#netjson-output>`__ (network topoogy parser)
 * `netengine-utils <http://netengine.readthedocs.org/en/latest/topics/netengine-utils.html#ifconfig-netjson-option>`__ (utilities for parsing the output from ``ifconfig``, ``iwconfig``, ecc.)
 
