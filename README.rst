@@ -225,15 +225,19 @@ Each ``link`` object may also define a ``properties`` object to store additional
 Network Collection
 ==================
 
-**Definition**: a collection of ``NetworkGraph`` and / or ``NetworkRoutes`` object.
+**Definition**: a collection of NetJSON objects.
 
-**Goals**: allow listing different groups of topologies or routes, eg: multiple routing protocols running on the same device, a multitopology capable routing protocol
+**Goals**: allow to list various netjson objects into a coherent group, eg:
+
+* list graphs of different routing protocols running on the same device
+* list all the routes of a multitopology capable routing protocol
+* list devices of a network
 
 **Example**: `network-collection.json <https://github.com/interop-dev/netjson/blob/master/examples/network-collection.json>`__
 
 A ``Network Collection`` object must have a member with the name ``type`` and value ``NetworkCollection``.
 
-It must define a ``collection`` member, which is a list of ``NetworkGraph`` and / or ``NetworkRoutes`` objects.
+It must define a ``collection`` member, which can be any of the previously defined NetJSON objects.
 
 Implementations
 ===============
