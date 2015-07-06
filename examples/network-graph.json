@@ -9,6 +9,10 @@
         {
             "id": "172.16.40.24",
             "label": "node-A",
+            "local_addresses": [
+                "10.0.0.1",
+                "10.0.0.2"
+            ],
             "properties": {
                 "hostname": "node1.my.net"
             }

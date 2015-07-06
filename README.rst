@@ -207,9 +207,12 @@ It may also define the following optional members:
 * ``revision``: the revision from which the routing protocol binary was built (eg: git hash, svn revision)
 * ``router_id``: ID of the router on which the protocol is running
 
-Each ``node`` object must define an ``id`` member and may define the following optional members:
+Each ``node`` object must define an ``id`` member which represents the primary address of the node.
 
-* ``label``: a label for the node
+Each ``node`` object  may also define the following optional members:
+
+* ``label``: a human readable label for the node
+* ``local_addresses``: a list of additional addresses (mac/ip) which can be used to communicate with the node
 * ``properties``: an object to store additional / custom metadata
 
 Each ``link`` object must define the following members:
