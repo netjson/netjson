@@ -219,7 +219,7 @@ Each ``link`` object must define the following members:
 
 * ``source``: id of the ``target`` node
 * ``target``: id of the ``source`` node
-* ``weight``: metric value for the link
+* ``weight``: metric value for the link, must be a valid number, ``Infinity`` and ``NaN`` are not allowed
 
 Each ``link`` object may also define a ``properties`` object to store additional / custom metadata.
 
