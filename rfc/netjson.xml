@@ -2,10 +2,10 @@
 <!-- This template is for creating an Internet Draft using xml2rfc,
      which is available here: http://xml.resource.org. -->
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd" [
-<!-- One method to get references from the online citation libraries.
-     There has to be one entity for each item to be referenced. 
-     An alternate method (rfc include) is described in the references. -->
 
+<!-- One method to get references from the online citation libraries.
+     There has to be one entity for each item to be referenced.
+     An alternate method (rfc include) is described in the references. -->
 <!ENTITY RFC2119 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml">
 <!ENTITY RFC2629 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2629.xml">
 <!ENTITY RFC3552 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3552.xml">
@@ -18,15 +18,13 @@
 <!ENTITY RFC6648 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.6648.xml">
 <!ENTITY RFC2234 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2234.xml">
 <!ENTITY RFC6973 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.6973.xml">
-
 <!ENTITY I-D.narten-iana-considerations-rfc2434bis SYSTEM "http://xml.resource.org/public/rfc/bibxml3/reference.I-D.narten-iana-considerations-rfc2434bis.xml">
-
 <!ENTITY I-D.draft-bortzmeyer-dnsop-dns-privacy SYSTEM "http://xml.resource.org/public/rfc/bibxml3/reference.I-D.draft-bortzmeyer-dnsop-dns-privacy">
 
 ]>
 <?xml-stylesheet type='text/xsl' href='rfc2629.xslt' ?>
 <!-- used by XSLT processors -->
-<!-- For a complete list and description of processing instructions (PIs), 
+<!-- For a complete list and description of processing instructions (PIs),
      please see http://xml.resource.org/authoring/README.html. -->
 <!-- Below are generally applicable Processing Instructions (PIs) that most I-Ds might want to use.
      (Here they are set differently than their defaults in xml2rfc v1.32) -->
@@ -42,7 +40,7 @@
 <!-- use symbolic references tags, i.e, [RFC2119] instead of [1] -->
 <?rfc sortrefs="yes" ?>
 <!-- sort the reference entries alphabetically -->
-<!-- control vertical white space 
+<!-- control vertical white space
      (using these PIs as follows is recommended by the RFC Editor) -->
 <?rfc compact="yes" ?>
 <!-- do not start each main section on a new page -->
@@ -50,100 +48,97 @@
 <!-- keep one blank line between list items -->
 <!-- end of list of popular I-D processing instructions -->
 <rfc category="info" docName="draft-kaplan-capoano-gaia-netjson-00" ipr="trust200902">
-  <!-- category values: std, bcp, info, exp, and historic
+    <!-- category values: std, bcp, info, exp, and historic
      ipr values: full3667, noModification3667, noDerivatives3667
-     you can add the attributes updates="NNNN" and obsoletes="NNNN" 
+     you can add the attributes updates="NNNN" and obsoletes="NNNN"
      they will automatically be output with "(if approved)" -->
-
-  <!-- ***** FRONT MATTER ***** -->
-
-  <front>
-    <title abbrev="NetJSON - format for community networks">NetJSON - format for community networks</title>
-    <author fullname="L. Aaron Kaplan" initials="A."
+    <!-- ***** FRONT MATTER ***** -->
+    <front>
+        <title abbrev="NetJSON - format for community networks">NetJSON - format for community networks</title>
+        <author fullname="L. Aaron Kaplan" initials="A."
             surname="Kaplan">
-      <organization>Funkfeuer.at</organization>
-      <address>
-        <postal>
-          <street>Schwarzhorngasse 9/5</street>
-          <city>Vienna</city>
-          <region></region>
-          <code>A-1050</code>
-          <country>Austria</country>
-        </postal>
-        <phone>+43 1 5056416 78</phone>
-        <email>aaron@lo-res.org</email>
-        <uri>http://www.funkfeuer.at/</uri>
-        <!-- uri and facsimile elements may also be added -->
-      </address>
-    </author>
-
-
-    <author fullname="Federico Capoano" initials="F."
+            <organization>Funkfeuer.at</organization>
+            <address>
+                <postal>
+                    <street>Schwarzhorngasse 9/5</street>
+                    <city>Vienna</city>
+                    <region></region>
+                    <code>A-1050</code>
+                    <country>Austria</country>
+                </postal>
+                <phone>+43 1 5056416 78</phone>
+                <email>aaron@lo-res.org</email>
+                <uri>http://www.funkfeuer.at/</uri>
+                <!-- uri and facsimile elements may also be added -->
+            </address>
+        </author>
+        <author fullname="Federico Capoano" initials="F."
             surname="Capoano">
-      <organization>Ninux</organization>
-      <address>
-        <postal>
-          <street></street>
-          <city>Rome</city>
-          <region></region>
-          <code></code>
-          <country>Italy</country>
-        </postal>
-        <phone></phone>
-        <email></email>
-        <uri></uri>
-      </address>
-    </author>
-
-
-    <date month="July" year="2015" />
-    <area>General</area>
-    <workgroup>Global Access to Internet for All</workgroup>
-
-    <keyword>gaia, MANET</keyword>
-
-
-    <abstract>
-	  <t>Blablabla here goes the abstract</t>
-    </abstract>
-  </front>
-
-  <middle>
-    <section title="Introduction">
-     <t>Blablablla  <xref target="SOMEREF">This is a reference</xref>. Blablabla , this is a reference to RFC3912 (WHOIS) : <xref target="RFC3912">WHOIS</xref> </t>
-     <t>
+            <organization>Ninux</organization>
+            <address>
+                <postal>
+                    <street></street>
+                    <city>Rome</city>
+                    <region></region>
+                    <code></code>
+                    <country>Italy</country>
+                </postal>
+                <phone></phone>
+                <email></email>
+                <uri></uri>
+            </address>
+        </author>
+        <date month="July" year="2015" />
+        <area>General</area>
+        <workgroup>Global Access to Internet for All</workgroup>
+        <keyword>gaia, MANET</keyword>
+        <abstract>
+            <t>Blablabla here goes the abstract</t>
+        </abstract>
+    </front>
+    <middle>
+        <section title="Introduction">
+            <t>Blablablla
+                <xref target="SOMEREF">This is a reference</xref>. Blablabla , this is a reference to RFC3912 (WHOIS) :
+                <xref target="RFC3912">WHOIS</xref>
+            </t>
+            <t>
     Another paragraph.
 
      </t>
-
-      <section title="Requirements Language">
-        <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+            <section title="Requirements Language">
+                <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
         "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
-        document are to be interpreted as described in <xref
-        target="RFC2119">RFC 2119</xref>.</t>
-      </section>
-    </section>
-
-    <section title="Limitation">
-    <t>  Here we describe what this RFC draft does NOT cover.
+        document are to be interpreted as described in
+                    <xref
+        target="RFC2119">RFC 2119</xref>.
+                </t>
+            </section>
+        </section>
+        <section title="Limitation">
+            <t>  Here we describe what this RFC draft does NOT cover.
     </t>
-    </section>
-    <section title="Motivaton">
-		<t>Blabla we are motivated because...</t>
-
-        <section title="ABNF grammar">
-			<figure><preamble>Formal grammar as defined in <xref target="RFC2234">ABNF</xref></preamble><artwork><![CDATA[
-answer          = entries 
+        </section>
+        <section title="Motivaton">
+            <t>Blabla we are motivated because...</t>
+            <section title="ABNF grammar">
+                <figure>
+                    <preamble>Formal grammar as defined in
+                        <xref target="RFC2234">ABNF</xref>
+                    </preamble>
+                    <artwork>
+                        <![CDATA[
+answer          = entries
 entries         = * ( entry CR)
-entry           = "{" keyvallist "}" 
+entry           = "{" keyvallist "}"
 keyvallist      = [ member *( value-separator member ) ]
 member          = qm field qm name-separator value
 name-separator  = ws %x3A ws            ; a ":" colon
 value           = value                 ; as defined in the JSON RFC
 value-separator = ws %x2C ws            ; , comma. As defined in JSON
-field           = "rrname" | "rrtype" | "rdata" | "time_first" | 
+field           = "rrname" | "rrtype" | "rdata" | "time_first" |
                   "time_last" | "count" | "bailiwick" | "sensor_id" |
-                  "zone_time_first" | "zone_time_last" | futureField 
+                  "zone_time_first" | "zone_time_last" | futureField
 futureField     = string
 CR              = %x0D
 qm              = %x22                  ; " a quotation mark
@@ -152,66 +147,55 @@ ws              = *(
                     %x09                ; Horizontal tab
                    )
 
-					]]></artwork></figure>
-			<t>Note that blablabla is defined in <xref target="RFC4627">JSON</xref> and has the exact same specification as there. The same goes for the definition of string.</t>
-		</section>
-		<section title="Mandatory Fields">
-			<t>The mandatory fields are: blablblalba </t>
-			<section title="type">
-				<t>This field contains the  "NetworkRoutes" </t>
-			</section>
-			<section title="protocol">
-			 <t>This field returns contains the PROTOCOL-NAME, </t>
-			</section>
-		</section>
-		<section title="Optional Fields">
-			<t>Implementations SHOULD support one or more fields.</t>
-			<section title="metric">
-			<t>Blablabla</t>
-			</section>
-		</section>
-		<section title="Additional Fields">
-			<t>Implementations MAY support the following fields:</t>
-			<section title="router_id">
-			<t>Blablabla</t>
-		    </section>
+					]]>
+                    </artwork>
+                </figure>
+                <t>Note that blablabla is defined in
+                    <xref target="RFC4627">JSON</xref> and has the exact same specification as there. The same goes for the definition of string.
+                </t>
+            </section>
+            <section title="Mandatory Fields">
+                <t>The mandatory fields are: blablblalba </t>
+                <section title="type">
+                    <t>This field contains the  "NetworkRoutes" </t>
+                </section>
+                <section title="protocol">
+                    <t>This field returns contains the PROTOCOL-NAME, </t>
+                </section>
+            </section>
+            <section title="Optional Fields">
+                <t>Implementations SHOULD support one or more fields.</t>
+                <section title="metric">
+                    <t>Blablabla</t>
+                </section>
+            </section>
+            <section title="Additional Fields">
+                <t>Implementations MAY support the following fields:</t>
+                <section title="router_id">
+                    <t>Blablabla</t>
+                </section>
+            </section>
         </section>
-    </section>
-
-
-    <!-- This PI places the pagebreak correctly (before the section title) in the text output. -->
-
-    <?rfc needLines="8" ?>
-
-
-
-
-    <section anchor="Acknowledgements" title="Acknowledgements">
-      <t>This work was partically supported financially via the CONFINE EU FP7 grant. XXX insert reference </t>
-
-    </section>
-
-    <!-- Possibly a 'Contributors' section ... -->
-
-    <section anchor="IANA" title="IANA Considerations">
-      <t>This memo includes no request to IANA.</t>
-    </section>
-
-	<section anchor="Privacy" title="Privacy Considerations">
-		<t>... blabla</t>
-
-	</section>
-    <section anchor="Security" title="Security Considerations">
-      <t>This section is mandatory and MUST define the security implications</t>
-    </section>
-  </middle>
-
- <!--  *****BACK MATTER ***** -->
-
-  <back>
-    <!-- References split into informative and normative -->
-
-    <!-- There are 2 ways to insert reference entries from the citation libraries:
+        <!-- This PI places the pagebreak correctly (before the section title) in the text output. -->
+        <?rfc needLines="8" ?>
+        <section anchor="Acknowledgements" title="Acknowledgements">
+            <t>This work was partically supported financially via the CONFINE EU FP7 grant. XXX insert reference </t>
+        </section>
+        <!-- Possibly a 'Contributors' section ... -->
+        <section anchor="IANA" title="IANA Considerations">
+            <t>This memo includes no request to IANA.</t>
+        </section>
+        <section anchor="Privacy" title="Privacy Considerations">
+            <t>... blabla</t>
+        </section>
+        <section anchor="Security" title="Security Considerations">
+            <t>This section is mandatory and MUST define the security implications</t>
+        </section>
+    </middle>
+    <!--  *****BACK MATTER ***** -->
+    <back>
+        <!-- References split into informative and normative -->
+        <!-- There are 2 ways to insert reference entries from the citation libraries:
      1. define an ENTITY at the top, and use "ampersand character"RFC2629; here (as shown)
      2. simply use a PI "less than character"?rfc include="reference.RFC.2119.xml"?> here
         (for I-Ds: include="reference.I-D.narten-iana-considerations-rfc2434bis.xml")
@@ -221,9 +205,8 @@ ws              = *(
      directory as the including file. You can also define the XML_LIBRARY environment variable
      with a value containing a set of directories to search.  These can be either in the local
      filing system or remote ones accessed by http (http://domain/dir/... ).-->
-
-    <references title="Normative References">
-      <!--?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml"?-->
+        <references title="Normative References">
+            <!--?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml"?-->
       &RFC2119;
 	  &RFC1035;
 	  &RFC1034;
@@ -234,32 +217,34 @@ ws              = *(
       &RFC6648;
       &RFC2234;
       &RFC6973;
-    </references>
-    <references>
-         <reference anchor="SOMEREF" target="https://www.google.com/index.html">
-          <front>
-            <title>Some reference </title>
-            <author fullname="Larry Page"/>
-            <date year="1998"/>
-          </front>
-        </reference>
-    </references>
 
-    <references title="Informative References">
-      <!-- Here we use entities that we defined at the beginning. -->
+        </references>
+        <references>
+            <reference anchor="SOMEREF" target="https://www.google.com/index.html">
+                <front>
+                    <title>Some reference </title>
+                    <author fullname="Larry Page"/>
+                    <date year="1998"/>
+                </front>
+            </reference>
+        </references>
+        <references title="Informative References">
+            <!-- Here we use entities that we defined at the beginning. -->
 
 
       &RFC3552;
 
       &I-D.narten-iana-considerations-rfc2434bis;
 
-      <!-- &I-D.draft-bortzmeyer-dnsop-dns-privacy; -->
-    </references>
-  <section anchor="app-additional" title="Examples">
-<t>The JSON output are represented on multiple lines for readability but each JSON object should on a single line.</t>
-<t>If you query a passive DNS for the rrname www.ietf.org, the passive dns common output format can be:</t>
-<figure><artwork>
-        <![CDATA[
+
+            <!-- &I-D.draft-bortzmeyer-dnsop-dns-privacy; -->
+        </references>
+        <section anchor="app-additional" title="Examples">
+            <t>The JSON output are represented on multiple lines for readability but each JSON object should on a single line.</t>
+            <t>If you query a passive DNS for the rrname www.ietf.org, the passive dns common output format can be:</t>
+            <figure>
+                <artwork>
+                    <![CDATA[
 {"count": 102, "time_first": 1298412391, "rrtype": "AAAA",
 "rrname": "www.ietf.org", "rdata": "2001:1890:1112:1::20",
 "time_last": 1302506851}
@@ -267,10 +252,12 @@ ws              = *(
 "rrname": "www.ietf.org", "rdata": "4.31.198.44",
 "time_last": 1389022219}
         ]]>
-</artwork></figure>
-<t>Example format can be:</t>
-<figure><artwork>
-        <![CDATA[
+                </artwork>
+            </figure>
+            <t>Example format can be:</t>
+            <figure>
+                <artwork>
+                    <![CDATA[
 {"count": 109877, "time_first": 1298398002, "rrtype": "NS",
 "rrname": "ietf.org", "rdata": "ns1.yyz1.afilias-nst.info",
 "time_last": 1389095375}
@@ -281,11 +268,9 @@ ws              = *(
 "rrname": "ietf.org", "rdata": "2001:1890:123a::1:1e",
 "time_last": 1330209752}
         ]]>
-</artwork></figure>
-	<t></t>
-          </section>
-
-  </back>
-
-
+                </artwork>
+            </figure>
+            <t></t>
+        </section>
+    </back>
 </rfc>
