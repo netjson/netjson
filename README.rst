@@ -3,7 +3,12 @@ NetJSON: data interchange format for networks
 
 .. image:: https://raw.githubusercontent.com/interop-dev/netjson/master/static/netjson-logo.png
 
-NetJSON is a data interchange format for encoding the basic building blocks of networking:
+NetJSON is a data interchange format based on JavaScript Object Notation (JSON)
+designed to describe the basic building blocks of layer2 and layer3 networking.
+
+It defines several types of JSON objects and the manner in which they are combined
+to represent a network: configuration of devices, monitoring data, network
+topology and routing information.
 
 * `devices <https://github.com/interop-dev/netjson#network-device-configuration>`__
 * `monitoring data <https://github.com/interop-dev/netjson#device-monitoring-data>`__
