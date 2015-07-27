@@ -7,17 +7,6 @@
      There has to be one entity for each item to be referenced.
      An alternate method (rfc include) is described in the references. -->
 <!ENTITY RFC2119 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml">
-<!ENTITY RFC2629 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2629.xml">
-<!ENTITY RFC3552 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3552.xml">
-<!ENTITY RFC1035 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.1035.xml">
-<!ENTITY RFC1034 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.1034.xml">
-<!ENTITY RFC4627 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.4627.xml">
-<!ENTITY RFC5001 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.5001.xml">
-<!ENTITY RFC3597 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3597.xml">
-<!ENTITY RFC3912 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3912.xml">
-<!ENTITY RFC6648 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.6648.xml">
-<!ENTITY RFC2234 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2234.xml">
-<!ENTITY RFC6973 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.6973.xml">
 <!ENTITY I-D.narten-iana-considerations-rfc2434bis SYSTEM "http://xml.resource.org/public/rfc/bibxml3/reference.I-D.narten-iana-considerations-rfc2434bis.xml">
 <!ENTITY I-D.draft-bortzmeyer-dnsop-dns-privacy SYSTEM "http://xml.resource.org/public/rfc/bibxml3/reference.I-D.draft-bortzmeyer-dnsop-dns-privacy">
 
@@ -93,21 +82,61 @@
         <workgroup>Global Access to Internet for All</workgroup>
         <keyword>gaia, MANET</keyword>
         <abstract>
-            <t>NetJSON is a data interchange format for encoding the basic building blocks of networking.</t>
+            <t>NetJSON is a data interchange format based on JavaScript Object Notation (JSON) designed to describe the basic building blocks of layer2 and layer3 networking.</t>
+            <t>It defines several types of JSON objects and the manner in which they are combined to represent a network: configuration of devices, monitoring data, network topology and routing information.</t>
         </abstract>
     </front>
     <middle>
         <section title="Introduction">
-            <t>Blablablla
-                <xref target="SOMEREF">This is a reference</xref>. Blablabla , this is a reference to RFC3912 (WHOIS) :
-                <xref target="RFC3912">WHOIS</xref>
+            <t>
+                NetJSON is a format for encoding data about layer2 and layer3 networking using
+                JavaScript Object Notation (JSON) <xref target="RFC7159">[RFC7159]</xref>.
             </t>
-            <t>Another paragraph.</t>
-            <section title="Definitions">
-                <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
-        "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
-        document are to be interpreted as described in
+            <t>
+                The format is concerned with the basic building blocks that compose a
+                computer network (devices, monitoring data, routing, topology).
+            </t>
+            <t>
+                The concepts in NetJSON are not new; they are derived from existing conventions
+                in the networking field and open source implementations
+                (OpenWRT, Nagios, OLSR, B.A.T.M.A.N-advanced)
+                and have been streamlined to encourage interoperability and facilitate
+                development of network centric web applications using JSON.
+            </t>
+            <section title="Requirements Language">
+                <t>
+                    The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT",
+                    "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in
                     <xref target="RFC2119">RFC 2119</xref>.
+                </t>
+            </section>
+            <section title="Conventions Used in This Document">
+                <t>
+                    The ordering of the members of any JSON object defined in this document MUST be considered irrelevant,
+                    as specified by <xref target="RFC7159">RFC RFC7159</xref>.
+                </t>
+                <t>
+                    Some examples use the combination of a JavaScript single line comment (//) followed by an ellipsis (...) as placeholder notation for
+                    content deemed irrelevant by the authors.  These placeholders must of course be deleted or otherwise replaced, before attempting to
+                    validate the corresponding JSON code example.
+                </t>
+                <t>
+                    Whitespace is used in the examples inside this document to help illustrate the data structures, but is not required.
+                    Unquoted whitespace is not significant in JSON.
+                </t>
+            </section>
+            <section title="Definitions">
+                <t>
+                    <list>
+                        <t>
+                            JavaScript Object Notation (JSON), and the terms object, name, value, array, number, true,
+                            false, and null are to be interpreted as defined in <xref target="RFC7159">RFC RFC7159</xref>.
+                        </t>
+                        <t>
+                            The term "NetJSON types" refers to the five case-sensitive strings: "DeviceConfiguration", "DeviceMonitoring",
+                            "NetworkRoutes", "NetworkGraph" and "NetworkCollection".
+                        </t>
+                    </list>
                 </t>
             </section>
         </section>
@@ -118,8 +147,7 @@
             <t>Blabla we are motivated because...</t>
             <section title="ABNF grammar">
                 <figure>
-                    <preamble>Formal grammar as defined in
-                        <xref target="RFC2234">ABNF</xref>
+                    <preamble>Formal grammar as defined in ...
                     </preamble>
                     <artwork>
                         <![CDATA[
@@ -146,7 +174,7 @@ ws              = *(
                     </artwork>
                 </figure>
                 <t>Note that blablabla is defined in
-                    <xref target="RFC4627">JSON</xref> and has the exact same specification as there. The same goes for the definition of string.
+                    JSON and has the exact same specification as there. The same goes for the definition of string.
                 </t>
             </section>
             <section title="Mandatory Fields">
@@ -200,39 +228,17 @@ ws              = *(
      directory as the including file. You can also define the XML_LIBRARY environment variable
      with a value containing a set of directories to search.  These can be either in the local
      filing system or remote ones accessed by http (http://domain/dir/... ).-->
-        <references title="Normative References">
-            <!--?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml"?-->
-      &RFC2119;
-      &RFC1035;
-      &RFC1034;
-      &RFC3912;
-      &RFC4627;
-      &RFC5001;
-      &RFC3597;
-      &RFC6648;
-      &RFC2234;
-      &RFC6973;
-
-        </references>
         <references>
-            <reference anchor="SOMEREF" target="https://www.google.com/index.html">
+            <reference anchor="RFC7159" target="https://tools.ietf.org/html/rfc7159">
                 <front>
-                    <title>Some reference </title>
-                    <author fullname="Larry Page"/>
-                    <date year="1998"/>
+                    <title>The JavaScript Object Notation (JSON) Data Interchange Format</title>
+                    <author fullname="Tim Bray"/>
+                    <date year="2014"/>
                 </front>
             </reference>
         </references>
         <references title="Informative References">
-            <!-- Here we use entities that we defined at the beginning. -->
-
-
-      &RFC3552;
-
-      &I-D.narten-iana-considerations-rfc2434bis;
-
-
-            <!-- &I-D.draft-bortzmeyer-dnsop-dns-privacy; -->
+            &RFC2119;
         </references>
         <section anchor="app-additional" title="Examples">
             <t>The JSON output are represented on multiple lines for readability but each JSON object should on a single line.</t>
