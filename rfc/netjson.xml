@@ -140,8 +140,17 @@
                 </t>
             </section>
         </section>
-        <section title="Limitation">
-            <t>Here we describe what this RFC draft does NOT cover.</t>
+        <section title="NetJSON Object">
+            <t>
+                NetJSON always consists of a single object. This object (referred to as the NetJSON object below) may represent the configuration
+                of a device, the monitoring data of a device, routing information, network topology, or a collection of NetJSON objects.
+            </t>
+            <t>
+                The NetJSON object MUST have a member with the name "type". The value of the member MUST be one of the NetJSON types.
+            </t>
+            <t>
+                The NetJSON object MAY have any number of other members not explicitly defined in this specification.
+            </t>
         </section>
         <section title="Motivaton">
             <t>Blabla we are motivated because...</t>
