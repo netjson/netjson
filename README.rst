@@ -222,8 +222,8 @@ Each ``node`` object  may also define the following optional members:
 
 Each ``link`` object must define the following members:
 
-* ``source``: id of the ``target`` node
-* ``target``: id of the ``source`` node
+* ``source``: id of the ``source`` node
+* ``target``: id of the ``target`` node
 * ``cost``: the numeric value of the routing metric indicating the outgoing cost to reach the destination; lower cost is better; ``Infinity`` and ``NaN`` are not allowed as per `JSON RFC <https://tools.ietf.org/html/rfc7159>`__
 
 Each ``link`` object may also define a ``properties`` object to store additional / custom metadata.
