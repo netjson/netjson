@@ -16,7 +16,7 @@
                 {
                     "source": "172.16.40.24",
                     "target": "172.16.40.60",
-                    "weight": 1.000,
+                    "cost": 1.000,
                     "properties": {
                         "lq": 1.000,
                         "nlq": 0.497
@@ -41,9 +41,9 @@
                 {
                     "source": "192.168.0.101",
                     "target": "192.168.0.102",
-                    "weight": 2105088,
+                    "cost": 2105088,
                     "properties": {
-                        "weight_txt": "1020  bit/s",
+                        "cost_txt": "1020  bit/s",
                         "in": 2105088,
                         "in_txt": "1020  bit/s"
                     }
@@ -51,9 +51,9 @@
                 {
                     "source": "192.168.0.102",
                     "target": "192.168.0.101",
-                    "weight": 2105088,
+                    "cost": 2105088,
                     "properties": {
-                        "weight_txt": "1020  bit/s",
+                        "cost_txt": "1020  bit/s",
                         "in": 2105088,
                         "in_txt": "1020  bit/s"
                     }
@@ -61,9 +61,9 @@
                 {
                     "source": "192.168.0.102",
                     "target": "192.168.0.103",
-                    "weight": 2105088,
+                    "cost": 2105088,
                     "properties": {
-                        "weight_txt": "1020  bit/s",
+                        "cost_txt": "1020  bit/s",
                         "in": 2105088,
                         "in_txt": "1020  bit/s"
                     }
@@ -71,9 +71,9 @@
                 {
                     "source": "192.168.0.103",
                     "target": "192.168.0.102",
-                    "weight": 2105088,
+                    "cost": 2105088,
                     "properties": {
-                        "weight_txt": "1020  bit/s",
+                        "cost_txt": "1020  bit/s",
                         "in": 2105088,
                         "in_txt": "1020  bit/s"
                     }
@@ -81,9 +81,9 @@
                 {
                     "source": "192.168.0.103",
                     "target": "192.168.0.104",
-                    "weight": 2105088,
+                    "cost": 2105088,
                     "properties": {
-                        "weight_txt": "1020  bit/s",
+                        "cost_txt": "1020  bit/s",
                         "in": 2105088,
                         "in_txt": "1020  bit/s"
                     }
@@ -91,9 +91,9 @@
                 {
                     "source": "192.168.0.104",
                     "target": "192.168.0.103",
-                    "weight": 2105088,
+                    "cost": 2105088,
                     "properties": {
-                        "weight_txt": "1020  bit/s",
+                        "cost_txt": "1020  bit/s",
                         "in": 2105088,
                         "in_txt": "1020  bit/s"
                     }
