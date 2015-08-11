@@ -108,7 +108,7 @@ The object should be composed of the following **optional** members:
 * ``resources``
 * ``interfaces``
 * ``physical_devices``
-* ``routing``
+* ``routes``
 * ``dns_servers``
 * ``dns_search``
 
@@ -166,17 +166,13 @@ It must define the following members:
 * ``protocol``: string indicating the name of the routing protocol, may be ``"static"`` when representing static routes
 * ``version``: string indicating the version of the routing protocol, may be ``null`` when representing static routes
 * ``metric``: string which indicates the name of main routing metric used by the routing protocol to determine the best routes when sending packets, may be ``null`` when representing static routes
+* ``routes``: array of route objects
 
 It may also define the following optional members:
 
 * ``revision``: string indicating the revision from which the routing protocol binary was built (eg: git hash, svn revision)
 * ``topology_id``: arbitrary string that identifies the topology
 * ``router_id``: arbitrary string that identifies the router on which the protocol is running (eg: ip, mac, hash)
-
-When contained in a ``DeviceConfiguration``, a ``Network Routes`` object indicates
-either that a routing protocol is running on the device or that static routes have been set; in this case the member ``routes`` is required only for static routes.
-
-When self contained, a ``NetworkRoutes`` object represents a routing table and must define a ``routes`` member, which contains an array of route objects.
 
 Each ``route`` object must define the following members:
 
