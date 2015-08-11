@@ -192,9 +192,9 @@ A ``route`` object may also define a ``source`` member containing a string with 
 Network Graph
 =============
 
-**Definition**: a list of nodes and links that represent the topology of a network.
+**Definition**: a list of nodes and links known by a node.
 
-**Goals**: visualize and detect changes in the topology for informational and monitoring purposes.
+**Goals**: visualization of network topology, collect network topology from distance vector protocols, monitoring.
 
 **Example**: `network-graph.json`_
 
