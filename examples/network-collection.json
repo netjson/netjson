@@ -25,7 +25,7 @@
             ]
         },
         {
-            "type": "NetworkRoutes",
+            "type": "NetworkGraph",
             "protocol": "olsrv2",
             "version": "0.8.0",
             "revision": "v0.8.0-0-g31b63ec-dirty",
@@ -42,8 +42,8 @@
                     "source": "192.168.0.101",
                     "target": "192.168.0.102",
                     "cost": 2105088,
+                    "cost_text": "1020  bit/s",
                     "properties": {
-                        "cost_txt": "1020  bit/s",
                         "in": 2105088,
                         "in_txt": "1020  bit/s"
                     }
@@ -52,8 +52,8 @@
                     "source": "192.168.0.102",
                     "target": "192.168.0.101",
                     "cost": 2105088,
+                    "cost_text": "1020  bit/s",
                     "properties": {
-                        "cost_txt": "1020  bit/s",
                         "in": 2105088,
                         "in_txt": "1020  bit/s"
                     }
@@ -62,8 +62,8 @@
                     "source": "192.168.0.102",
                     "target": "192.168.0.103",
                     "cost": 2105088,
+                    "cost_text": "1020  bit/s",
                     "properties": {
-                        "cost_txt": "1020  bit/s",
                         "in": 2105088,
                         "in_txt": "1020  bit/s"
                     }
@@ -72,8 +72,8 @@
                     "source": "192.168.0.103",
                     "target": "192.168.0.102",
                     "cost": 2105088,
+                    "cost_text": "1020  bit/s",
                     "properties": {
-                        "cost_txt": "1020  bit/s",
                         "in": 2105088,
                         "in_txt": "1020  bit/s"
                     }
@@ -82,8 +82,8 @@
                     "source": "192.168.0.103",
                     "target": "192.168.0.104",
                     "cost": 2105088,
+                    "cost_text": "1020  bit/s",
                     "properties": {
-                        "cost_txt": "1020  bit/s",
                         "in": 2105088,
                         "in_txt": "1020  bit/s"
                     }
@@ -92,8 +92,8 @@
                     "source": "192.168.0.104",
                     "target": "192.168.0.103",
                     "cost": 2105088,
+                    "cost_text": "1020  bit/s",
                     "properties": {
-                        "cost_txt": "1020  bit/s",
                         "in": 2105088,
                         "in_txt": "1020  bit/s"
                     }

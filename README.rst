@@ -185,7 +185,10 @@ Each ``route`` object must define the following members:
 * ``device``: string indicating the interface the traffic will be going to, **it may be omitted when representing static routes**
 * ``cost``: numeric value of the routing metric indicating the outgoing cost to reach the destination; lower cost is better, **it may be omitted when representing static routes**; ``Infinity`` and ``NaN`` are not allowed as per `JSON RFC <https://tools.ietf.org/html/rfc7159>`__
 
-A ``route`` object may also define a ``source`` member containing a string with the source (necessary for source-specific routing).
+A ``route`` object may also define the following optional members:
+
+* ``cost_text``: human readable representation of ``cost``
+* ``source``: string indicating the source (necessary for source-specific routing)
 
 .. _network-routes.json: https://github.com/interop-dev/network-device-schema/blob/master/examples/network-routes.json
 
@@ -220,7 +223,7 @@ Each ``node`` object  may also define the following optional members:
 
 * ``label``: string with a human readable node label
 * ``local_addresses``: array of strings representing additional addresses (mac/ip) which can be used to communicate with the node
-* ``properties``: an object which may contain any arbitrary key/value pairs
+* ``properties``: object which may contain any arbitrary key/value pairs
 
 Each ``link`` object must define the following members:
 
@@ -228,7 +231,10 @@ Each ``link`` object must define the following members:
 * ``target``: id of the ``target`` node
 * ``cost``: numeric value of the routing metric indicating the outgoing cost to reach the destination; lower cost is better, **it may be omitted when representing static routes**; ``Infinity`` and ``NaN`` are not allowed as per `JSON RFC <https://tools.ietf.org/html/rfc7159>`__
 
-Each ``link`` object may also define a ``properties`` object which may contain any arbitrary key/value pairs.
+Each ``link`` object may also define the following optional members:
+
+* ``cost_text``: human readable representation of ``cost``
+* ``properties``: object which may contain any arbitrary key/value pairs
 
 .. _network-graph.json: https://github.com/interop-dev/network-device-schema/blob/master/examples/network-graph.json
 
