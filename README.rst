@@ -170,6 +170,7 @@ It must define the following members:
 It may also define the following optional members:
 
 * ``revision``: string indicating the revision from which the routing protocol binary was built (eg: git hash, svn revision)
+* ``topology_id``: string that identifies the topology
 * ``router_id``: string that identifies the router on which the protocol is running
 
 When contained in a ``DeviceConfiguration``, a ``Network Routes`` object indicates
@@ -210,6 +211,7 @@ It must define the following members:
 It may also define the following optional members:
 
 * ``revision``: string indicating the revision from which the routing protocol binary was built (eg: git hash, svn revision)
+* ``topology_id``: string that identifies the topology
 * ``router_id``: string that identifies the router on which the protocol is running
 
 Each ``node`` object must define an ``id`` member which refers to the ``router_id`` of the node.
