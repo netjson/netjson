@@ -163,28 +163,28 @@ A ``Network Routes`` object must have a member with the name ``type`` and value 
 
 It must define the following members:
 
-* ``protocol``: the name of the routing protocol, can be ``static`` when representing static routes
-* ``version``: the version of the routing protocol, can be ``null`` when representing static routes
-* ``metric``: a string which indicates the name of main routing metric used by the routing protocol to determine the best routes when sending packets, can be ``null`` when representing static routes
+* ``protocol``: string indicating the name of the routing protocol, may be ``"static"`` when representing static routes
+* ``version``: string indicating the version of the routing protocol, may be ``null`` when representing static routes
+* ``metric``: string which indicates the name of main routing metric used by the routing protocol to determine the best routes when sending packets, may be ``null`` when representing static routes
 
 It may also define the following optional members:
 
-* ``revision``: the revision from which the routing protocol binary was built (eg: git hash, svn revision)
-* ``router_id``: ID of the router on which the protocol is running
+* ``revision``: string indicating the revision from which the routing protocol binary was built (eg: git hash, svn revision)
+* ``router_id``: string that identifies the router on which the protocol is running
 
 When contained in a ``DeviceConfiguration``, a ``Network Routes`` object indicates
 either that a routing protocol is running on the device or that static routes have been set; in this case the member ``routes`` is required only for static routes.
 
-When self contained, a ``NetworkRoutes`` object represents a routing table and must define a ``routes`` member, which contains a list of route objects.
+When self contained, a ``NetworkRoutes`` object represents a routing table and must define a ``routes`` member, which contains an array of route objects.
 
 Each ``route`` object must define the following members:
 
-* ``destination``: a string indicating the ip address, prefix or mac address that will be matched to the destination of the traffic
-* ``next``: a string indicating the ip address, prefix or mac address of the next hop
-* ``device``: a string indicating the interface the traffic will be going to, **it can be omitted when representing static routes**
-* ``cost``: the numeric value of the routing metric indicating the outgoing cost to reach the destination; lower cost is better, **it can be omitted when representing static routes**; ``Infinity`` and ``NaN`` are not allowed as per `JSON RFC <https://tools.ietf.org/html/rfc7159>`__
+* ``destination``: string indicating the ip address, prefix or mac address that will be matched to the destination of the traffic
+* ``next``: string indicating the ip address, prefix or mac address of the next hop
+* ``device``: string indicating the interface the traffic will be going to, **it may be omitted when representing static routes**
+* ``cost``: numeric value of the routing metric indicating the outgoing cost to reach the destination; lower cost is better, **it may be omitted when representing static routes**; ``Infinity`` and ``NaN`` are not allowed as per `JSON RFC <https://tools.ietf.org/html/rfc7159>`__
 
-A ``route`` object may also define a ``source`` member indicating the source (necessary for source-specific routing).
+A ``route`` object may also define a ``source`` member containing a string with the source (necessary for source-specific routing).
 
 .. _network-routes.json: https://github.com/interop-dev/network-device-schema/blob/master/examples/network-routes.json
 
@@ -201,32 +201,32 @@ A ``Network Graph`` object must have a member with the name ``type`` and value `
 
 It must define the following members:
 
-* ``protocol``: the name of the routing protocol, can be ``static`` when representing static routes
-* ``version``: the version of the routing protocol, can be ``null`` when representing static routes
-* ``metric``: a string which indicates the name of main routing metric used by the routing protocol to determine the best routes when sending packets, can be ``null`` when representing static routes
-* ``nodes``: a list of nodes
-* ``links``: a list of links
+* ``protocol``: string indicating the name of the routing protocol, may be ``"static"`` when representing static routes
+* ``version``: string indicating the version of the routing protocol, may be ``null`` when representing static routes
+* ``metric``: string which indicates the name of main routing metric used by the routing protocol to determine the best routes when sending packets, may be ``null`` when representing static routes
+* ``nodes``: array of node objects
+* ``links``: array of link objects
 
 It may also define the following optional members:
 
-* ``revision``: the revision from which the routing protocol binary was built (eg: git hash, svn revision)
-* ``router_id``: ID of the router on which the protocol is running
+* ``revision``: string indicating the revision from which the routing protocol binary was built (eg: git hash, svn revision)
+* ``router_id``: string that identifies the router on which the protocol is running
 
-Each ``node`` object must define an ``id`` member which represents the primary address of the node.
+Each ``node`` object must define an ``id`` member which refers to the ``router_id`` of the node.
 
 Each ``node`` object  may also define the following optional members:
 
-* ``label``: a human readable label for the node
-* ``local_addresses``: a list of additional addresses (mac/ip) which can be used to communicate with the node
-* ``properties``: an object to store additional / custom metadata
+* ``label``: string with a human readable node label
+* ``local_addresses``: array of strings representing additional addresses (mac/ip) which can be used to communicate with the node
+* ``properties``: an object which may contain any arbitrary key/value pairs
 
 Each ``link`` object must define the following members:
 
 * ``source``: id of the ``source`` node
 * ``target``: id of the ``target`` node
-* ``cost``: the numeric value of the routing metric indicating the outgoing cost to reach the destination; lower cost is better; ``Infinity`` and ``NaN`` are not allowed as per `JSON RFC <https://tools.ietf.org/html/rfc7159>`__
+* ``cost``: numeric value of the routing metric indicating the outgoing cost to reach the destination; lower cost is better, **it may be omitted when representing static routes**; ``Infinity`` and ``NaN`` are not allowed as per `JSON RFC <https://tools.ietf.org/html/rfc7159>`__
 
-Each ``link`` object may also define a ``properties`` object to store additional / custom metadata.
+Each ``link`` object may also define a ``properties`` object which may contain any arbitrary key/value pairs.
 
 .. _network-graph.json: https://github.com/interop-dev/network-device-schema/blob/master/examples/network-graph.json
 
@@ -245,7 +245,7 @@ Network Collection
 
 A ``Network Collection`` object must have a member with the name ``type`` and value ``NetworkCollection``.
 
-It must define a ``collection`` member, which can be any of the previously defined NetJSON objects.
+It must define a ``collection`` member which contains an array of NetJSON objects.
 
 Implementations
 ===============
