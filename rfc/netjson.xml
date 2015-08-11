@@ -60,23 +60,6 @@
                 <uri>http://www.ninux.org/</uri>
             </address>
         </author>
-        <author fullname="L. Aaron Kaplan" initials="A."
-            surname="Kaplan">
-            <organization>Funkfeuer.at</organization>
-            <address>
-                <postal>
-                    <street>Schwarzhorngasse 9/5</street>
-                    <city>Vienna</city>
-                    <region></region>
-                    <code>A-1050</code>
-                    <country>Austria</country>
-                </postal>
-                <phone>+43 1 5056416 78</phone>
-                <email>aaron@lo-res.org</email>
-                <uri>http://www.funkfeuer.at/</uri>
-                <!-- uri and facsimile elements may also be added -->
-            </address>
-        </author>
         <date month="July" year="2015" />
         <area>General</area>
         <workgroup>Global Access to Internet for All</workgroup>
@@ -99,10 +82,21 @@
             <t>
                 The concepts in NetJSON are not new; they are derived from existing conventions
                 in the networking field and open source implementations
-                (OpenWRT, Nagios, OLSR, B.A.T.M.A.N-advanced)
+                (OpenWRT, Nagios, OLSR, Batman-adv)
                 and have been streamlined to encourage interoperability and facilitate
                 development of network centric web applications using JSON.
             </t>
+            <section title="Motivatons">
+                <t>Developing software that deals with networks is harder than it should.</t>
+                <t>Developers have to take into account all the differences between vendors, operating systems,
+                    routing protocols, hardware and (when working with community networks) with the different approaches of each community.</t>
+                <t>Very often, each vendor develops an entire stack that works exclusively with its own hardware and software.</t>
+                <t>There exist many libraries and web apps for networking, but it is very hard to make them interoperable,
+                    that is, making them talk and understand one another with minimum effort.</t>
+                <t>This is an attempt to invert this trend, following the successful example of the GeoJSON open standard.</t>
+                <t>By defining common data structures we can allow developers to focus on their goals instead of having
+                    to struggle with the differences of each vendor, firmware, routing protocol or community.</t>
+            </section>
             <section title="Requirements Language">
                 <t>
                     The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT",
@@ -152,76 +146,18 @@
                 The NetJSON object MAY have any number of other members not explicitly defined in this specification.
             </t>
         </section>
-        <section title="Motivaton">
-            <t>Blabla we are motivated because...</t>
-            <section title="ABNF grammar">
-                <figure>
-                    <preamble>Formal grammar as defined in ...
-                    </preamble>
-                    <artwork>
-                        <![CDATA[
-answer          = entries
-entries         = * ( entry CR)
-entry           = "{" keyvallist "}"
-keyvallist      = [ member *( value-separator member ) ]
-member          = qm field qm name-separator value
-name-separator  = ws %x3A ws            ; a ":" colon
-value           = value                 ; as defined in the JSON RFC
-value-separator = ws %x2C ws            ; , comma. As defined in JSON
-field           = "rrname" | "rrtype" | "rdata" | "time_first" |
-                  "time_last" | "count" | "bailiwick" | "sensor_id" |
-                  "zone_time_first" | "zone_time_last" | futureField
-futureField     = string
-CR              = %x0D
-qm              = %x22                  ; " a quotation mark
-ws              = *(
-                    %x20 |              ; Space
-                    %x09                ; Horizontal tab
-                   )
-
-                    ]]>
-                    </artwork>
-                </figure>
-                <t>Note that blablabla is defined in
-                    JSON and has the exact same specification as there. The same goes for the definition of string.
-                </t>
-            </section>
-            <section title="Mandatory Fields">
-                <t>The mandatory fields are: blablblalba </t>
-                <section title="type">
-                    <t>This field contains the  "NetworkRoutes" </t>
-                </section>
-                <section title="protocol">
-                    <t>This field returns contains the PROTOCOL-NAME, </t>
-                </section>
-            </section>
-            <section title="Optional Fields">
-                <t>Implementations SHOULD support one or more fields.</t>
-                <section title="metric">
-                    <t>Blablabla</t>
-                </section>
-            </section>
-            <section title="Additional Fields">
-                <t>Implementations MAY support the following fields:</t>
-                <section title="router_id">
-                    <t>Blablabla</t>
-                </section>
-            </section>
-        </section>
         <!-- This PI places the pagebreak correctly (before the section title) in the text output. -->
         <?rfc needLines="8" ?>
+        <section anchor="Privacy" title="Privacy Considerations">
+            <t>NetJSON does not impose to publish, send or collect sensitive information.</t>
+            <t>NetJSON only describes how to represent data, each implementation has to decide:</t>
+            <t><list><t>which parts to expose (sensitive data can be omitted)</t></list></t>
+            <t><list><t>how to expose it (public, basic auth, token auth, ecc.)</t></list></t>
+            <t><list><t>how to collect it</t></list></t>
+            <t><list><t>which parts should be collected</t></list></t>
+        </section>
         <section anchor="Acknowledgements" title="Acknowledgements">
             <t>This work was partically supported financially via the CONFINE EU FP7 grant. XXX insert reference </t>
-        </section>
-        <!-- Possibly a 'Contributors' section ... -->
-        <section anchor="IANA" title="IANA Considerations">
-            <t>This memo includes no request to IANA.</t>
-        </section>
-        <section anchor="Privacy" title="Privacy Considerations">
-            <t>... blabla</t>
-        </section>
-        <section anchor="Security" title="Security Considerations">
-            <t>This section is mandatory and MUST define the security implications</t>
         </section>
     </middle>
     <!--  *****BACK MATTER ***** -->
@@ -250,37 +186,64 @@ ws              = *(
             &RFC2119;
         </references>
         <section anchor="app-additional" title="Examples">
-            <t>The JSON output are represented on multiple lines for readability but each JSON object should on a single line.</t>
-            <t>If you query a passive DNS for the rrname www.ietf.org, the passive dns common output format can be:</t>
+            <t>NetworkGraph object example:</t>
             <figure>
                 <artwork>
                     <![CDATA[
-{"count": 102, "time_first": 1298412391, "rrtype": "AAAA",
-"rrname": "www.ietf.org", "rdata": "2001:1890:1112:1::20",
-"time_last": 1302506851}
-{"count": 59, "time_first": 1384865833, "rrtype": "A",
-"rrname": "www.ietf.org", "rdata": "4.31.198.44",
-"time_last": 1389022219}
+{
+    "type": "NetworkGraph",
+    "protocol": "olsr",
+    "version": "0.6.6",
+    "revision": "5031a799fcbe17f61d57e387bc3806de",
+    "metric": "etx",
+    "router_id": "172.16.40.24",
+    "nodes": [
+        {
+            "id": "172.16.40.24",
+            "label": "node-A",
+            "local_addresses": [
+                "10.0.0.1",
+                "10.0.0.2"
+            ],
+            "properties": {
+                "hostname": "node1.my.net"
+            }
+        },
+        {
+            "id": "172.16.40.60",
+            "label": "node-B",
+            "properties": {
+                "hostname": "node2.my.net"
+            }
+        }
+    ],
+    "links": [
+        {
+            "source": "172.16.40.24",
+            "target": "172.16.40.60",
+            "cost": 1.000,
+            "cost_text": "1020  bit/s",
+            "properties": {
+                "lq": 1.000,
+                "nlq": 0.497
+            }
+        }
+    ]
+}
         ]]>
                 </artwork>
             </figure>
-            <t>Example format can be:</t>
-            <figure>
-                <artwork>
-                    <![CDATA[
-{"count": 109877, "time_first": 1298398002, "rrtype": "NS",
-"rrname": "ietf.org", "rdata": "ns1.yyz1.afilias-nst.info",
-"time_last": 1389095375}
-{"count": 4, "time_first": 1298495035, "rrtype": "A",
-"rrname": "ietf.org", "rdata": "64.170.98.32",
-"time_last": 1298495035}
-{"count": 9, "time_first": 1317037550, "rrtype": "AAAA",
-"rrname": "ietf.org", "rdata": "2001:1890:123a::1:1e",
-"time_last": 1330209752}
-        ]]>
-                </artwork>
-            </figure>
-            <t></t>
+        </section>
+        <section anchor="Contributions" title="Contributions">
+            <t>
+                The NetJSON format is the product of discussion on the NetJSON
+                mailing list: https://lists.funkfeuer.at/mailman/listinfo/interop-dev.
+            </t>
+            <t>
+               Comments are solicited and should be addressed to the NetJSON mailing
+               list at interop-dev@lists.funkfeuer.at or to the NetJSON issue tracker at
+               https://github.com/interop-dev/netjson/issues.
+           </t>
         </section>
     </back>
 </rfc>
