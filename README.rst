@@ -251,6 +251,7 @@ Implementations
 ===============
 
 * `OLSR.org Network Framework <http://www.olsr.org/mediawiki/index.php/NetJson_Info_Plugin>`__ (OLSRd v2)
+* `netjsongraph.js <https://github.com/interop-dev/netjsongraph.js>`__ (visualization library based on d3.js)
 * `netdiff <https://github.com/ninuxorg/netdiff#netjson-output>`__ (network topoogy parser)
 * `netengine-utils <http://netengine.readthedocs.org/en/latest/topics/netengine-utils.html#ifconfig-netjson-option>`__ (utilities for parsing the output from ``ifconfig``, ``iwconfig``, ecc.)
 
