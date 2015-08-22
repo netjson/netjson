@@ -89,67 +89,6 @@ Definitions
 .. _IETF RTC 4627: http://www.ietf.org/rfc/rfc4627.txt
 .. _IETF RFC 2119: http://www.ietf.org/rfc/rfc2119.txt
 
-Network Device Configuration
-============================
-
-**Definition**: configuration and properties of a network device.
-
-**Goals**: configuration management & deployment, import & export configurations between different monitoring tools / network controllers.
-
-**Example**: `device-configuration.json`_
-
-A ``Network Device Configuration`` object must have a member with the name ``type`` and value ``DeviceConfiguration``.
-
-The object should be composed of the following **optional** members:
-
-* ``general``
-* ``hardware``
-* ``operating_system``
-* ``resources``
-* ``interfaces``
-* ``physical_devices``
-* ``routes``
-* ``dns_servers``
-* ``dns_search``
-
-All the values of each member must be objects which further describe each component of a network device.
-
-**Each object will be described more in detail in the future iterations of this project**.
-
-**Most blocks will be optional**, for the reason that each implementation will return what it is able to retrieve or what is willing to expose.
-
-Software providing this JSON format to should return all the information it is able to access from the system,
-according to security and privacy rules defined by the device owner or network administrator.
-
-Software consuming this JSON format must be able to handle missing attributes.
-
-Software consuming this JSON format must ignore unrecognized attributes.
-
-.. _device-configuration.json: https://github.com/interop-dev/network-device-schema/blob/master/examples/device-configuration.json
-
-Device Monitoring Data
-======================
-
-**Definition**: information that indicates the behaviour of a device that changes over time.
-
-**Goals**: ouput, collect, parse and visualize monitoring data of a network device.
-
-**Example**: `monitoring-data.json`_
-
-A ``Device Monitoring`` object must have a member with the name ``type`` and value ``DeviceMonitoring``.
-
-The object should be composed of the following **optional** members:
-
-* ``general``
-* ``interfaces``
-* ``resources``
-
-**Each object will be described more in detail in the future iterations of this project**.
-
-**Most blocks will be optional**, for the reason that each implementation will return what it is able to retrieve or what is willing to expose.
-
-.. _monitoring-data.json: https://github.com/interop-dev/network-device-schema/blob/master/examples/monitoring-data.json
-
 Network Routes
 ==============
 
@@ -233,6 +172,67 @@ Each ``link`` object may also define the following optional members:
 * ``properties``: object which may contain any arbitrary key/value pairs
 
 .. _network-graph.json: https://github.com/interop-dev/network-device-schema/blob/master/examples/network-graph.json
+
+Network Device Configuration
+============================
+
+**Definition**: configuration and properties of a network device.
+
+**Goals**: configuration management & deployment, import & export configurations between different monitoring tools / network controllers.
+
+**Example**: `device-configuration.json`_
+
+A ``Network Device Configuration`` object must have a member with the name ``type`` and value ``DeviceConfiguration``.
+
+The object should be composed of the following **optional** members:
+
+* ``general``
+* ``hardware``
+* ``operating_system``
+* ``resources``
+* ``interfaces``
+* ``physical_devices``
+* ``routes``
+* ``dns_servers``
+* ``dns_search``
+
+All the values of each member must be objects which further describe each component of a network device.
+
+**Each object will be described more in detail in the future iterations of this project**.
+
+**Most blocks will be optional**, for the reason that each implementation will return what it is able to retrieve or what is willing to expose.
+
+Software providing this JSON format to should return all the information it is able to access from the system,
+according to security and privacy rules defined by the device owner or network administrator.
+
+Software consuming this JSON format must be able to handle missing attributes.
+
+Software consuming this JSON format must ignore unrecognized attributes.
+
+.. _device-configuration.json: https://github.com/interop-dev/network-device-schema/blob/master/examples/device-configuration.json
+
+Device Monitoring Data
+======================
+
+**Definition**: information that indicates the behaviour of a device that changes over time.
+
+**Goals**: ouput, collect, parse and visualize monitoring data of a network device.
+
+**Example**: `monitoring-data.json`_
+
+A ``Device Monitoring`` object must have a member with the name ``type`` and value ``DeviceMonitoring``.
+
+The object should be composed of the following **optional** members:
+
+* ``general``
+* ``interfaces``
+* ``resources``
+
+**Each object will be described more in detail in the future iterations of this project**.
+
+**Most blocks will be optional**, for the reason that each implementation will return what it is able to retrieve or what is willing to expose.
+
+.. _monitoring-data.json: https://github.com/interop-dev/network-device-schema/blob/master/examples/monitoring-data.json
 
 Network Collection
 ==================
