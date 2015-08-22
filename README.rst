@@ -3,23 +3,25 @@ NetJSON: data interchange format for networks
 
 .. image:: https://raw.githubusercontent.com/interop-dev/netjson/master/static/netjson-logo.png
 
+`Mailing List`_ | `Archives`_ | `Issue tracker`_
+
+.. _Mailing List: https://lists.funkfeuer.at/mailman/listinfo/interop-dev
+.. _Archives: https://lists.funkfeuer.at/pipermail/interop-dev/
+.. _Issue tracker: https://github.com/interop-dev/netjson/issues
+
+.. contents:: Table of Contents
+   :backlinks: none
+   :depth: 3
+
+Introduction
+============
+
 NetJSON is a data interchange format based on JavaScript Object Notation (JSON)
-designed to describe the basic building blocks of layer2 and layer3 networking.
+designed to describe the basic building blocks of layer2 and layer3 networks.
 
 It defines several types of JSON objects and the manner in which they are combined
 to represent a network: configuration of devices, monitoring data, network
 topology and routing information.
-
-* `devices <https://github.com/interop-dev/netjson#network-device-configuration>`__
-* `monitoring data <https://github.com/interop-dev/netjson#device-monitoring-data>`__
-* `routes <https://github.com/interop-dev/netjson#network-routes>`__
-* `network topology <https://github.com/interop-dev/netjson#network-graph>`__
-* `list of topologies / routes <https://github.com/interop-dev/netjson#network-collection>`__
-
-`Reach us on the Mailing List`_ - `Consult the ML Archives`_
-
-.. _Reach us on the Mailing List: https://lists.funkfeuer.at/mailman/listinfo/interop-dev
-.. _Consult the ML Archives: https://lists.funkfeuer.at/pipermail/interop-dev/
 
 Goals
 -----
@@ -30,12 +32,6 @@ Define simple JSON data structures that contain the lowest common denominator of
 * monitoring data extracted from devices
 * routes of a routing protocol
 
-The resulting JSON structures should follow these general principles:
-
-* `KISS`_: keep it simple, proceed one step at time
-* `Principle of least astonishment`_: use accepted terminology
-* **Explicit names**: prefer verbose explicit names, eg: "operating_system" is better than "os"
-
 Once we get to a first version, we should implement these formats in software like:
 
 * Firwmares and linux modules
@@ -43,6 +39,16 @@ Once we get to a first version, we should implement these formats in software li
 * Monitoring agents
 * Node databases
 * Monitoring tools
+
+Design principles
+-----------------
+
+The resulting JSON structures should follow these general principles:
+
+* `KISS`_: keep it simple, proceed one step at time
+* `Principle of least astonishment`_: use accepted terminology
+* **Explicit names**: prefer verbose explicit names, eg: "operating_system"
+  is better than "os"
 
 .. _KISS: http://en.wikipedia.org/wiki/KISS_principle
 .. _Principle of least astonishment: http://en.wikipedia.org/wiki/Principle_of_least_astonishment
@@ -82,23 +88,54 @@ write systems that work together, instead of creating silos.
 Definitions
 -----------
 
-* JavaScript Object Notation (JSON), and the terms object, name, value, array, and number, are defined in `IETF RTC 4627`_.
+* JavaScript Object Notation (JSON), and the terms object, name, value, array,
+  and number, are defined in `IETF RTC 4627`_.
 
-* The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in `IETF RFC 2119`_.
+* The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
+  "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
+  interpreted as described in `IETF RFC 2119`_.
 
 .. _IETF RTC 4627: http://www.ietf.org/rfc/rfc4627.txt
 .. _IETF RFC 2119: http://www.ietf.org/rfc/rfc2119.txt
 
-Network Routes
+NetJSON Object
 ==============
 
-**Definition**: a list of routes of a dynamic routing protocol or statically configured on the device.
+NetJSON always consists of a single object, referred to as the "NetJSON object"
+below.
 
-**Goals**: show internal information of a routing protocol for monitoring and debugging purposes.
+The NetJSON object MUST have a member with the name ``"type"``. The value of the
+member MUST be one of the *NetJSON types*.
+
+The NetJSON object MAY have any number of other members not explicitly defined
+in this specification, referred as "custom members" below.
+Before adding any custom member, read the registry section [TODO]
+to see existing custom members and find out how to officially submit new custom
+members.
+
+NetJSON types
+-------------
+
+NetJSON defines the following types:
+
+* ``NetworkRoutes``
+* ``NetworkGraph``
+* ``DeviceConfiguration``
+* ``DeviceMonitoring``
+* ``NetworkCollection``
+
+NetworkRoutes
+-------------
+
+**Definition**: a list of routes of a dynamic routing protocol or statically
+configured on the device.
+
+**Goals**: show internal information of a routing protocol for monitoring and
+debugging purposes.
 
 **Example**: `network-routes.json`_
 
-A ``Network Routes`` object must have a member with the name ``type`` and value ``NetworkRoutes``.
+A *NetworkRoutes* object must have a member with the name ``type`` and value ``NetworkRoutes``.
 
 It must define the following members:
 
@@ -125,10 +162,10 @@ A ``route`` object may also define the following optional members:
 * ``cost_text``: human readable representation of ``cost``
 * ``source``: string indicating the source (necessary for source-specific routing)
 
-.. _network-routes.json: https://github.com/interop-dev/network-device-schema/blob/master/examples/network-routes.json
+.. _network-routes.json: ./blob/master/examples/network-routes.json
 
-Network Graph
-=============
+NetworkGraph
+------------
 
 **Definition**: a list of nodes and links known by a node.
 
@@ -136,7 +173,7 @@ Network Graph
 
 **Example**: `network-graph.json`_
 
-A ``Network Graph`` object must have a member with the name ``type`` and value ``NetworkGraph``.
+A *NetworkGraph* object must have a member with the name ``type`` and value ``NetworkGraph``.
 
 It must define the following members:
 
@@ -172,18 +209,20 @@ Each ``link`` object may also define the following optional members:
 * ``cost_text``: human readable representation of ``cost``
 * ``properties``: object which may contain any arbitrary key/value pairs
 
-.. _network-graph.json: https://github.com/interop-dev/network-device-schema/blob/master/examples/network-graph.json
+.. _network-graph.json: ./blob/master/examples/network-graph.json
 
-Network Device Configuration
-============================
+Device Configuration
+--------------------
 
 **Definition**: configuration and properties of a network device.
 
-**Goals**: configuration management & deployment, import & export configurations between different monitoring tools / network controllers.
+**Goals**: configuration management & deployment, import & export configurations
+between different monitoring tools / network controllers.
 
 **Example**: `device-configuration.json`_
 
-A ``Network Device Configuration`` object must have a member with the name ``type`` and value ``DeviceConfiguration``.
+A *DeviceConfiguration* object must have a member with the name ``type`` and
+value ``DeviceConfiguration``.
 
 The object should be composed of the following **optional** members:
 
@@ -197,31 +236,39 @@ The object should be composed of the following **optional** members:
 * ``dns_servers``
 * ``dns_search``
 
-All the values of each member must be objects which further describe each component of a network device.
+All the values of each member must be objects which further describe each
+component of a network device.
 
-**Each object will be described more in detail in the future iterations of this project**.
+**Each object will be described more in detail in the future iterations of this
+project**.
 
-**Most blocks will be optional**, for the reason that each implementation will return what it is able to retrieve or what is willing to expose.
+**Most blocks will be optional**, for the reason that each implementation will
+return what it is able to retrieve or what is willing to expose.
 
-Software providing this JSON format to should return all the information it is able to access from the system,
-according to security and privacy rules defined by the device owner or network administrator.
+Software providing this JSON format to should return all the information it is
+able to access from the system,
+according to security and privacy rules defined by the device owner or network
+administrator.
 
 Software consuming this JSON format must be able to handle missing attributes.
 
 Software consuming this JSON format must ignore unrecognized attributes.
 
-.. _device-configuration.json: https://github.com/interop-dev/network-device-schema/blob/master/examples/device-configuration.json
+.. _device-configuration.json: ./blob/master/examples/device-configuration.json
 
-Device Monitoring Data
-======================
+DeviceMonitoring
+----------------
 
-**Definition**: information that indicates the behaviour of a device that changes over time.
+**Definition**: information that indicates the behaviour of a device that
+changes over time.
 
-**Goals**: ouput, collect, parse and visualize monitoring data of a network device.
+**Goals**: ouput, collect, parse and visualize monitoring data of a network
+device.
 
 **Example**: `monitoring-data.json`_
 
-A ``Device Monitoring`` object must have a member with the name ``type`` and value ``DeviceMonitoring``.
+A *DeviceMonitoring* object must have a member with the name ``type`` and value
+``DeviceMonitoring``.
 
 The object should be composed of the following **optional** members:
 
@@ -229,14 +276,16 @@ The object should be composed of the following **optional** members:
 * ``interfaces``
 * ``resources``
 
-**Each object will be described more in detail in the future iterations of this project**.
+**Each object will be described more in detail in the future iterations of this
+project**.
 
-**Most blocks will be optional**, for the reason that each implementation will return what it is able to retrieve or what is willing to expose.
+**Most blocks will be optional**, for the reason that each implementation will
+return what it is able to retrieve or what is willing to expose.
 
-.. _monitoring-data.json: https://github.com/interop-dev/network-device-schema/blob/master/examples/monitoring-data.json
+.. _monitoring-data.json: ./blob/master/examples/monitoring-data.json
 
-Network Collection
-==================
+NetworkCollection
+-----------------
 
 **Definition**: a collection of NetJSON objects.
 
@@ -246,9 +295,10 @@ Network Collection
 * list all the routes of a multitopology capable routing protocol
 * list devices of a network
 
-**Example**: `network-collection.json <https://github.com/interop-dev/netjson/blob/master/examples/network-collection.json>`__
+**Example**: `network-collection.json <./blob/master/examples/network-collection.json>`__
 
-A ``Network Collection`` object must have a member with the name ``type`` and value ``NetworkCollection``.
+A *NetworkCollection* object must have a member with the name ``type`` and
+value ``NetworkCollection``.
 
 It must define a ``collection`` member which contains an array of NetJSON objects.
 
@@ -267,11 +317,13 @@ Frequentedly Asked Questions.
 Is this some kind of new SNMP?
 ------------------------------
 
-Not exactly. Think about NetJSON as a possible common language that libraries and applications
+Not exactly. Think about NetJSON as a possible common language that libraries
+and applications
 can adopt in order to interoperate on different levels.
 
-NetJSON does not aim to define how the data is exchanged, it could be exposed via an HTTP API,
-it could be sent through UDP packets, it could be copied from application A and pasted into application B.
+NetJSON does not aim to define how the data is exchanged, it could be exposed
+via an HTTP API, it could be sent through UDP packets, it could be copied from
+application A and pasted into application B.
 
 Can we avoid to expose sensitive data in order to protect privacy?
 ------------------------------------------------------------------
@@ -287,4 +339,11 @@ It should just describes how to represent data, each implementation will decide:
 * how to collect it
 * which parts should be collected
 
-The important part is to find a way to output and parse this data in a standard and (possibly) easy way.
+The important part is to find a way to output and parse this data in a standard
+and (possibly) easy way.
+
+Contact us
+==========
+
+You can contact us via the `Mailing List`_ or send feedback through
+the `Issue tracker`_.
