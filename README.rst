@@ -153,7 +153,7 @@ The object should be composed of the following **optional** members:
 Network Routes
 ==============
 
-**Definition**: a list of routes of a dynamic routing protocol or statically configured on the device. May be contained in a ``DeviceConfiguration`` object.
+**Definition**: a list of routes of a dynamic routing protocol or statically configured on the device.
 
 **Goals**: show internal information of a routing protocol for monitoring and debugging purposes.
 
