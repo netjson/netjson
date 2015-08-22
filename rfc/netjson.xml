@@ -36,7 +36,7 @@
 <?rfc subcompact="no" ?>
 <!-- keep one blank line between list items -->
 <!-- end of list of popular I-D processing instructions -->
-<rfc category="info" docName="draft-kaplan-capoano-gaia-netjson-00" ipr="trust200902">
+<rfc category="info" docName="draft-capoano-kaplan-netjson-00" ipr="trust200902">
     <!-- category values: std, bcp, info, exp, and historic
      ipr values: full3667, noModification3667, noDerivatives3667
      you can add the attributes updates="NNNN" and obsoletes="NNNN"
@@ -59,7 +59,7 @@
                 <uri>http://www.ninux.org/</uri>
             </address>
         </author>
-        <author fullname="L. Aaron Kaplan" initials="A." surname="Kaplan">
+        <author fullname="L. Aaron Kaplan" initials="L.A." surname="Kaplan">
 
           <organization>CERT.at</organization>
 
@@ -90,7 +90,6 @@
     </author>
         <date month="July" year="2015" />
         <area>General</area>
-        <workgroup>Global Access to Internet for All</workgroup>
         <keyword>gaia, MANET</keyword>
         <abstract>
             <t>NetJSON is a data interchange format based on JavaScript Object Notation (JSON) designed to describe the basic building blocks of layer2 and layer3 networking.</t>
