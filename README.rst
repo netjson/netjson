@@ -151,6 +151,7 @@ It may also define the following optional members:
 * ``revision``: string indicating the revision from which the routing protocol binary was built (eg: git hash, svn revision)
 * ``topology_id``: arbitrary string that identifies the topology
 * ``router_id``: arbitrary string that identifies the router on which the protocol is running (eg: ip, mac, hash)
+* ``label``: a human readable label for the topology
 
 Each ``node`` object must define an ``id`` member which refers to the ``router_id`` of the node.
 
