@@ -573,17 +573,45 @@
                 </front>
             </reference>
         </references>
-        <section anchor="app-additional" title="Examples">
-            <t>NetworkGraph object example:</t>
-            <figure>
-                <artwork>
-                    <![CDATA[
+        <section anchor="Examples" title="Examples">
+            <t>
+                Each of the examples below represents a valid and complete NetJSON object.
+            </t>
+            <section anchor="NetworkRoutes" title="NetworkRoutes">
+                <figure>
+                    <artwork>
+<![CDATA[
+{
+    "type": "NetworkRoutes",
+    "protocol": "olsrv2",
+    "version": "0.8.2",
+    "revision": "v0.8.2-6-ge2e3acc",
+    "metric": "ff_dat_metric",
+    "router_id": "192.168.0.101",
+    "routes": [
+        {
+            "destination": "192.168.0.102",
+            "next": "169.254.1.102",
+            "cost": 4292352,
+            "device": "eth1",
+        }
+    ]
+}
+]]>
+                    </artwork>
+                </figure>
+            </section>
+            <section anchor="NetworkGraph" title="NetworkGraph">
+                <figure>
+                    <artwork>
+<![CDATA[
 {
     "type": "NetworkGraph",
     "protocol": "olsr",
     "version": "0.6.6",
     "revision": "5031a799fcbe17f61d57e387bc3806de",
     "metric": "etx",
+    "label": "Test Network",
     "router_id": "172.16.40.24",
     "nodes": [
         {
@@ -618,9 +646,360 @@
         }
     ]
 }
-        ]]>
-                </artwork>
-            </figure>
+]]>
+                    </artwork>
+                </figure>
+            </section>
+            <section anchor="DeviceConfiguration" title="DeviceConfiguration">
+                <figure>
+                    <artwork>
+<![CDATA[
+{
+    "type": "DeviceConfiguration",
+    "general": {
+        "hostname": "DeviceNameExample",
+        "maintainer": "email@example.org",
+        "description": "general info here"
+    },
+    "hardware": {
+        "manufacturer": "Example inc.",
+        "model": "Example model",
+        "revision": 1,
+        "cpu": "Atheros AR2317"
+    },
+    "operating_system": {
+        "name": "OpenWRT",
+        "kernel": "3.10.49",
+        "version": "Barrier Breaker",
+        "revision": "r43321",
+        "description": "OpenWrt Barrier Breaker 14.07"
+    },
+    "resources": {
+        "memory": {
+            "total": 67108864
+        },
+        "swap": {
+            "total": 0
+        },
+        "cpu": {
+            "frequency": 400000000
+        },
+        "flash": {
+            "total": 8388608
+        },
+        "storage": {
+            "total": null
+        }
+    },
+    "physical_devices": [
+        {
+            "name": "phy0",
+            "channel": 149,
+            "channel_width": 20,
+            "tx_power": 18
+        }
+    ],
+    "interfaces": [
+        {
+            "type": "wireless",
+            "name": "wlan0",
+            "mac": "de:9f:db:30:c9:c5",
+            "mtu": 1500,
+            "txqueuelen": 1000,
+            "carrier": true,
+            "autostart": true,
+            "wireless": {
+                "physical_device": "phy0",
+                "bitrate": 54000000,
+                "ack_distance": 1000,
+                "rts_threshold": 1400,
+                "frag_threshold": 1400,
+                "mode": "ap",
+                "essid": "ap-ssid-example",
+                "encryption": {
+                    "enabled": false
+                }
+            },
+            "addresses": [
+                {
+                    "address": "192.168.1.1",
+                    "mask": 24,
+                    "family": "ipv4",
+                    "proto": "static"
+                },
+                {
+                    "address": "fe80::216:44ff:fe60:32d2",
+                    "mask": 64,
+                    "family": "ipv6",
+                    "proto": "static"
+                }
+            ]
+        },
+        {
+            "type": "ethernet",
+            "name": "eth0",
+            "mac": "52:54:00:56:46:d0",
+            "mtu": 1500,
+            "txqueuelen": 1000,
+            "carrier": true,
+            "autostart": true,
+            "addresses": [
+                {
+                    "address": "176.9.211.214",
+                    "mask": 28,
+                    "family": "ipv4",
+                    "proto": "static"
+                },
+                {
+                    "address": "2a01:4f8:150:8ffc::214",
+                    "mask": 64,
+                    "family": "ipv6",
+                    "proto": "static"
+                },
+                {
+                    "address": "fe80::5054:ff:fe56:46d0",
+                    "mask": 64,
+                    "family": "ipv6",
+                    "proto": "static"
+                }
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "destination": "10.0.3.1",
+            "next": "10.0.2.1"
+        }
+    ],
+    "dns_servers": [
+        "10.254.0.1",
+        "10.254.0.2"
+    ],
+    "dns_search": [
+        "domain.com"
+    ]
+}
+]]>
+                    </artwork>
+                </figure>
+            </section>
+            <section anchor="DeviceMonitoring" title="DeviceMonitoring">
+                <figure>
+                    <artwork>
+<![CDATA[
+{
+    "type": "DeviceMonitoring",
+    "general": {
+        "local_time": 1414305354,
+        "uptime": 3501937
+    },
+    "resources": {
+        "load_average": [
+           "0.08",
+           "0.04",
+           "0.05"
+        ],
+        "memory": {
+            "total": 67108864,
+            "free": 3156,
+            "buffered": 2072,
+            "cache": 6884
+        },
+        "swap": {
+            "total": 0,
+            "free": 0
+        },
+        "connections": {
+            "ipv4": {
+                "tcp": 4,
+                "udp": 18
+            },
+            "ipv6": {
+                "tcp": 2,
+                "udp": 1
+            }
+        },
+        "processes": {
+            "running": 2,
+            "sleeping": 36,
+            "blocked": 0,
+            "zombie": 0,
+            "stopped": 0,
+            "paging": 0
+        },
+        "cpu": {
+            "frequency": 400000000,
+            "user": 13,
+            "system": 0,
+            "nice": 4,
+            "idle": 83,
+            "iowait": 0,
+            "irq": 0,
+            "softirq": 0
+        },
+        "flash": {
+            "total": 8388608,
+            "free": 1388608
+        },
+        "storage": {
+            "total": null,
+            "free": null
+        }
+    },
+    "interfaces": [
+        {
+            "name": "lo",
+            "uptime": 1404305354,
+            "statistics": {
+               "collisions": 0,
+               "rx_frame_errors": 0,
+               "tx_compressed": 0,
+               "multicast": 0,
+               "rx_length_errors": 0,
+               "tx_dropped": 0,
+               "rx_bytes": 9287737,
+               "rx_missed_errors": 0,
+               "tx_errors": 0,
+               "rx_compressed": 0,
+               "rx_over_errors": 0,
+               "tx_fifo_errors": 0,
+               "rx_crc_errors": 0,
+               "rx_packets": 57624,
+               "tx_heartbeat_errors": 0,
+               "rx_dropped": 0,
+               "tx_aborted_errors": 0,
+               "tx_packets": 57624,
+               "rx_errors": 0,
+               "tx_bytes": 9287737,
+               "tx_window_errors": 0,
+               "rx_fifo_errors": 0,
+               "tx_carrier_errors": 0
+            }
+        },
+        {
+            "name": "wlan0",
+            "uptime": 1304305354,
+            "statistics": {
+               "collisions": 0,
+               "rx_frame_errors": 0,
+               "tx_compressed": 0,
+               "multicast": 0,
+               "rx_length_errors": 0,
+               "tx_dropped": 0,
+               "rx_bytes": 2434,
+               "rx_missed_errors": 0,
+               "tx_errors": 0,
+               "rx_compressed": 0,
+               "rx_over_errors": 0,
+               "tx_fifo_errors": 0,
+               "rx_crc_errors": 0,
+               "rx_packets": 5,
+               "tx_heartbeat_errors": 0,
+               "rx_dropped": 0,
+               "tx_aborted_errors": 0,
+               "tx_packets": 2169666,
+               "rx_errors": 0,
+               "tx_bytes": 583692816,
+               "tx_window_errors": 0,
+               "rx_fifo_errors": 0,
+               "tx_carrier_errors": 0
+            }
+        },
+        {
+            "name": "eth0",
+            "uptime": 1294305354,
+            "statistics": {
+                "collisions": 0,
+                "rx_frame_errors": 0,
+                "tx_compressed": 0,
+                "multicast": 0,
+                "rx_length_errors": 0,
+                "tx_dropped": 0,
+                "rx_bytes": 3542783708,
+                "rx_missed_errors": 0,
+                "tx_errors": 0,
+                "rx_compressed": 0,
+                "rx_over_errors": 0,
+                "tx_fifo_errors": 0,
+                "rx_crc_errors": 0,
+                "rx_packets": 35118502,
+                "tx_heartbeat_errors": 0,
+                "rx_dropped": 14,
+                "tx_aborted_errors": 0,
+                "tx_packets": 11761973,
+                "rx_errors": 0,
+                "tx_bytes": 2952333765,
+                "tx_window_errors": 0,
+                "rx_fifo_errors": 0,
+                "tx_carrier_errors": 0
+            }
+        }
+    ]
+}
+]]>
+                    </artwork>
+                </figure>
+            </section>
+            <section anchor="NetworkCollection" title="NetworkCollection">
+                <figure>
+                    <artwork>
+<![CDATA[
+{
+    "type": "NetworkCollection",
+    "collection": [
+        {
+            "type": "NetworkGraph",
+            "protocol": "olsr",
+            "version": "0.6.6",
+            "revision": "5031a799fcbe17f61d57e387bc3806de",
+            "metric": "etx",
+            "router_id": "172.16.40.24",
+            "nodes": [
+                { "id": "172.16.40.24" },
+                { "id": "172.16.40.60" }
+            ],
+            "links": [
+                {
+                    "source": "172.16.40.24",
+                    "target": "172.16.40.60",
+                    "cost": 1.000,
+                    "properties": {
+                        "lq": 1.000,
+                        "nlq": 0.497
+                    }
+                }
+            ]
+        },
+        {
+            "type": "NetworkGraph",
+            "protocol": "olsrv2",
+            "version": "0.8.0",
+            "revision": "v0.8.0-0-g31b63ec-dirty",
+            "router_id": "192.168.0.101",
+            "metric": "ff_dat_metric",
+            "nodes": [
+                { "id": "192.168.0.101" },
+                { "id": "192.168.0.102" }
+            ],
+            "links": [
+                {
+                    "source": "192.168.0.101",
+                    "target": "192.168.0.102",
+                    "cost": 2105088,
+                    "cost_text": "1020  bit/s",
+                    "properties": {
+                        "in": 2105088,
+                        "in_txt": "1020  bit/s"
+                    }
+                }
+            ]
+        }
+    ]
+}
+]]>
+                    </artwork>
+                </figure>
+            </section>
         </section>
         <section anchor="Contributions" title="Contributions">
             <t>
