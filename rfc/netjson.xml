@@ -240,38 +240,126 @@
                 </t>
                 <t>
                     <list>
-                        <t>NetworkRoutes.</t>
-                        <t>NetworkGraph.</t>
-                        <t>DeviceConfiguration.</t>
-                        <t>DeviceMonitoring.</t>
+                        <t>NetworkRoutes;</t>
+                        <t>NetworkGraph;</t>
+                        <t>DeviceConfiguration;</t>
+                        <t>DeviceMonitoring;</t>
                         <t>NetworkCollection.</t>
                     </list>
                 </t>
             </section>
             <section title="NetworkRoutes">
                 <t>
-                    Definition: a list of routes of a dynamic routing protocol or statically configured on the device.
+                    <spanx style="strong">Definition:</spanx> a list of routes of a
+                    dynamic routing protocol or statically configured on the device.
                 </t>
                 <t>
-                    Goals: show internal information of a routing protocol for monitoring and debugging purposes.
+                    <spanx style="strong">Goals:</spanx> show internal information
+                    of a routing protocol for monitoring and debugging purposes.
                 </t>
-                <t>A Network Routes object must have a member with the name type and value NetworkRoutes.</t>
-                <t>It must define the following members:</t>
+                <t>
+                    <spanx style="strong">Example:</spanx>
+                    <xref target="NetworkRoutes">A.1. NetworkRoutes</xref>.
+                </t>
+                <t>
+                    A <spanx style="em">NetworkRoutes</spanx> object MUST
+                    define the following REQUIRED members:
+                </t>
                 <t>
                     <list>
-                        <t>protocol: string indicating the name of the routing protocol, may be "static" when representing static routes</t>
-                        <t>version: string indicating the version of the routing protocol, may be null when representing static routes</t>
-                        <t>metric: string which indicates the name of main routing metric used by the routing protocol to determine the best routes when sending packets, may be null when representing static routes</t>
-                        <t>routes: array of route objects</t>
+                        <t>
+                            <spanx style="strong">type</spanx>: string, MUST be "NetworkRoutes";
+                        </t>
+                        <t>
+                            <spanx style="strong">protocol</spanx>: string indicating the name
+                            of the routing protocol, may be "static" when representing static routes;
+                        </t>
+                        <t>
+                            <spanx style="strong">version</spanx>: string indicating the version of
+                            the routing protocol, may be null when representing static routes;
+                        </t>
+                        <t>
+                            <spanx style="strong">metric</spanx>: string which indicates the name of
+                            main routing metric used by the routing protocol to determine the best
+                            routes when sending packets, may be null when representing static routes;</t>
+                        <t>
+                            <spanx style="strong">routes</spanx>:
+                            array of <xref target="route-objects">Route Objects</xref>.
+                        </t>
                     </list>
                 </t>
-                <t>It may also define the following optional members:</t>
+                <t>
+                    A <spanx style="em">NetworkRoutes</spanx> object MAY
+                    also define the following OPTIONAL members:
+                </t>
                 <t>
                     <list>
-                        <t>revision: string indicating the revision from which the routing protocol binary was built (eg: git hash, svn revision)</t>
-                        <t>topology_id: arbitrary string that identifies the topology</t>
+                        <t>
+                            <spanx style="strong">revision:</spanx> string
+                            indicating the revision from which the routing protocol
+                            binary was built (eg: git hash, svn revision);
+                        </t>
+                        <t>
+                            <spanx style="strong">topology_id:</spanx>
+                            arbitrary string that identifies the topology;
+                        </t>
+                        <t>
+                            <spanx style="strong">router_id:</spanx>
+                            arbitrary string that identifies the router
+                            on which the protocol is running (eg: ip, mac, hash);
+                        </t>
                     </list>
                 </t>
+                <section title="Route Objects" anchor="route-objects">
+                    <t>
+                        Each route object MUST define the following REQUIRED members:
+                    </t>
+                    <t>
+                        <list>
+                            <t>
+                                <spanx style="strong">destination:</spanx>
+                                string indicating the ip address, prefix or mac
+                                address that will be matched to the destination of the traffic;
+                            </t>
+                            <t>
+                                <spanx style="strong">next:</spanx>
+                                string indicating the ip address, prefix or mac
+                                address of the next hop;
+                            </t>
+                            <t>
+                                <spanx style="strong">device:</spanx>
+                                string indicating the interface the traffic will be
+                                going to, it may be omitted when representing static routes;
+                            </t>
+                            <t>
+                                <spanx style="strong">cost:</spanx>
+                                numeric value of the routing metric indicating the
+                                outgoing cost to reach the destination; lower cost is better,
+                                it MAY be omitted when representing static routes;
+                                <spanx style="em">Infinity</spanx> and <spanx style="em">NaN</spanx>
+                                are not allowed in accordance with the
+                                <xref target="RFC7159">JSON RFC</xref>.
+                            </t>
+                        </list>
+                    </t>
+                    <t>
+                        Each route object MAY also define the following OPTIONAL members:
+                    </t>
+                    <t>
+                        <list>
+                            <t>
+                                <spanx style="strong">cost_text:</spanx>
+                                human readable representation of the
+                                <spanx style="em">cost</spanx> member;
+                            </t>
+                            <t>
+                                <spanx style="strong">source:</spanx>
+                                string indicating the source
+                                (necessary for source-specific routing).
+                            </t>
+                        </list>
+                    </t>
+                </section>
             </section>
             <section title="NetworkGraph">
                 <t>
@@ -293,19 +381,19 @@
                     <spanx style="strong">Example:</spanx>
                     <xref target="DeviceConfiguration">A.3. DeviceConfiguration</xref>.
                 </t>
-                <section title="Mandatory fields">
+                <section title="REQUIRED fields">
                     <t>
                         A Network Device Configuration object MUST have a member
                         with the name "type" and value "DeviceConfiguration".
                     </t>
                 </section>
-                <section title="Optional fields">
+                <section title="OPTIONAL fields">
                     <section title="Overview">
                         <t>
                             The object MAY be composed of the following OPTIONAL members, all
                             of which are objects (or arrays of objects) and again contain (possibly OPTIONAL) members.
                             For a full formal specification in <xref target="JSON-Schema">JSON-Schema</xref>
-                            format, please see XXX insert reference XXX
+                            format, please see [insert reference].
                         </t>
                         <t>
                             <list>
