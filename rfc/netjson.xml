@@ -420,14 +420,14 @@
         <?rfc needLines="8" ?>
         <section anchor="Privacy" title="Privacy Considerations">
             <t>NetJSON does not impose to publish, send or collect sensitive information.</t>
-            <t>NetJSON only describes how to represent data, each implementation has to decide:</t>
+            <t>NetJSON only describes how to represent data, each implementer MAY decide:</t>
             <t>
-            <list>
-                <t>which parts to expose (sensitive data can be omitted)</t>
-                <t>how to expose it (public, basic auth, token auth, ecc.)</t>
-                <t>how to collect it</t>
-                <t>which parts should be collected</t>
-            </list>
+                <list>
+                    <t>which optional members to publish (sensitive data can be omitted)</t>
+                    <t>how to publish it (public, basic auth, token auth, ecc.)</t>
+                    <t>how to collect it</t>
+                    <t>which parts should be collected</t>
+                </list>
             </t>
         </section>
         <section anchor="Acknowledgements" title="Acknowledgements">
