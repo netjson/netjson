@@ -60,40 +60,33 @@
             </address>
         </author>
         <author fullname="L. Aaron Kaplan" initials="L.A." surname="Kaplan">
-
-          <organization>CERT.at</organization>
-
-          <address>
-
-            <postal>
-
-              <street>Karlsplatz 1/2/9</street>
-
-              <city>Vienna</city>
-
-              <region></region>
-
-              <code>A-1010</code>
-
-              <country>Austria</country>
-
-            </postal>
-
-            <phone>+43 1 5056416 78</phone>
-
-            <email>kaplan@cert.at</email>
-
-            <uri>http://www.cert.at/</uri>
-
-          </address>
-
-    </author>
+            <organization>CERT.at</organization>
+            <address>
+                <postal>
+                    <street>Karlsplatz 1/2/9</street>
+                    <city>Vienna</city>
+                    <region></region>
+                    <code>A-1010</code>
+                    <country>Austria</country>
+                </postal>
+                <phone>+43 1 5056416 78</phone>
+                <email>kaplan@cert.at</email>
+                <uri>http://www.cert.at/</uri>
+            </address>
+        </author>
         <date month="July" year="2015" />
         <area>General</area>
         <keyword>gaia, MANET</keyword>
         <abstract>
-            <t>NetJSON is a data interchange format based on JavaScript Object Notation (JSON) designed to describe the basic building blocks of layer2 and layer3 networking.</t>
-            <t>It defines several types of JSON objects and the manner in which they are combined to represent a network: configuration of devices, monitoring data, network topology and routing information.</t>
+            <t>
+                NetJSON is a data interchange format based on JavaScript Object Notation (JSON)
+                designed to describe the basic building blocks of layer2 and layer3 networking.
+            </t>
+            <t>
+                It defines several types of JSON objects and the manner in which they are
+                combined to represent a network: configuration of devices, monitoring data,
+                network topology and routing information.
+            </t>
         </abstract>
     </front>
     <middle>
@@ -108,41 +101,90 @@
             </t>
             <t>
                 The concepts in NetJSON are not new; they are derived from existing conventions
-                in the networking field, for example the community networking markup language <xref target="CNML">[CNML]</xref> or 
-                open source implementations of network monitoring and routing protocols or open source firmwares
-                (<xref target="OpenWRT">[OpenWRT]</xref>, <xref target="Nagios">[Nagios]</xref>, <xref target="OLSRd">[OLSRd]</xref> (<xref target="RFC3626">[RFC3626]</xref>), <xref target="RFC6126">[RFC6126]</xref>, <xref target="BMX">[BMX]</xref>, <xref target="Batman-adv">[Batman-adv]</xref>).
-                These concepts have been streamlined to encourage interoperability between network centric web applications using JSON.
+                consolidated in open source projects related to the networking field,
+                such as:
+            </t>
+            <t>
+                <list>
+                    <t>
+                        the Community Networking Markup Language
+                        <xref target="CNML">[CNML]</xref>
+                    </t>
+                    <t>
+                        open source implementations of network monitoring tools
+                        like <xref target="Nagios">[Nagios]</xref>
+                    </t>
+                    <t>
+                        dynamic routing protocols like
+                        <xref target="OLSRd">[OLSRd]</xref>
+                        (<xref target="RFC3626">[RFC3626]</xref> and <xref target="RFC7181">[RFC7181]</xref>),
+                        <xref target="Babel">[Babel]</xref> (<xref target="RFC6126">[RFC6126]</xref>),
+                        <xref target="Batman-adv">[Batman-adv]</xref> and
+                        <xref target="BMX">[BMX]</xref>
+                    </t>
+                    <t>
+                        linux distributions like
+                        <xref target="OpenWRT">[OpenWRT]</xref>
+                    </t>
+                </list>
+            </t>
+            <t>
+                These concepts have been streamlined to encourage interoperability
+                between network centric web applications using JSON.
             </t>
             <section title="Motivatons">
-                <t>Developing software that deals with networks is harder than it should.</t>
-                <t>Developers have to take into account all the differences between vendors, operating systems,
-                    routing protocols, hardware and (when working with community networks) with the different approaches of each community.</t>
-                <t>Very often, each vendor develops an entire stack that works exclusively with its own hardware and software.</t>
-                <t>There exist many libraries and web apps for networking, but it is very hard to make them interoperable,
-                    that is, making them talk and understand one another with minimum effort.</t>
-                <t>This is an attempt to invert this trend, following the successful example of the GeoJSON open standard.</t>
-                <t>By defining common data structures we can allow developers to focus on their goals instead of having
-                    to struggle with the differences of each vendor, firmware, routing protocol or community.</t>
+                <t>
+                    Developing software that deals with networks is harder than it should.
+                </t>
+                <t>
+                    Developers have to take into account all the differences between vendors,
+                    operating systems, routing protocols, hardware and (when working with
+                    community networks) with the different approaches of each community.
+                </t>
+                <t>
+                    Very often, each vendor develops an entire stack that works
+                    exclusively with its own hardware and software.
+                </t>
+                <t>
+                    There exist many libraries and web apps for networking, but
+                    it is very hard to make them interoperable, that is, making
+                    them talk and understand one another with minimum effort.
+                </t>
+                <t>
+                    This is an attempt to invert this trend, following the successful
+                    example of the <xref target="GeoJSON">GeoJSON format</xref>.
+                </t>
+                <t>
+                    By defining common data structures we can allow developers
+                    to focus on their goals instead of having to struggle with
+                    the differences of each vendor, firmware, routing protocol
+                    or community.
+                </t>
             </section>
             <section title="Requirements Language">
                 <t>
-                    The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT",
-                    "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in
+                    The key words "MUST", "MUST NOT", "REQUIRED", "SHALL",
+                    "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY",
+                    and "OPTIONAL" in this document are to be interpreted as described in
                     <xref target="RFC2119">RFC 2119</xref>.
                 </t>
             </section>
             <section title="Conventions Used in This Document">
                 <t>
-                    The ordering of the members of any JSON object defined in this document MUST be considered irrelevant,
+                    The ordering of the members of any JSON object defined in this
+                    document MUST be considered irrelevant,
                     as specified by <xref target="RFC7159">RFC RFC7159</xref>.
                 </t>
                 <t>
-                    Some examples use the combination of a JavaScript single line comment (//) followed by an ellipsis (...) as placeholder notation for
-                    content deemed irrelevant by the authors.  These placeholders must of course be deleted or otherwise replaced, before attempting to
+                    Some examples use the combination of a JavaScript single line
+                    comment (//) followed by an ellipsis (...) as placeholder notation for
+                    content deemed irrelevant by the authors.  These placeholders
+                    must of course be deleted or otherwise replaced, before attempting to
                     validate the corresponding JSON code example.
                 </t>
                 <t>
-                    Whitespace is used in the examples inside this document to help illustrate the data structures, but is not required.
+                    Whitespace is used in the examples inside this document to
+                    help illustrate the data structures, but is not required.
                     Unquoted whitespace is not significant in JSON.
                 </t>
             </section>
@@ -150,12 +192,16 @@
                 <t>
                     <list>
                         <t>
-                            JavaScript Object Notation (JSON), and the terms "object", "member", "name", "value", "array", "number", "true",
-                            "false", and "null" are to be interpreted as defined in <xref target="RFC7159">RFC RFC7159</xref>.
+                            JavaScript Object Notation (JSON), and the terms "object",
+                            "member", "name", "value", "array", "number", "true",
+                            "false", and "null" are to be interpreted as defined
+                            in <xref target="RFC7159">RFC RFC7159</xref>.
                         </t>
                         <t>
-                            The term "NetJSON type(s)" (sometimes abbreviated to "type(s)") refers to (one of) the five case-sensitive strings: "DeviceConfiguration", "DeviceMonitoring",
-                            "NetworkRoutes", "NetworkGraph" and "NetworkCollection".
+                            The term "NetJSON type(s)" (sometimes abbreviated to "type(s)")
+                            refers to (one of) the five case-sensitive strings:
+                            "DeviceConfiguration", "DeviceMonitoring", "NetworkRoutes",
+                            "NetworkGraph" and "NetworkCollection".
                         </t>
                     </list>
                 </t>
@@ -163,21 +209,32 @@
         </section>
         <section title="NetJSON Object">
             <t>
-                NetJSON always consists of a single object, referred to as the "NetJSON object" below.
+                NetJSON always consists of a single object,
+                referred to as the "NetJSON object" below.
             </t>
             <t>
-                The NetJSON object MUST have a member with the name "type". The value of the member MUST be one of the NetJSON types.
+                <list>
+                    <t>
+                        The NetJSON object MUST have a member with the name "type".
+                        The value of the member MUST be one of the NetJSON types defined below.
+                    </t>
+                    <t>
+                        The NetJSON object MAY have any number of other members not
+                        explicitly defined in this specification, referred as "custom members" below.
+                        Implementations MUST ignore unrecognized custom members.
+                    </t>
+                    <t>
+                        Before adding any custom member, read the registry
+                        section [LINK HERE] to see existing custom members and
+                        find out how to officially submit new custom members.
+                    </t>
+                </list>
             </t>
-            <t>
-                The NetJSON object MAY have any number of other members not explicitly defined in this specification, referred as "custom members" below.
-                Before adding any custom member, read the registry section [LINK HERE] to see existing custom members and
-                find out how to officially submit new custom members.
-            </t>
-        <section title="NetJSON types">
-            <t>
-                NetJSON defines the following types:
-            </t>
-            <t>
+            <section title="NetJSON types">
+                <t>
+                    NetJSON defines the following types:
+                </t>
+                <t>
                     <list>
                         <t>NetworkRoutes</t>
                         <t>NetworkGraph</t>
@@ -186,204 +243,177 @@
                         <t>NetworkCollection</t>
                     </list>
                 </t>
-        </section>
-        
-        <section title="NetworkRoutes">
-            <t>
-                Definition: a list of routes of a dynamic routing protocol or statically configured on the device.
-            </t>
-            <t>
-                Goals: show internal information of a routing protocol for monitoring and debugging purposes.
-            </t>
-            <t>A Network Routes object must have a member with the name type and value NetworkRoutes.</t>
-            <t>It must define the following members:</t>
-            <t>
-                <list>
+            </section>
+            <section title="NetworkRoutes">
+                <t>
+                    Definition: a list of routes of a dynamic routing protocol or statically configured on the device.
+                </t>
+                <t>
+                    Goals: show internal information of a routing protocol for monitoring and debugging purposes.
+                </t>
+                <t>A Network Routes object must have a member with the name type and value NetworkRoutes.</t>
+                <t>It must define the following members:</t>
+                <t>
+                    <list>
                         <t>protocol: string indicating the name of the routing protocol, may be "static" when representing static routes</t>
                         <t>version: string indicating the version of the routing protocol, may be null when representing static routes</t>
                         <t>metric: string which indicates the name of main routing metric used by the routing protocol to determine the best routes when sending packets, may be null when representing static routes</t>
                         <t>routes: array of route objects</t>
-                </list>
-            </t>
-            <t>It may also define the following optional members:</t>
-            <t>
-                <list>
-                    <t>revision: string indicating the revision from which the routing protocol binary was built (eg: git hash, svn revision)</t>
-                    <t>topology_id: arbitrary string that identifies the topology</t>
-                </list>
-            </t>
-        </section>
-        <section title="NetworkGraph">
-            <t>
-                Definition: a list of nodes and links known by a node.
-            </t>
-            <t>
-                Goals: visualization of network topology, collect network topology from distance vector protocols, monitoring.
-            </t>
-        </section>
-        <section title="DeviceConfiguration">
-            <t>
-                Definition: configuration and properties of a network device.
-            </t>
-            <t>
-                Goals: configuration storage and management, import and export
-                configurations between different monitoring tools or network controllers.
-            </t>
-            <section title="Mandatory fields">
-
-    <t>A Network Device Configuration object MUST have a member with the name "type" and value "DeviceConfiguration".</t>
-
-    </section>
-
-    <section title="Optional fields">
-
-    <section title="Overview">
-
-    <t>The object MAY be composed of the following OPTIONAL members, all of which are objects (or arrays of objects) and again contain (possibly OPTIONAL) members. 
-
-    For a full formal specification in <xref target="JSON-Schema">JSON-Schema</xref> format, please see XXX insert reference XXX</t>
-
-    <t>
-
-    <list>
-
-    <t><spanx style="strong">general</spanx>: an object describing general information such as hostname, technical maintainer, etc. of the network device.</t>
-
-    <t><spanx style="strong">hardware</spanx>: an object describing hardware characteristics of the network device.</t>
-
-    <t><spanx style="strong">operating_system</spanx>: an object listing name, version, kernel version and revision of the operating system.</t>
-
-    <t><spanx style="strong">resources</spanx>: object listing computing resources that the network device has.</t>
-
-    <t><spanx style="strong">interfaces</spanx>: an array of objects describing logical networking interfaces of the network device.</t>
-
-    <t><spanx style="strong">physical_devices</spanx>: an array of objects describing the physical networking interfaces of the network device.</t>
-
-    <t><spanx style="strong">routes</spanx>: an array of objects describing the current routing table of the network device. Note that these values can vary a lot over time and MUST NOT be considered static information.</t>
-
-    <t><spanx style="strong">dns_servers</spanx>: an array of strings denoting DNS servers of the networking device.</t>
-
-    <t><spanx style="strong">dns_search</spanx>: an array of  strings denoting DNS search paths .</t>
-
-    </list>
-
-    </t>
-
-    </section>
-
-    <section title="Details">
-
-    <texttable align="left">
-
-    <ttcol>parent</ttcol><ttcol>child</ttcol><ttcol>format</ttcol><ttcol>description</ttcol>
-
-    <c>general</c><c>hostname</c><c> string</c><c>Hostname of the network device</c>
-
-    <c>general</c><c>maintainer</c><c>string</c><c>Email address of the maintainer of the network device</c>
-
-    <c>general</c><c>description</c><c>string</c><c>Free-form textual description of the network device</c>
-
-    <c>hardware</c><c>manufacturer</c><c>string</c><c>Name of the manufacturer of the device</c>
-
-    <c>hardware</c><c>model</c><c>string</c><c>Name of the model</c>
-
-    <c>hardware</c><c>revision</c><c>number</c><c></c>
-
-    <c>hardware</c><c>cpu</c><c>string</c><c>CPU specification</c>
-
-    <c>operating_system</c><c>name</c><c>string</c><c>Name of the operating system or firmware</c>
-
-    <c>operating_system</c><c>kernel</c><c>string</c><c>Kernel version</c>
-
-    <c>operating_system</c><c>version</c><c>string</c><c>Version name or version number of the operating system</c>
-
-    <c>operating_system</c><c>revision</c><c>string</c><c>revision number or revision tag</c>
-
-    <c>operating_system</c><c>description</c><c>string</c><c>Free-form textual description</c>
-
-    <c>resources</c><c>memory</c><c>object</c><c>Object containing "total" - a number of total memory (unit: bytes)</c>
-
-    <c>resources</c><c>swap</c><c>object</c><c>Object containing "total" - a number of total swap memory (unit: bytes)</c>
-
-    <c>resources</c><c>cpu</c><c>object</c><c>Object containing "frequency" - a number of specifying the frequency (unit: Hz)</c>
-
-    <c>resources</c><c>flash</c><c>object</c><c>Object containing "total" - a number of total flash memory (unit: bytes)</c>
-
-    <c>resources</c><c>storage</c><c>object</c><c>Object containing "total" - a number of total external storage memory (unit: bytes)</c>
-
-    <c>physical_devices</c><c>name</c><c>string</c><c>Name of the physical device</c>
-
-    <c>physical_devices</c><c>channel</c><c>number</c><c>Channel number</c>
-
-    <c>physical_devices</c><c>channel_width</c><c>number</c><c>Channel width (unit: Hz)</c>
-
-    <c>physical_devices</c><c>tx_power</c><c>number</c><c>Transmission power (unit: dBm)</c>
-
-    <c>interfaces</c><c>type</c><c>string</c><c>Possible values: "wireless" , "ethernet", "bridge" or "virtual"</c>
-
-    <c>interfaces</c><c>bridge-members</c><c>array</c><c>An array listing the interface names contained in the network bridge interface</c>
-
-    <c>interfaces</c><c>name</c><c>string</c><c>Name of the logical interface</c>
-
-    <c>interfaces</c><c>mac</c><c>string</c><c>Mac address</c>
-
-    <c>interfaces</c><c>mtu</c><c>number</c><c>Maximum Transmission Unit</c>
-
-    <c>interfaces</c><c>txqueuelen</c><c>number</c><c>TX queue length</c>
-
-    <c>interfaces</c><c>carrier</c><c>boolean</c><c>Is the interface sensing any carrier?</c>
-
-    <c>interfaces</c><c>autostart</c><c>boolean</c><c>Should the interface be brought up after power on?</c>
-
-    <c>interfaces</c><c>wireless</c><c>object</c><c>Object. Only valid in this context if "type" = "wireless". This object links the logical wireless interace to the physical wireless interface and also specifies various physical parameters. For a detailed list of all sub-members of this object, please refer to XXX insert reference JSON-Schema XXX.</c>
-
-    <c>interfaces</c><c>addresses</c><c>array of objects</c><c>An array of objects with members listing the address, netmask, family ("ipv4", "ipv6") and protocol ("static", "dynamic") of the configured IP address of the logical interface. Note that a logical interface MAY have multiple IP addresses assigned and therefore multiple array members are possible in this field</c>
-
-    <c>routes</c><c>destination</c><c>string</c><c>"routes" contains an array of objects, each listing "destination" and "next" (hop) IP address. In essence, it is a routing table</c>
-
-    <c>routes</c><c>next</c><c>string</c><c>"routes" contains an array of objects, each listing "destination" and "next" (hop) IP address. In essence, it is a routing table</c>
-
-    </texttable>
-
-    </section>
-
-    <section title="Examples">
-
-    <t>See XXX internal reference XXX</t>
-
-    </section>
-
-    </section>
-
-        </section>
-        <section title="DeviceMonitoring">
-            <t>
-                Definition: information that indicates the behaviour of a device that changes over time.
-            </t>
-            <t>
-                Goals: ouput, collect, parse and visualize monitoring data of a network device.
-            </t>
-        </section>
-        <section title="NetworkCollection">
-            <t>
-                Definition: collection of NetJSON objects.
-            </t>
-            <t>
-                Goals: allow to list various netjson objects into a coherent group, eg:
-            </t>
-            <t>
-                <list>
-
-                  <t>list graphs of different routing protocols running on the same device</t>
-
-                  <t>list all the routes of a multi-topology capable routing protocol</t>
-
-                  <t>list devices of a network</t>
-
-                </list>
-            </t>
-        </section>
-        
+                    </list>
+                </t>
+                <t>It may also define the following optional members:</t>
+                <t>
+                    <list>
+                        <t>revision: string indicating the revision from which the routing protocol binary was built (eg: git hash, svn revision)</t>
+                        <t>topology_id: arbitrary string that identifies the topology</t>
+                    </list>
+                </t>
+            </section>
+            <section title="NetworkGraph">
+                <t>
+                    Definition: a list of nodes and links known by a node.
+                </t>
+                <t>
+                    Goals: visualization of network topology, collect network topology from distance vector protocols, monitoring.
+                </t>
+            </section>
+            <section title="DeviceConfiguration">
+                <t>
+                    Definition: configuration and properties of a network device.
+                </t>
+                <t>
+                    Goals: configuration storage and management, import and export
+                    configurations between different monitoring tools or network controllers.
+                </t>
+                <section title="Mandatory fields">
+                    <t>
+                        A Network Device Configuration object MUST have a member
+                        with the name "type" and value "DeviceConfiguration".
+                    </t>
+                </section>
+                <section title="Optional fields">
+                    <section title="Overview">
+                        <t>
+                            The object MAY be composed of the following OPTIONAL members, all
+                            of which are objects (or arrays of objects) and again contain (possibly OPTIONAL) members.
+                            For a full formal specification in <xref target="JSON-Schema">JSON-Schema</xref>
+                            format, please see XXX insert reference XXX
+                        </t>
+                        <t>
+                            <list>
+                                <t>
+                                    <spanx style="strong">general</spanx>:
+                                    an object describing general information such as hostname,
+                                    technical maintainer, etc. of the network device.
+                                </t>
+                                <t>
+                                    <spanx style="strong">hardware</spanx>:
+                                    an object describing hardware characteristics
+                                    of the network device.
+                                </t>
+                                <t>
+                                    <spanx style="strong">operating_system</spanx>:
+                                    an object listing name, version, kernel version and
+                                    revision of the operating system.</t>
+                                <t>
+                                    <spanx style="strong">resources</spanx>:
+                                    object listing computing resources that the network device has.
+                                </t>
+                                <t>
+                                    <spanx style="strong">interfaces</spanx>:
+                                    an array of objects describing logical
+                                    networking interfaces of the network device.
+                                </t>
+                                <t>
+                                    <spanx style="strong">physical_devices</spanx>:
+                                    an array of objects describing the physical
+                                    networking interfaces of the network device.
+                                </t>
+                                <t>
+                                    <spanx style="strong">routes</spanx>:
+                                    an array of objects describing the current routing table of the
+                                    network device. Note that these values can vary a lot over
+                                    time and MUST NOT be considered static information.
+                                </t>
+                                <t>
+                                    <spanx style="strong">dns_servers</spanx>:
+                                    an array of strings denoting DNS servers of the networking device.</t>
+                                <t>
+                                    <spanx style="strong">dns_search</spanx>:
+                                    an array of  strings denoting DNS search paths.
+                                </t>
+                            </list>
+                        </t>
+                    </section>
+                    <section title="Details">
+                        <texttable align="left">
+                            <ttcol>parent</ttcol><ttcol>child</ttcol><ttcol>format</ttcol><ttcol>description</ttcol>
+                            <c>general</c><c>hostname</c><c>string</c><c>Hostname of the network device</c>
+                            <c>general</c><c>maintainer</c><c>string</c><c>Email address of the maintainer of the network device</c>
+                            <c>general</c><c>description</c><c>string</c><c>Free-form textual description of the network device</c>
+                            <c>hardware</c><c>manufacturer</c><c>string</c><c>Name of the manufacturer of the device</c>
+                            <c>hardware</c><c>model</c><c>string</c><c>Name of the model</c>
+                            <c>hardware</c><c>revision</c><c>number</c><c></c>
+                            <c>hardware</c><c>cpu</c><c>string</c><c>CPU specification</c>
+                            <c>operating_system</c><c>name</c><c>string</c><c>Name of the operating system or firmware</c>
+                            <c>operating_system</c><c>kernel</c><c>string</c><c>Kernel version</c>
+                            <c>operating_system</c><c>version</c><c>string</c><c>Version name or version number of the operating system</c>
+                            <c>operating_system</c><c>revision</c><c>string</c><c>revision number or revision tag</c>
+                            <c>operating_system</c><c>description</c><c>string</c><c>Free-form textual description</c>
+                            <c>resources</c><c>memory</c><c>object</c><c>Object containing "total" - a number of total memory (unit: bytes)</c>
+                            <c>resources</c><c>swap</c><c>object</c><c>Object containing "total" - a number of total swap memory (unit: bytes)</c>
+                            <c>resources</c><c>cpu</c><c>object</c><c>Object containing "frequency" - a number of specifying the frequency (unit: Hz)</c>
+                            <c>resources</c><c>flash</c><c>object</c><c>Object containing "total" - a number of total flash memory (unit: bytes)</c>
+                            <c>resources</c><c>storage</c><c>object</c><c>Object containing "total" - a number of total external storage memory (unit: bytes)</c>
+                            <c>physical_devices</c><c>name</c><c>string</c><c>Name of the physical device</c>
+                            <c>physical_devices</c><c>channel</c><c>number</c><c>Channel number</c>
+                            <c>physical_devices</c><c>channel_width</c><c>number</c><c>Channel width (unit: Hz)</c>
+                            <c>physical_devices</c><c>tx_power</c><c>number</c><c>Transmission power (unit: dBm)</c>
+                            <c>interfaces</c><c>type</c><c>string</c><c>Possible values: "wireless" , "ethernet", "bridge" or "virtual"</c>
+                            <c>interfaces</c><c>bridge-members</c><c>array</c><c>An array listing the interface names contained in the network bridge interface</c>
+                            <c>interfaces</c><c>name</c><c>string</c><c>Name of the logical interface</c>
+                            <c>interfaces</c><c>mac</c><c>string</c><c>Mac address</c>
+                            <c>interfaces</c><c>mtu</c><c>number</c><c>Maximum Transmission Unit</c>
+                            <c>interfaces</c><c>txqueuelen</c><c>number</c><c>TX queue length</c>
+                            <c>interfaces</c><c>carrier</c><c>boolean</c><c>Is the interface sensing any carrier?</c>
+                            <c>interfaces</c><c>autostart</c><c>boolean</c><c>Should the interface be brought up after power on?</c>
+                            <c>interfaces</c><c>wireless</c><c>object</c><c>Object. Only valid in this context if "type" = "wireless". This object links the logical wireless interace to the physical wireless interface and also specifies various physical parameters. For a detailed list of all sub-members of this object, please refer to XXX insert reference JSON-Schema XXX.</c>
+                            <c>interfaces</c><c>addresses</c><c>array of objects</c><c>An array of objects with members listing the address, netmask, family ("ipv4", "ipv6") and protocol ("static", "dynamic") of the configured IP address of the logical interface. Note that a logical interface MAY have multiple IP addresses assigned and therefore multiple array members are possible in this field</c>
+                            <c>routes</c><c>destination</c><c>string</c><c>"routes" contains an array of objects, each listing "destination" and "next" (hop) IP address. In essence, it is a routing table</c>
+                            <c>routes</c><c>next</c><c>string</c><c>"routes" contains an array of objects, each listing "destination" and "next" (hop) IP address. In essence, it is a routing table</c>
+                        </texttable>
+                    </section>
+
+                    <section title="Examples">
+                        <t>See XXX internal reference XXX</t>
+                    </section>
+
+                </section>
+
+            </section>
+            <section title="DeviceMonitoring">
+                <t>
+                    Definition: information that indicates the behaviour of a device that changes over time.
+                </t>
+                <t>
+                    Goals: ouput, collect, parse and visualize monitoring data of a network device.
+                </t>
+            </section>
+            <section title="NetworkCollection">
+                <t>
+                    Definition: collection of NetJSON objects.
+                </t>
+                <t>
+                    Goals: allow to list various netjson objects into a coherent group, eg:
+                </t>
+                <t>
+                    <list>
+                      <t>list graphs of different routing protocols running on the same device</t>
+                      <t>list all the routes of a multi-topology capable routing protocol</t>
+                      <t>list devices of a network</t>
+                    </list>
+                </t>
+            </section>
         </section>
         <!-- This PI places the pagebreak correctly (before the section title) in the text output. -->
         <?rfc needLines="8" ?>
@@ -420,7 +450,7 @@
             <reference anchor="RFC7159" target="https://tools.ietf.org/html/rfc7159">
                 <front>
                     <title>The JavaScript Object Notation (JSON) Data Interchange Format</title>
-                    <author fullname="Tim Bray" initials="T." surname="Bray"/>
+                    <author fullname="Tim Bray" initials="T.B." surname="Bray"/>
                     <date year="2014"/>
                 </front>
             </reference>
@@ -431,12 +461,10 @@
                     <date year="2015"/>
                 </front>
             </reference>
-
-    <reference anchor="JSON-Schema" target="https://datatracker.ietf.org/doc/draft-zyp-json-schema/">
-
+            <reference anchor="JSON-Schema" target="https://tools.ietf.org/html/draft-zyp-json-schema">
                 <front>
                     <title>JSON Schema: core definitions and terminology</title>
-                    <author fullname="Francis Galiegue" initials="F." surname="Galiegue"/>
+                    <author fullname="Francis Galiegue" initials="F.G." surname="Galiegue"/>
                     <date year="2013"/>
                 </front>
             </reference>
@@ -448,14 +476,6 @@
                     <date year="2007"/>
                 </front>
             </reference>
-            <reference anchor="RFC3626" target="https://tools.ietf.org/html/rfc3626">
-                <front>
-                    <title>Optimized Link State Routing Protocol (OLSR)</title>
-                    <author fullname="T. Clausen" initials="T." surname="Clausen"/>
-                    <author fullname="P. Jacquet" initials="P." surname="Jacquet"/>
-                    <date year="2003"/>
-                </front>
-            </reference>    
             <reference anchor="OLSRd" target="http://www.olsr.org">
                 <front>
                     <title>The Optimised Link State Routing Protocol (OLSR), olsrd open source implementation</title>
@@ -468,11 +488,14 @@
                     <date year="2004"/>
                 </front>
             </reference>
-            <reference anchor="BMX" target="http://bmx6.net/projects/bmx6">
+            <reference anchor="RFC3626" target="https://tools.ietf.org/html/rfc3626">
                 <front>
-                    <title>BMX6 Mesh networking protocol</title>
-                    <author fullname="Axel Neumann" initials="A." surname="Neumann"/>
-                    <date year="2007"/>
+                    <title>Optimized Link State Routing Protocol (OLSR)</title>
+                    <author fullname="T. Clausen" initials="T.C." surname="Clausen"/>
+                    <author fullname="P. Jacquet" initials="P.J." surname="Jacquet"/>
+                    <date year="2003"/>
+                </front>
+            </reference>
             <reference anchor="RFC7181" target="https://tools.ietf.org/html/rfc7181">
                 <front>
                     <title>The Optimized Link State Routing Protocol Version 2</title>
@@ -483,45 +506,49 @@
                     <date year="2003"/>
                 </front>
             </reference>
+            <reference anchor="Babel" target="http://www.pps.univ-paris-diderot.fr/~jch/software/babel/">
+                <front>
+                    <title>Babel - a loop-avoiding distance-vector routing protocol</title>
+                    <author fullname="Julius Chroboczek" initials="J.C." surname="Chroboczek"/>
+                    <date year="2009"/>
                 </front>
             </reference>
             <reference anchor="RFC6126" target="http://tools.ietf.org/html/rfc6126">
                 <front>
                     <title>The Babel Routing Protocol</title>
-                    <author fullname="Julius Chroboczek" initials="J." surname="Chroboczek"/>
+                    <author fullname="Julius Chroboczek" initials="J.C." surname="Chroboczek"/>
                     <date year="2009"/>
                 </front>
             </reference>
             <reference anchor="Batman-adv" target="http://www.open-mesh.org/projects/open-mesh/wiki">
                 <front>
                     <title>Batman-adv routing protocol</title>
-
                     <author>
-
                         <organization>The B.A.T.M.A.N.  team</organization>
-
-    </author>
-
+                    </author>
                     <date year="2009"/>
                 </front>
             </reference>
-           <reference anchor="OpenWRT" target="http://www.openwrt.org">
+            <reference anchor="BMX" target="http://bmx6.net/projects/bmx6">
+                <front>
+                    <title>BMX6 Mesh networking protocol</title>
+                    <author fullname="Axel Neumann" initials="A.N." surname="Neumann"/>
+                    <date year="2007"/>
+                </front>
+            </reference>
+            <reference anchor="OpenWRT" target="http://www.openwrt.org">
                 <front>
                     <title>OpenWRT</title>
-
-    <author>
-
+                    <author>
                         <organization>The OpenWRT team</organization>
-
-    </author>
-
+                    </author>
                     <date year="2004"/>
                 </front>
             </reference>
            <reference anchor="Nagios" target="http://www.nagios.org">
                 <front>
                     <title>Nagios network monitoring</title>
-                    <author fullname="Ethan Galstad" initials="E." surname="Galstad"/>
+                    <author fullname="Ethan Galstad" initials="E. G." surname="Galstad"/>
                     <date year="1999"/>
                 </front>
             </reference>
@@ -529,11 +556,8 @@
                 <front>
                     <title>The CONFINE EU project</title>
                     <author>
-
                         <organization>The CONFINE project team</organization>
-
-    </author>
-
+                    </author>
                     <date year="2011"/>
                 </front>
             </reference>
@@ -603,5 +627,3 @@
         </section>
     </back>
 </rfc>
-
-
