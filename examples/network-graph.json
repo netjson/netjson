@@ -30,6 +30,7 @@
             "source": "172.16.40.24",
             "target": "172.16.40.60",
             "cost": 1.000,
+            "cost_text": "1020  bit/s",
             "properties": {
                 "lq": 1.000,
                 "nlq": 0.497
