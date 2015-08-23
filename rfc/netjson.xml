@@ -424,6 +424,13 @@
                     <date year="2014"/>
                 </front>
             </reference>
+            <reference anchor="GeoJSON" target="http://tools.ietf.org/html/draft-butler-geojson">
+                <front>
+                    <title>The GeoJSON Format</title>
+                    <author fullname="H. Butler" initials="H.B." surname="Butler"/>
+                    <date year="2015"/>
+                </front>
+            </reference>
 
     <reference anchor="JSON-Schema" target="https://datatracker.ietf.org/doc/draft-zyp-json-schema/">
 
