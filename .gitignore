@@ -2,3 +2,5 @@
 *.DS_Store
 *~
 ._*
+rfc/*.html
+rfc/*.txt
