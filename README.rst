@@ -94,14 +94,14 @@ Definitions
 -----------
 
 * JavaScript Object Notation (JSON), and the terms object, name, value, array,
-  and number, are defined in `IETF RTC 4627`_.
+  and number, are defined in `IETF RTC 7159`_.
 
 * The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
   "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
   interpreted as described in `IETF RFC 2119`_.
 
-.. _IETF RTC 4627: http://www.ietf.org/rfc/rfc4627.txt
-.. _IETF RFC 2119: http://www.ietf.org/rfc/rfc2119.txt
+.. _IETF RTC 7159: https://tools.ietf.org/html/rfc7159
+.. _IETF RFC 2119: https://tools.ietf.org/html/rfc2119
 
 NetJSON Object
 ==============
