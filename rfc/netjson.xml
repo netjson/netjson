@@ -280,11 +280,15 @@
             </section>
             <section title="DeviceConfiguration">
                 <t>
-                    Definition: configuration and properties of a network device.
+                    <spanx style="strong">Definition:</spanx> configuration and properties of a network device.
                 </t>
                 <t>
-                    Goals: configuration storage and management, import and export
+                    <spanx style="strong">Goals:</spanx> configuration storage and management, import and export
                     configurations between different monitoring tools or network controllers.
+                </t>
+                <t>
+                    <spanx style="strong">Example:</spanx>
+                    <xref target="DeviceConfiguration">A.3. DeviceConfiguration</xref>.
                 </t>
                 <section title="Mandatory fields">
                     <t>
@@ -384,13 +388,7 @@
                             <c>routes</c><c>next</c><c>string</c><c>"routes" contains an array of objects, each listing "destination" and "next" (hop) IP address. In essence, it is a routing table</c>
                         </texttable>
                     </section>
-
-                    <section title="Examples">
-                        <t>See XXX internal reference XXX</t>
-                    </section>
-
                 </section>
-
             </section>
             <section title="DeviceMonitoring">
                 <t>
