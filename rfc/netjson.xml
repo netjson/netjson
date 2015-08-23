@@ -215,6 +215,9 @@
             <t>
                 <list>
                     <t>
+                        The top level of NetJSON text MUST be a JSON object.
+                    </t>
+                    <t>
                         The NetJSON object MUST have a member with the name "type".
                         The value of the member MUST be one of the NetJSON types defined below.
                     </t>
@@ -237,11 +240,11 @@
                 </t>
                 <t>
                     <list>
-                        <t>NetworkRoutes</t>
-                        <t>NetworkGraph</t>
-                        <t>DeviceConfiguration</t>
-                        <t>DeviceMonitoring</t>
-                        <t>NetworkCollection</t>
+                        <t>NetworkRoutes.</t>
+                        <t>NetworkGraph.</t>
+                        <t>DeviceConfiguration.</t>
+                        <t>DeviceMonitoring.</t>
+                        <t>NetworkCollection.</t>
                     </list>
                 </t>
             </section>
