@@ -114,9 +114,12 @@ member MUST be one of the *NetJSON types*.
 
 The NetJSON object MAY have any number of other members not explicitly defined
 in this specification, referred as "custom members" below.
-Before adding any custom member, read the registry section [TODO]
-to see existing custom members and find out how to officially submit new custom
-members.
+Implementations MUST ignore unrecognized custom members.
+
+Before adding any custom member, implementers SHOULD read the
+`NetJSON registry section <https://github.com/interop-dev/netjson/blob/master/registry.rst>`__
+in order to find existing custom members to reuse or to learn how to officially
+submit new custom members.
 
 NetJSON types
 -------------
