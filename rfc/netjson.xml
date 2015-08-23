@@ -466,6 +466,16 @@
                     <title>BMX6 Mesh networking protocol</title>
                     <author fullname="Axel Neumann" initials="A." surname="Neumann"/>
                     <date year="2007"/>
+            <reference anchor="RFC7181" target="https://tools.ietf.org/html/rfc7181">
+                <front>
+                    <title>The Optimized Link State Routing Protocol Version 2</title>
+                    <author fullname="T. Clausen" initials="T.C." surname="Clausen"/>
+                    <author fullname="C. Dearlove" initials="C.D." surname="Dearlove"/>
+                    <author fullname="P. Jacquet" initials="P.J." surname="Jacquet"/>
+                    <author fullname="U. Herberg" initials="U.H." surname="Herberg"/>
+                    <date year="2003"/>
+                </front>
+            </reference>
                 </front>
             </reference>
             <reference anchor="RFC6126" target="http://tools.ietf.org/html/rfc6126">
