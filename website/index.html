@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NetJSON</title>
+    <meta charset="utf-8">
+    <style>
+        body{ font: normal 14px/20px Arial, "Liberation Sans", sans-serif; }
+        h1{ font: italic normal 30px Georgia, serif; }
+        .menu{ font-size: 16px; margin: 40px 0 }
+        a{ font-weight: bold; color: #535353 }
+        a:hover{ color: #000; text-decoration: none }
+        .menu span{ font-weight: bold; color: #aaaaaa; margin: 0 3px }
+        .center{ text-align: center }
+        .content{ width: 600px; margin: 0 auto; text-align: justify }
+        .content img{ width: 100% }
+        @media (max-width: 600px) {
+            .content{ width: 96%; padding: 0 2% }
+        }
+        pre {
+            background-color: #f9f9f9;
+            padding: 15px 20px;
+            border: 1px dashed #b4b4b4;
+            color: #363636;
+        }
+    </style>
+</head>
+<body class="center">
+    <p>
+        <img src="https://raw.githubusercontent.com/interop-dev/netjson/master/static/netjson-logo.png"
+             alt="netjson">
+    </p>
+    <h1>
+        <strong>NetJSON</strong>: data interchange format for networks
+    </h1>
+    <p class="menu">
+        <a href="https://github.com/interop-dev/netjson#netjson-object">Specification</a> <span>/</span>
+        <a href="https://github.com/interop-dev/netjson#implementations">Implementations</a> <span>/</span>
+        <a href="https://github.com/interop-dev/netjson#faqs">FAQs</a> <span>/</span>
+        <a href="https://lists.funkfeuer.at/mailman/listinfo/interop-dev">Mailing list</a> <span>/</span>
+        <a href="https://github.com/interop-dev/netjson/issues">Issue tracker</a>
+    </p>
+    <div class="content">
+        <p>
+            <em>NetJSON</em> is a data interchange format based on <a href="http://json.org/">JavaScript Object Notation (JSON)</a>
+            designed to describe the basic building blocks of layer2 and layer3 <strong>networks</strong>.
+        </p>
+        <p>
+            It defines several types of JSON objects and the manner in which they are combined
+            to represent a network: <strong>configuration of devices</strong>,
+            <strong>monitoring data</strong>, <strong>network topology</strong>
+            and <strong>routing information</strong>.
+        </p>
+        <p>
+            <a href="https://github.com/interop-dev/netjsongraph.js">
+                <img src="https://raw.githubusercontent.com/interop-dev/netjsongraph.js/master/docs/netjsongraph-default.png"
+                     alt=""
+                     style="min-width:400px">
+            </a>
+        </p>
+<pre>{
+    "type": "NetworkGraph",
+    "protocol": "olsr",
+    "version": "0.6.6",
+    "revision": "5031a799fcbe17f61d57e387bc3806de",
+    "metric": "etx",
+    "router_id": "172.16.40.24",
+    "nodes": [
+        {
+            "id": "172.16.40.24",
+            "label": "node-A",
+            "local_addresses": [
+                "10.0.0.1",
+                "10.0.0.2"
+            ],
+            "properties": {
+                "hostname": "node1.my.net"
+            }
+        },
+        {
+            "id": "172.16.40.60",
+            "label": "node-B",
+            "properties": {
+                "hostname": "node2.my.net"
+            }
+        }
+    ],
+    "links": [
+        {
+            "source": "172.16.40.24",
+            "target": "172.16.40.60",
+            "cost": 1.000,
+            "cost_text": "1020  bit/s",
+            "properties": {
+                "lq": 1.000,
+                "nlq": 0.497
+            }
+        }
+    ]
+}</pre>
+    </div>
+</body>
+</html>
