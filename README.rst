@@ -2,14 +2,19 @@ NetJSON: data interchange format for networks
 =============================================
 
 .. image:: https://raw.githubusercontent.com/interop-dev/netjson/master/static/netjson-logo.png
+  :alt: NetJSON
+
+------------
 
 `Mailing List`_ | `Archives`_ | `Issue tracker`_
+
+------------
 
 .. _Mailing List: https://lists.funkfeuer.at/mailman/listinfo/interop-dev
 .. _Archives: https://lists.funkfeuer.at/pipermail/interop-dev/
 .. _Issue tracker: https://github.com/interop-dev/netjson/issues
 
-.. contents:: Table of Contents
+.. contents:: **Table of Contents**:
    :backlinks: none
    :depth: 3
 
