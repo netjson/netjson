@@ -167,7 +167,7 @@ A ``route`` object may also define the following optional members:
 * ``cost_text``: human readable representation of ``cost``
 * ``source``: string indicating the source (necessary for source-specific routing)
 
-.. _network-routes.json: ./blob/master/examples/network-routes.json
+.. _network-routes.json: ./examples/network-routes.json
 
 NetworkGraph
 ------------
@@ -214,7 +214,7 @@ Each ``link`` object may also define the following optional members:
 * ``cost_text``: human readable representation of ``cost``
 * ``properties``: object which may contain any arbitrary key/value pairs
 
-.. _network-graph.json: ./blob/master/examples/network-graph.json
+.. _network-graph.json: ./examples/network-graph.json
 
 Device Configuration
 --------------------
@@ -259,7 +259,7 @@ Software consuming this JSON format must be able to handle missing attributes.
 
 Software consuming this JSON format must ignore unrecognized attributes.
 
-.. _device-configuration.json: ./blob/master/examples/device-configuration.json
+.. _device-configuration.json: ./examples/device-configuration.json
 
 DeviceMonitoring
 ----------------
@@ -287,7 +287,7 @@ project**.
 **Most blocks will be optional**, for the reason that each implementation will
 return what it is able to retrieve or what is willing to expose.
 
-.. _monitoring-data.json: ./blob/master/examples/monitoring-data.json
+.. _monitoring-data.json: ./examples/monitoring-data.json
 
 NetworkCollection
 -----------------
@@ -300,7 +300,7 @@ NetworkCollection
 * list all the routes of a multitopology capable routing protocol
 * list devices of a network
 
-**Example**: `network-collection.json <./blob/master/examples/network-collection.json>`__
+**Example**: `network-collection.json <./examples/network-collection.json>`__
 
 A *NetworkCollection* object must have a member with the name ``type`` and
 value ``NetworkCollection``.
