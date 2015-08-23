@@ -447,7 +447,8 @@
      directory as the including file. You can also define the XML_LIBRARY environment variable
      with a value containing a set of directories to search.  These can be either in the local
      filing system or remote ones accessed by http (http://domain/dir/... ).-->
-        <references>
+        <references title="Normative References">
+            &RFC2119;
             <reference anchor="RFC7159" target="https://tools.ietf.org/html/rfc7159">
                 <front>
                     <title>The JavaScript Object Notation (JSON) Data Interchange Format</title>
@@ -455,6 +456,8 @@
                     <date year="2014"/>
                 </front>
             </reference>
+        </references>
+        <references title="Informative References">
             <reference anchor="GeoJSON" target="http://tools.ietf.org/html/draft-butler-geojson">
                 <front>
                     <title>The GeoJSON Format</title>
@@ -569,9 +572,6 @@
                     <date year="2015"/>
                 </front>
             </reference>
-        </references>
-        <references title="Informative References">
-            &RFC2119;
         </references>
         <section anchor="app-additional" title="Examples">
             <t>NetworkGraph object example:</t>
