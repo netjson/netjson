@@ -3,6 +3,7 @@
 <head>
     <title>NetJSON</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
     <style>
         body{ font: normal 14px/20px Arial, "Liberation Sans", sans-serif; }
         h1{ font: italic normal 30px Georgia, serif; }
@@ -10,24 +11,31 @@
         a{ font-weight: bold; color: #535353 }
         a:hover{ color: #000; text-decoration: none }
         .menu span{ font-weight: bold; color: #aaaaaa; margin: 0 3px }
+        #logo { max-width:420px }
         .center{ text-align: center }
-        .content{ width: 600px; margin: 0 auto; text-align: justify }
+        .justify{ text-align: justify }
+        .content{ width: 600px; margin: 0 auto; box-sizing: border-box; }
         .content img{ width: 100% }
-        @media (max-width: 600px) {
-            .content{ width: 96%; padding: 0 2% }
+        @media screen and (max-width: 600px) {
+            .content{ width: 100%; padding: 0 10px }
+            #logo{ width: 80% }
         }
         pre {
-            background-color: #f9f9f9;
+            width: 100%;
             padding: 15px 20px;
+            box-sizing: border-box;
+            overflow-x: auto;
+            background-color: #f9f9f9;
             border: 1px dashed #b4b4b4;
             color: #363636;
         }
     </style>
 </head>
-<body class="center">
+<body class="center content">
     <p>
         <img src="https://raw.githubusercontent.com/interop-dev/netjson/master/static/netjson-logo.png"
-             alt="netjson">
+             alt="netjson"
+             id="logo">
     </p>
     <h1>
         <strong>NetJSON</strong>: data interchange format for networks
@@ -39,7 +47,7 @@
         <a href="https://lists.funkfeuer.at/mailman/listinfo/interop-dev">Mailing list</a> <span>/</span>
         <a href="https://github.com/interop-dev/netjson/issues">Issue tracker</a>
     </p>
-    <div class="content">
+    <div class="justify">
         <p>
             <em>NetJSON</em> is a data interchange format based on <a href="http://json.org/">JavaScript Object Notation (JSON)</a>
             designed to describe the basic building blocks of layer2 and layer3 <strong>networks</strong>.
@@ -53,8 +61,7 @@
         <p>
             <a href="https://github.com/interop-dev/netjsongraph.js">
                 <img src="https://raw.githubusercontent.com/interop-dev/netjsongraph.js/master/docs/netjsongraph-default.png"
-                     alt=""
-                     style="min-width:400px">
+                     alt="">
             </a>
         </p>
 <pre>{
