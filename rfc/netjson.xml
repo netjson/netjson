@@ -1256,16 +1256,18 @@
             </section>
         </section>
         <section anchor="Contributions" title="Contributions">
-            <t>
-                The NetJSON format is the product of discussion on the NetJSON
-                mailing list:
-                <eref target="https://lists.funkfeuer.at/mailman/listinfo/interop-dev">https://lists.funkfeuer.at/mailman/listinfo/interop-dev</eref>.
-            </t>
-            <t>
-               Comments are solicited and should be addressed to the NetJSON mailing
-               list at <spanx style="strong">interop-dev [at] lists.funkfeuer.at</spanx> or to the NetJSON issue tracker at
-               <eref target="https://github.com/interop-dev/netjson/issues">https://github.com/interop-dev/netjson/issues</eref>.
-           </t>
+        <t>
+            The NetJSON format is the product of discussion on
+            the interop-dev mailing list:
+            <eref target="https://lists.funkfeuer.at/mailman/listinfo/interop-dev">https://lists.funkfeuer.at/mailman/listinfo/interop-dev</eref>.
+        </t>
+        <t>
+            Comments are solicited and should be addressed to
+            the interop-dev mailing list at
+            <eref target="mailto:interop-dev@lists.funkfeuer.at">interop-dev@lists.funkfeuer.at</eref>
+            or to the NetJSON issue tracker at
+            <eref target="https://github.com/interop-dev/netjson/issues">https://github.com/interop-dev/netjson/issues</eref>.
+        </t>
         </section>
     </back>
 </rfc>
