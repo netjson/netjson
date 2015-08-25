@@ -207,7 +207,7 @@
                 </t>
             </section>
         </section>
-        <section title="NetJSON Object">
+        <section title="NetJSON Object" anchor="netjson-object">
             <t>
                 NetJSON always consists of a single object,
                 referred to as the "NetJSON object" below.
@@ -395,7 +395,8 @@
                         <t>
                             <spanx style="strong">metric</spanx>: string which indicates the name of
                             main routing metric used by the routing protocol to determine the best
-                            routes when sending packets, may be null when representing static routes;</t>
+                            routes when sending packets, may be null when representing static routes;
+                        </t>
                         <t>
                             <spanx style="strong">nodes</spanx>:
                             array of <xref target="node-objects">Noute Objects</xref>.
@@ -634,16 +635,37 @@
             </section>
             <section title="NetworkCollection">
                 <t>
-                    Definition: collection of NetJSON objects.
+                    <spanx style="strong">Definition</spanx>:
+                    collection of NetJSON objects.
                 </t>
                 <t>
-                    Goals: allow to list various netjson objects into a coherent group, eg:
+                    <spanx style="strong">Goals</spanx>:
+                    allow to list various netjson objects into a coherent group, eg:
                 </t>
                 <t>
                     <list>
-                      <t>list graphs of different routing protocols running on the same device</t>
-                      <t>list all the routes of a multi-topology capable routing protocol</t>
-                      <t>list devices of a network</t>
+                      <t>list graphs of different routing protocols running on the same device;</t>
+                      <t>list all the routes of a multi-topology capable routing protocol;</t>
+                      <t>list devices of a network.</t>
+                    </list>
+                </t>
+                <t>
+                    <spanx style="strong">Example</spanx>:
+                    <xref target="NetworkCollection">A.5. NetworkCollection</xref>.
+                </t>
+                <t>
+                    A <spanx style="em">NetworkCollection</spanx> object MUST
+                    define the following REQUIRED members:
+                </t>
+                <t>
+                    <list>
+                        <t>
+                            <spanx style="strong">type</spanx>: string, MUST be "NetworkCollection";
+                        </t>
+                        <t>
+                            <spanx style="strong">collection</spanx>:
+                            array of <xref target="netjson-object">NetJSON objects</xref>.
+                        </t>
                     </list>
                 </t>
             </section>
