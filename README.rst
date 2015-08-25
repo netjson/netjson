@@ -339,16 +339,16 @@ Can we avoid to expose sensitive data in order to protect privacy?
 
 Yes definitely.
 
-NetJSON should not impose to expose, send or collect sensitive information.
+NetJSON does not impose to publish, send or collect sensitive information.
 
-It should just describes how to represent data, each implementation will decide:
+NetJSON only describes how to represent data, each implementer MAY decide:
 
-* which parts to expose (sensitive data can be omitted)
-* how to expose it (public, basic auth, token auth, ecc.)
+* which optional members to publish (sensitive data can be omitted)
+* how to publish it (public, basic auth, token auth, ecc.)
 * how to collect it
 * which parts should be collected
 
-The important part is to find a way to output and parse this data in a standard
+The goal is to find a way to output and parse this data in a standard
 and (possibly) easy way.
 
 Contact us
