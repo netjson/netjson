@@ -259,7 +259,7 @@
                 </t>
                 <t>
                     <spanx style="strong">Example:</spanx>
-                    <xref target="NetworkRoutes">A.1. NetworkRoutes</xref>.
+                    <xref target="NetworkRoutes-example">A.1. NetworkRoutes</xref>.
                 </t>
                 <t>
                     A <spanx style="em">NetworkRoutes</spanx> object MUST
@@ -373,7 +373,7 @@
                 </t>
                 <t>
                     <spanx style="strong">Example:</spanx>
-                    <xref target="NetworkGraph">A.2. NetworkGraph</xref>.
+                    <xref target="NetworkGraph-example">A.2. NetworkGraph</xref>.
                 </t>
                 <t>
                     A <spanx style="em">NetworkGraph</spanx> object MUST
@@ -523,7 +523,7 @@
                 </t>
                 <t>
                     <spanx style="strong">Example:</spanx>
-                    <xref target="DeviceConfiguration">A.3. DeviceConfiguration</xref>.
+                    <xref target="DeviceConfiguration-example">A.3. DeviceConfiguration</xref>.
                 </t>
                 <section title="REQUIRED fields">
                     <t>
@@ -651,7 +651,7 @@
                 </t>
                 <t>
                     <spanx style="strong">Example</spanx>:
-                    <xref target="NetworkCollection">A.5. NetworkCollection</xref>.
+                    <xref target="NetworkCollection-example">A.5. NetworkCollection</xref>.
                 </t>
                 <t>
                     A <spanx style="em">NetworkCollection</spanx> object MUST
@@ -831,7 +831,7 @@
             <t>
                 Each of the examples below represents a valid and complete NetJSON object.
             </t>
-            <section anchor="NetworkRoutes" title="NetworkRoutes">
+            <section anchor="NetworkRoutes-example" title="NetworkRoutes">
                 <figure>
                     <artwork>
 <![CDATA[
@@ -855,7 +855,7 @@
                     </artwork>
                 </figure>
             </section>
-            <section anchor="NetworkGraph" title="NetworkGraph">
+            <section anchor="NetworkGraph-example" title="NetworkGraph">
                 <figure>
                     <artwork>
 <![CDATA[
@@ -904,7 +904,7 @@
                     </artwork>
                 </figure>
             </section>
-            <section anchor="DeviceConfiguration" title="DeviceConfiguration">
+            <section anchor="DeviceConfiguration-example" title="DeviceConfiguration">
                 <figure>
                     <artwork>
 <![CDATA[
@@ -1037,7 +1037,7 @@
                     </artwork>
                 </figure>
             </section>
-            <section anchor="DeviceMonitoring" title="DeviceMonitoring">
+            <section anchor="DeviceMonitoring-example" title="DeviceMonitoring">
                 <figure>
                     <artwork>
 <![CDATA[
@@ -1194,7 +1194,7 @@
                     </artwork>
                 </figure>
             </section>
-            <section anchor="NetworkCollection" title="NetworkCollection">
+            <section anchor="NetworkCollection-example" title="NetworkCollection">
                 <figure>
                     <artwork>
 <![CDATA[
