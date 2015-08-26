@@ -240,15 +240,15 @@
                 </t>
                 <t>
                     <list>
-                        <t>NetworkRoutes;</t>
-                        <t>NetworkGraph;</t>
-                        <t>DeviceConfiguration;</t>
-                        <t>DeviceMonitoring;</t>
-                        <t>NetworkCollection.</t>
+                        <t><xref target="NetworkRoutes">NetworkRoutes</xref>;</t>
+                        <t><xref target="NetworkGraph">NetworkGraph</xref>;</t>
+                        <t><xref target="DeviceConfiguration">DeviceConfiguration</xref>;</t>
+                        <t><xref target="DeviceMonitoring">DeviceMonitoring</xref>;</t>
+                        <t><xref target="NetworkCollection">NetworkCollection</xref>.</t>
                     </list>
                 </t>
             </section>
-            <section title="NetworkRoutes">
+            <section anchor="NetworkRoutes" title="NetworkRoutes">
                 <t>
                     <spanx style="strong">Definition:</spanx> a list of routes of a
                     dynamic routing protocol or statically configured on the device.
@@ -361,7 +361,7 @@
                     </t>
                 </section>
             </section>
-            <section title="NetworkGraph">
+            <section anchor="NetworkGraph" title="NetworkGraph">
                 <t>
                     <spanx style="strong">Definition:</spanx>
                     a list of nodes and links known by a node.
@@ -513,7 +513,7 @@
                     </t>
                 </section>
             </section>
-            <section title="DeviceConfiguration">
+            <section anchor="DeviceConfiguration" title="DeviceConfiguration">
                 <t>
                     <spanx style="strong">Definition:</spanx> configuration and properties of a network device.
                 </t>
@@ -625,7 +625,7 @@
                     </section>
                 </section>
             </section>
-            <section title="DeviceMonitoring">
+            <section anchor="DeviceMonitoring" title="DeviceMonitoring">
                 <t>
                     Definition: information that indicates the behaviour of a device that changes over time.
                 </t>
@@ -633,7 +633,7 @@
                     Goals: ouput, collect, parse and visualize monitoring data of a network device.
                 </t>
             </section>
-            <section title="NetworkCollection">
+            <section anchor="NetworkCollection" title="NetworkCollection">
                 <t>
                     <spanx style="strong">Definition</spanx>:
                     collection of NetJSON objects.
