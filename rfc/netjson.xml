@@ -527,7 +527,7 @@
                 </t>
                 <section title="REQUIRED fields">
                     <t>
-                        A Network Device Configuration object MUST have a member
+                        A DeviceConfiguration object MUST have a member
                         with the name "type" and value "DeviceConfiguration".
                     </t>
                 </section>
@@ -554,7 +554,8 @@
                                 <t>
                                     <spanx style="strong">operating_system</spanx>:
                                     an object listing name, version, kernel version and
-                                    revision of the operating system.</t>
+                                    revision of the operating system.
+                                </t>
                                 <t>
                                     <spanx style="strong">resources</spanx>:
                                     object listing computing resources that the network device has.
@@ -627,11 +628,69 @@
             </section>
             <section anchor="DeviceMonitoring" title="DeviceMonitoring">
                 <t>
-                    Definition: information that indicates the behaviour of a device that changes over time.
+                    <spanx style="strong">Definition:</spanx>
+                    information that indicates the behaviour of a device that changes over time.
                 </t>
                 <t>
-                    Goals: ouput, collect, parse and visualize monitoring data of a network device.
+                    <spanx style="strong">Goals:</spanx>
+                     ouput, collect, parse and visualize monitoring data of a network device.
                 </t>
+                <t>
+                    <spanx style="strong">Example:</spanx>
+                    <xref target="DeviceMonitoring-example">A.4. DeviceMonitoring</xref>.
+                </t>
+                <section title="REQUIRED fields">
+                    <t>
+                        A DeviceMonitoring object MUST have a member
+                        with the name "type" and value "DeviceMonitoring".
+                    </t>
+                </section>
+                <section title="OPTIONAL fields">
+                    <section title="Overview">
+                        <t>
+                            The object MAY be composed of the following OPTIONAL members, all
+                            of which are objects (or arrays of objects) and again contain (possibly OPTIONAL) members.
+                            For a full formal specification in <xref target="JSON-Schema">JSON-Schema</xref>
+                            format, please see [insert reference].
+                        </t>
+                        <t>
+                            <list>
+                                <t>
+                                    <spanx style="strong">general</spanx>:
+                                    an object containing values that are relevant
+                                    for the entire device
+                                    (opposed to spefic interfaces or hardware components).
+                                </t>
+                                <t>
+                                    <spanx style="strong">resources</spanx>:
+                                    object listing the current usage of specific hardware resources.
+                                </t>
+                                <t>
+                                    <spanx style="strong">interfaces</spanx>:
+                                    an array of interface objects providing
+                                    interface specific monitoring data.
+                                </t>
+                            </list>
+                        </t>
+                    </section>
+                    <section title="Details">
+                        <texttable align="left">
+                            <ttcol>parent</ttcol><ttcol>child</ttcol><ttcol>format</ttcol><ttcol>description</ttcol>
+                            <c>general</c><c>local_time</c><c>integer</c><c>Device local time</c>
+                            <c>general</c><c>uptime</c><c>integer</c><c>Time since boot, in seconds</c>
+                            <c>resources</c><c>memory</c><c>object</c><c>Object describing memory usage, contains: "total", "free", "buffered", "cache" (unit: bytes)</c>
+                            <c>resources</c><c>swap</c><c>object</c><c>Object describing swap usage, contains "total", "free" (unit: bytes)</c>
+                            <c>resources</c><c>connections</c><c>object</c><c>Object describing connection state, contains two objects: "ipv4", "ipv6", each object has two members: "tcp" and "udp", indicating the number of open connections.</c>
+                            <c>resources</c><c>processes</c><c>object</c><c>Object describing running processes, contains "running", "sleeping", "blocked", "zombie", "stopped", "paging".</c>
+                            <c>resources</c><c>cpu</c><c>object</c><c>Object describing CPU usage, contains "frequency" (MHz), "user", "system, "nice", "idle", "iowait", "irq", "softirq"</c>
+                            <c>resources</c><c>flash</c><c>object</c><c>Object describing flash usage, contains "total", "free" (unit: bytes)</c>
+                            <c>resources</c><c>storage</c><c>object</c><c>Object describing storage usage, contains "total", "free" (unit: bytes)</c>
+                            <c>interfaces</c><c>name</c><c>string</c><c>Name of the logical interface</c>
+                            <c>interfaces</c><c>uptime</c><c>integer</c><c>Interface specific uptime in seconds</c>
+                            <c>interfaces</c><c>statistics</c><c>object</c><c>Object describing detailed monitoring data about the interface.</c>
+                        </texttable>
+                    </section>
+                </section>
             </section>
             <section anchor="NetworkCollection" title="NetworkCollection">
                 <t>
