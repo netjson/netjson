@@ -265,100 +265,60 @@
                     A <spanx style="em">NetworkRoutes</spanx> object MUST
                     define the following REQUIRED members:
                 </t>
-                <t>
-                    <list>
-                        <t>
-                            <spanx style="strong">type</spanx>: string, MUST be "NetworkRoutes";
-                        </t>
-                        <t>
-                            <spanx style="strong">protocol</spanx>: string indicating the name
-                            of the routing protocol, may be "static" when representing static routes;
-                        </t>
-                        <t>
-                            <spanx style="strong">version</spanx>: string indicating the version of
-                            the routing protocol, may be null when representing static routes;
-                        </t>
-                        <t>
-                            <spanx style="strong">metric</spanx>: string which indicates the name of
-                            main routing metric used by the routing protocol to determine the best
-                            routes when sending packets, may be null when representing static routes;</t>
-                        <t>
-                            <spanx style="strong">routes</spanx>:
-                            array of <xref target="route-objects">Route Objects</xref>.
-                        </t>
-                    </list>
-                </t>
+                <texttable align="left">
+                    <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                    <c>type</c><c>string</c><c>MUST be <spanx style="em">"NetworkRoutes"</spanx></c>
+                    <c>protocol</c><c>string</c><c>name of the routing protocol,
+                    may be <spanx style="em">"static"</spanx> when representing static routes</c>
+                    <c>version</c><c>string</c><c>version of the routing protocol,
+                    may be <spanx style="em">null</spanx> when representing static routes</c>
+                    <c>metric</c><c>string</c><c>name of main routing metric used
+                    by the routing protocol to determine the best routes when sending
+                    packets, may be <spanx style="em">null</spanx> when representing static routes</c>
+                    <c>routes</c><c>array</c><c>array of <xref target="route-objects">Route Objects</xref></c>
+                </texttable>
                 <t>
                     A <spanx style="em">NetworkRoutes</spanx> object MAY
                     also define the following OPTIONAL members:
                 </t>
-                <t>
-                    <list>
-                        <t>
-                            <spanx style="strong">revision:</spanx> string
-                            indicating the revision from which the routing protocol
-                            binary was built (eg: git hash, svn revision);
-                        </t>
-                        <t>
-                            <spanx style="strong">topology_id:</spanx>
-                            arbitrary string that identifies the topology;
-                        </t>
-                        <t>
-                            <spanx style="strong">router_id:</spanx>
-                            arbitrary string that identifies the router
-                            on which the protocol is running (eg: ip, mac, hash);
-                        </t>
-                    </list>
-                </t>
+                <texttable align="left">
+                    <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                    <c>revision</c><c>string</c><c>string
+                    indicating the revision from which the routing protocol
+                    binary was built (eg: git hash, svn revision)</c>
+                    <c>topology_id</c><c>string</c><c>arbitrary identifier of the topology</c>
+                    <c>router_id</c><c>string</c><c>arbitrary identifier of the router
+                    on which the protocol is running (eg: ip, mac, hash)</c>
+                </texttable>
                 <section title="Route Objects" anchor="route-objects">
                     <t>
                         Each route object MUST define the following REQUIRED members:
                     </t>
-                    <t>
-                        <list>
-                            <t>
-                                <spanx style="strong">destination:</spanx>
-                                string indicating the ip address, prefix or mac
-                                address that will be matched to the destination of the traffic;
-                            </t>
-                            <t>
-                                <spanx style="strong">next:</spanx>
-                                string indicating the ip address, prefix or mac
-                                address of the next hop;
-                            </t>
-                            <t>
-                                <spanx style="strong">device:</spanx>
-                                string indicating the interface the traffic will be
-                                going to, it may be omitted when representing static routes;
-                            </t>
-                            <t>
-                                <spanx style="strong">cost:</spanx>
-                                numeric value of the routing metric indicating the
-                                outgoing cost to reach the destination; lower cost is better,
-                                it MAY be omitted when representing static routes;
-                                <spanx style="em">Infinity</spanx> and <spanx style="em">NaN</spanx>
-                                are not allowed in accordance with the
-                                <xref target="RFC7159">JSON RFC</xref>.
-                            </t>
-                        </list>
-                    </t>
+                    <texttable align="left">
+                        <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                        <c>destination</c><c>string</c><c>the ip address, prefix or mac
+                        address that will be matched to the destination of the traffic</c>
+                        <c>next</c><c>string</c><c>the ip address, prefix or mac
+                        address of the next hop</c>
+                        <c>device</c><c>string</c><c>the interface the traffic will be
+                        going to, it may be omitted when representing static routes</c>
+                        <c>cost</c><c>number</c><c>value of the routing metric indicating the
+                        outgoing cost to reach the destination; lower cost is better,
+                        it MAY be omitted when representing static routes
+                        <spanx style="em">Infinity</spanx> and <spanx style="em">NaN</spanx>
+                        are not allowed in accordance with the
+                        <xref target="RFC7159">JSON RFC</xref></c>
+                    </texttable>
                     <t>
                         Each route object MAY also define the following OPTIONAL members:
                     </t>
-                    <t>
-                        <list>
-                            <t>
-                                <spanx style="strong">cost_text:</spanx>
-                                human readable representation of the
-                                <spanx style="em">cost</spanx> member;
-                            </t>
-                            <t>
-                                <spanx style="strong">source:</spanx>
-                                string indicating the source
-                                (necessary for source-specific routing).
-                            </t>
-                        </list>
-                    </t>
+                    <texttable align="left">
+                        <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                        <c>cost_text</c><c>string</c><c>human readable representation of the
+                        <spanx style="em">cost</spanx> member</c>
+                        <c>source</c><c>string</c><c>the source address of the route
+                        (used in source-specific routing)</c>
+                    </texttable>
                 </section>
             </section>
             <section anchor="NetworkGraph" title="NetworkGraph">
