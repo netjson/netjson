@@ -339,138 +339,82 @@
                     A <spanx style="em">NetworkGraph</spanx> object MUST
                     define the following REQUIRED members:
                 </t>
-                <t>
-                    <list>
-                        <t>
-                            <spanx style="strong">type</spanx>: string, MUST be "NetworkGraph";
-                        </t>
-                        <t>
-                            <spanx style="strong">protocol</spanx>: string indicating the name
-                            of the routing protocol, may be "static" when representing static routes;
-                        </t>
-                        <t>
-                            <spanx style="strong">version</spanx>: string indicating the version of
-                            the routing protocol, may be null when representing static routes;
-                        </t>
-                        <t>
-                            <spanx style="strong">metric</spanx>: string which indicates the name of
-                            main routing metric used by the routing protocol to determine the best
-                            routes when sending packets, may be null when representing static routes;
-                        </t>
-                        <t>
-                            <spanx style="strong">nodes</spanx>:
-                            array of <xref target="node-objects">Noute Objects</xref>.
-                        </t>
-                        <t>
-                            <spanx style="strong">links</spanx>:
-                            array of <xref target="link-objects">Link Objects</xref>.
-                        </t>
-                    </list>
-                </t>
+                <texttable align="left">
+                    <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                    <c>type</c><c>string</c><c>MUST be <spanx style="em">"NetworkGraph"</spanx></c>
+                    <c>protocol</c><c>string</c><c>name of the routing protocol,
+                    may be <spanx style="em">"static"</spanx> when representing static routes</c>
+                    <c>version</c><c>string</c><c>version of the routing protocol,
+                    may be <spanx style="em">null</spanx> when representing static routes</c>
+                    <c>metric</c><c>string</c><c>name of main routing metric used
+                    by the routing protocol to determine the best routes when sending
+                    packets, may be <spanx style="em">null</spanx> when representing static routes</c>
+                    <c>nodes</c><c>array</c><c>array of <xref target="node-objects">Noute Objects</xref></c>
+                    <c>links</c><c>array</c><c>array of <xref target="link-objects">Link Objects</xref></c>
+                </texttable>
                 <t>
                     A <spanx style="em">NetworkGraph</spanx> object MAY
                     also define the following OPTIONAL members:
                 </t>
-                <t>
-                    <list>
-                        <t>
-                            <spanx style="strong">revision:</spanx> string
-                            indicating the revision from which the routing protocol
-                            binary was built (eg: git hash, svn revision);
-                        </t>
-                        <t>
-                            <spanx style="strong">topology_id:</spanx>
-                            arbitrary string that identifies the topology;
-                        </t>
-                        <t>
-                            <spanx style="strong">router_id:</spanx>
-                            arbitrary string that identifies the router
-                            on which the protocol is running (eg: ip, mac, hash);
-                        </t>
-                        <t>
-                            <spanx style="strong">label:</spanx>
-                            a human readable label for the topology.
-                        </t>
-                    </list>
-                </t>
+                <texttable align="left">
+                    <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                    <c>revision</c><c>string</c><c>string
+                    indicating the revision from which the routing protocol
+                    binary was built (eg: git hash, svn revision)</c>
+                    <c>topology_id</c><c>string</c><c>arbitrary identifier of the topology</c>
+                    <c>router_id</c><c>string</c><c>arbitrary identifier of the router
+                    on which the protocol is running (eg: ip, mac, hash)</c>
+                    <c>label</c><c>string</c><c>a human readable label for the topology</c>
+                </texttable>
                 <section title="Node Objects" anchor="node-objects">
                     <t>
                         Each node object MUST define the following REQUIRED members:
                     </t>
-                    <t>
-                        <list>
-                            <t>
-                                <spanx style="strong">id:</spanx>
-                                an arbitrary string which identifies a node.
-                            </t>
-                        </list>
-                    </t>
+                    <texttable align="left">
+                        <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                        <c>id</c><c>string</c><c>arbitrary identifier of the node</c>
+                    </texttable>
                     <t>
                         Each node object MAY also define the following OPTIONAL members:
                     </t>
-                    <t>
-                        <list>
-                            <t>
-                                <spanx style="strong">label:</spanx>
-                                string providing a human readable label for the node;
-                            </t>
-                            <t>
-                                <spanx style="strong">local_addresses:</spanx>
-                                array of strings representing additional addresses
-                                (mac/ip) which can be used to communicate with the node;
-                            </t>
-                            <t>
-                                <spanx style="strong">properties:</spanx>
-                                object which MAY contain any arbitrary member;
-                                These aribtrary members SHOULD be visualized by
-                                user interface software.
-                            </t>
-                        </list>
-                    </t>
+                    <texttable align="left">
+                        <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                        <c>label</c><c>string</c><c>human readable label of the node</c>
+                        <c>local_addresses</c><c>array</c><c>array of strings
+                        representing additional addresses (mac/ip) which can be
+                        used to communicate with the node</c>
+                        <c>properties</c><c>object</c><c>object which MAY contain
+                        any arbitrary member; These aribtrary members SHOULD be visualized by
+                        user interface software</c>
+                    </texttable>
                 </section>
                 <section title="Link Objects" anchor="link-objects">
                     <t>
                         Each link object MUST define the following REQUIRED members:
                     </t>
-                    <t>
-                        <list>
-                            <t>
-                                <spanx style="strong">source:</spanx>
-                                id of the source node;
-                            </t>
-                            <t>
-                                <spanx style="strong">target:</spanx>
-                                id of the target node;
-                            </t>
-                            <t>
-                                <spanx style="strong">cost:</spanx>
-                                numeric value of the routing metric indicating the
-                                outgoing cost to reach the destination; lower cost is better,
-                                it MAY be omitted when representing static routes;
-                                <spanx style="em">Infinity</spanx> and <spanx style="em">NaN</spanx>
-                                are not allowed in accordance with the
-                                <xref target="RFC7159">JSON RFC</xref>.
-                            </t>
-                        </list>
-                    </t>
+                    <texttable align="left">
+                        <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                        <c>source</c><c>string</c><c>id of the source node</c>
+                        <c>target</c><c>string</c><c>id of the target node</c>
+                        <c>cost</c><c>number</c><c>value of the routing metric indicating the
+                        outgoing cost to reach the destination; lower cost is better,
+                        it MAY be omitted when representing static routes;
+                        <spanx style="em">Infinity</spanx> and <spanx style="em">NaN</spanx>
+                        are not allowed in accordance with the
+                        <xref target="RFC7159">JSON RFC</xref></c>
+                    </texttable>
                     <t>
                         Each link object MAY also define the following OPTIONAL members:
                     </t>
-                    <t>
-                        <list>
-                            <t>
-                                <spanx style="strong">cost_text:</spanx>
-                                human readable representation of the
-                                <spanx style="em">cost</spanx> member;
-                            </t>
-                            <t>
-                                <spanx style="strong">properties:</spanx>
-                                object which MAY contain any arbitrary member;
-                                These aribtrary members SHOULD be visualized by
-                                user interface software.
-                            </t>
-                        </list>
-                    </t>
+                    <texttable align="left">
+                        <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                        <c>cost_text</c><c>string</c><c>human readable representation of the
+                        <spanx style="em">cost</spanx> member;</c>
+                        <c>properties</c><c>object</c><c>object which MAY contain
+                        any arbitrary member;
+                        These aribtrary members SHOULD be visualized by
+                        user interface software</c>
+                    </texttable>
                 </section>
             </section>
             <section anchor="DeviceConfiguration" title="DeviceConfiguration">
