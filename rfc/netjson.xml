@@ -449,11 +449,11 @@
                     see <xref target="general1">Hardware Object</xref> for details</c>
                     <c>operating_system</c><c>object</c><c>operating system information,
                     see <xref target="operating_system1">Operating System Object</xref> for details</c>
-                    <c>resources</c><c>object</c><c>describes the total amount of
+                    <c>object</c><c>describes the total amount of
                     different resources available on the system, like RAM, flash, storage
                     see <xref target="resources1">Resources Object</xref> for details</c>
-                    <c>interfaces</c><c>array</c><c>array of Interface Objects that
-                    represent how network interfaces are configured on the device
+                    <c>interfaces</c><c>array</c><c>array of objects that represent how
+                    network interfaces are configured on the device,
                     see <xref target="interfaces1">Interfaces Objects</xref> for details</c>
                     <c>physical_devices</c><c>array</c><c>array of objects
                     that represent the configuration of radios available on the system,
@@ -602,57 +602,86 @@
                     <spanx style="strong">Example:</spanx>
                     <xref target="DeviceMonitoring-example">A.4. DeviceMonitoring</xref>.
                 </t>
-                <section title="REQUIRED fields">
+                <t>
+                    A <spanx style="em">DeviceMonitoring</spanx> object MUST
+                    define the following REQUIRED members:
+                </t>
+                <texttable align="left">
+                    <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                    <c>type</c><c>string</c><c>MUST be <spanx style="em">"DeviceMonitoring"</spanx></c>
+                </texttable>
+                <t>
+                    A <spanx style="em">DeviceMonitoring</spanx> object MAY
+                    also define the following OPTIONAL members:
+                </t>
+                <texttable align="left">
+                    <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                    <c>general</c><c>object</c><c>object that contains monitoring data that is related to
+                    the whole device, see <xref target="general2">General Object</xref> for details</c>
+                    <c>resources</c><c>object</c><c>describes how hardware resources are being used
+                    by the system, see <xref target="resources2">Resources Object</xref> for details</c>
+                    <c>interfaces</c><c>array</c><c>array of objects that represent monitoring data
+                    related to specific network interfaces,
+                    see <xref target="interfaces2">Interfaces Objects</xref> for details</c>
+                </texttable>
+                <section title="General Object" anchor="general2">
                     <t>
-                        A DeviceMonitoring object MUST have a member
-                        with the name "type" and value "DeviceMonitoring".
+                        The <spanx style="em">"general"</spanx> object of
+                        <spanx style="em">DeviceMonitoring</spanx>
+                        MAY define the following OPTIONAL members:
                     </t>
+                    <texttable align="left">
+                        <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                        <c>local_time</c><c>number</c><c>device local time</c>
+                        <c>uptime</c><c>number</c><c>time since boot, in seconds</c>
+                    </texttable>
                 </section>
-                <section title="OPTIONAL fields">
-                    <section title="Overview">
-                        <t>
-                            The object MAY be composed of the following OPTIONAL members, all
-                            of which are objects (or arrays of objects) and again contain (possibly OPTIONAL) members.
-                            For a full formal specification in <xref target="JSON-Schema">JSON-Schema</xref>
-                            format, please see [insert reference].
-                        </t>
-                        <t>
-                            <list>
-                                <t>
-                                    <spanx style="strong">general</spanx>:
-                                    an object containing values that are relevant
-                                    for the entire device
-                                    (opposed to spefic interfaces or hardware components).
-                                </t>
-                                <t>
-                                    <spanx style="strong">resources</spanx>:
-                                    object listing the current usage of specific hardware resources.
-                                </t>
-                                <t>
-                                    <spanx style="strong">interfaces</spanx>:
-                                    an array of interface objects providing
-                                    interface specific monitoring data.
-                                </t>
-                            </list>
-                        </t>
-                    </section>
-                    <section title="Details">
-                        <texttable align="left">
-                            <ttcol>parent</ttcol><ttcol>child</ttcol><ttcol>format</ttcol><ttcol>description</ttcol>
-                            <c>general</c><c>local_time</c><c>integer</c><c>Device local time</c>
-                            <c>general</c><c>uptime</c><c>integer</c><c>Time since boot, in seconds</c>
-                            <c>resources</c><c>memory</c><c>object</c><c>Object describing memory usage, contains: "total", "free", "buffered", "cache" (unit: bytes)</c>
-                            <c>resources</c><c>swap</c><c>object</c><c>Object describing swap usage, contains "total", "free" (unit: bytes)</c>
-                            <c>resources</c><c>connections</c><c>object</c><c>Object describing connection state, contains two objects: "ipv4", "ipv6", each object has two members: "tcp" and "udp", indicating the number of open connections.</c>
-                            <c>resources</c><c>processes</c><c>object</c><c>Object describing running processes, contains "running", "sleeping", "blocked", "zombie", "stopped", "paging".</c>
-                            <c>resources</c><c>cpu</c><c>object</c><c>Object describing CPU usage, contains "frequency" (MHz), "user", "system, "nice", "idle", "iowait", "irq", "softirq"</c>
-                            <c>resources</c><c>flash</c><c>object</c><c>Object describing flash usage, contains "total", "free" (unit: bytes)</c>
-                            <c>resources</c><c>storage</c><c>object</c><c>Object describing storage usage, contains "total", "free" (unit: bytes)</c>
-                            <c>interfaces</c><c>name</c><c>string</c><c>Name of the logical interface</c>
-                            <c>interfaces</c><c>uptime</c><c>integer</c><c>Interface specific uptime in seconds</c>
-                            <c>interfaces</c><c>statistics</c><c>object</c><c>Object describing detailed monitoring data about the interface.</c>
-                        </texttable>
-                    </section>
+                <section title="Resources Object" anchor="resources2">
+                    <t>
+                        The <spanx style="em">"resources"</spanx> object of
+                        <spanx style="em">DeviceMonitoring</spanx>
+                        MAY define the following OPTIONAL members:
+                    </t>
+                    <texttable align="left">
+                        <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                        <c>memory</c><c>object</c><c>object describing RAM usage, SHOULD contain
+                        the following RECOMMENDED members: "total", "free", "buffered", "cache" (unit: bytes)</c>
+                        <c>swap</c><c>object</c><c>object describing swap memory usage, SHOULD contain
+                        the following RECOMMENDED members: "total", "free" (unit: bytes)</c>
+                        <c>connections</c><c>object</c><c>object describing connection state,
+                        SHOULD contain two RECOMMENDED objects: "ipv4", "ipv6", each object MUST have
+                        two members: "tcp" and "udp", indicating the number of open connections</c>
+                        <c>processes</c><c>object</c><c>object describing running processes,
+                        SHOULD contain the RECOMMENDED member "running" and MAY contain the following
+                        RECOMMENDED members: "sleeping", "blocked", "zombie", "stopped", "paging".</c>
+                        <c>cpu</c><c>object</c><c>object describing CPU usage, MAY contain
+                        the following OPTIONAL members: "frequency" (MHz), "user", "system, "nice", "idle", "iowait", "irq", "softirq"</c>
+                        <c>flash</c><c>object</c><c>object describing flash usage, SHOULD contain
+                        the following RECOMMENDED members: "total", "free" (unit: bytes)</c>
+                        <c>storage</c><c>object</c><c>object describing storage usage, SHOULD
+                        contain the following RECOMMENDED members: "total", "free" (unit: bytes)</c>
+                    </texttable>
+                </section>
+                <section title="Interfaces Objects" anchor="interfaces2">
+                    <t>
+                        Each object contained in the <spanx style="em">"interfaces"</spanx>
+                        array of <spanx style="em">DeviceMonitoring</spanx>
+                        MAY define the following OPTIONAL members:
+                    </t>
+                    <texttable align="left">
+                        <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                        <c>name</c><c>string</c><c>name of the logical interface</c>
+                        <c>uptime</c><c>number</c><c>interface specific uptime in seconds</c>
+                        <c>statistics</c><c>object</c><c>object providing detailed monitoring
+                        data related to the interface, it MAY contain the following
+                        OPTIONAL members: "collisions", "rx_frame_errors", "tx_compressed",
+                        "multicast", rx_length_errors", "tx_dropped", "rx_bytes", "rx_missed_errors",
+                        "tx_errors", "rx_compressed", "rx_over_errors", "tx_fifo_errors",
+                        "rx_crc_errors", "rx_packets", "tx_heartbeat_errors",
+                        "rx_dropped", "tx_aborted_errors", "tx_packets",
+                        "rx_errors", "tx_bytes", "tx_window_errors", "rx_fifo_errors",
+                        "tx_carrier_errors"</c>
+                    </texttable>
                 </section>
             </section>
             <section anchor="NetworkCollection" title="NetworkCollection">
