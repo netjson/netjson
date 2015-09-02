@@ -449,7 +449,7 @@
                     see <xref target="general1">Hardware Object</xref> for details</c>
                     <c>operating_system</c><c>object</c><c>operating system information,
                     see <xref target="operating_system1">Operating System Object</xref> for details</c>
-                    <c>object</c><c>describes the total amount of
+                    <c>resources</c><c>object</c><c>describes the total amount of
                     different resources available on the system, like RAM, flash, storage
                     see <xref target="resources1">Resources Object</xref> for details</c>
                     <c>interfaces</c><c>array</c><c>array of objects that represent how
