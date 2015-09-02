@@ -443,64 +443,150 @@
                 </t>
                 <texttable align="left">
                     <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
-                    <c>general</c><c>object</c><c>general information related to
-                    the network device</c>
-                    <c>hardware</c><c>object</c><c>information related to the
-                    hardware of the network device</c>
-                    <c>operating_system</c><c>object</c><c>operating system information
-                    like name, version, kernel version and revision</c>
+                    <c>general</c><c>object</c><c>object that contains general information related to
+                    the network device, see <xref target="general1">General Object</xref> for details</c>
+                    <c>hardware</c><c>object</c><c>hardware information related to the network device,
+                    see <xref target="general1">Hardware Object</xref> for details</c>
+                    <c>operating_system</c><c>object</c><c>operating system information,
+                    see <xref target="operating_system1">Operating System Object</xref> for details</c>
                     <c>resources</c><c>object</c><c>describes the total amount of
-                    different resources available on the system, like RAM, flash, storage, ecc.</c>
+                    different resources available on the system, like RAM, flash, storage
+                    see <xref target="resources1">Resources Object</xref> for details</c>
                     <c>interfaces</c><c>array</c><c>array of Interface Objects that
-                    represent how network interfaces are configured on the device</c>
-                    <c>physical_devices</c><c>array</c><c>array of Physical Device Objects
-                    that represent the configuradion of physical radios</c>
-                    <c>routes</c><c>array</c><c>array of Routes Objects that represent
-                    static routes configured on the device</c>
+                    represent how network interfaces are configured on the device
+                    see <xref target="interfaces1">Interfaces Objects</xref> for details</c>
+                    <c>physical_devices</c><c>array</c><c>array of objects
+                    that represent the configuration of radios available on the system,
+                    see <xref target="physical_devices1">Physical Device Objects</xref> for details</c>
+                    <c>routes</c><c>array</c><c>array of objects that represent
+                    static routes configured on the device,
+                    see <xref target="routes1">Static Route Objects</xref> for details</c>
                     <c>dns_servers</c><c>array</c><c>an array of strings denoting
                     DNS servers configured on the device</c>
                     <c>dns_search</c><c>array</c><c>an array of strings denoting DNS search paths
                     configured on the device</c>
                 </texttable>
-                <section title="OPTIONAL fields">
-                    <section title="Details">
-                        <texttable align="left">
-                            <ttcol>parent</ttcol><ttcol>child</ttcol><ttcol>format</ttcol><ttcol>description</ttcol>
-                            <c>general</c><c>hostname</c><c>string</c><c>Hostname of the network device</c>
-                            <c>general</c><c>maintainer</c><c>string</c><c>Email address of the maintainer of the network device</c>
-                            <c>general</c><c>description</c><c>string</c><c>Free-form textual description of the network device</c>
-                            <c>hardware</c><c>manufacturer</c><c>string</c><c>Name of the manufacturer of the device</c>
-                            <c>hardware</c><c>model</c><c>string</c><c>Name of the model</c>
-                            <c>hardware</c><c>revision</c><c>number</c><c></c>
-                            <c>hardware</c><c>cpu</c><c>string</c><c>CPU specification</c>
-                            <c>operating_system</c><c>name</c><c>string</c><c>Name of the operating system or firmware</c>
-                            <c>operating_system</c><c>kernel</c><c>string</c><c>Kernel version</c>
-                            <c>operating_system</c><c>version</c><c>string</c><c>Version name or version number of the operating system</c>
-                            <c>operating_system</c><c>revision</c><c>string</c><c>revision number or revision tag</c>
-                            <c>operating_system</c><c>description</c><c>string</c><c>Free-form textual description</c>
-                            <c>resources</c><c>memory</c><c>object</c><c>Object containing "total" - a number of total memory (unit: bytes)</c>
-                            <c>resources</c><c>swap</c><c>object</c><c>Object containing "total" - a number of total swap memory (unit: bytes)</c>
-                            <c>resources</c><c>cpu</c><c>object</c><c>Object containing "frequency" - a number of specifying the frequency (unit: Hz)</c>
-                            <c>resources</c><c>flash</c><c>object</c><c>Object containing "total" - a number of total flash memory (unit: bytes)</c>
-                            <c>resources</c><c>storage</c><c>object</c><c>Object containing "total" - a number of total external storage memory (unit: bytes)</c>
-                            <c>physical_devices</c><c>name</c><c>string</c><c>Name of the physical device</c>
-                            <c>physical_devices</c><c>channel</c><c>number</c><c>Channel number</c>
-                            <c>physical_devices</c><c>channel_width</c><c>number</c><c>Channel width (unit: Hz)</c>
-                            <c>physical_devices</c><c>tx_power</c><c>number</c><c>Transmission power (unit: dBm)</c>
-                            <c>interfaces</c><c>type</c><c>string</c><c>Possible values: "wireless" , "ethernet", "bridge" or "virtual"</c>
-                            <c>interfaces</c><c>bridge-members</c><c>array</c><c>An array listing the interface names contained in the network bridge interface</c>
-                            <c>interfaces</c><c>name</c><c>string</c><c>Name of the logical interface</c>
-                            <c>interfaces</c><c>mac</c><c>string</c><c>Mac address</c>
-                            <c>interfaces</c><c>mtu</c><c>number</c><c>Maximum Transmission Unit</c>
-                            <c>interfaces</c><c>txqueuelen</c><c>number</c><c>TX queue length</c>
-                            <c>interfaces</c><c>carrier</c><c>boolean</c><c>Is the interface sensing any carrier?</c>
-                            <c>interfaces</c><c>autostart</c><c>boolean</c><c>Should the interface be brought up after power on?</c>
-                            <c>interfaces</c><c>wireless</c><c>object</c><c>Object. Only valid in this context if "type" = "wireless". This object links the logical wireless interace to the physical wireless interface and also specifies various physical parameters. For a detailed list of all sub-members of this object, please refer to XXX insert reference JSON-Schema XXX.</c>
-                            <c>interfaces</c><c>addresses</c><c>array of objects</c><c>An array of objects with members listing the address, netmask, family ("ipv4", "ipv6") and protocol ("static", "dynamic") of the configured IP address of the logical interface. Note that a logical interface MAY have multiple IP addresses assigned and therefore multiple array members are possible in this field</c>
-                            <c>routes</c><c>destination</c><c>string</c><c>"routes" contains an array of objects, each listing "destination" and "next" (hop) IP address. In essence, it is a routing table</c>
-                            <c>routes</c><c>next</c><c>string</c><c>"routes" contains an array of objects, each listing "destination" and "next" (hop) IP address. In essence, it is a routing table</c>
-                        </texttable>
-                    </section>
+                <section title="General Object" anchor="general1">
+                    <t>
+                        The <spanx style="em">"general"</spanx> object of
+                        <spanx style="em">DeviceConfiguration</spanx>
+                        MAY define the following OPTIONAL members:
+                    </t>
+                    <texttable align="left">
+                        <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                        <c>hostname</c><c>string</c><c>hostname of the network device</c>
+                        <c>maintainer</c><c>string</c><c>email address of the maintainer of the network device</c>
+                        <c>description</c><c>string</c><c>free-form textual description of the network device</c>
+                    </texttable>
+                </section>
+                <section title="Hardware Object" anchor="hardware1">
+                    <t>
+                        The <spanx style="em">"hardware"</spanx> object of
+                        <spanx style="em">DeviceConfiguration</spanx>
+                        MAY define the following OPTIONAL members:
+                    </t>
+                    <texttable align="left">
+                        <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                        <c>manufacturer</c><c>string</c><c>name of the manufacturer</c>
+                        <c>model</c><c>string</c><c>name of the model</c>
+                        <c>version</c><c>string</c><c>version of the device (as in the
+                        <eref target="http://wiki.openwrt.org/toh/start">OpenWRT Table of Hardware</eref>)</c>
+                        <c>cpu</c><c>string</c><c>CPU specification</c>
+                    </texttable>
+                </section>
+                <section title="Operating Sytem Object" anchor="operating_system1">
+                    <t>
+                        The <spanx style="em">"operating_system"</spanx> object of
+                        <spanx style="em">DeviceConfiguration</spanx>
+                        MAY define the following OPTIONAL members:
+                    </t>
+                    <texttable align="left">
+                        <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                        <c>name</c><c>string</c><c>name of the operating system or firmware</c>
+                        <c>kernel</c><c>string</c><c>kernel version</c>
+                        <c>version</c><c>string</c><c>version name or version number of the operating system</c>
+                        <c>revision</c><c>string</c><c>revision from which the firmware
+                        binary was built (eg: git hash, svn revision)</c>
+                        <c>description</c><c>string</c><c>free-form textual description</c>
+                    </texttable>
+                </section>
+                <section title="Resources Object" anchor="resources1">
+                    <t>
+                        The <spanx style="em">"resources"</spanx> object of
+                        <spanx style="em">DeviceConfiguration</spanx>
+                        MAY define the following OPTIONAL members:
+                    </t>
+                    <texttable align="left">
+                        <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                        <c>memory</c><c>object</c><c>object containing only one REQUIRED
+                        "total" member having as value a number which represents the total
+                        RAM available on the system measured in bytes</c>
+                        <c>swap</c><c>object</c><c>object containing only one REQUIRED
+                        "total" member having as value a number which represents the total
+                        swap memory available on the system measured in bytes</c>
+                        <c>cpu</c><c>object</c><c> containing only one REQUIRED "frequency"
+                        member having as value a number which represents the clock frequency
+                        measured in Hertz</c>
+                        <c>flash</c><c>object</c><c>object containing only one REQUIRED
+                        "total" member having as value a number which represents the total
+                        flash memory available on the system measured in bytes</c>
+                        <c>storage</c><c>object</c><c>object containing only one REQUIRED
+                        "total" member having as value a number which represents the total
+                        storage memory available on the system measured in bytes</c>
+                    </texttable>
+                </section>
+                <section title="Interfaces Objects" anchor="interfaces1">
+                    <t>
+                        Each object contained in the <spanx style="em">"interfaces"</spanx>
+                        array of <spanx style="em">DeviceConfiguration</spanx>
+                        MAY define the following OPTIONAL members:
+                    </t>
+                    <texttable align="left">
+                        <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                        <c>type</c><c>string</c><c>possible values: "wireless", "ethernet", "bridge" or "virtual"</c>
+                        <c>bridge_members</c><c>array</c><c>array of interface names representing the bridged interfaces</c>
+                        <c>name</c><c>string</c><c>name of the interface</c>
+                        <c>mac</c><c>string</c><c>mac address</c>
+                        <c>mtu</c><c>number</c><c>value of the Maximum Transmission Unit setting</c>
+                        <c>txqueuelen</c><c>number</c><c>value of the TX queue length setting</c>
+                        <c>autostart</c><c>boolean</c><c>indicates whether the interface should be automatically started after reboot, defaults to true</c>
+                        <c>wireless</c><c>object</c><c>valid only if "type" is "wireless".
+                        This object links the logical wireless interace to the relative physical device
+                        and also specifies various physical parameters.
+                        For a detailed list of all sub-members of this object,
+                        please refer to XXX insert reference JSON-Schema XXX.</c>
+                        <c>addresses</c><c>array of objects</c><c>An array of objects with
+                        members listing the address, netmask, family ("ipv4", "ipv6")
+                        and protocol ("static", "dynamic") of the configured IP address of the logical interface
+                        Note that a logical interface MAY have multiple IP addresses assigned
+                        and therefore multiple array members are possible in this field</c>
+                    </texttable>
+                </section>
+                <section title="Physical Device Objects" anchor="physical_devices1">
+                    <t>
+                        Each object contained in the
+                        <spanx style="em">"physical_device"</spanx> array of <spanx style="em">DeviceConfiguration</spanx>
+                        MUST define the following REQUIRED members:
+                    </t>
+                    <texttable align="left">
+                        <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                        <c>name</c><c>string</c><c>name of the physical device</c>
+                        <c>channel</c><c>number</c><c>channel number</c>
+                        <c>channel_width</c><c>number</c><c>channel width in Hertz</c>
+                        <c>tx_power</c><c>number</c><c>transmission power in dBm</c>
+                    </texttable>
+                </section>
+                <section title="Static Route Objects" anchor="routes1">
+                    <t>
+                        Each object contained in the
+                        <spanx style="em">"routes"</spanx> array of <spanx style="em">DeviceConfiguration</spanx>
+                        MUST define the following REQUIRED members:
+                    </t>
+                    <texttable align="left">
+                        <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                        <c>destination</c><c>string</c><c>destination address of the static route</c>
+                        <c>next</c><c>string</c><c>next hop address for the static route</c>
+                    </texttable>
                 </section>
             </section>
             <section anchor="DeviceMonitoring" title="DeviceMonitoring">
@@ -896,7 +982,6 @@
             "mac": "de:9f:db:30:c9:c5",
             "mtu": 1500,
             "txqueuelen": 1000,
-            "carrier": true,
             "autostart": true,
             "wireless": {
                 "physical_device": "phy0",
@@ -931,7 +1016,6 @@
             "mac": "52:54:00:56:46:d0",
             "mtu": 1500,
             "txqueuelen": 1000,
-            "carrier": true,
             "autostart": true,
             "addresses": [
                 {

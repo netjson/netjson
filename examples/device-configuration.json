@@ -50,7 +50,6 @@
             "mac": "de:9f:db:30:c9:c5",
             "mtu": 1500,
             "txqueuelen": 1000,
-            "carrier": true,
             "autostart": true,
             "wireless": {
                 "physical_device": "phy0",
@@ -85,7 +84,6 @@
             "mac": "02:CA:FF:EE:BA:BE",
             "mtu": 1500,
             "txqueuelen": 1000,
-            "carrier": true,
             "autostart": true,
             "wireless": {
                 "physical_device": "phy0",
@@ -115,7 +113,6 @@
             "mac": "52:54:00:56:46:d0",
             "mtu": 1500,
             "txqueuelen": 1000,
-            "carrier": true,
             "autostart": true,
             "addresses": [
                 {
@@ -144,7 +141,6 @@
             "mac": "52:54:00:56:46:c0",
             "mtu": 1500,
             "txqueuelen": 1000,
-            "carrier": true,
             "autostart": true,
             "addresses": [
                 {
@@ -163,7 +159,6 @@
             "mac": "de:9f:db:30:c9:c4",
             "mtu": 1500,
             "txqueuelen": 1000,
-            "carrier": true,
             "autostart": true,
             "wireless": {
                 "physical_device": "phy0",
@@ -204,7 +199,6 @@
             "mac": "82:29:23:7d:c2:14",
             "mtu": 1500,
             "txqueuelen": 100,
-            "carrier": true,
             "autostart": true,
             "addresses": [
                 {
@@ -221,7 +215,6 @@
             "mac": "82:29:23:7d:c2:14",
             "mtu": 1500,
             "txqueuelen": 100,
-            "carrier": true,
             "autostart": true
         },
         {
@@ -230,9 +223,8 @@
             "mac": "82:29:23:7d:c2:14",
             "mtu": 1500,
             "txqueuelen": 0,
-            "carrier": true,
             "autostart": true,
-            "bridge-members": [
+            "bridge_members": [
                 "wlan0",
                 "vpn.40"
             ],
