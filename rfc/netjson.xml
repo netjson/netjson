@@ -708,17 +708,11 @@
                     A <spanx style="em">NetworkCollection</spanx> object MUST
                     define the following REQUIRED members:
                 </t>
-                <t>
-                    <list>
-                        <t>
-                            <spanx style="strong">type</spanx>: string, MUST be "NetworkCollection";
-                        </t>
-                        <t>
-                            <spanx style="strong">collection</spanx>:
-                            array of <xref target="netjson-object">NetJSON objects</xref>.
-                        </t>
-                    </list>
-                </t>
+                <texttable align="left">
+                    <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                    <c>type</c><c>string</c><c>MUST be <spanx style="em">"NetworkCollection"</spanx></c>
+                    <c>collection</c><c>array</c><c>array of <xref target="netjson-object">NetJSON objects</xref></c>
+                </texttable>
             </section>
         </section>
         <!-- This PI places the pagebreak correctly (before the section title) in the text output. -->
