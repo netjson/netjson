@@ -429,67 +429,40 @@
                     <spanx style="strong">Example:</spanx>
                     <xref target="DeviceConfiguration-example">A.3. DeviceConfiguration</xref>.
                 </t>
-                <section title="REQUIRED fields">
-                    <t>
-                        A DeviceConfiguration object MUST have a member
-                        with the name "type" and value "DeviceConfiguration".
-                    </t>
-                </section>
+                <t>
+                    A <spanx style="em">DeviceConfiguration</spanx> object MUST
+                    define the following REQUIRED members:
+                </t>
+                <texttable align="left">
+                    <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                    <c>type</c><c>string</c><c>MUST be <spanx style="em">"DeviceConfiguration"</spanx></c>
+                </texttable>
+                <t>
+                    A <spanx style="em">DeviceConfiguration</spanx> object MAY
+                    also define the following OPTIONAL members:
+                </t>
+                <texttable align="left">
+                    <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                    <c>general</c><c>object</c><c>general information related to
+                    the network device</c>
+                    <c>hardware</c><c>object</c><c>information related to the
+                    hardware of the network device</c>
+                    <c>operating_system</c><c>object</c><c>operating system information
+                    like name, version, kernel version and revision</c>
+                    <c>resources</c><c>object</c><c>describes the total amount of
+                    different resources available on the system, like RAM, flash, storage, ecc.</c>
+                    <c>interfaces</c><c>array</c><c>array of Interface Objects that
+                    represent how network interfaces are configured on the device</c>
+                    <c>physical_devices</c><c>array</c><c>array of Physical Device Objects
+                    that represent the configuradion of physical radios</c>
+                    <c>routes</c><c>array</c><c>array of Routes Objects that represent
+                    static routes configured on the device</c>
+                    <c>dns_servers</c><c>array</c><c>an array of strings denoting
+                    DNS servers configured on the device</c>
+                    <c>dns_search</c><c>array</c><c>an array of strings denoting DNS search paths
+                    configured on the device</c>
+                </texttable>
                 <section title="OPTIONAL fields">
-                    <section title="Overview">
-                        <t>
-                            The object MAY be composed of the following OPTIONAL members, all
-                            of which are objects (or arrays of objects) and again contain (possibly OPTIONAL) members.
-                            For a full formal specification in <xref target="JSON-Schema">JSON-Schema</xref>
-                            format, please see [insert reference].
-                        </t>
-                        <t>
-                            <list>
-                                <t>
-                                    <spanx style="strong">general</spanx>:
-                                    an object describing general information such as hostname,
-                                    technical maintainer, etc. of the network device.
-                                </t>
-                                <t>
-                                    <spanx style="strong">hardware</spanx>:
-                                    an object describing hardware characteristics
-                                    of the network device.
-                                </t>
-                                <t>
-                                    <spanx style="strong">operating_system</spanx>:
-                                    an object listing name, version, kernel version and
-                                    revision of the operating system.
-                                </t>
-                                <t>
-                                    <spanx style="strong">resources</spanx>:
-                                    object listing computing resources that the network device has.
-                                </t>
-                                <t>
-                                    <spanx style="strong">interfaces</spanx>:
-                                    an array of objects describing logical
-                                    networking interfaces of the network device.
-                                </t>
-                                <t>
-                                    <spanx style="strong">physical_devices</spanx>:
-                                    an array of objects describing the physical
-                                    networking interfaces of the network device.
-                                </t>
-                                <t>
-                                    <spanx style="strong">routes</spanx>:
-                                    an array of objects describing the current routing table of the
-                                    network device. Note that these values can vary a lot over
-                                    time and MUST NOT be considered static information.
-                                </t>
-                                <t>
-                                    <spanx style="strong">dns_servers</spanx>:
-                                    an array of strings denoting DNS servers of the networking device.</t>
-                                <t>
-                                    <spanx style="strong">dns_search</spanx>:
-                                    an array of  strings denoting DNS search paths.
-                                </t>
-                            </list>
-                        </t>
-                    </section>
                     <section title="Details">
                         <texttable align="left">
                             <ttcol>parent</ttcol><ttcol>child</ttcol><ttcol>format</ttcol><ttcol>description</ttcol>
