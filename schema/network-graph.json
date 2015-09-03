@@ -118,7 +118,7 @@
                     },
                     "cost": {
                         "id": "cost",
-                        "type": "integer",
+                        "type": "number",
                         "default": 1
                     },
                     "cost_text": {
