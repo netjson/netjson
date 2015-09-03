@@ -5,6 +5,8 @@
     "revision": "5031a799fcbe17f61d57e387bc3806de",
     "metric": "etx",
     "router_id": "172.16.40.24",
+    "topology_id": "topology0",
+    "label": "Optional human readable label",
     "nodes": [
         {
             "id": "172.16.40.24",
