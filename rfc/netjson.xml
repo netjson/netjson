@@ -557,7 +557,7 @@
                         please refer to XXX insert reference JSON-Schema XXX.</c>
                         <c>addresses</c><c>array of objects</c><c>An array of objects with
                         members listing the address, netmask, family ("ipv4", "ipv6")
-                        and protocol ("static", "dynamic") of the configured IP address of the logical interface
+                        and protocol ("static", "dhcp") of the configured IP address of the logical interface
                         Note that a logical interface MAY have multiple IP addresses assigned
                         and therefore multiple array members are possible in this field</c>
                     </texttable>
