@@ -72,7 +72,7 @@
           },
           "cost": {
             "id": "cost",
-            "type": "float"
+            "type": "number"
           },
           "source": {
             "id": "source",
