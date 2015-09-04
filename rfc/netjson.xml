@@ -252,492 +252,492 @@
                     </list>
                 </t>
             </section>
-            <section anchor="NetworkRoutes" title="NetworkRoutes">
+        </section>
+        <section anchor="NetworkRoutes" title="NetworkRoutes">
+            <t>
+                <spanx style="strong">Definition:</spanx> a list of routes of a
+                dynamic routing protocol or statically configured on the device.
+            </t>
+            <t>
+                <spanx style="strong">Goals:</spanx> show internal information
+                of a routing protocol for monitoring and debugging purposes.
+            </t>
+            <t>
+                <spanx style="strong">Example:</spanx>
+                <xref target="NetworkRoutes-example">A.1. NetworkRoutes Example</xref>.
+            </t>
+            <t>
+                <spanx style="strong">JSON Schema:</spanx>
+                <xref target="NetworkRoutes-schema">B.1. NetworkRoutes Schema</xref>.
+            </t>
+            <t>
+                A <spanx style="em">NetworkRoutes</spanx> object MUST
+                define the following REQUIRED members:
+            </t>
+            <texttable align="left">
+                <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                <c>type</c><c>string</c><c>MUST be <spanx style="em">"NetworkRoutes"</spanx></c>
+                <c>protocol</c><c>string</c><c>name of the routing protocol,
+                may be <spanx style="em">"static"</spanx> when representing static routes</c>
+                <c>version</c><c>string</c><c>version of the routing protocol,
+                may be <spanx style="em">null</spanx> when representing static routes</c>
+                <c>metric</c><c>string</c><c>name of main routing metric used
+                by the routing protocol to determine the best routes when sending
+                packets, may be <spanx style="em">null</spanx> when representing static routes</c>
+                <c>routes</c><c>array</c><c>array of <xref target="route-objects">Route Objects</xref></c>
+            </texttable>
+            <t>
+                A <spanx style="em">NetworkRoutes</spanx> object MAY
+                also define the following OPTIONAL members:
+            </t>
+            <texttable align="left">
+                <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                <c>revision</c><c>string</c><c>string
+                indicating the revision from which the routing protocol
+                binary was built (eg: git hash, svn revision)</c>
+                <c>topology_id</c><c>string</c><c>arbitrary identifier of the topology</c>
+                <c>router_id</c><c>string</c><c>arbitrary identifier of the router
+                on which the protocol is running (eg: ip, mac, hash)</c>
+            </texttable>
+            <section title="Route Objects" anchor="route-objects">
                 <t>
-                    <spanx style="strong">Definition:</spanx> a list of routes of a
-                    dynamic routing protocol or statically configured on the device.
-                </t>
-                <t>
-                    <spanx style="strong">Goals:</spanx> show internal information
-                    of a routing protocol for monitoring and debugging purposes.
-                </t>
-                <t>
-                    <spanx style="strong">Example:</spanx>
-                    <xref target="NetworkRoutes-example">A.1. NetworkRoutes Example</xref>.
-                </t>
-                <t>
-                    <spanx style="strong">JSON Schema:</spanx>
-                    <xref target="NetworkRoutes-schema">B.1. NetworkRoutes Schema</xref>.
-                </t>
-                <t>
-                    A <spanx style="em">NetworkRoutes</spanx> object MUST
-                    define the following REQUIRED members:
+                    Each route object MUST define the following REQUIRED members:
                 </t>
                 <texttable align="left">
                     <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
-                    <c>type</c><c>string</c><c>MUST be <spanx style="em">"NetworkRoutes"</spanx></c>
-                    <c>protocol</c><c>string</c><c>name of the routing protocol,
-                    may be <spanx style="em">"static"</spanx> when representing static routes</c>
-                    <c>version</c><c>string</c><c>version of the routing protocol,
-                    may be <spanx style="em">null</spanx> when representing static routes</c>
-                    <c>metric</c><c>string</c><c>name of main routing metric used
-                    by the routing protocol to determine the best routes when sending
-                    packets, may be <spanx style="em">null</spanx> when representing static routes</c>
-                    <c>routes</c><c>array</c><c>array of <xref target="route-objects">Route Objects</xref></c>
+                    <c>destination</c><c>string</c><c>the ip address, prefix or mac
+                    address that will be matched to the destination of the traffic</c>
+                    <c>next</c><c>string</c><c>the ip address, prefix or mac
+                    address of the next hop</c>
+                    <c>device</c><c>string</c><c>the interface the traffic will be
+                    going to, it may be omitted when representing static routes</c>
+                    <c>cost</c><c>number</c><c>value of the routing metric indicating the
+                    outgoing cost to reach the destination; lower cost is better,
+                    it MAY be omitted when representing static routes
+                    <spanx style="em">Infinity</spanx> and <spanx style="em">NaN</spanx>
+                    are not allowed in accordance with the
+                    <xref target="RFC7159">JSON RFC</xref></c>
                 </texttable>
                 <t>
-                    A <spanx style="em">NetworkRoutes</spanx> object MAY
-                    also define the following OPTIONAL members:
+                    Each route object MAY also define the following OPTIONAL members:
                 </t>
                 <texttable align="left">
                     <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
-                    <c>revision</c><c>string</c><c>string
-                    indicating the revision from which the routing protocol
+                    <c>cost_text</c><c>string</c><c>human readable representation of the
+                    <spanx style="em">cost</spanx> member</c>
+                    <c>source</c><c>string</c><c>the source address of the route
+                    (used in source-specific routing)</c>
+                </texttable>
+            </section>
+        </section>
+        <section anchor="NetworkGraph" title="NetworkGraph">
+            <t>
+                <spanx style="strong">Definition:</spanx>
+                a list of nodes and links known by a node.
+            </t>
+            <t>
+                <spanx style="strong">Goals:</spanx>
+                visualization of network topology, collect network topology
+                from distance vector protocols, monitoring.
+            </t>
+            <t>
+                <spanx style="strong">Example:</spanx>
+                <xref target="NetworkGraph-example">A.2. NetworkGraph Example</xref>.
+            </t>
+            <t>
+                <spanx style="strong">JSON Schema:</spanx>
+                <xref target="NetworkGraph-schema">B.2. NetworkGraph Schema</xref>.
+            </t>
+            <t>
+                A <spanx style="em">NetworkGraph</spanx> object MUST
+                define the following REQUIRED members:
+            </t>
+            <texttable align="left">
+                <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                <c>type</c><c>string</c><c>MUST be <spanx style="em">"NetworkGraph"</spanx></c>
+                <c>protocol</c><c>string</c><c>name of the routing protocol,
+                may be <spanx style="em">"static"</spanx> when representing static routes</c>
+                <c>version</c><c>string</c><c>version of the routing protocol,
+                may be <spanx style="em">null</spanx> when representing static routes</c>
+                <c>metric</c><c>string</c><c>name of main routing metric used
+                by the routing protocol to determine the best routes when sending
+                packets, may be <spanx style="em">null</spanx> when representing static routes</c>
+                <c>nodes</c><c>array</c><c>array of <xref target="node-objects">Noute Objects</xref></c>
+                <c>links</c><c>array</c><c>array of <xref target="link-objects">Link Objects</xref></c>
+            </texttable>
+            <t>
+                A <spanx style="em">NetworkGraph</spanx> object MAY
+                also define the following OPTIONAL members:
+            </t>
+            <texttable align="left">
+                <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                <c>revision</c><c>string</c><c>string
+                indicating the revision from which the routing protocol
+                binary was built (eg: git hash, svn revision)</c>
+                <c>topology_id</c><c>string</c><c>arbitrary identifier of the topology</c>
+                <c>router_id</c><c>string</c><c>arbitrary identifier of the router
+                on which the protocol is running (eg: ip, mac, hash)</c>
+                <c>label</c><c>string</c><c>a human readable label for the topology</c>
+            </texttable>
+            <section title="Node Objects" anchor="node-objects">
+                <t>
+                    Each node object MUST define the following REQUIRED members:
+                </t>
+                <texttable align="left">
+                    <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                    <c>id</c><c>string</c><c>arbitrary identifier of the node</c>
+                </texttable>
+                <t>
+                    Each node object MAY also define the following OPTIONAL members:
+                </t>
+                <texttable align="left">
+                    <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                    <c>label</c><c>string</c><c>human readable label of the node</c>
+                    <c>local_addresses</c><c>array</c><c>array of strings
+                    representing additional addresses (mac/ip) which can be
+                    used to communicate with the node</c>
+                    <c>properties</c><c>object</c><c>object which MAY contain
+                    any arbitrary member; These aribtrary members SHOULD be visualized by
+                    user interface software</c>
+                </texttable>
+            </section>
+            <section title="Link Objects" anchor="link-objects">
+                <t>
+                    Each link object MUST define the following REQUIRED members:
+                </t>
+                <texttable align="left">
+                    <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                    <c>source</c><c>string</c><c>id of the source node</c>
+                    <c>target</c><c>string</c><c>id of the target node</c>
+                    <c>cost</c><c>number</c><c>value of the routing metric indicating the
+                    outgoing cost to reach the destination; lower cost is better,
+                    it MAY be omitted when representing static routes;
+                    <spanx style="em">Infinity</spanx> and <spanx style="em">NaN</spanx>
+                    are not allowed in accordance with the
+                    <xref target="RFC7159">JSON RFC</xref></c>
+                </texttable>
+                <t>
+                    Each link object MAY also define the following OPTIONAL members:
+                </t>
+                <texttable align="left">
+                    <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                    <c>cost_text</c><c>string</c><c>human readable representation of the
+                    <spanx style="em">cost</spanx> member;</c>
+                    <c>properties</c><c>object</c><c>object which MAY contain
+                    any arbitrary member;
+                    These aribtrary members SHOULD be visualized by
+                    user interface software</c>
+                </texttable>
+            </section>
+        </section>
+        <section anchor="DeviceConfiguration" title="DeviceConfiguration">
+            <t>
+                <spanx style="strong">Definition:</spanx> configuration and properties of a network device.
+            </t>
+            <t>
+                <spanx style="strong">Goals:</spanx> configuration storage and management, import and export
+                configurations between different monitoring tools or network controllers.
+            </t>
+            <t>
+                <spanx style="strong">Example:</spanx>
+                <xref target="DeviceConfiguration-example">A.3. DeviceConfiguration Example</xref>.
+            </t>
+            <t>
+                <spanx style="strong">JSON Schema:</spanx>
+                <xref target="DeviceConfiguration-schema">B.3. DeviceConfiguration Schema</xref>.
+            </t>
+            <t>
+                A <spanx style="em">DeviceConfiguration</spanx> object MUST
+                define the following REQUIRED members:
+            </t>
+            <texttable align="left">
+                <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                <c>type</c><c>string</c><c>MUST be <spanx style="em">"DeviceConfiguration"</spanx></c>
+            </texttable>
+            <t>
+                A <spanx style="em">DeviceConfiguration</spanx> object MAY
+                also define the following OPTIONAL members:
+            </t>
+            <texttable align="left">
+                <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                <c>general</c><c>object</c><c>object that contains general information related to
+                the network device, see <xref target="general1">General Object</xref> for details</c>
+                <c>hardware</c><c>object</c><c>hardware information related to the network device,
+                see <xref target="general1">Hardware Object</xref> for details</c>
+                <c>operating_system</c><c>object</c><c>operating system information,
+                see <xref target="operating_system1">Operating System Object</xref> for details</c>
+                <c>resources</c><c>object</c><c>describes the total amount of
+                different resources available on the system, like RAM, flash, storage
+                see <xref target="resources1">Resources Object</xref> for details</c>
+                <c>interfaces</c><c>array</c><c>array of objects that represent how
+                network interfaces are configured on the device,
+                see <xref target="interfaces1">Interfaces Objects</xref> for details</c>
+                <c>physical_devices</c><c>array</c><c>array of objects
+                that represent the configuration of radios available on the system,
+                see <xref target="physical_devices1">Physical Device Objects</xref> for details</c>
+                <c>routes</c><c>array</c><c>array of objects that represent
+                static routes configured on the device,
+                see <xref target="routes1">Static Route Objects</xref> for details</c>
+                <c>dns_servers</c><c>array</c><c>an array of strings denoting
+                DNS servers configured on the device</c>
+                <c>dns_search</c><c>array</c><c>an array of strings denoting DNS search paths
+                configured on the device</c>
+            </texttable>
+            <section title="General Object" anchor="general1">
+                <t>
+                    The <spanx style="em">"general"</spanx> object of
+                    <spanx style="em">DeviceConfiguration</spanx>
+                    MAY define the following OPTIONAL members:
+                </t>
+                <texttable align="left">
+                    <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                    <c>hostname</c><c>string</c><c>hostname of the network device</c>
+                    <c>maintainer</c><c>string</c><c>email address of the maintainer of the network device</c>
+                    <c>description</c><c>string</c><c>free-form textual description of the network device</c>
+                </texttable>
+            </section>
+            <section title="Hardware Object" anchor="hardware1">
+                <t>
+                    The <spanx style="em">"hardware"</spanx> object of
+                    <spanx style="em">DeviceConfiguration</spanx>
+                    MAY define the following OPTIONAL members:
+                </t>
+                <texttable align="left">
+                    <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                    <c>manufacturer</c><c>string</c><c>name of the manufacturer</c>
+                    <c>model</c><c>string</c><c>name of the model</c>
+                    <c>version</c><c>string</c><c>version of the device (as in the
+                    <eref target="http://wiki.openwrt.org/toh/start">OpenWRT Table of Hardware</eref>)</c>
+                    <c>cpu</c><c>string</c><c>CPU specification</c>
+                </texttable>
+            </section>
+            <section title="Operating Sytem Object" anchor="operating_system1">
+                <t>
+                    The <spanx style="em">"operating_system"</spanx> object of
+                    <spanx style="em">DeviceConfiguration</spanx>
+                    MAY define the following OPTIONAL members:
+                </t>
+                <texttable align="left">
+                    <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                    <c>name</c><c>string</c><c>name of the operating system or firmware</c>
+                    <c>kernel</c><c>string</c><c>kernel version</c>
+                    <c>version</c><c>string</c><c>version name or version number of the operating system</c>
+                    <c>revision</c><c>string</c><c>revision from which the firmware
                     binary was built (eg: git hash, svn revision)</c>
-                    <c>topology_id</c><c>string</c><c>arbitrary identifier of the topology</c>
-                    <c>router_id</c><c>string</c><c>arbitrary identifier of the router
-                    on which the protocol is running (eg: ip, mac, hash)</c>
-                </texttable>
-                <section title="Route Objects" anchor="route-objects">
-                    <t>
-                        Each route object MUST define the following REQUIRED members:
-                    </t>
-                    <texttable align="left">
-                        <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
-                        <c>destination</c><c>string</c><c>the ip address, prefix or mac
-                        address that will be matched to the destination of the traffic</c>
-                        <c>next</c><c>string</c><c>the ip address, prefix or mac
-                        address of the next hop</c>
-                        <c>device</c><c>string</c><c>the interface the traffic will be
-                        going to, it may be omitted when representing static routes</c>
-                        <c>cost</c><c>number</c><c>value of the routing metric indicating the
-                        outgoing cost to reach the destination; lower cost is better,
-                        it MAY be omitted when representing static routes
-                        <spanx style="em">Infinity</spanx> and <spanx style="em">NaN</spanx>
-                        are not allowed in accordance with the
-                        <xref target="RFC7159">JSON RFC</xref></c>
-                    </texttable>
-                    <t>
-                        Each route object MAY also define the following OPTIONAL members:
-                    </t>
-                    <texttable align="left">
-                        <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
-                        <c>cost_text</c><c>string</c><c>human readable representation of the
-                        <spanx style="em">cost</spanx> member</c>
-                        <c>source</c><c>string</c><c>the source address of the route
-                        (used in source-specific routing)</c>
-                    </texttable>
-                </section>
-            </section>
-            <section anchor="NetworkGraph" title="NetworkGraph">
-                <t>
-                    <spanx style="strong">Definition:</spanx>
-                    a list of nodes and links known by a node.
-                </t>
-                <t>
-                    <spanx style="strong">Goals:</spanx>
-                    visualization of network topology, collect network topology
-                    from distance vector protocols, monitoring.
-                </t>
-                <t>
-                    <spanx style="strong">Example:</spanx>
-                    <xref target="NetworkGraph-example">A.2. NetworkGraph Example</xref>.
-                </t>
-                <t>
-                    <spanx style="strong">JSON Schema:</spanx>
-                    <xref target="NetworkGraph-schema">B.2. NetworkGraph Schema</xref>.
-                </t>
-                <t>
-                    A <spanx style="em">NetworkGraph</spanx> object MUST
-                    define the following REQUIRED members:
-                </t>
-                <texttable align="left">
-                    <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
-                    <c>type</c><c>string</c><c>MUST be <spanx style="em">"NetworkGraph"</spanx></c>
-                    <c>protocol</c><c>string</c><c>name of the routing protocol,
-                    may be <spanx style="em">"static"</spanx> when representing static routes</c>
-                    <c>version</c><c>string</c><c>version of the routing protocol,
-                    may be <spanx style="em">null</spanx> when representing static routes</c>
-                    <c>metric</c><c>string</c><c>name of main routing metric used
-                    by the routing protocol to determine the best routes when sending
-                    packets, may be <spanx style="em">null</spanx> when representing static routes</c>
-                    <c>nodes</c><c>array</c><c>array of <xref target="node-objects">Noute Objects</xref></c>
-                    <c>links</c><c>array</c><c>array of <xref target="link-objects">Link Objects</xref></c>
-                </texttable>
-                <t>
-                    A <spanx style="em">NetworkGraph</spanx> object MAY
-                    also define the following OPTIONAL members:
-                </t>
-                <texttable align="left">
-                    <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
-                    <c>revision</c><c>string</c><c>string
-                    indicating the revision from which the routing protocol
-                    binary was built (eg: git hash, svn revision)</c>
-                    <c>topology_id</c><c>string</c><c>arbitrary identifier of the topology</c>
-                    <c>router_id</c><c>string</c><c>arbitrary identifier of the router
-                    on which the protocol is running (eg: ip, mac, hash)</c>
-                    <c>label</c><c>string</c><c>a human readable label for the topology</c>
-                </texttable>
-                <section title="Node Objects" anchor="node-objects">
-                    <t>
-                        Each node object MUST define the following REQUIRED members:
-                    </t>
-                    <texttable align="left">
-                        <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
-                        <c>id</c><c>string</c><c>arbitrary identifier of the node</c>
-                    </texttable>
-                    <t>
-                        Each node object MAY also define the following OPTIONAL members:
-                    </t>
-                    <texttable align="left">
-                        <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
-                        <c>label</c><c>string</c><c>human readable label of the node</c>
-                        <c>local_addresses</c><c>array</c><c>array of strings
-                        representing additional addresses (mac/ip) which can be
-                        used to communicate with the node</c>
-                        <c>properties</c><c>object</c><c>object which MAY contain
-                        any arbitrary member; These aribtrary members SHOULD be visualized by
-                        user interface software</c>
-                    </texttable>
-                </section>
-                <section title="Link Objects" anchor="link-objects">
-                    <t>
-                        Each link object MUST define the following REQUIRED members:
-                    </t>
-                    <texttable align="left">
-                        <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
-                        <c>source</c><c>string</c><c>id of the source node</c>
-                        <c>target</c><c>string</c><c>id of the target node</c>
-                        <c>cost</c><c>number</c><c>value of the routing metric indicating the
-                        outgoing cost to reach the destination; lower cost is better,
-                        it MAY be omitted when representing static routes;
-                        <spanx style="em">Infinity</spanx> and <spanx style="em">NaN</spanx>
-                        are not allowed in accordance with the
-                        <xref target="RFC7159">JSON RFC</xref></c>
-                    </texttable>
-                    <t>
-                        Each link object MAY also define the following OPTIONAL members:
-                    </t>
-                    <texttable align="left">
-                        <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
-                        <c>cost_text</c><c>string</c><c>human readable representation of the
-                        <spanx style="em">cost</spanx> member;</c>
-                        <c>properties</c><c>object</c><c>object which MAY contain
-                        any arbitrary member;
-                        These aribtrary members SHOULD be visualized by
-                        user interface software</c>
-                    </texttable>
-                </section>
-            </section>
-            <section anchor="DeviceConfiguration" title="DeviceConfiguration">
-                <t>
-                    <spanx style="strong">Definition:</spanx> configuration and properties of a network device.
-                </t>
-                <t>
-                    <spanx style="strong">Goals:</spanx> configuration storage and management, import and export
-                    configurations between different monitoring tools or network controllers.
-                </t>
-                <t>
-                    <spanx style="strong">Example:</spanx>
-                    <xref target="DeviceConfiguration-example">A.3. DeviceConfiguration Example</xref>.
-                </t>
-                <t>
-                    <spanx style="strong">JSON Schema:</spanx>
-                    <xref target="DeviceConfiguration-schema">B.3. DeviceConfiguration Schema</xref>.
-                </t>
-                <t>
-                    A <spanx style="em">DeviceConfiguration</spanx> object MUST
-                    define the following REQUIRED members:
-                </t>
-                <texttable align="left">
-                    <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
-                    <c>type</c><c>string</c><c>MUST be <spanx style="em">"DeviceConfiguration"</spanx></c>
-                </texttable>
-                <t>
-                    A <spanx style="em">DeviceConfiguration</spanx> object MAY
-                    also define the following OPTIONAL members:
-                </t>
-                <texttable align="left">
-                    <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
-                    <c>general</c><c>object</c><c>object that contains general information related to
-                    the network device, see <xref target="general1">General Object</xref> for details</c>
-                    <c>hardware</c><c>object</c><c>hardware information related to the network device,
-                    see <xref target="general1">Hardware Object</xref> for details</c>
-                    <c>operating_system</c><c>object</c><c>operating system information,
-                    see <xref target="operating_system1">Operating System Object</xref> for details</c>
-                    <c>resources</c><c>object</c><c>describes the total amount of
-                    different resources available on the system, like RAM, flash, storage
-                    see <xref target="resources1">Resources Object</xref> for details</c>
-                    <c>interfaces</c><c>array</c><c>array of objects that represent how
-                    network interfaces are configured on the device,
-                    see <xref target="interfaces1">Interfaces Objects</xref> for details</c>
-                    <c>physical_devices</c><c>array</c><c>array of objects
-                    that represent the configuration of radios available on the system,
-                    see <xref target="physical_devices1">Physical Device Objects</xref> for details</c>
-                    <c>routes</c><c>array</c><c>array of objects that represent
-                    static routes configured on the device,
-                    see <xref target="routes1">Static Route Objects</xref> for details</c>
-                    <c>dns_servers</c><c>array</c><c>an array of strings denoting
-                    DNS servers configured on the device</c>
-                    <c>dns_search</c><c>array</c><c>an array of strings denoting DNS search paths
-                    configured on the device</c>
-                </texttable>
-                <section title="General Object" anchor="general1">
-                    <t>
-                        The <spanx style="em">"general"</spanx> object of
-                        <spanx style="em">DeviceConfiguration</spanx>
-                        MAY define the following OPTIONAL members:
-                    </t>
-                    <texttable align="left">
-                        <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
-                        <c>hostname</c><c>string</c><c>hostname of the network device</c>
-                        <c>maintainer</c><c>string</c><c>email address of the maintainer of the network device</c>
-                        <c>description</c><c>string</c><c>free-form textual description of the network device</c>
-                    </texttable>
-                </section>
-                <section title="Hardware Object" anchor="hardware1">
-                    <t>
-                        The <spanx style="em">"hardware"</spanx> object of
-                        <spanx style="em">DeviceConfiguration</spanx>
-                        MAY define the following OPTIONAL members:
-                    </t>
-                    <texttable align="left">
-                        <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
-                        <c>manufacturer</c><c>string</c><c>name of the manufacturer</c>
-                        <c>model</c><c>string</c><c>name of the model</c>
-                        <c>version</c><c>string</c><c>version of the device (as in the
-                        <eref target="http://wiki.openwrt.org/toh/start">OpenWRT Table of Hardware</eref>)</c>
-                        <c>cpu</c><c>string</c><c>CPU specification</c>
-                    </texttable>
-                </section>
-                <section title="Operating Sytem Object" anchor="operating_system1">
-                    <t>
-                        The <spanx style="em">"operating_system"</spanx> object of
-                        <spanx style="em">DeviceConfiguration</spanx>
-                        MAY define the following OPTIONAL members:
-                    </t>
-                    <texttable align="left">
-                        <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
-                        <c>name</c><c>string</c><c>name of the operating system or firmware</c>
-                        <c>kernel</c><c>string</c><c>kernel version</c>
-                        <c>version</c><c>string</c><c>version name or version number of the operating system</c>
-                        <c>revision</c><c>string</c><c>revision from which the firmware
-                        binary was built (eg: git hash, svn revision)</c>
-                        <c>description</c><c>string</c><c>free-form textual description</c>
-                    </texttable>
-                </section>
-                <section title="Resources Object" anchor="resources1">
-                    <t>
-                        The <spanx style="em">"resources"</spanx> object of
-                        <spanx style="em">DeviceConfiguration</spanx>
-                        MAY define the following OPTIONAL members:
-                    </t>
-                    <texttable align="left">
-                        <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
-                        <c>memory</c><c>object</c><c>object containing only one REQUIRED
-                        "total" member having as value a number which represents the total
-                        RAM available on the system measured in bytes</c>
-                        <c>swap</c><c>object</c><c>object containing only one REQUIRED
-                        "total" member having as value a number which represents the total
-                        swap memory available on the system measured in bytes</c>
-                        <c>cpu</c><c>object</c><c> containing only one REQUIRED "frequency"
-                        member having as value a number which represents the clock frequency
-                        measured in Hertz</c>
-                        <c>flash</c><c>object</c><c>object containing only one REQUIRED
-                        "total" member having as value a number which represents the total
-                        flash memory available on the system measured in bytes</c>
-                        <c>storage</c><c>object</c><c>object containing only one REQUIRED
-                        "total" member having as value a number which represents the total
-                        storage memory available on the system measured in bytes</c>
-                    </texttable>
-                </section>
-                <section title="Interfaces Objects" anchor="interfaces1">
-                    <t>
-                        Each object contained in the <spanx style="em">"interfaces"</spanx>
-                        array of <spanx style="em">DeviceConfiguration</spanx>
-                        MAY define the following OPTIONAL members:
-                    </t>
-                    <texttable align="left">
-                        <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
-                        <c>type</c><c>string</c><c>possible values: "wireless", "ethernet", "bridge" or "virtual"</c>
-                        <c>bridge_members</c><c>array</c><c>array of interface names representing the bridged interfaces</c>
-                        <c>name</c><c>string</c><c>name of the interface</c>
-                        <c>mac</c><c>string</c><c>mac address</c>
-                        <c>mtu</c><c>number</c><c>value of the Maximum Transmission Unit setting</c>
-                        <c>txqueuelen</c><c>number</c><c>value of the TX queue length setting</c>
-                        <c>autostart</c><c>boolean</c><c>indicates whether the interface should be automatically started after reboot, defaults to true</c>
-                        <c>wireless</c><c>object</c><c>valid only if "type" is "wireless".
-                        This object links the logical wireless interace to the relative physical device
-                        and also specifies various physical parameters.
-                        For a detailed list of all sub-members of this object,
-                        please refer to <xref target="DeviceConfiguration-schema">B.3. DeviceConfiguration Schema</xref>.</c>
-                        <c>addresses</c><c>array of objects</c><c>An array of objects with
-                        members listing the address, netmask, family ("ipv4", "ipv6")
-                        and protocol ("static", "dhcp") of the configured IP address of the logical interface
-                        Note that a logical interface MAY have multiple IP addresses assigned
-                        and therefore multiple array members are possible in this field</c>
-                    </texttable>
-                </section>
-                <section title="Physical Device Objects" anchor="physical_devices1">
-                    <t>
-                        Each object contained in the
-                        <spanx style="em">"physical_device"</spanx> array of <spanx style="em">DeviceConfiguration</spanx>
-                        MUST define the following REQUIRED members:
-                    </t>
-                    <texttable align="left">
-                        <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
-                        <c>name</c><c>string</c><c>name of the physical device</c>
-                        <c>channel</c><c>number</c><c>channel number</c>
-                        <c>channel_width</c><c>number</c><c>channel width in Hertz</c>
-                        <c>tx_power</c><c>number</c><c>transmission power in dBm</c>
-                    </texttable>
-                </section>
-                <section title="Static Route Objects" anchor="routes1">
-                    <t>
-                        Each object contained in the
-                        <spanx style="em">"routes"</spanx> array of <spanx style="em">DeviceConfiguration</spanx>
-                        MUST define the following REQUIRED members:
-                    </t>
-                    <texttable align="left">
-                        <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
-                        <c>destination</c><c>string</c><c>destination address of the static route</c>
-                        <c>next</c><c>string</c><c>next hop address for the static route</c>
-                    </texttable>
-                </section>
-            </section>
-            <section anchor="DeviceMonitoring" title="DeviceMonitoring">
-                <t>
-                    <spanx style="strong">Definition:</spanx>
-                    information that indicates the behaviour of a device that changes over time.
-                </t>
-                <t>
-                    <spanx style="strong">Goals:</spanx>
-                     ouput, collect, parse and visualize monitoring data of a network device.
-                </t>
-                <t>
-                    <spanx style="strong">Example:</spanx>
-                    <xref target="DeviceMonitoring-example">A.4. DeviceMonitoring Example</xref>.
-                </t>
-                <t>
-                    <spanx style="strong">JSON Schema:</spanx>
-                    <xref target="DeviceMonitoring-schema">B.4. DeviceMonitoring Schema</xref>.
-                </t>
-                <t>
-                    A <spanx style="em">DeviceMonitoring</spanx> object MUST
-                    define the following REQUIRED members:
-                </t>
-                <texttable align="left">
-                    <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
-                    <c>type</c><c>string</c><c>MUST be <spanx style="em">"DeviceMonitoring"</spanx></c>
-                </texttable>
-                <t>
-                    A <spanx style="em">DeviceMonitoring</spanx> object MAY
-                    also define the following OPTIONAL members:
-                </t>
-                <texttable align="left">
-                    <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
-                    <c>general</c><c>object</c><c>object that contains monitoring data that is related to
-                    the whole device, see <xref target="general2">General Object</xref> for details</c>
-                    <c>resources</c><c>object</c><c>describes how hardware resources are being used
-                    by the system, see <xref target="resources2">Resources Object</xref> for details</c>
-                    <c>interfaces</c><c>array</c><c>array of objects that represent monitoring data
-                    related to specific network interfaces,
-                    see <xref target="interfaces2">Interfaces Objects</xref> for details</c>
-                </texttable>
-                <section title="General Object" anchor="general2">
-                    <t>
-                        The <spanx style="em">"general"</spanx> object of
-                        <spanx style="em">DeviceMonitoring</spanx>
-                        MAY define the following OPTIONAL members:
-                    </t>
-                    <texttable align="left">
-                        <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
-                        <c>local_time</c><c>number</c><c>device local time</c>
-                        <c>uptime</c><c>number</c><c>time since boot, in seconds</c>
-                    </texttable>
-                </section>
-                <section title="Resources Object" anchor="resources2">
-                    <t>
-                        The <spanx style="em">"resources"</spanx> object of
-                        <spanx style="em">DeviceMonitoring</spanx>
-                        MAY define the following OPTIONAL members:
-                    </t>
-                    <texttable align="left">
-                        <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
-                        <c>memory</c><c>object</c><c>object describing RAM usage, SHOULD contain
-                        the following RECOMMENDED members: "total", "free", "buffered", "cache" (unit: bytes)</c>
-                        <c>swap</c><c>object</c><c>object describing swap memory usage, SHOULD contain
-                        the following RECOMMENDED members: "total", "free" (unit: bytes)</c>
-                        <c>connections</c><c>object</c><c>object describing connection state,
-                        SHOULD contain two RECOMMENDED objects: "ipv4", "ipv6", each object MUST have
-                        two members: "tcp" and "udp", indicating the number of open connections</c>
-                        <c>processes</c><c>object</c><c>object describing running processes,
-                        SHOULD contain the RECOMMENDED member "running" and MAY contain the following
-                        RECOMMENDED members: "sleeping", "blocked", "zombie", "stopped", "paging".</c>
-                        <c>cpu</c><c>object</c><c>object describing CPU usage, MAY contain
-                        the following OPTIONAL members: "frequency" (MHz), "user", "system, "nice", "idle", "iowait", "irq", "softirq"</c>
-                        <c>flash</c><c>object</c><c>object describing flash usage, SHOULD contain
-                        the following RECOMMENDED members: "total", "free" (unit: bytes)</c>
-                        <c>storage</c><c>object</c><c>object describing storage usage, SHOULD
-                        contain the following RECOMMENDED members: "total", "free" (unit: bytes)</c>
-                    </texttable>
-                </section>
-                <section title="Interfaces Objects" anchor="interfaces2">
-                    <t>
-                        Each object contained in the <spanx style="em">"interfaces"</spanx>
-                        array of <spanx style="em">DeviceMonitoring</spanx>
-                        MAY define the following OPTIONAL members:
-                    </t>
-                    <texttable align="left">
-                        <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
-                        <c>name</c><c>string</c><c>name of the logical interface</c>
-                        <c>uptime</c><c>number</c><c>interface specific uptime in seconds</c>
-                        <c>statistics</c><c>object</c><c>object providing detailed monitoring
-                        data related to the interface, it MAY contain the following
-                        OPTIONAL members: "collisions", "rx_frame_errors", "tx_compressed",
-                        "multicast", rx_length_errors", "tx_dropped", "rx_bytes", "rx_missed_errors",
-                        "tx_errors", "rx_compressed", "rx_over_errors", "tx_fifo_errors",
-                        "rx_crc_errors", "rx_packets", "tx_heartbeat_errors",
-                        "rx_dropped", "tx_aborted_errors", "tx_packets",
-                        "rx_errors", "tx_bytes", "tx_window_errors", "rx_fifo_errors",
-                        "tx_carrier_errors"</c>
-                    </texttable>
-                </section>
-            </section>
-            <section anchor="NetworkCollection" title="NetworkCollection">
-                <t>
-                    <spanx style="strong">Definition</spanx>:
-                    collection of NetJSON objects.
-                </t>
-                <t>
-                    <spanx style="strong">Goals</spanx>:
-                    allow to list various netjson objects into a coherent group, eg:
-                </t>
-                <t>
-                    <list>
-                      <t>list graphs of different routing protocols running on the same device;</t>
-                      <t>list all the routes of a multi-topology capable routing protocol;</t>
-                      <t>list devices of a network.</t>
-                    </list>
-                </t>
-                <t>
-                    <spanx style="strong">Example</spanx>:
-                    <xref target="NetworkCollection-example">A.5. NetworkCollection Example</xref>.
-                </t>
-                <t>
-                    <spanx style="strong">JSON Schema:</spanx>
-                    <xref target="NetworkCollection-schema">B.5. NetworkCollection Schema</xref>.
-                </t>
-                <t>
-                    A <spanx style="em">NetworkCollection</spanx> object MUST
-                    define the following REQUIRED members:
-                </t>
-                <texttable align="left">
-                    <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
-                    <c>type</c><c>string</c><c>MUST be <spanx style="em">"NetworkCollection"</spanx></c>
-                    <c>collection</c><c>array</c><c>array of <xref target="netjson-object">NetJSON objects</xref></c>
+                    <c>description</c><c>string</c><c>free-form textual description</c>
                 </texttable>
             </section>
+            <section title="Resources Object" anchor="resources1">
+                <t>
+                    The <spanx style="em">"resources"</spanx> object of
+                    <spanx style="em">DeviceConfiguration</spanx>
+                    MAY define the following OPTIONAL members:
+                </t>
+                <texttable align="left">
+                    <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                    <c>memory</c><c>object</c><c>object containing only one REQUIRED
+                    "total" member having as value a number which represents the total
+                    RAM available on the system measured in bytes</c>
+                    <c>swap</c><c>object</c><c>object containing only one REQUIRED
+                    "total" member having as value a number which represents the total
+                    swap memory available on the system measured in bytes</c>
+                    <c>cpu</c><c>object</c><c> containing only one REQUIRED "frequency"
+                    member having as value a number which represents the clock frequency
+                    measured in Hertz</c>
+                    <c>flash</c><c>object</c><c>object containing only one REQUIRED
+                    "total" member having as value a number which represents the total
+                    flash memory available on the system measured in bytes</c>
+                    <c>storage</c><c>object</c><c>object containing only one REQUIRED
+                    "total" member having as value a number which represents the total
+                    storage memory available on the system measured in bytes</c>
+                </texttable>
+            </section>
+            <section title="Interfaces Objects" anchor="interfaces1">
+                <t>
+                    Each object contained in the <spanx style="em">"interfaces"</spanx>
+                    array of <spanx style="em">DeviceConfiguration</spanx>
+                    MAY define the following OPTIONAL members:
+                </t>
+                <texttable align="left">
+                    <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                    <c>type</c><c>string</c><c>possible values: "wireless", "ethernet", "bridge" or "virtual"</c>
+                    <c>bridge_members</c><c>array</c><c>array of interface names representing the bridged interfaces</c>
+                    <c>name</c><c>string</c><c>name of the interface</c>
+                    <c>mac</c><c>string</c><c>mac address</c>
+                    <c>mtu</c><c>number</c><c>value of the Maximum Transmission Unit setting</c>
+                    <c>txqueuelen</c><c>number</c><c>value of the TX queue length setting</c>
+                    <c>autostart</c><c>boolean</c><c>indicates whether the interface should be automatically started after reboot, defaults to true</c>
+                    <c>wireless</c><c>object</c><c>valid only if "type" is "wireless".
+                    This object links the logical wireless interace to the relative physical device
+                    and also specifies various physical parameters.
+                    For a detailed list of all sub-members of this object,
+                    please refer to <xref target="DeviceConfiguration-schema">B.3. DeviceConfiguration Schema</xref>.</c>
+                    <c>addresses</c><c>array of objects</c><c>An array of objects with
+                    members listing the address, netmask, family ("ipv4", "ipv6")
+                    and protocol ("static", "dhcp") of the configured IP address of the logical interface
+                    Note that a logical interface MAY have multiple IP addresses assigned
+                    and therefore multiple array members are possible in this field</c>
+                </texttable>
+            </section>
+            <section title="Physical Device Objects" anchor="physical_devices1">
+                <t>
+                    Each object contained in the
+                    <spanx style="em">"physical_device"</spanx> array of <spanx style="em">DeviceConfiguration</spanx>
+                    MUST define the following REQUIRED members:
+                </t>
+                <texttable align="left">
+                    <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                    <c>name</c><c>string</c><c>name of the physical device</c>
+                    <c>channel</c><c>number</c><c>channel number</c>
+                    <c>channel_width</c><c>number</c><c>channel width in Hertz</c>
+                    <c>tx_power</c><c>number</c><c>transmission power in dBm</c>
+                </texttable>
+            </section>
+            <section title="Static Route Objects" anchor="routes1">
+                <t>
+                    Each object contained in the
+                    <spanx style="em">"routes"</spanx> array of <spanx style="em">DeviceConfiguration</spanx>
+                    MUST define the following REQUIRED members:
+                </t>
+                <texttable align="left">
+                    <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                    <c>destination</c><c>string</c><c>destination address of the static route</c>
+                    <c>next</c><c>string</c><c>next hop address for the static route</c>
+                </texttable>
+            </section>
+        </section>
+        <section anchor="DeviceMonitoring" title="DeviceMonitoring">
+            <t>
+                <spanx style="strong">Definition:</spanx>
+                information that indicates the behaviour of a device that changes over time.
+            </t>
+            <t>
+                <spanx style="strong">Goals:</spanx>
+                 ouput, collect, parse and visualize monitoring data of a network device.
+            </t>
+            <t>
+                <spanx style="strong">Example:</spanx>
+                <xref target="DeviceMonitoring-example">A.4. DeviceMonitoring Example</xref>.
+            </t>
+            <t>
+                <spanx style="strong">JSON Schema:</spanx>
+                <xref target="DeviceMonitoring-schema">B.4. DeviceMonitoring Schema</xref>.
+            </t>
+            <t>
+                A <spanx style="em">DeviceMonitoring</spanx> object MUST
+                define the following REQUIRED members:
+            </t>
+            <texttable align="left">
+                <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                <c>type</c><c>string</c><c>MUST be <spanx style="em">"DeviceMonitoring"</spanx></c>
+            </texttable>
+            <t>
+                A <spanx style="em">DeviceMonitoring</spanx> object MAY
+                also define the following OPTIONAL members:
+            </t>
+            <texttable align="left">
+                <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                <c>general</c><c>object</c><c>object that contains monitoring data that is related to
+                the whole device, see <xref target="general2">General Object</xref> for details</c>
+                <c>resources</c><c>object</c><c>describes how hardware resources are being used
+                by the system, see <xref target="resources2">Resources Object</xref> for details</c>
+                <c>interfaces</c><c>array</c><c>array of objects that represent monitoring data
+                related to specific network interfaces,
+                see <xref target="interfaces2">Interfaces Objects</xref> for details</c>
+            </texttable>
+            <section title="General Object" anchor="general2">
+                <t>
+                    The <spanx style="em">"general"</spanx> object of
+                    <spanx style="em">DeviceMonitoring</spanx>
+                    MAY define the following OPTIONAL members:
+                </t>
+                <texttable align="left">
+                    <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                    <c>local_time</c><c>number</c><c>device local time</c>
+                    <c>uptime</c><c>number</c><c>time since boot, in seconds</c>
+                </texttable>
+            </section>
+            <section title="Resources Object" anchor="resources2">
+                <t>
+                    The <spanx style="em">"resources"</spanx> object of
+                    <spanx style="em">DeviceMonitoring</spanx>
+                    MAY define the following OPTIONAL members:
+                </t>
+                <texttable align="left">
+                    <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                    <c>memory</c><c>object</c><c>object describing RAM usage, SHOULD contain
+                    the following RECOMMENDED members: "total", "free", "buffered", "cache" (unit: bytes)</c>
+                    <c>swap</c><c>object</c><c>object describing swap memory usage, SHOULD contain
+                    the following RECOMMENDED members: "total", "free" (unit: bytes)</c>
+                    <c>connections</c><c>object</c><c>object describing connection state,
+                    SHOULD contain two RECOMMENDED objects: "ipv4", "ipv6", each object MUST have
+                    two members: "tcp" and "udp", indicating the number of open connections</c>
+                    <c>processes</c><c>object</c><c>object describing running processes,
+                    SHOULD contain the RECOMMENDED member "running" and MAY contain the following
+                    RECOMMENDED members: "sleeping", "blocked", "zombie", "stopped", "paging".</c>
+                    <c>cpu</c><c>object</c><c>object describing CPU usage, MAY contain
+                    the following OPTIONAL members: "frequency" (MHz), "user", "system, "nice", "idle", "iowait", "irq", "softirq"</c>
+                    <c>flash</c><c>object</c><c>object describing flash usage, SHOULD contain
+                    the following RECOMMENDED members: "total", "free" (unit: bytes)</c>
+                    <c>storage</c><c>object</c><c>object describing storage usage, SHOULD
+                    contain the following RECOMMENDED members: "total", "free" (unit: bytes)</c>
+                </texttable>
+            </section>
+            <section title="Interfaces Objects" anchor="interfaces2">
+                <t>
+                    Each object contained in the <spanx style="em">"interfaces"</spanx>
+                    array of <spanx style="em">DeviceMonitoring</spanx>
+                    MAY define the following OPTIONAL members:
+                </t>
+                <texttable align="left">
+                    <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                    <c>name</c><c>string</c><c>name of the logical interface</c>
+                    <c>uptime</c><c>number</c><c>interface specific uptime in seconds</c>
+                    <c>statistics</c><c>object</c><c>object providing detailed monitoring
+                    data related to the interface, it MAY contain the following
+                    OPTIONAL members: "collisions", "rx_frame_errors", "tx_compressed",
+                    "multicast", rx_length_errors", "tx_dropped", "rx_bytes", "rx_missed_errors",
+                    "tx_errors", "rx_compressed", "rx_over_errors", "tx_fifo_errors",
+                    "rx_crc_errors", "rx_packets", "tx_heartbeat_errors",
+                    "rx_dropped", "tx_aborted_errors", "tx_packets",
+                    "rx_errors", "tx_bytes", "tx_window_errors", "rx_fifo_errors",
+                    "tx_carrier_errors"</c>
+                </texttable>
+            </section>
+        </section>
+        <section anchor="NetworkCollection" title="NetworkCollection">
+            <t>
+                <spanx style="strong">Definition</spanx>:
+                collection of NetJSON objects.
+            </t>
+            <t>
+                <spanx style="strong">Goals</spanx>:
+                allow to list various netjson objects into a coherent group, eg:
+            </t>
+            <t>
+                <list>
+                  <t>list graphs of different routing protocols running on the same device;</t>
+                  <t>list all the routes of a multi-topology capable routing protocol;</t>
+                  <t>list devices of a network.</t>
+                </list>
+            </t>
+            <t>
+                <spanx style="strong">Example</spanx>:
+                <xref target="NetworkCollection-example">A.5. NetworkCollection Example</xref>.
+            </t>
+            <t>
+                <spanx style="strong">JSON Schema:</spanx>
+                <xref target="NetworkCollection-schema">B.5. NetworkCollection Schema</xref>.
+            </t>
+            <t>
+                A <spanx style="em">NetworkCollection</spanx> object MUST
+                define the following REQUIRED members:
+            </t>
+            <texttable align="left">
+                <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                <c>type</c><c>string</c><c>MUST be <spanx style="em">"NetworkCollection"</spanx></c>
+                <c>collection</c><c>array</c><c>array of <xref target="netjson-object">NetJSON objects</xref></c>
+            </texttable>
         </section>
         <!-- This PI places the pagebreak correctly (before the section title) in the text output. -->
         <?rfc needLines="8" ?>
