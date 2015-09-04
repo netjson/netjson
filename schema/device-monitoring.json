@@ -1,0 +1,345 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "/",
+    "type": "object",
+    "additionalProperties": true,
+    "required": [
+        "type"
+    ],
+    "properties": {
+        "type": {
+            "id": "type",
+            "type": "string",
+            "default": "DeviceMonitoring",
+            "pattern": "DeviceMonitoring"
+        },
+        "general": {
+            "id": "general",
+            "type": "object",
+            "title": "General",
+            "additionalProperties": true,
+            "properties": {
+                "local_time": {
+                    "id": "local_time",
+                    "type": "number"
+                },
+                "uptime": {
+                    "id": "uptime",
+                    "type": "number"
+                }
+            }
+        },
+        "resources": {
+            "id": "resources",
+            "type": "object",
+            "title": "Resources",
+            "additionalProperties": true,
+            "properties": {
+                "load_average": {
+                    "id": "load_average",
+                    "type": "array",
+                    "items": [
+                        {
+                            "id": "0",
+                            "type": "string"
+                        },
+                        {
+                            "id": "1",
+                            "type": "string"
+                        },
+                        {
+                            "id": "2",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "memory": {
+                    "id": "memory",
+                    "type": "object",
+                    "properties": {
+                        "total": {
+                            "id": "total",
+                            "type": "number"
+                        },
+                        "free": {
+                            "id": "free",
+                            "type": "number"
+                        },
+                        "buffered": {
+                            "id": "buffered",
+                            "type": "number"
+                        },
+                        "cache": {
+                            "id": "cache",
+                            "type": "number"
+                        }
+                    }
+                },
+                "swap": {
+                    "id": "swap",
+                    "type": "object",
+                    "properties": {
+                        "total": {
+                            "id": "total",
+                            "type": "number"
+                        },
+                        "free": {
+                            "id": "free",
+                            "type": "number"
+                        }
+                    }
+                },
+                "connections": {
+                    "id": "connections",
+                    "type": "object",
+                    "properties": {
+                        "ipv4": {
+                            "id": "ipv4",
+                            "type": "object",
+                            "properties": {
+                                "tcp": {
+                                    "id": "tcp",
+                                    "type": "number"
+                                },
+                                "udp": {
+                                    "id": "udp",
+                                    "type": "number"
+                                }
+                            }
+                        },
+                        "ipv6": {
+                            "id": "ipv6",
+                            "type": "object",
+                            "properties": {
+                                "tcp": {
+                                    "id": "tcp",
+                                    "type": "number"
+                                },
+                                "udp": {
+                                    "id": "udp",
+                                    "type": "number"
+                                }
+                            }
+                        }
+                    }
+                },
+                "processes": {
+                    "id": "processes",
+                    "type": "object",
+                    "properties": {
+                        "running": {
+                            "id": "running",
+                            "type": "number"
+                        },
+                        "sleeping": {
+                            "id": "sleeping",
+                            "type": "number"
+                        },
+                        "blocked": {
+                            "id": "blocked",
+                            "type": "number"
+                        },
+                        "zombie": {
+                            "id": "zombie",
+                            "type": "number"
+                        },
+                        "stopped": {
+                            "id": "stopped",
+                            "type": "number"
+                        },
+                        "paging": {
+                            "id": "paging",
+                            "type": "number"
+                        }
+                    }
+                },
+                "cpu": {
+                    "id": "cpu",
+                    "type": "object",
+                    "properties": {
+                        "frequency": {
+                            "id": "frequency",
+                            "type": "number"
+                        },
+                        "user": {
+                            "id": "user",
+                            "type": "number"
+                        },
+                        "system": {
+                            "id": "system",
+                            "type": "number"
+                        },
+                        "nice": {
+                            "id": "nice",
+                            "type": "number"
+                        },
+                        "idle": {
+                            "id": "idle",
+                            "type": "number"
+                        },
+                        "iowait": {
+                            "id": "iowait",
+                            "type": "number"
+                        },
+                        "irq": {
+                            "id": "irq",
+                            "type": "number"
+                        },
+                        "softirq": {
+                            "id": "softirq",
+                            "type": "number"
+                        }
+                    }
+                },
+                "flash": {
+                    "id": "flash",
+                    "type": "object",
+                    "properties": {
+                        "total": {
+                            "id": "total",
+                            "type": "number"
+                        },
+                        "free": {
+                            "id": "free",
+                            "type": "number"
+                        }
+                    }
+                },
+                "storage": {
+                    "id": "storage",
+                    "type": "object",
+                    "properties": {
+                        "total": {
+                            "id": "total",
+                            "type": "number"
+                        },
+                        "free": {
+                            "id": "free",
+                            "type": "number"
+                        }
+                    }
+                }
+            }
+        },
+        "interfaces": {
+            "id": "interfaces",
+            "type": "array",
+            "title": "Interfaces",
+            "uniqueItems": true,
+            "additionalItems": true,
+            "items": {
+                "type": "object",
+                "title": "Interface",
+                "additionalProperties": true,
+                "properties": {
+                    "name": {
+                        "id": "name",
+                        "type": "string"
+                    },
+                    "uptime": {
+                        "id": "uptime",
+                        "type": "number"
+                    },
+                    "statistics": {
+                        "id": "statistics",
+                        "type": "object",
+                        "properties": {
+                            "collisions": {
+                                "id": "collisions",
+                                "type": "number"
+                            },
+                            "rx_frame_errors": {
+                                "id": "rx_frame_errors",
+                                "type": "number"
+                            },
+                            "tx_compressed": {
+                                "id": "tx_compressed",
+                                "type": "number"
+                            },
+                            "multicast": {
+                                "id": "multicast",
+                                "type": "number"
+                            },
+                            "rx_length_errors": {
+                                "id": "rx_length_errors",
+                                "type": "number"
+                            },
+                            "tx_dropped": {
+                                "id": "tx_dropped",
+                                "type": "number"
+                            },
+                            "rx_bytes": {
+                                "id": "rx_bytes",
+                                "type": "number"
+                            },
+                            "rx_missed_errors": {
+                                "id": "rx_missed_errors",
+                                "type": "number"
+                            },
+                            "tx_errors": {
+                                "id": "tx_errors",
+                                "type": "number"
+                            },
+                            "rx_compressed": {
+                                "id": "rx_compressed",
+                                "type": "number"
+                            },
+                            "rx_over_errors": {
+                                "id": "rx_over_errors",
+                                "type": "number"
+                            },
+                            "tx_fifo_errors": {
+                                "id": "tx_fifo_errors",
+                                "type": "number"
+                            },
+                            "rx_crc_errors": {
+                                "id": "rx_crc_errors",
+                                "type": "number"
+                            },
+                            "rx_packets": {
+                                "id": "rx_packets",
+                                "type": "number"
+                            },
+                            "tx_heartbeat_errors": {
+                                "id": "tx_heartbeat_errors",
+                                "type": "number"
+                            },
+                            "rx_dropped": {
+                                "id": "rx_dropped",
+                                "type": "number"
+                            },
+                            "tx_aborted_errors": {
+                                "id": "tx_aborted_errors",
+                                "type": "number"
+                            },
+                            "tx_packets": {
+                                "id": "tx_packets",
+                                "type": "number"
+                            },
+                            "rx_errors": {
+                                "id": "rx_errors",
+                                "type": "number"
+                            },
+                            "tx_bytes": {
+                                "id": "tx_bytes",
+                                "type": "number"
+                            },
+                            "tx_window_errors": {
+                                "id": "tx_window_errors",
+                                "type": "number"
+                            },
+                            "rx_fifo_errors": {
+                                "id": "rx_fifo_errors",
+                                "type": "number"
+                            },
+                            "tx_carrier_errors": {
+                                "id": "tx_carrier_errors",
+                                "type": "number"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
