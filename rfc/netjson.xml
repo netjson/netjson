@@ -471,7 +471,7 @@
                 see <xref target="resources1">Resources Object</xref> for details</c>
                 <c>interfaces</c><c>array</c><c>array of objects that represent how
                 network interfaces are configured on the device,
-                see <xref target="interfaces1">Interfaces Objects</xref> for details</c>
+                see <xref target="interfaces1">Interface Objects</xref> for details</c>
                 <c>physical_devices</c><c>array</c><c>array of objects
                 that represent the configuration of radios available on the system,
                 see <xref target="physical_devices1">Physical Device Objects</xref> for details</c>
@@ -552,7 +552,7 @@
                     storage memory available on the system measured in bytes</c>
                 </texttable>
             </section>
-            <section title="Interfaces Objects" anchor="interfaces1">
+            <section title="Interface Objects" anchor="interfaces1">
                 <t>
                     Each object contained in the <spanx style="em">"interfaces"</spanx>
                     array of <spanx style="em">DeviceConfiguration</spanx>
@@ -643,7 +643,7 @@
                 by the system, see <xref target="resources2">Resources Object</xref> for details</c>
                 <c>interfaces</c><c>array</c><c>array of objects that represent monitoring data
                 related to specific network interfaces,
-                see <xref target="interfaces2">Interfaces Objects</xref> for details</c>
+                see <xref target="interfaces2">Interface Objects</xref> for details</c>
             </texttable>
             <section title="General Object" anchor="general2">
                 <t>
@@ -683,7 +683,7 @@
                     contain the following RECOMMENDED members: "total", "free" (unit: bytes)</c>
                 </texttable>
             </section>
-            <section title="Interfaces Objects" anchor="interfaces2">
+            <section title="Interface Objects" anchor="interfaces2">
                 <t>
                     Each object contained in the <spanx style="em">"interfaces"</spanx>
                     array of <spanx style="em">DeviceMonitoring</spanx>
