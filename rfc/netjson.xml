@@ -263,7 +263,11 @@
                 </t>
                 <t>
                     <spanx style="strong">Example:</spanx>
-                    <xref target="NetworkRoutes-example">A.1. NetworkRoutes</xref>.
+                    <xref target="NetworkRoutes-example">A.1. NetworkRoutes Example</xref>.
+                </t>
+                <t>
+                    <spanx style="strong">JSON Schema:</spanx>
+                    <xref target="NetworkRoutes-schema">B.1. NetworkRoutes Schema</xref>.
                 </t>
                 <t>
                     A <spanx style="em">NetworkRoutes</spanx> object MUST
@@ -887,7 +891,7 @@
             <t>
                 Each of the examples below represents a valid and complete NetJSON object.
             </t>
-            <section anchor="NetworkRoutes-example" title="NetworkRoutes">
+            <section anchor="NetworkRoutes-example" title="NetworkRoutes Example">
                 <figure>
                     <artwork>
 <![CDATA[
@@ -1303,6 +1307,108 @@
             ]
         }
     ]
+}
+]]>
+                    </artwork>
+                </figure>
+            </section>
+        </section>
+        <section anchor="Schemas" title="Schemas">
+            <t>
+                Below are listed the JSON Schemas of the each NetJSON Type.
+            </t>
+            <section anchor="NetworkRoutes-schema" title="NetworkRoutes Schema">
+                <figure>
+                    <artwork>
+<![CDATA[
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "/",
+    "type": "object",
+    "additionalProperties": true,
+    "required": [
+        "type",
+        "protocol",
+        "version",
+        "metric",
+        "routes"
+    ],
+    "properties": {
+        "type": {
+            "id": "type",
+            "type": "string",
+            "default": "NetworkRoutes",
+            "pattern": "NetworkRoutes"
+        },
+        "protocol": {
+            "id": "protocol",
+            "type": "string"
+        },
+        "version": {
+            "id": "version",
+            "type": "string"
+        },
+        "metric": {
+            "id": "metric",
+            "type": "string"
+        },
+        "revision": {
+            "id": "revision",
+            "type": "string"
+        },
+        "router_id": {
+            "id": "router_id",
+            "type": "string"
+        },
+        "topology_id": {
+            "id": "topology_id",
+            "type": "string"
+        },
+        "routes": {
+            "id": "routes",
+            "type": "array",
+            "title": "Routes",
+            "uniqueItems": true,
+            "additionalItems": true,
+            "items": {
+                "type": "object",
+                "title": "Route",
+                "additionalProperties": true,
+                "required": [
+                    "destination",
+                    "next",
+                    "device",
+                    "cost"
+                ],
+                "properties": {
+                    "destination": {
+                        "id": "destination",
+                        "type": "string"
+                    },
+                    "next": {
+                        "id": "next",
+                        "type": "string"
+                    },
+                    "device": {
+                        "id": "device",
+                        "type": "string"
+                    },
+                    "cost": {
+                        "id": "cost",
+                        "type": "number"
+                    },
+                    "source": {
+                        "id": "source",
+                        "type": "string"
+                    },
+                    "cost_txt": {
+                        "id": "cost_txt",
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
 }
 ]]>
                     </artwork>
