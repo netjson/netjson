@@ -721,6 +721,13 @@
         </section>
         <!-- This PI places the pagebreak correctly (before the section title) in the text output. -->
         <?rfc needLines="8" ?>
+        <section anchor="Security" title="Security Considerations">
+            <t>
+                NetJSON types and their schemas are JSON values.
+                As such, all security considerations defined in
+                <xref target="RFC7159">RFC 7159</xref> apply.
+            </t>
+        </section>
         <section anchor="Privacy" title="Privacy Considerations">
             <t>NetJSON does not impose to publish, send or collect sensitive information.</t>
             <t>NetJSON only describes how to represent data, each implementer MAY decide:</t>
