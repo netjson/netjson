@@ -722,7 +722,11 @@
                 </t>
                 <t>
                     <spanx style="strong">Example</spanx>:
-                    <xref target="NetworkCollection-example">A.5. NetworkCollection</xref>.
+                    <xref target="NetworkCollection-example">A.5. NetworkCollection Example</xref>.
+                </t>
+                <t>
+                    <spanx style="strong">JSON Schema:</spanx>
+                    <xref target="NetworkCollection-schema">B.5. NetworkCollection Schema</xref>.
                 </t>
                 <t>
                     A <spanx style="em">NetworkCollection</spanx> object MUST
@@ -2330,6 +2334,60 @@
                                 "type": "number"
                             }
                         }
+                    }
+                }
+            }
+        }
+    }
+}
+]]>
+                    </artwork>
+                </figure>
+            </section>
+            <section anchor="NetworkCollection-schema" title="NetworkCollection Schema">
+                <figure>
+                    <artwork>
+<![CDATA[
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "/",
+    "type": "object",
+    "additionalProperties": true,
+    "required": [
+        "type",
+        "collection"
+    ],
+    "properties": {
+        "type": {
+            "id": "type",
+            "type": "string",
+            "default": "NetworkCollection",
+            "pattern": "NetworkCollection"
+        },
+        "collection": {
+            "id": "collection",
+            "type": "array",
+            "title": "NetJSON Objects",
+            "uniqueItems": true,
+            "additionalItems": true,
+            "items": {
+                "type": "object",
+                "title": "NetJSON Object",
+                "additionalProperties": true,
+                "required": [
+                    "type"
+                ],
+                "properties": {
+                    "type": {
+                        "id": "type",
+                        "type": "string",
+                        "enum": [
+                            "NetworkRoutes",
+                            "NetworkGraph",
+                            "DeviceConfiguration",
+                            "DeviceMonitoring",
+                            "NetworkCollection"
+                        ]
                     }
                 }
             }
