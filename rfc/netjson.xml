@@ -766,6 +766,13 @@
                     <date year="2014"/>
                 </front>
             </reference>
+            <reference anchor="JSON-Schema" target="https://tools.ietf.org/html/draft-zyp-json-schema">
+                <front>
+                    <title>JSON Schema: core definitions and terminology</title>
+                    <author fullname="Francis Galiegue" initials="F.G." surname="Galiegue"/>
+                    <date year="2013"/>
+                </front>
+            </reference>
         </references>
         <references title="Informative References">
             <reference anchor="GeoJSON" target="http://tools.ietf.org/html/draft-butler-geojson">
@@ -773,13 +780,6 @@
                     <title>The GeoJSON Format</title>
                     <author fullname="H. Butler" initials="H.B." surname="Butler"/>
                     <date year="2015"/>
-                </front>
-            </reference>
-            <reference anchor="JSON-Schema" target="https://tools.ietf.org/html/draft-zyp-json-schema">
-                <front>
-                    <title>JSON Schema: core definitions and terminology</title>
-                    <author fullname="Francis Galiegue" initials="F.G." surname="Galiegue"/>
-                    <date year="2013"/>
                 </front>
             </reference>
             <reference anchor="CNML" target="http://www.cnml.info/">
