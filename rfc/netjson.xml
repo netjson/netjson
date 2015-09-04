@@ -341,7 +341,11 @@
                 </t>
                 <t>
                     <spanx style="strong">Example:</spanx>
-                    <xref target="NetworkGraph-example">A.2. NetworkGraph</xref>.
+                    <xref target="NetworkGraph-example">A.2. NetworkGraph Example</xref>.
+                </t>
+                <t>
+                    <spanx style="strong">JSON Schema:</spanx>
+                    <xref target="NetworkGraph-schema">B.2. NetworkGraph Schema</xref>.
                 </t>
                 <t>
                     A <spanx style="em">NetworkGraph</spanx> object MUST
@@ -915,7 +919,7 @@
                     </artwork>
                 </figure>
             </section>
-            <section anchor="NetworkGraph-example" title="NetworkGraph">
+            <section anchor="NetworkGraph-example" title="NetworkGraph Example">
                 <figure>
                     <artwork>
 <![CDATA[
@@ -1410,6 +1414,152 @@
         }
     }
 }
+]]>
+                    </artwork>
+                </figure>
+            </section>
+            <section anchor="NetworkGraph-schema" title="NetworkGraph Schema">
+                <figure>
+                    <artwork>
+<![CDATA[
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "/",
+    "type": "object",
+    "additionalProperties": true,
+    "required": [
+        "type",
+        "protocol",
+        "version",
+        "metric",
+        "nodes",
+        "links"
+    ],
+    "properties": {
+        "type": {
+            "id": "type",
+            "type": "string",
+            "default": "NetworkGraph",
+            "pattern": "NetworkGraph"
+        },
+        "protocol": {
+            "id": "protocol",
+            "type": "string"
+        },
+        "version": {
+            "id": "version",
+            "type": "string"
+        },
+        "revision": {
+            "id": "revision",
+            "type": "string"
+        },
+        "metric": {
+            "id": "metric",
+            "type": "string"
+        },
+        "router_id": {
+            "id": "router_id",
+            "type": "string"
+        },
+        "topology_id": {
+            "id": "topology_id",
+            "type": "string"
+        },
+        "label": {
+            "id": "label",
+            "type": "string"
+        },
+        "nodes": {
+            "id": "nodes",
+            "type": "array",
+            "title": "Nodes",
+            "uniqueItems": true,
+            "additionalItems": true,
+            "items": [
+                {
+                    "title": "Node",
+                    "type": "object",
+                    "additionalProperties": true,
+                    "required": [
+                        "id"
+                    ],
+                    "properties": {
+                        "id": {
+                            "id": "id",
+                            "type": "string"
+                        },
+                        "label": {
+                            "id": "label",
+                            "type": "string"
+                        },
+                        "local_addresses": {
+                            "id": "local_addresses",
+                            "type": "array",
+                            "items": [
+                                {
+                                    "id": "0",
+                                    "type": "string"
+                                },
+                                {
+                                    "id": "1",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "properties": {
+                            "id": "properties",
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            ]
+        },
+        "links": {
+            "id": "links",
+            "type": "array",
+            "title": "Links",
+            "uniqueItems": true,
+            "additionalItems": true,
+            "items": {
+                "type": "object",
+                "title": "Link",
+                "additionalProperties": true,
+                "required": [
+                    "source",
+                    "target",
+                    "cost"
+                ],
+                "properties": {
+                    "source": {
+                        "id": "source",
+                        "type": "string"
+                    },
+                    "target": {
+                        "id": "target",
+                        "type": "string"
+                    },
+                    "cost": {
+                        "id": "cost",
+                        "type": "number",
+                        "default": 1
+                    },
+                    "cost_text": {
+                        "id": "cost_text",
+                        "type": "string"
+                    },
+                    "properties": {
+                        "id": "properties",
+                        "type": "object",
+                        "additionalProperties": true
+                    }
+                }
+            }
+        }
+    }
+}
+
 ]]>
                     </artwork>
                 </figure>
