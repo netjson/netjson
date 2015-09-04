@@ -142,7 +142,7 @@
                     "properties": {
                         "total": {
                             "id": "total",
-                            "type": "null"
+                            "type": "number"
                         }
                     }
                 }
