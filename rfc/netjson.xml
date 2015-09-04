@@ -203,6 +203,10 @@
                             "DeviceConfiguration", "DeviceMonitoring", "NetworkRoutes",
                             "NetworkGraph" and "NetworkCollection".
                         </t>
+                        <t>
+                            The term "JSON Schema" (sometimes abbreviated as "schema"),
+                            refers to <xref target="JSON-Schema">JSON-Schema</xref> version 4.
+                        </t>
                     </list>
                 </t>
             </section>
