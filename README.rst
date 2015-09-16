@@ -61,7 +61,7 @@ The resulting JSON structures should follow these general principles:
 Motivations
 -----------
 
-Developing software that deals with networks is harder than it should.
+Developing software that deals with networks is harder than it should be.
 
 Developers have to take into account all the differences between vendors,
 operating systems, routing protocols, hardware and (when working with
