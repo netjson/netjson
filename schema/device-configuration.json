@@ -217,7 +217,8 @@
                             "ethernet",
                             "wireless",
                             "bridge",
-                            "virtual"
+                            "virtual",
+                            "loopback"
                         ]
                     },
                     "name": {
