@@ -35,9 +35,10 @@
             "total": null
         }
     },
-    "physical_devices": [
+    "radios": [
         {
-            "name": "phy0",
+            "name": "radio0",
+            "phy": "phy0",
             "channel": 149,
             "channel_width": 20,
             "tx_power": 18
@@ -52,7 +53,7 @@
             "txqueuelen": 1000,
             "autostart": true,
             "wireless": {
-                "physical_device": "phy0",
+                "radio": "radio0",
                 "bitrate": 54000000,
                 "ack_distance": 1000,
                 "rts_threshold": 1400,
@@ -86,7 +87,7 @@
             "txqueuelen": 1000,
             "autostart": true,
             "wireless": {
-                "physical_device": "phy0",
+                "radio": "radio0",
                 "bitrate": 54000000,
                 "ack_distance": 1000,
                 "rts_threshold": 1400,
@@ -161,7 +162,7 @@
             "txqueuelen": 1000,
             "autostart": true,
             "wireless": {
-                "physical_device": "phy0",
+                "radio": "radio0",
                 "bitrate": 54000000,
                 "rts_threshold": 1400,
                 "frag_threshold": 1400,

@@ -239,7 +239,7 @@ The object should be composed of the following **optional** members:
 * ``operating_system``
 * ``resources``
 * ``interfaces``
-* ``physical_devices``
+* ``radios``
 * ``routes``
 * ``dns_servers``
 * ``dns_search``

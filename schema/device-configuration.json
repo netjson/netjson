@@ -148,15 +148,15 @@
                 }
             }
         },
-        "physical_devices": {
-            "id": "physical_devices",
+        "radios": {
+            "id": "radios",
             "type": "array",
-            "title": "Physical Devices",
+            "title": "Radios",
             "uniqueItems": true,
             "additionalItems": true,
             "items": {
                 "type": "object",
-                "title": "Physical Device",
+                "title": "Radio",
                 "additionalProperties": true,
                 "required": [
                     "name",
@@ -167,6 +167,10 @@
                 "properties": {
                     "name": {
                         "id": "name",
+                        "type": "string"
+                    },
+                    "phy": {
+                        "id": "phy",
                         "type": "string"
                     },
                     "channel": {
@@ -281,8 +285,8 @@
                         "title": "Wireless",
                         "additionalProperties": true,
                         "properties": {
-                            "physical_device": {
-                                "id": "physical_device",
+                            "radio": {
+                                "id": "radio",
                                 "type": "string"
                             },
                             "bitrate": {

@@ -472,9 +472,9 @@
                 <c>interfaces</c><c>array</c><c>array of objects that represent how
                 network interfaces are configured on the device,
                 see <xref target="interfaces1">Interface Objects</xref> for details</c>
-                <c>physical_devices</c><c>array</c><c>array of objects
+                <c>radios</c><c>array</c><c>array of objects
                 that represent the configuration of radios available on the system,
-                see <xref target="physical_devices1">Physical Device Objects</xref> for details</c>
+                see <xref target="radios1">Radio Objects</xref> for details</c>
                 <c>routes</c><c>array</c><c>array of objects that represent
                 static routes configured on the device,
                 see <xref target="routes1">Static Route Objects</xref> for details</c>
@@ -568,7 +568,7 @@
                     <c>txqueuelen</c><c>number</c><c>value of the TX queue length setting</c>
                     <c>autostart</c><c>boolean</c><c>indicates whether the interface should be automatically started after reboot, defaults to true</c>
                     <c>wireless</c><c>object</c><c>valid only if "type" is "wireless".
-                    This object links the logical wireless interace to the relative physical device
+                    This object links the logical wireless interace to the relative radio device
                     and also specifies various physical parameters.
                     For a detailed list of all sub-members of this object,
                     please refer to <xref target="DeviceConfiguration-schema">B.3. DeviceConfiguration Schema</xref>.</c>
@@ -579,18 +579,28 @@
                     and therefore multiple array members are possible in this field</c>
                 </texttable>
             </section>
-            <section title="Physical Device Objects" anchor="physical_devices1">
+            <section title="Radio Objects" anchor="radios1">
                 <t>
                     Each object contained in the
-                    <spanx style="em">"physical_device"</spanx> array of <spanx style="em">DeviceConfiguration</spanx>
+                    <spanx style="em">"radios"</spanx> array of <spanx style="em">DeviceConfiguration</spanx>
                     MUST define the following REQUIRED members:
                 </t>
                 <texttable align="left">
                     <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
-                    <c>name</c><c>string</c><c>name of the physical device</c>
+                    <c>name</c><c>string</c><c>arbitrary name of the radio device</c>
                     <c>channel</c><c>number</c><c>channel number</c>
                     <c>channel_width</c><c>number</c><c>channel width in Hertz</c>
                     <c>tx_power</c><c>number</c><c>transmission power in dBm</c>
+                </texttable>
+                <t>
+                    Each object contained in the
+                    <spanx style="em">"radios"</spanx> array of <spanx style="em">DeviceConfiguration</spanx>
+                    MAY define the following OPTIONAL members:
+                </t>
+                <texttable align="left">
+                    <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                    <c>phy</c><c>string</c><c>name of the physical device to which the radio object is related to,
+                    optional because usually autodetected</c>
                 </texttable>
             </section>
             <section title="Static Route Objects" anchor="routes1">
@@ -1021,9 +1031,10 @@
             "total": null
         }
     },
-    "physical_devices": [
+    "radios": [
         {
-            "name": "phy0",
+            "name": "radio0",
+            "phy": "phy0",
             "channel": 149,
             "channel_width": 20,
             "tx_power": 18
@@ -1038,7 +1049,7 @@
             "txqueuelen": 1000,
             "autostart": true,
             "wireless": {
-                "physical_device": "phy0",
+                "radio": "radio0",
                 "bitrate": 54000000,
                 "ack_distance": 1000,
                 "rts_threshold": 1400,
@@ -1729,15 +1740,15 @@
                 }
             }
         },
-        "physical_devices": {
-            "id": "physical_devices",
+        "radios": {
+            "id": "radios",
             "type": "array",
-            "title": "Physical Devices",
+            "title": "Radios",
             "uniqueItems": true,
             "additionalItems": true,
             "items": {
                 "type": "object",
-                "title": "Physical Device",
+                "title": "Radio",
                 "additionalProperties": true,
                 "required": [
                     "name",
@@ -1748,6 +1759,10 @@
                 "properties": {
                     "name": {
                         "id": "name",
+                        "type": "string"
+                    },
+                    "phy": {
+                        "id": "phy",
                         "type": "string"
                     },
                     "channel": {
@@ -1862,8 +1877,8 @@
                         "title": "Wireless",
                         "additionalProperties": true,
                         "properties": {
-                            "physical_device": {
-                                "id": "physical_device",
+                            "radio": {
+                                "id": "radio",
                                 "type": "string"
                             },
                             "bitrate": {
