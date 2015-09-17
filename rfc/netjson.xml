@@ -1780,6 +1780,17 @@
                     "tx_power": {
                         "id": "tx_power",
                         "type": "number"
+                    },
+                    "country": {
+                        "id": "country",
+                        "type": "string",
+                        "minLength": 2,
+                        "maxLength": 2
+                    },
+                    "disabled": {
+                        "id": "disabled",
+                        "type": "boolean",
+                        "default": false
                     }
                 }
             }
