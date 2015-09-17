@@ -43,6 +43,7 @@
             "channel_width": 20,
             "tx_power": 18,
             "country": "en",
+            "disabled": false
         }
     ],
     "interfaces": [

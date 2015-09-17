@@ -602,6 +602,7 @@
                     <c>phy</c><c>string</c><c>name of the physical device to which the radio object is related to,
                     optional because usually autodetected</c>
                     <c>country</c><c>string</c><c>two digit country code in ISO 3166-1 alpha-2 format, case insensitive</c>
+                    <c>disabled</c><c>boolean</c><c>whether the radio should be disabled or not, defaults to false</c>
                 </texttable>
             </section>
             <section title="Static Route Objects" anchor="routes1">
@@ -1040,6 +1041,7 @@
             "channel_width": 20,
             "tx_power": 18,
             "country": "en",
+            "disabled": false
         }
     ],
     "interfaces": [
