@@ -601,6 +601,7 @@
                     <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
                     <c>phy</c><c>string</c><c>name of the physical device to which the radio object is related to,
                     optional because usually autodetected</c>
+                    <c>country</c><c>string</c><c>two digit country code in ISO 3166-1 alpha-2 format, case insensitive</c>
                 </texttable>
             </section>
             <section title="Static Route Objects" anchor="routes1">
@@ -1037,7 +1038,8 @@
             "phy": "phy0",
             "channel": 149,
             "channel_width": 20,
-            "tx_power": 18
+            "tx_power": 18,
+            "country": "en",
         }
     ],
     "interfaces": [
