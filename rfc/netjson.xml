@@ -560,7 +560,8 @@
                 </t>
                 <texttable align="left">
                     <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
-                    <c>type</c><c>string</c><c>possible values: "ethernet", "wireless", "bridge", "virtual" or "loopback"</c>
+                    <c>type</c><c>string</c><c>RECOMMENDED possible values for this field are: "ethernet", "wireless",
+                    "bridge", "virtual" or "loopback". Additional values MAY be allowed if needed.</c>
                     <c>bridge_members</c><c>array</c><c>array of interface names representing the bridged interfaces</c>
                     <c>name</c><c>string</c><c>name of the interface</c>
                     <c>mac</c><c>string</c><c>mac address</c>
