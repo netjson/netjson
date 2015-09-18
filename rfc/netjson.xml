@@ -1059,7 +1059,7 @@
                 "rts_threshold": 1400,
                 "frag_threshold": 1400,
                 "mode": "ap",
-                "essid": "ap-ssid-example",
+                "ssid": "ap-ssid-example",
                 "encryption": {
                     "enabled": false
                 }
@@ -1925,8 +1925,8 @@
                                     "802.11s"
                                 ]
                             },
-                            "essid": {
-                                "id": "essid",
+                            "ssid": {
+                                "id": "ssid",
                                 "type": "string"
                             },
                             "bssid": {

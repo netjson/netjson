@@ -61,7 +61,7 @@
                 "rts_threshold": 1400,
                 "frag_threshold": 1400,
                 "mode": "ap",
-                "essid": "ap-ssid-example",
+                "ssid": "ap-ssid-example",
                 "encryption": {
                     "enabled": false
                 }
@@ -95,7 +95,7 @@
                 "rts_threshold": 1400,
                 "frag_threshold": 1400,
                 "mode": "adhoc",
-                "essid": "adhoc-ssid-example",
+                "ssid": "adhoc-ssid-example",
                 "bssid": "02:CA:FF:EE:BA:BE",
                 "encryption": {
                     "enabled": false
@@ -169,7 +169,7 @@
                 "rts_threshold": 1400,
                 "frag_threshold": 1400,
                 "mode": "ap",
-                "essid": "private-network-example",
+                "ssid": "private-network-example",
                 "encryption": {
                     "enabled": true,
                     "wpa": [
