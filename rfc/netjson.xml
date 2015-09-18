@@ -1055,11 +1055,7 @@
             "autostart": true,
             "wireless": {
                 "radio": "radio0",
-                "bitrate": 54000000,
-                "ack_distance": 1000,
-                "rts_threshold": 1400,
-                "frag_threshold": 1400,
-                "mode": "ap",
+                "mode": "access_point",
                 "ssid": "ap-ssid-example",
                 "encryption": {
                     "enabled": false
@@ -1891,28 +1887,17 @@
                     "wireless": {
                         "id": "wireless",
                         "type": "object",
-                        "title": "Wireless",
-                        "additionalProperties": true,
+                        "title": "Wireless settings",
+                        "additionalProperties": True,
+                        "required": [
+                            "radio",
+                            "mode",
+                            "ssid"
+                        ],
                         "properties": {
                             "radio": {
                                 "id": "radio",
                                 "type": "string"
-                            },
-                            "bitrate": {
-                                "id": "bitrate",
-                                "type": "number"
-                            },
-                            "ack_distance": {
-                                "id": "ack_distance",
-                                "type": "number"
-                            },
-                            "rts_threshold": {
-                                "id": "rts_threshold",
-                                "type": "number"
-                            },
-                            "frag_threshold": {
-                                "id": "frag_threshold",
-                                "type": "number"
                             },
                             "mode": {
                                 "id": "mode",
@@ -1933,6 +1918,11 @@
                             "bssid": {
                                 "id": "bssid",
                                 "type": "string"
+                            },
+                            "hidden": {
+                                "id": "bssid",
+                                "type": "boolean",
+                                "default": False
                             },
                             "encryption": {
                                 "id": "encryption",
