@@ -295,7 +295,7 @@
                         "id": "wireless",
                         "type": "object",
                         "title": "Wireless settings",
-                        "additionalProperties": True,
+                        "additionalProperties": true,
                         "required": [
                             "radio",
                             "mode",
@@ -329,7 +329,7 @@
                             "hidden": {
                                 "id": "bssid",
                                 "type": "boolean",
-                                "default": False
+                                "default": false
                             },
                             "encryption": {
                                 "id": "encryption",
