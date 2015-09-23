@@ -568,11 +568,12 @@
                     <c>mtu</c><c>number</c><c>value of the Maximum Transmission Unit setting</c>
                     <c>txqueuelen</c><c>number</c><c>value of the TX queue length setting</c>
                     <c>autostart</c><c>boolean</c><c>indicates whether the interface should be automatically started after reboot, defaults to true</c>
-                    <c>wireless</c><c>object</c><c>valid only if "type" is "wireless".
-                    This object links the logical wireless interace to the relative radio device
-                    and also specifies various physical parameters.
-                    For a detailed list of all sub-members of this object,
-                    please refer to <xref target="DeviceConfiguration-schema">B.3. DeviceConfiguration Schema</xref>.</c>
+                    <c>wireless</c><c>array</c><c>valid only if "type" is "wireless".
+                    A list of wireless interface objects which contain attributes needed to configure settings
+                    like SSID, BSSID, wireless mode, encryption and so on.
+                    The array type allows to have multiple SSIDs assigned to each physical radio.
+                    For detailed information regarding the wireless interface objects, please refer to
+                    <xref target="DeviceConfiguration-schema">B.3. DeviceConfiguration Schema</xref>.</c>
                     <c>addresses</c><c>array of objects</c><c>An array of objects with
                     members listing the address, netmask, family ("ipv4", "ipv6")
                     and protocol ("static", "dhcp") of the configured IP address of the logical interface
@@ -1053,14 +1054,16 @@
             "mtu": 1500,
             "txqueuelen": 1000,
             "autostart": true,
-            "wireless": {
-                "radio": "radio0",
-                "mode": "access_point",
-                "ssid": "ap-ssid-example",
-                "encryption": {
-                    "enabled": false
+            "wireless": [
+                {
+                    "radio": "radio0",
+                    "mode": "access_point",
+                    "ssid": "ap-ssid-example",
+                    "encryption": {
+                        "enabled": false
+                    }
                 }
-            },
+            ],
             "addresses": [
                 {
                     "address": "192.168.1.1",
@@ -1885,73 +1888,85 @@
                         ]
                     },
                     "wireless": {
-                        "id": "wireless",
-                        "type": "object",
-                        "title": "Wireless settings",
-                        "additionalProperties": true,
-                        "required": [
-                            "radio",
-                            "mode",
-                            "ssid"
-                        ],
-                        "properties": {
-                            "radio": {
-                                "id": "radio",
-                                "type": "string"
-                            },
-                            "mode": {
-                                "id": "mode",
-                                "type": "string",
-                                "enum": [
-                                    "access_point",
-                                    "station",
-                                    "adhoc",
-                                    "wds",
-                                    "monitor",
-                                    "802.11s"
-                                ]
-                            },
-                            "ssid": {
-                                "id": "ssid",
-                                "type": "string"
-                            },
-                            "bssid": {
-                                "id": "bssid",
-                                "type": "string"
-                            },
-                            "hidden": {
-                                "id": "bssid",
-                                "type": "boolean",
-				"default": false
-                            },
-                            "encryption": {
-                                "id": "encryption",
-                                "type": "object",
-                                "title": "Encryption",
-                                "properties": {
-                                    "enabled": {
-                                        "id": "enabled",
-                                        "type": "boolean"
-                                    },
-                                    "wpa": {
-                                        "id": "wpa",
-                                        "type": "array",
-                                        "items": {
-                                            "type": "integer"
-                                        }
-                                    },
-                                    "authentication": {
-                                        "id": "authentication",
-                                        "type": "array",
-                                        "items": {
+                        "type": "array",
+                        "title": "Wireless interfaces",
+                        "uniqueItems": true,
+                        "additionalItems": true,
+                        "items": {
+                            "type": "object",
+                            "title": "Wireless Interface",
+                            "additionalProperties": true,
+                            "required": [
+                                "radio",
+                                "mode",
+                                "ssid"
+                            ],
+                            "properties": {
+                                "radio": {
+                                    "id": "radio",
+                                    "type": "string"
+                                },
+                                "mode": {
+                                    "id": "mode",
+                                    "type": "string",
+                                    "enum": [
+                                        "access_point",
+                                        "station",
+                                        "adhoc",
+                                        "wds",
+                                        "monitor",
+                                        "802.11s"
+                                    ]
+                                },
+                                "ssid": {
+                                    "id": "ssid",
+                                    "type": "string"
+                                },
+                                "bssid": {
+                                    "id": "bssid",
+                                    "type": "string"
+                                },
+                                "hidden": {
+                                    "id": "bssid",
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "encryption": {
+                                    "id": "encryption",
+                                    "type": "object",
+                                    "title": "Encryption",
+                                    "required": [
+                                        "enabled",
+                                        "protocol",
+                                        "key"
+                                    ],
+                                    "properties": {
+                                        "enabled": {
+                                            "id": "enabled",
+                                            "type": "boolean"
+                                        },
+                                        "protocol": {
+                                            "id": "protocol",
+                                            "type": "string",
+                                            "enum": [
+                                                "wep_open",
+                                                "wep_shared",
+                                                "wpa_personal",
+                                                "wpa2_personal",
+                                                "wpa_personal_mixed",
+                                                "wpa_enterprise",
+                                                "wpa2_enterprise",
+                                                "wpa_enterprise_mixed",
+                                                "wps"
+                                            ]
+                                        },
+                                        "ciphers": {
+                                            "id": "ciphers",
+                                            "type": "array"
+                                        },
+                                        "key": {
+                                            "id": "key",
                                             "type": "string"
-                                        }
-                                    },
-                                    "ciphers": {
-                                        "id": "ciphers",
-                                        "type": "array",
-                                        "items": {
-                                            "type": "integer"
                                         }
                                     }
                                 }
