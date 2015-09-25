@@ -209,6 +209,9 @@
                 "type": "object",
                 "title": "Interface",
                 "additionalProperties": true,
+                "required": [
+                    "name"
+                ],
                 "properties": {
                     "type": {
                         "id": "type",

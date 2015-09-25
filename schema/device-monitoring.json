@@ -227,6 +227,9 @@
             "title": "Interfaces",
             "uniqueItems": true,
             "additionalItems": true,
+            "required": [
+                "name"
+            ],
             "items": {
                 "type": "object",
                 "title": "Interface",
