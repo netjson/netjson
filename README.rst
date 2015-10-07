@@ -318,6 +318,7 @@ Implementations
 * `netdiff <https://github.com/ninuxorg/netdiff#netjson-output>`__ (network topoogy parser)
 * `netengine-utils <http://netengine.readthedocs.org/en/latest/topics/netengine-utils.html#ifconfig-netjson-option>`__ (utilities for parsing the output from ``ifconfig``, ``iwconfig``, ecc.)
 * `netjsonconfig <https://github.com/openwisp/netjsonconfig>`__ (converts NetJSON DeviceConfiguration objects to real router configurations)
+* `django-netjsongraph <https://github.com/interop-dev/django-netjsongraph>`__ (django implementation of NetJSON NetworkGraph)
 
 FAQs
 ====
