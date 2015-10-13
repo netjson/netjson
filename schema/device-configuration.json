@@ -265,6 +265,10 @@
                                     "id": "mask",
                                     "type": "integer"
                                 },
+                                "gateway": {
+                                    "id": "gateway",
+                                    "type": "string"
+                                },
                                 "family": {
                                     "id": "family",
                                     "type": "string",

@@ -117,6 +117,7 @@
                 {
                     "address": "176.9.211.214",
                     "mask": 28,
+                    "gateway": "176.9.211.209",
                     "family": "ipv4",
                     "proto": "static"
                 },
