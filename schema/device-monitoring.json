@@ -35,21 +35,21 @@
             "title": "Resources",
             "additionalProperties": true,
             "properties": {
-                "load_average": {
-                    "id": "load_average",
+                "load": {
+                    "id": "load",
                     "type": "array",
                     "items": [
                         {
                             "id": "0",
-                            "type": "string"
+                            "type": "number"
                         },
                         {
                             "id": "1",
-                            "type": "string"
+                            "type": "number"
                         },
                         {
                             "id": "2",
-                            "type": "string"
+                            "type": "number"
                         }
                     ]
                 },

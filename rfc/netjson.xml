@@ -679,6 +679,9 @@
                 </t>
                 <texttable align="left">
                     <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                    <c>load</c><c>array</c><c>array with 3 numeric values representing
+                    load average values respectively in the last minute,
+                    in the last 5 minutes and in the last 15 minutes </c>
                     <c>memory</c><c>object</c><c>object describing RAM usage, SHOULD contain
                     the following RECOMMENDED members: "total", "free", "buffered", "cache" (unit: bytes)</c>
                     <c>swap</c><c>object</c><c>object describing swap memory usage, SHOULD contain
@@ -1137,10 +1140,10 @@
         "uptime": 3501937
     },
     "resources": {
-        "load_average": [
-           "0.08",
-           "0.04",
-           "0.05"
+        "load": [
+           0.08,
+           0.04,
+           0.05
         ],
         "memory": {
             "total": 67108864,
@@ -2077,21 +2080,21 @@
             "title": "Resources",
             "additionalProperties": true,
             "properties": {
-                "load_average": {
-                    "id": "load_average",
+                "load": {
+                    "id": "load",
                     "type": "array",
                     "items": [
                         {
                             "id": "0",
-                            "type": "string"
+                            "type": "number"
                         },
                         {
                             "id": "1",
-                            "type": "string"
+                            "type": "number"
                         },
                         {
                             "id": "2",
-                            "type": "string"
+                            "type": "number"
                         }
                     ]
                 },
