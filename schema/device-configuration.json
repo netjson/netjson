@@ -338,6 +338,18 @@
                                     "type": "boolean",
                                     "default": false
                                 },
+                                "ack_distance": {
+                                    "id": "ack_distance",
+                                    "type": "integer"
+                                },
+                                "rts_threshold": {
+                                    "id": "rts_threshold",
+                                    "type": "integer"
+                                },
+                                "frag_threshold": {
+                                    "id": "frag_threshold",
+                                    "type": "integer"
+                                },
                                 "encryption": {
                                     "id": "encryption",
                                     "type": "object",
