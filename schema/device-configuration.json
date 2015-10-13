@@ -49,7 +49,7 @@
                 },
                 "revision": {
                     "id": "revision",
-                    "type": "number"
+                    "type": "integer"
                 },
                 "cpu": {
                     "id": "cpu",
@@ -98,7 +98,7 @@
                     "properties": {
                         "total": {
                             "id": "total",
-                            "type": "number"
+                            "type": "integer"
                         }
                     }
                 },
@@ -109,7 +109,7 @@
                     "properties": {
                         "total": {
                             "id": "total",
-                            "type": "number"
+                            "type": "integer"
                         }
                     }
                 },
@@ -120,7 +120,7 @@
                     "properties": {
                         "frequency": {
                             "id": "frequency",
-                            "type": "number"
+                            "type": "integer"
                         }
                     }
                 },
@@ -131,7 +131,7 @@
                     "properties": {
                         "total": {
                             "id": "total",
-                            "type": "number"
+                            "type": "integer"
                         }
                     }
                 },
@@ -142,7 +142,7 @@
                     "properties": {
                         "total": {
                             "id": "total",
-                            "type": "number"
+                            "type": "integer"
                         }
                     }
                 }
@@ -175,15 +175,15 @@
                     },
                     "channel": {
                         "id": "channel",
-                        "type": "number"
+                        "type": "integer"
                     },
                     "channel_width": {
                         "id": "channel_width",
-                        "type": "number"
+                        "type": "integer"
                     },
                     "tx_power": {
                         "id": "tx_power",
-                        "type": "number"
+                        "type": "integer"
                     },
                     "country": {
                         "id": "country",
@@ -234,12 +234,12 @@
                     },
                     "mtu": {
                         "id": "mtu",
-                        "type": "number",
+                        "type": "integer",
                         "default": 1500
                     },
                     "txqueuelen": {
                         "id": "txqueuelen",
-                        "type": "number"
+                        "type": "integer"
                     },
                     "autostart": {
                         "id": "autostart",
@@ -263,7 +263,7 @@
                                 },
                                 "mask": {
                                     "id": "mask",
-                                    "type": "number"
+                                    "type": "integer"
                                 },
                                 "family": {
                                     "id": "family",

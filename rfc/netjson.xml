@@ -536,19 +536,19 @@
                 <texttable align="left">
                     <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
                     <c>memory</c><c>object</c><c>object containing only one REQUIRED
-                    "total" member having as value a number which represents the total
+                    "total" member having as value an integer which represents the total
                     RAM available on the system measured in bytes</c>
                     <c>swap</c><c>object</c><c>object containing only one REQUIRED
-                    "total" member having as value a number which represents the total
+                    "total" member having as value an integer which represents the total
                     swap memory available on the system measured in bytes</c>
                     <c>cpu</c><c>object</c><c> containing only one REQUIRED "frequency"
-                    member having as value a number which represents the clock frequency
+                    member having as value an integer which represents the clock frequency
                     measured in Hertz</c>
                     <c>flash</c><c>object</c><c>object containing only one REQUIRED
-                    "total" member having as value a number which represents the total
+                    "total" member having as value an integer which represents the total
                     flash memory available on the system measured in bytes</c>
                     <c>storage</c><c>object</c><c>object containing only one REQUIRED
-                    "total" member having as value a number which represents the total
+                    "total" member having as value an integer which represents the total
                     storage memory available on the system measured in bytes</c>
                 </texttable>
             </section>
@@ -565,8 +565,8 @@
                     <c>bridge_members</c><c>array</c><c>array of interface names representing the bridged interfaces</c>
                     <c>name</c><c>string</c><c>name of the interface</c>
                     <c>mac</c><c>string</c><c>mac address</c>
-                    <c>mtu</c><c>number</c><c>value of the Maximum Transmission Unit setting</c>
-                    <c>txqueuelen</c><c>number</c><c>value of the TX queue length setting</c>
+                    <c>mtu</c><c>integer</c><c>value of the Maximum Transmission Unit setting</c>
+                    <c>txqueuelen</c><c>integer</c><c>value of the TX queue length setting</c>
                     <c>autostart</c><c>boolean</c><c>indicates whether the interface should be automatically started after reboot, defaults to true</c>
                     <c>wireless</c><c>array</c><c>valid only if "type" is "wireless".
                     A list of wireless interface objects which contain attributes needed to configure settings
@@ -590,9 +590,9 @@
                 <texttable align="left">
                     <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
                     <c>name</c><c>string</c><c>arbitrary name of the radio device</c>
-                    <c>channel</c><c>number</c><c>channel number</c>
-                    <c>channel_width</c><c>number</c><c>channel width in Hertz</c>
-                    <c>tx_power</c><c>number</c><c>transmission power in dBm</c>
+                    <c>channel</c><c>integer</c><c>channel number</c>
+                    <c>channel_width</c><c>integer</c><c>channel width in Hertz</c>
+                    <c>tx_power</c><c>integer</c><c>transmission power in dBm</c>
                 </texttable>
                 <t>
                     Each object contained in the
@@ -667,8 +667,8 @@
                 </t>
                 <texttable align="left">
                     <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
-                    <c>local_time</c><c>number</c><c>device local time</c>
-                    <c>uptime</c><c>number</c><c>time since boot, in seconds</c>
+                    <c>local_time</c><c>integer</c><c>device local time</c>
+                    <c>uptime</c><c>integer</c><c>time since boot, in seconds</c>
                 </texttable>
             </section>
             <section title="Resources Object" anchor="resources2">
@@ -706,7 +706,7 @@
                 <texttable align="left">
                     <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
                     <c>name</c><c>string</c><c>name of the logical interface</c>
-                    <c>uptime</c><c>number</c><c>interface specific uptime in seconds</c>
+                    <c>uptime</c><c>integer</c><c>interface specific uptime in seconds</c>
                     <c>statistics</c><c>object</c><c>object providing detailed monitoring
                     data related to the interface, it MAY contain the following
                     OPTIONAL members: "collisions", "rx_frame_errors", "tx_compressed",
@@ -1645,7 +1645,7 @@
                 },
                 "revision": {
                     "id": "revision",
-                    "type": "number"
+                    "type": "integer"
                 },
                 "cpu": {
                     "id": "cpu",
@@ -1694,7 +1694,7 @@
                     "properties": {
                         "total": {
                             "id": "total",
-                            "type": "number"
+                            "type": "integer"
                         }
                     }
                 },
@@ -1705,7 +1705,7 @@
                     "properties": {
                         "total": {
                             "id": "total",
-                            "type": "number"
+                            "type": "integer"
                         }
                     }
                 },
@@ -1716,7 +1716,7 @@
                     "properties": {
                         "frequency": {
                             "id": "frequency",
-                            "type": "number"
+                            "type": "integer"
                         }
                     }
                 },
@@ -1727,7 +1727,7 @@
                     "properties": {
                         "total": {
                             "id": "total",
-                            "type": "number"
+                            "type": "integer"
                         }
                     }
                 },
@@ -1738,7 +1738,7 @@
                     "properties": {
                         "total": {
                             "id": "total",
-                            "type": "number"
+                            "type": "integer"
                         }
                     }
                 }
@@ -1771,15 +1771,15 @@
                     },
                     "channel": {
                         "id": "channel",
-                        "type": "number"
+                        "type": "integer"
                     },
                     "channel_width": {
                         "id": "channel_width",
-                        "type": "number"
+                        "type": "integer"
                     },
                     "tx_power": {
                         "id": "tx_power",
-                        "type": "number"
+                        "type": "integer"
                     },
                     "country": {
                         "id": "country",
@@ -1830,12 +1830,12 @@
                     },
                     "mtu": {
                         "id": "mtu",
-                        "type": "number",
+                        "type": "integer",
                         "default": 1500
                     },
                     "txqueuelen": {
                         "id": "txqueuelen",
-                        "type": "number"
+                        "type": "integer"
                     },
                     "autostart": {
                         "id": "autostart",
@@ -1859,7 +1859,7 @@
                                 },
                                 "mask": {
                                     "id": "mask",
-                                    "type": "number"
+                                    "type": "integer"
                                 },
                                 "family": {
                                     "id": "family",
@@ -2063,11 +2063,11 @@
             "properties": {
                 "local_time": {
                     "id": "local_time",
-                    "type": "number"
+                    "type": "integer"
                 },
                 "uptime": {
                     "id": "uptime",
-                    "type": "number"
+                    "type": "integer"
                 }
             }
         },
@@ -2101,19 +2101,19 @@
                     "properties": {
                         "total": {
                             "id": "total",
-                            "type": "number"
+                            "type": "integer"
                         },
                         "free": {
                             "id": "free",
-                            "type": "number"
+                            "type": "integer"
                         },
                         "buffered": {
                             "id": "buffered",
-                            "type": "number"
+                            "type": "integer"
                         },
                         "cache": {
                             "id": "cache",
-                            "type": "number"
+                            "type": "integer"
                         }
                     }
                 },
@@ -2123,11 +2123,11 @@
                     "properties": {
                         "total": {
                             "id": "total",
-                            "type": "number"
+                            "type": "integer"
                         },
                         "free": {
                             "id": "free",
-                            "type": "number"
+                            "type": "integer"
                         }
                     }
                 },
@@ -2141,11 +2141,11 @@
                             "properties": {
                                 "tcp": {
                                     "id": "tcp",
-                                    "type": "number"
+                                    "type": "integer"
                                 },
                                 "udp": {
                                     "id": "udp",
-                                    "type": "number"
+                                    "type": "integer"
                                 }
                             }
                         },
@@ -2155,11 +2155,11 @@
                             "properties": {
                                 "tcp": {
                                     "id": "tcp",
-                                    "type": "number"
+                                    "type": "integer"
                                 },
                                 "udp": {
                                     "id": "udp",
-                                    "type": "number"
+                                    "type": "integer"
                                 }
                             }
                         }
@@ -2171,27 +2171,27 @@
                     "properties": {
                         "running": {
                             "id": "running",
-                            "type": "number"
+                            "type": "integer"
                         },
                         "sleeping": {
                             "id": "sleeping",
-                            "type": "number"
+                            "type": "integer"
                         },
                         "blocked": {
                             "id": "blocked",
-                            "type": "number"
+                            "type": "integer"
                         },
                         "zombie": {
                             "id": "zombie",
-                            "type": "number"
+                            "type": "integer"
                         },
                         "stopped": {
                             "id": "stopped",
-                            "type": "number"
+                            "type": "integer"
                         },
                         "paging": {
                             "id": "paging",
-                            "type": "number"
+                            "type": "integer"
                         }
                     }
                 },
@@ -2201,35 +2201,35 @@
                     "properties": {
                         "frequency": {
                             "id": "frequency",
-                            "type": "number"
+                            "type": "integer"
                         },
                         "user": {
                             "id": "user",
-                            "type": "number"
+                            "type": "integer"
                         },
                         "system": {
                             "id": "system",
-                            "type": "number"
+                            "type": "integer"
                         },
                         "nice": {
                             "id": "nice",
-                            "type": "number"
+                            "type": "integer"
                         },
                         "idle": {
                             "id": "idle",
-                            "type": "number"
+                            "type": "integer"
                         },
                         "iowait": {
                             "id": "iowait",
-                            "type": "number"
+                            "type": "integer"
                         },
                         "irq": {
                             "id": "irq",
-                            "type": "number"
+                            "type": "integer"
                         },
                         "softirq": {
                             "id": "softirq",
-                            "type": "number"
+                            "type": "integer"
                         }
                     }
                 },
@@ -2239,11 +2239,11 @@
                     "properties": {
                         "total": {
                             "id": "total",
-                            "type": "number"
+                            "type": "integer"
                         },
                         "free": {
                             "id": "free",
-                            "type": "number"
+                            "type": "integer"
                         }
                     }
                 },
@@ -2253,11 +2253,11 @@
                     "properties": {
                         "total": {
                             "id": "total",
-                            "type": "number"
+                            "type": "integer"
                         },
                         "free": {
                             "id": "free",
-                            "type": "number"
+                            "type": "integer"
                         }
                     }
                 }
@@ -2283,7 +2283,7 @@
                     },
                     "uptime": {
                         "id": "uptime",
-                        "type": "number"
+                        "type": "integer"
                     },
                     "statistics": {
                         "id": "statistics",
@@ -2291,95 +2291,95 @@
                         "properties": {
                             "collisions": {
                                 "id": "collisions",
-                                "type": "number"
+                                "type": "integer"
                             },
                             "rx_frame_errors": {
                                 "id": "rx_frame_errors",
-                                "type": "number"
+                                "type": "integer"
                             },
                             "tx_compressed": {
                                 "id": "tx_compressed",
-                                "type": "number"
+                                "type": "integer"
                             },
                             "multicast": {
                                 "id": "multicast",
-                                "type": "number"
+                                "type": "integer"
                             },
                             "rx_length_errors": {
                                 "id": "rx_length_errors",
-                                "type": "number"
+                                "type": "integer"
                             },
                             "tx_dropped": {
                                 "id": "tx_dropped",
-                                "type": "number"
+                                "type": "integer"
                             },
                             "rx_bytes": {
                                 "id": "rx_bytes",
-                                "type": "number"
+                                "type": "integer"
                             },
                             "rx_missed_errors": {
                                 "id": "rx_missed_errors",
-                                "type": "number"
+                                "type": "integer"
                             },
                             "tx_errors": {
                                 "id": "tx_errors",
-                                "type": "number"
+                                "type": "integer"
                             },
                             "rx_compressed": {
                                 "id": "rx_compressed",
-                                "type": "number"
+                                "type": "integer"
                             },
                             "rx_over_errors": {
                                 "id": "rx_over_errors",
-                                "type": "number"
+                                "type": "integer"
                             },
                             "tx_fifo_errors": {
                                 "id": "tx_fifo_errors",
-                                "type": "number"
+                                "type": "integer"
                             },
                             "rx_crc_errors": {
                                 "id": "rx_crc_errors",
-                                "type": "number"
+                                "type": "integer"
                             },
                             "rx_packets": {
                                 "id": "rx_packets",
-                                "type": "number"
+                                "type": "integer"
                             },
                             "tx_heartbeat_errors": {
                                 "id": "tx_heartbeat_errors",
-                                "type": "number"
+                                "type": "integer"
                             },
                             "rx_dropped": {
                                 "id": "rx_dropped",
-                                "type": "number"
+                                "type": "integer"
                             },
                             "tx_aborted_errors": {
                                 "id": "tx_aborted_errors",
-                                "type": "number"
+                                "type": "integer"
                             },
                             "tx_packets": {
                                 "id": "tx_packets",
-                                "type": "number"
+                                "type": "integer"
                             },
                             "rx_errors": {
                                 "id": "rx_errors",
-                                "type": "number"
+                                "type": "integer"
                             },
                             "tx_bytes": {
                                 "id": "tx_bytes",
-                                "type": "number"
+                                "type": "integer"
                             },
                             "tx_window_errors": {
                                 "id": "tx_window_errors",
-                                "type": "number"
+                                "type": "integer"
                             },
                             "rx_fifo_errors": {
                                 "id": "rx_fifo_errors",
-                                "type": "number"
+                                "type": "integer"
                             },
                             "tx_carrier_errors": {
                                 "id": "tx_carrier_errors",
-                                "type": "number"
+                                "type": "integer"
                             }
                         }
                     }
