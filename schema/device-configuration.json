@@ -344,7 +344,8 @@
                                 },
                                 "ack_distance": {
                                     "id": "ack_distance",
-                                    "type": "integer"
+                                    "type": "integer",
+                                    "minimum": 1
                                 },
                                 "rts_threshold": {
                                     "id": "rts_threshold",
