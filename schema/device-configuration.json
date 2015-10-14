@@ -349,7 +349,9 @@
                                 },
                                 "rts_threshold": {
                                     "id": "rts_threshold",
-                                    "type": "integer"
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 2346
                                 },
                                 "frag_threshold": {
                                     "id": "frag_threshold",
