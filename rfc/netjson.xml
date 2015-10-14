@@ -1943,15 +1943,20 @@
                                 },
                                 "ack_distance": {
                                     "id": "ack_distance",
-                                    "type": "integer"
+                                    "type": "integer",
+                                    "minimum": 1
                                 },
                                 "rts_threshold": {
                                     "id": "rts_threshold",
-                                    "type": "integer"
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 2346
                                 },
                                 "frag_threshold": {
                                     "id": "frag_threshold",
-                                    "type": "integer"
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 2346
                                 },
                                 "encryption": {
                                     "id": "encryption",
