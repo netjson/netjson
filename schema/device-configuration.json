@@ -355,7 +355,9 @@
                                 },
                                 "frag_threshold": {
                                     "id": "frag_threshold",
-                                    "type": "integer"
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 2346
                                 },
                                 "encryption": {
                                     "id": "encryption",
