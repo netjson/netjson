@@ -362,7 +362,7 @@
                 <c>metric</c><c>string</c><c>name of main routing metric used
                 by the routing protocol to determine the best routes when sending
                 packets, may be <spanx style="em">null</spanx> when representing static routes</c>
-                <c>nodes</c><c>array</c><c>array of <xref target="node-objects">Noute Objects</xref></c>
+                <c>nodes</c><c>array</c><c>array of <xref target="node-objects">Node Objects</xref></c>
                 <c>links</c><c>array</c><c>array of <xref target="link-objects">Link Objects</xref></c>
             </texttable>
             <t>
