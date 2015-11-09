@@ -385,7 +385,8 @@
                 </t>
                 <texttable align="left">
                     <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
-                    <c>id</c><c>string</c><c>arbitrary identifier of the node</c>
+                    <c>id</c><c>string</c><c>arbitrary identifier of the node,
+                    eg: ipv4, ipv6, mac address, hash, ecc.</c>
                 </texttable>
                 <t>
                     Each node object MAY also define the following OPTIONAL members:
