@@ -1821,7 +1821,8 @@
                             "wireless",
                             "bridge",
                             "virtual",
-                            "loopback"
+                            "loopback",
+                            "other"
                         ]
                     },
                     "name": {
