@@ -247,6 +247,10 @@
                         "type": "boolean",
                         "default": true
                     },
+                    "disabled": {
+                        "type": "boolean",
+                        "default": false
+                    },
                     "addresses": {
                         "id": "addresses",
                         "type": "array",

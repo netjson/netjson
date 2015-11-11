@@ -569,6 +569,7 @@
                     <c>mtu</c><c>integer</c><c>value of the Maximum Transmission Unit setting</c>
                     <c>txqueuelen</c><c>integer</c><c>value of the TX queue length setting</c>
                     <c>autostart</c><c>boolean</c><c>indicates whether the interface should be automatically started after reboot, defaults to true</c>
+                    <c>disabled</c><c>boolean</c><c>indicates whether the interface is disabled, defaults to false</c>
                     <c>wireless</c><c>array</c><c>valid only if "type" is "wireless".
                     A list of wireless interface objects which contain attributes needed to configure settings
                     like SSID, BSSID, wireless mode, encryption and so on.
@@ -1846,6 +1847,10 @@
                         "id": "autostart",
                         "type": "boolean",
                         "default": true
+                    },
+                    "disabled": {
+                        "type": "boolean",
+                        "default": false
                     },
                     "addresses": {
                         "id": "addresses",
