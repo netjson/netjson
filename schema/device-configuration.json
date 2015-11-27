@@ -210,7 +210,8 @@
                 "title": "Interface",
                 "additionalProperties": true,
                 "required": [
-                    "name"
+                    "name",
+                    "type"
                 ],
                 "properties": {
                     "type": {

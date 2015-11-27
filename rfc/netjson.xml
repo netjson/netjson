@@ -562,6 +562,8 @@
                 <texttable align="left">
                     <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
                     <c>name</c><c>string</c><c>name of the interface</c>
+                    <c>type</c><c>string</c><c>RECOMMENDED possible values for this field are: "ethernet", "wireless",
+                    "bridge", "virtual", "loopback" or "other". Additional values MAY be allowed if needed.</c>
                 </texttable>
                 <t>
                     Each object contained in the <spanx style="em">"interfaces"</spanx>
@@ -570,8 +572,6 @@
                 </t>
                 <texttable align="left">
                     <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
-                    <c>type</c><c>string</c><c>RECOMMENDED possible values for this field are: "ethernet", "wireless",
-                    "bridge", "virtual", "loopback" or "other". Additional values MAY be allowed if needed.</c>
                     <c>bridge_members</c><c>array</c><c>array of interface names representing the bridged interfaces</c>
                     <c>mac</c><c>string</c><c>mac address</c>
                     <c>mtu</c><c>integer</c><c>value of the Maximum Transmission Unit setting</c>
@@ -1819,7 +1819,8 @@
                 "title": "Interface",
                 "additionalProperties": true,
                 "required": [
-                    "name"
+                    "name",
+                    "type"
                 ],
                 "properties": {
                     "type": {
