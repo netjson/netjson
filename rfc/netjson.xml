@@ -557,6 +557,15 @@
                 <t>
                     Each object contained in the <spanx style="em">"interfaces"</spanx>
                     array of <spanx style="em">DeviceConfiguration</spanx>
+                    MUST define the following REQUIRED members:
+                </t>
+                <texttable align="left">
+                    <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                    <c>name</c><c>string</c><c>name of the interface</c>
+                </texttable>
+                <t>
+                    Each object contained in the <spanx style="em">"interfaces"</spanx>
+                    array of <spanx style="em">DeviceConfiguration</spanx>
                     MAY define the following OPTIONAL members:
                 </t>
                 <texttable align="left">
@@ -564,7 +573,6 @@
                     <c>type</c><c>string</c><c>RECOMMENDED possible values for this field are: "ethernet", "wireless",
                     "bridge", "virtual", "loopback" or "other". Additional values MAY be allowed if needed.</c>
                     <c>bridge_members</c><c>array</c><c>array of interface names representing the bridged interfaces</c>
-                    <c>name</c><c>string</c><c>name of the interface</c>
                     <c>mac</c><c>string</c><c>mac address</c>
                     <c>mtu</c><c>integer</c><c>value of the Maximum Transmission Unit setting</c>
                     <c>txqueuelen</c><c>integer</c><c>value of the TX queue length setting</c>
