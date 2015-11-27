@@ -572,7 +572,8 @@
                 </t>
                 <texttable align="left">
                     <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
-                    <c>bridge_members</c><c>array</c><c>array of interface names representing the bridged interfaces</c>
+                    <c>bridge_members</c><c>array</c><c>valid only if "type" is "bridge".
+                    Array of interface names (strings) representing the bridged interfaces</c>
                     <c>mac</c><c>string</c><c>mac address</c>
                     <c>mtu</c><c>integer</c><c>value of the Maximum Transmission Unit setting</c>
                     <c>txqueuelen</c><c>integer</c><c>value of the TX queue length setting</c>
