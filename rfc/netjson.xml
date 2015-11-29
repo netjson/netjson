@@ -1070,10 +1070,7 @@
             "wireless": {
                 "radio": "radio0",
                 "mode": "access_point",
-                "ssid": "ap-ssid-example",
-                "encryption": {
-                    "enabled": false
-                }
+                "ssid": "ap-ssid-example"
             },
             "addresses": [
                 {
@@ -1972,15 +1969,10 @@
                                 "type": "object",
                                 "title": "Encryption",
                                 "required": [
-                                    "enabled",
                                     "protocol",
                                     "key"
                                 ],
                                 "properties": {
-                                    "enabled": {
-                                        "id": "enabled",
-                                        "type": "boolean"
-                                    },
                                     "protocol": {
                                         "id": "protocol",
                                         "type": "string",
@@ -2003,6 +1995,10 @@
                                     "key": {
                                         "id": "key",
                                         "type": "string"
+                                    },
+                                    "disabled": {
+                                        "type": "boolean",
+                                        "default": false
                                     }
                                 }
                             }
