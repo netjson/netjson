@@ -467,9 +467,6 @@
                 see <xref target="general1">Hardware Object</xref> for details</c>
                 <c>operating_system</c><c>object</c><c>operating system information,
                 see <xref target="operating_system1">Operating System Object</xref> for details</c>
-                <c>resources</c><c>object</c><c>describes the total amount of
-                different resources available on the system, like RAM, flash, storage
-                see <xref target="resources1">Resources Object</xref> for details</c>
                 <c>interfaces</c><c>array</c><c>array of objects that represent how
                 network interfaces are configured on the device,
                 see <xref target="interfaces1">Interface Objects</xref> for details</c>
@@ -526,31 +523,6 @@
                     <c>revision</c><c>string</c><c>revision from which the firmware
                     binary was built (eg: git hash, svn revision)</c>
                     <c>description</c><c>string</c><c>free-form textual description</c>
-                </texttable>
-            </section>
-            <section title="Resources Object" anchor="resources1">
-                <t>
-                    The <spanx style="em">"resources"</spanx> object of
-                    <spanx style="em">DeviceConfiguration</spanx>
-                    MAY define the following OPTIONAL members:
-                </t>
-                <texttable align="left">
-                    <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
-                    <c>memory</c><c>object</c><c>object containing only one REQUIRED
-                    "total" member having as value an integer which represents the total
-                    RAM available on the system measured in bytes</c>
-                    <c>swap</c><c>object</c><c>object containing only one REQUIRED
-                    "total" member having as value an integer which represents the total
-                    swap memory available on the system measured in bytes</c>
-                    <c>cpu</c><c>object</c><c> containing only one REQUIRED "frequency"
-                    member having as value an integer which represents the clock frequency
-                    measured in Hertz</c>
-                    <c>flash</c><c>object</c><c>object containing only one REQUIRED
-                    "total" member having as value an integer which represents the total
-                    flash memory available on the system measured in bytes</c>
-                    <c>storage</c><c>object</c><c>object containing only one REQUIRED
-                    "total" member having as value an integer which represents the total
-                    storage memory available on the system measured in bytes</c>
                 </texttable>
             </section>
             <section title="Interface Objects" anchor="interfaces1">
@@ -1628,58 +1600,6 @@
                 },
                 "description": {
                     "type": "string"
-                }
-            }
-        },
-        "resources": {
-            "type": "object",
-            "title": "Resources",
-            "additionalProperties": true,
-            "properties": {
-                "memory": {
-                    "type": "object",
-                    "additionalProperties": true,
-                    "properties": {
-                        "total": {
-                            "type": "integer"
-                        }
-                    }
-                },
-                "swap": {
-                    "type": "object",
-                    "additionalProperties": true,
-                    "properties": {
-                        "total": {
-                            "type": "integer"
-                        }
-                    }
-                },
-                "cpu": {
-                    "type": "object",
-                    "additionalProperties": true,
-                    "properties": {
-                        "frequency": {
-                            "type": "integer"
-                        }
-                    }
-                },
-                "flash": {
-                    "type": "object",
-                    "additionalProperties": true,
-                    "properties": {
-                        "total": {
-                            "type": "integer"
-                        }
-                    }
-                },
-                "storage": {
-                    "type": "object",
-                    "additionalProperties": true,
-                    "properties": {
-                        "total": {
-                            "type": "integer"
-                        }
-                    }
                 }
             }
         },

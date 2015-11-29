@@ -68,58 +68,6 @@
                 }
             }
         },
-        "resources": {
-            "type": "object",
-            "title": "Resources",
-            "additionalProperties": true,
-            "properties": {
-                "memory": {
-                    "type": "object",
-                    "additionalProperties": true,
-                    "properties": {
-                        "total": {
-                            "type": "integer"
-                        }
-                    }
-                },
-                "swap": {
-                    "type": "object",
-                    "additionalProperties": true,
-                    "properties": {
-                        "total": {
-                            "type": "integer"
-                        }
-                    }
-                },
-                "cpu": {
-                    "type": "object",
-                    "additionalProperties": true,
-                    "properties": {
-                        "frequency": {
-                            "type": "integer"
-                        }
-                    }
-                },
-                "flash": {
-                    "type": "object",
-                    "additionalProperties": true,
-                    "properties": {
-                        "total": {
-                            "type": "integer"
-                        }
-                    }
-                },
-                "storage": {
-                    "type": "object",
-                    "additionalProperties": true,
-                    "properties": {
-                        "total": {
-                            "type": "integer"
-                        }
-                    }
-                }
-            }
-        },
         "radios": {
             "type": "array",
             "title": "Radios",
