@@ -1362,7 +1362,6 @@
 <![CDATA[
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "/",
     "type": "object",
     "additionalProperties": true,
     "required": [
@@ -1374,37 +1373,29 @@
     ],
     "properties": {
         "type": {
-            "id": "type",
             "type": "string",
             "default": "NetworkRoutes",
             "pattern": "NetworkRoutes"
         },
         "protocol": {
-            "id": "protocol",
             "type": "string"
         },
         "version": {
-            "id": "version",
             "type": "string"
         },
         "metric": {
-            "id": "metric",
             "type": "string"
         },
         "revision": {
-            "id": "revision",
             "type": "string"
         },
         "router_id": {
-            "id": "router_id",
             "type": "string"
         },
         "topology_id": {
-            "id": "topology_id",
             "type": "string"
         },
         "routes": {
-            "id": "routes",
             "type": "array",
             "title": "Routes",
             "uniqueItems": true,
@@ -1421,27 +1412,21 @@
                 ],
                 "properties": {
                     "destination": {
-                        "id": "destination",
                         "type": "string"
                     },
                     "next": {
-                        "id": "next",
                         "type": "string"
                     },
                     "device": {
-                        "id": "device",
                         "type": "string"
                     },
                     "cost": {
-                        "id": "cost",
                         "type": "number"
                     },
                     "source": {
-                        "id": "source",
                         "type": "string"
                     },
                     "cost_txt": {
-                        "id": "cost_txt",
                         "type": "string"
                     }
                 }
@@ -1459,7 +1444,6 @@
 <![CDATA[
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "/",
     "type": "object",
     "additionalProperties": true,
     "required": [
@@ -1472,41 +1456,32 @@
     ],
     "properties": {
         "type": {
-            "id": "type",
             "type": "string",
             "default": "NetworkGraph",
             "pattern": "NetworkGraph"
         },
         "protocol": {
-            "id": "protocol",
             "type": "string"
         },
         "version": {
-            "id": "version",
             "type": "string"
         },
         "revision": {
-            "id": "revision",
             "type": "string"
         },
         "metric": {
-            "id": "metric",
             "type": "string"
         },
         "router_id": {
-            "id": "router_id",
             "type": "string"
         },
         "topology_id": {
-            "id": "topology_id",
             "type": "string"
         },
         "label": {
-            "id": "label",
             "type": "string"
         },
         "nodes": {
-            "id": "nodes",
             "type": "array",
             "title": "Nodes",
             "uniqueItems": true,
@@ -1521,15 +1496,12 @@
                     ],
                     "properties": {
                         "id": {
-                            "id": "id",
                             "type": "string"
                         },
                         "label": {
-                            "id": "label",
                             "type": "string"
                         },
                         "local_addresses": {
-                            "id": "local_addresses",
                             "type": "array",
                             "additionalItems": true,
                             "items": {
@@ -1537,7 +1509,6 @@
                             }
                         },
                         "properties": {
-                            "id": "properties",
                             "type": "object",
                             "additionalProperties": true
                         }
@@ -1546,7 +1517,6 @@
             ]
         },
         "links": {
-            "id": "links",
             "type": "array",
             "title": "Links",
             "uniqueItems": true,
@@ -1562,24 +1532,19 @@
                 ],
                 "properties": {
                     "source": {
-                        "id": "source",
                         "type": "string"
                     },
                     "target": {
-                        "id": "target",
                         "type": "string"
                     },
                     "cost": {
-                        "id": "cost",
                         "type": "number",
                         "default": 1
                     },
                     "cost_text": {
-                        "id": "cost_text",
                         "type": "string"
                     },
                     "properties": {
-                        "id": "properties",
                         "type": "object",
                         "additionalProperties": true
                     }
@@ -1598,7 +1563,6 @@
 <![CDATA[
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "/",
     "type": "object",
     "additionalProperties": true,
     "required": [
@@ -1606,140 +1570,113 @@
     ],
     "properties": {
         "type": {
-            "id": "type",
             "type": "string",
             "default": "DeviceConfiguration",
             "pattern": "DeviceConfiguration"
         },
         "general": {
-            "id": "general",
             "type": "object",
             "title": "General",
             "additionalProperties": true,
             "properties": {
                 "hostname": {
-                    "id": "hostname",
                     "type": "string"
                 },
                 "maintainer": {
-                    "id": "maintainer",
                     "type": "string"
                 },
                 "description": {
-                    "id": "description",
                     "type": "string"
                 }
             }
         },
         "hardware": {
-            "id": "hardware",
             "type": "object",
             "title": "Hardware",
             "additionalProperties": true,
             "properties": {
                 "manufacturer": {
-                    "id": "manufacturer",
                     "type": "string"
                 },
                 "model": {
-                    "id": "model",
                     "type": "string"
                 },
                 "revision": {
-                    "id": "revision",
                     "type": "integer"
                 },
                 "cpu": {
-                    "id": "cpu",
                     "type": "string"
                 }
             }
         },
         "operating_system": {
-            "id": "operating_system",
             "type": "object",
             "title": "Operating System",
             "additionalProperties": true,
             "properties": {
                 "name": {
-                    "id": "name",
                     "type": "string"
                 },
                 "kernel": {
-                    "id": "kernel",
                     "type": "string"
                 },
                 "version": {
-                    "id": "version",
                     "type": "string"
                 },
                 "revision": {
-                    "id": "revision",
                     "type": "string"
                 },
                 "description": {
-                    "id": "description",
                     "type": "string"
                 }
             }
         },
         "resources": {
-            "id": "resources",
             "type": "object",
             "title": "Resources",
             "additionalProperties": true,
             "properties": {
                 "memory": {
-                    "id": "memory",
                     "type": "object",
                     "additionalProperties": true,
                     "properties": {
                         "total": {
-                            "id": "total",
                             "type": "integer"
                         }
                     }
                 },
                 "swap": {
-                    "id": "swap",
                     "type": "object",
                     "additionalProperties": true,
                     "properties": {
                         "total": {
-                            "id": "total",
                             "type": "integer"
                         }
                     }
                 },
                 "cpu": {
-                    "id": "cpu",
                     "type": "object",
                     "additionalProperties": true,
                     "properties": {
                         "frequency": {
-                            "id": "frequency",
                             "type": "integer"
                         }
                     }
                 },
                 "flash": {
-                    "id": "flash",
                     "type": "object",
                     "additionalProperties": true,
                     "properties": {
                         "total": {
-                            "id": "total",
                             "type": "integer"
                         }
                     }
                 },
                 "storage": {
-                    "id": "storage",
                     "type": "object",
                     "additionalProperties": true,
                     "properties": {
                         "total": {
-                            "id": "total",
                             "type": "integer"
                         }
                     }
@@ -1747,7 +1684,6 @@
             }
         },
         "radios": {
-            "id": "radios",
             "type": "array",
             "title": "Radios",
             "uniqueItems": true,
@@ -1764,33 +1700,26 @@
                 ],
                 "properties": {
                     "name": {
-                        "id": "name",
                         "type": "string"
                     },
                     "phy": {
-                        "id": "phy",
                         "type": "string"
                     },
                     "channel": {
-                        "id": "channel",
                         "type": "integer"
                     },
                     "channel_width": {
-                        "id": "channel_width",
                         "type": "integer"
                     },
                     "tx_power": {
-                        "id": "tx_power",
                         "type": "integer"
                     },
                     "country": {
-                        "id": "country",
                         "type": "string",
                         "minLength": 2,
                         "maxLength": 2
                     },
                     "disabled": {
-                        "id": "disabled",
                         "type": "boolean",
                         "default": false
                     }
@@ -1798,7 +1727,6 @@
             }
         },
         "interfaces": {
-            "id": "interfaces",
             "type": "array",
             "title": "Interfaces",
             "uniqueItems": true,
@@ -1813,7 +1741,6 @@
                 ],
                 "properties": {
                     "type": {
-                        "id": "type",
                         "type": "string",
                         "enum": [
                             "ethernet",
@@ -1825,24 +1752,19 @@
                         ]
                     },
                     "name": {
-                        "id": "name",
                         "type": "string"
                     },
                     "mac": {
-                        "id": "mac",
                         "type": "string"
                     },
                     "mtu": {
-                        "id": "mtu",
                         "type": "integer",
                         "default": 1500
                     },
                     "txqueuelen": {
-                        "id": "txqueuelen",
                         "type": "integer"
                     },
                     "autostart": {
-                        "id": "autostart",
                         "type": "boolean",
                         "default": true
                     },
@@ -1851,7 +1773,6 @@
                         "default": false
                     },
                     "addresses": {
-                        "id": "addresses",
                         "type": "array",
                         "title": "Addresses",
                         "uniqueItems": true,
@@ -1862,19 +1783,15 @@
                             "additionalProperties": true,
                             "properties": {
                                 "address": {
-                                    "id": "address",
                                     "type": "string"
                                 },
                                 "mask": {
-                                    "id": "mask",
                                     "type": "integer"
                                 },
                                 "gateway": {
-                                    "id": "gateway",
                                     "type": "string"
                                 },
                                 "family": {
-                                    "id": "family",
                                     "type": "string",
                                     "enum": [
                                         "ipv4",
@@ -1882,7 +1799,6 @@
                                     ]
                                 },
                                 "proto": {
-                                    "id": "proto",
                                     "type": "string",
                                     "enum": [
                                         "static",
@@ -1893,7 +1809,6 @@
                         }
                     },
                     "bridge_members": {
-                        "id": "bridge_members",
                         "type": "array",
                         "title": "Bridge Members",
                         "items": [
@@ -1913,11 +1828,9 @@
                         ],
                         "properties": {
                             "radio": {
-                                "id": "radio",
                                 "type": "string"
                             },
                             "mode": {
-                                "id": "mode",
                                 "type": "string",
                                 "enum": [
                                     "access_point",
@@ -1929,37 +1842,30 @@
                                 ]
                             },
                             "ssid": {
-                                "id": "ssid",
                                 "type": "string"
                             },
                             "bssid": {
-                                "id": "bssid",
                                 "type": "string"
                             },
                             "hidden": {
-                                "id": "bssid",
                                 "type": "boolean",
                                 "default": false
                             },
                             "ack_distance": {
-                                "id": "ack_distance",
                                 "type": "integer",
                                 "minimum": 1
                             },
                             "rts_threshold": {
-                                "id": "rts_threshold",
                                 "type": "integer",
                                 "minimum": 0,
                                 "maximum": 2346
                             },
                             "frag_threshold": {
-                                "id": "frag_threshold",
                                 "type": "integer",
                                 "minimum": 0,
                                 "maximum": 2346
                             },
                             "encryption": {
-                                "id": "encryption",
                                 "type": "object",
                                 "title": "Encryption",
                                 "required": [
@@ -1968,7 +1874,6 @@
                                 ],
                                 "properties": {
                                     "protocol": {
-                                        "id": "protocol",
                                         "type": "string",
                                         "enum": [
                                             "wep_open",
@@ -1983,11 +1888,9 @@
                                         ]
                                     },
                                     "ciphers": {
-                                        "id": "ciphers",
                                         "type": "array"
                                     },
                                     "key": {
-                                        "id": "key",
                                         "type": "string"
                                     },
                                     "disabled": {
@@ -2002,7 +1905,6 @@
             }
         },
         "routes": {
-            "id": "routes",
             "type": "array",
             "title": "Routes",
             "uniqueItems": true,
@@ -2018,22 +1920,18 @@
                 ],
                 "properties": {
                     "device": {
-                        "id": "device",
                         "type": "string"
                     },
                     "next": {
-                        "id": "next",
                         "type": "string"
                     },
                     "destination": {
-                        "id": "destination",
                         "type": "string"
                     }
                 }
             }
         },
         "dns_servers": {
-            "id": "dns_servers",
             "title": "DNS Servers",
             "type": "array",
             "uniqueItems": true,
@@ -2043,7 +1941,6 @@
             }
         },
         "dns_search": {
-            "id": "dns_search",
             "title": "DNS Search",
             "type": "array",
             "uniqueItems": true,
@@ -2064,7 +1961,6 @@
 <![CDATA[
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "/",
     "type": "object",
     "additionalProperties": true,
     "required": [
@@ -2072,47 +1968,38 @@
     ],
     "properties": {
         "type": {
-            "id": "type",
             "type": "string",
             "default": "DeviceMonitoring",
             "pattern": "DeviceMonitoring"
         },
         "general": {
-            "id": "general",
             "type": "object",
             "title": "General",
             "additionalProperties": true,
             "properties": {
                 "local_time": {
-                    "id": "local_time",
                     "type": "integer"
                 },
                 "uptime": {
-                    "id": "uptime",
                     "type": "integer"
                 }
             }
         },
         "resources": {
-            "id": "resources",
             "type": "object",
             "title": "Resources",
             "additionalProperties": true,
             "properties": {
                 "load": {
-                    "id": "load",
                     "type": "array",
                     "items": [
                         {
-                            "id": "0",
                             "type": "number"
                         },
                         {
-                            "id": "1",
                             "type": "number"
                         },
                         {
-                            "id": "2",
                             "type": "number"
                         }
                     ]
@@ -2122,65 +2009,51 @@
                     "type": "object",
                     "properties": {
                         "total": {
-                            "id": "total",
                             "type": "integer"
                         },
                         "free": {
-                            "id": "free",
                             "type": "integer"
                         },
                         "buffered": {
-                            "id": "buffered",
                             "type": "integer"
                         },
                         "cache": {
-                            "id": "cache",
                             "type": "integer"
                         }
                     }
                 },
                 "swap": {
-                    "id": "swap",
                     "type": "object",
                     "properties": {
                         "total": {
-                            "id": "total",
                             "type": "integer"
                         },
                         "free": {
-                            "id": "free",
                             "type": "integer"
                         }
                     }
                 },
                 "connections": {
-                    "id": "connections",
                     "type": "object",
                     "properties": {
                         "ipv4": {
-                            "id": "ipv4",
                             "type": "object",
                             "properties": {
                                 "tcp": {
-                                    "id": "tcp",
                                     "type": "integer"
                                 },
                                 "udp": {
-                                    "id": "udp",
                                     "type": "integer"
                                 }
                             }
                         },
                         "ipv6": {
-                            "id": "ipv6",
                             "type": "object",
                             "properties": {
                                 "tcp": {
-                                    "id": "tcp",
                                     "type": "integer"
                                 },
                                 "udp": {
-                                    "id": "udp",
                                     "type": "integer"
                                 }
                             }
@@ -2188,97 +2061,75 @@
                     }
                 },
                 "processes": {
-                    "id": "processes",
                     "type": "object",
                     "properties": {
                         "running": {
-                            "id": "running",
                             "type": "integer"
                         },
                         "sleeping": {
-                            "id": "sleeping",
                             "type": "integer"
                         },
                         "blocked": {
-                            "id": "blocked",
                             "type": "integer"
                         },
                         "zombie": {
-                            "id": "zombie",
                             "type": "integer"
                         },
                         "stopped": {
-                            "id": "stopped",
                             "type": "integer"
                         },
                         "paging": {
-                            "id": "paging",
                             "type": "integer"
                         }
                     }
                 },
                 "cpu": {
-                    "id": "cpu",
                     "type": "object",
                     "properties": {
                         "frequency": {
-                            "id": "frequency",
                             "type": "integer"
                         },
                         "user": {
-                            "id": "user",
                             "type": "integer"
                         },
                         "system": {
-                            "id": "system",
                             "type": "integer"
                         },
                         "nice": {
-                            "id": "nice",
                             "type": "integer"
                         },
                         "idle": {
-                            "id": "idle",
                             "type": "integer"
                         },
                         "iowait": {
-                            "id": "iowait",
                             "type": "integer"
                         },
                         "irq": {
-                            "id": "irq",
                             "type": "integer"
                         },
                         "softirq": {
-                            "id": "softirq",
                             "type": "integer"
                         }
                     }
                 },
                 "flash": {
-                    "id": "flash",
                     "type": "object",
                     "properties": {
                         "total": {
-                            "id": "total",
                             "type": "integer"
                         },
                         "free": {
-                            "id": "free",
                             "type": "integer"
                         }
                     }
                 },
                 "storage": {
-                    "id": "storage",
                     "type": "object",
                     "properties": {
                         "total": {
-                            "id": "total",
                             "type": "integer"
                         },
                         "free": {
-                            "id": "free",
                             "type": "integer"
                         }
                     }
@@ -2286,7 +2137,6 @@
             }
         },
         "interfaces": {
-            "id": "interfaces",
             "type": "array",
             "title": "Interfaces",
             "uniqueItems": true,
@@ -2300,107 +2150,81 @@
                 "additionalProperties": true,
                 "properties": {
                     "name": {
-                        "id": "name",
                         "type": "string"
                     },
                     "uptime": {
-                        "id": "uptime",
                         "type": "integer"
                     },
                     "statistics": {
-                        "id": "statistics",
                         "type": "object",
                         "properties": {
                             "collisions": {
-                                "id": "collisions",
                                 "type": "integer"
                             },
                             "rx_frame_errors": {
-                                "id": "rx_frame_errors",
                                 "type": "integer"
                             },
                             "tx_compressed": {
-                                "id": "tx_compressed",
                                 "type": "integer"
                             },
                             "multicast": {
-                                "id": "multicast",
                                 "type": "integer"
                             },
                             "rx_length_errors": {
-                                "id": "rx_length_errors",
                                 "type": "integer"
                             },
                             "tx_dropped": {
-                                "id": "tx_dropped",
                                 "type": "integer"
                             },
                             "rx_bytes": {
-                                "id": "rx_bytes",
                                 "type": "integer"
                             },
                             "rx_missed_errors": {
-                                "id": "rx_missed_errors",
                                 "type": "integer"
                             },
                             "tx_errors": {
-                                "id": "tx_errors",
                                 "type": "integer"
                             },
                             "rx_compressed": {
-                                "id": "rx_compressed",
                                 "type": "integer"
                             },
                             "rx_over_errors": {
-                                "id": "rx_over_errors",
                                 "type": "integer"
                             },
                             "tx_fifo_errors": {
-                                "id": "tx_fifo_errors",
                                 "type": "integer"
                             },
                             "rx_crc_errors": {
-                                "id": "rx_crc_errors",
                                 "type": "integer"
                             },
                             "rx_packets": {
-                                "id": "rx_packets",
                                 "type": "integer"
                             },
                             "tx_heartbeat_errors": {
-                                "id": "tx_heartbeat_errors",
                                 "type": "integer"
                             },
                             "rx_dropped": {
-                                "id": "rx_dropped",
                                 "type": "integer"
                             },
                             "tx_aborted_errors": {
-                                "id": "tx_aborted_errors",
                                 "type": "integer"
                             },
                             "tx_packets": {
-                                "id": "tx_packets",
                                 "type": "integer"
                             },
                             "rx_errors": {
-                                "id": "rx_errors",
                                 "type": "integer"
                             },
                             "tx_bytes": {
-                                "id": "tx_bytes",
                                 "type": "integer"
                             },
                             "tx_window_errors": {
-                                "id": "tx_window_errors",
                                 "type": "integer"
                             },
                             "rx_fifo_errors": {
-                                "id": "rx_fifo_errors",
                                 "type": "integer"
                             },
                             "tx_carrier_errors": {
-                                "id": "tx_carrier_errors",
                                 "type": "integer"
                             }
                         }
@@ -2420,7 +2244,6 @@
 <![CDATA[
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "/",
     "type": "object",
     "additionalProperties": true,
     "required": [
@@ -2429,13 +2252,11 @@
     ],
     "properties": {
         "type": {
-            "id": "type",
             "type": "string",
             "default": "NetworkCollection",
             "pattern": "NetworkCollection"
         },
         "collection": {
-            "id": "collection",
             "type": "array",
             "title": "NetJSON Objects",
             "uniqueItems": true,
@@ -2449,7 +2270,6 @@
                 ],
                 "properties": {
                     "type": {
-                        "id": "type",
                         "type": "string",
                         "enum": [
                             "NetworkRoutes",

@@ -1,6 +1,5 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "/",
     "type": "object",
     "additionalProperties": true,
     "required": [
@@ -13,41 +12,32 @@
     ],
     "properties": {
         "type": {
-            "id": "type",
             "type": "string",
             "default": "NetworkGraph",
             "pattern": "NetworkGraph"
         },
         "protocol": {
-            "id": "protocol",
             "type": "string"
         },
         "version": {
-            "id": "version",
             "type": "string"
         },
         "revision": {
-            "id": "revision",
             "type": "string"
         },
         "metric": {
-            "id": "metric",
             "type": "string"
         },
         "router_id": {
-            "id": "router_id",
             "type": "string"
         },
         "topology_id": {
-            "id": "topology_id",
             "type": "string"
         },
         "label": {
-            "id": "label",
             "type": "string"
         },
         "nodes": {
-            "id": "nodes",
             "type": "array",
             "title": "Nodes",
             "uniqueItems": true,
@@ -62,23 +52,19 @@
                     ],
                     "properties": {
                         "id": {
-                            "id": "id",
                             "type": "string"
                         },
                         "label": {
-                            "id": "label",
                             "type": "string"
                         },
                         "local_addresses": {
-                            "id": "local_addresses",
                             "type": "array",
-			    "additionalItems": true,
+                            "additionalItems": true,
                             "items": {
                                 "type": "string"
                             }
                         },
                         "properties": {
-                            "id": "properties",
                             "type": "object",
                             "additionalProperties": true
                         }
@@ -87,7 +73,6 @@
             ]
         },
         "links": {
-            "id": "links",
             "type": "array",
             "title": "Links",
             "uniqueItems": true,
@@ -103,24 +88,19 @@
                 ],
                 "properties": {
                     "source": {
-                        "id": "source",
                         "type": "string"
                     },
                     "target": {
-                        "id": "target",
                         "type": "string"
                     },
                     "cost": {
-                        "id": "cost",
                         "type": "number",
                         "default": 1
                     },
                     "cost_text": {
-                        "id": "cost_text",
                         "type": "string"
                     },
                     "properties": {
-                        "id": "properties",
                         "type": "object",
                         "additionalProperties": true
                     }

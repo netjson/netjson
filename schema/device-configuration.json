@@ -1,6 +1,5 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "/",
     "type": "object",
     "additionalProperties": true,
     "required": [
@@ -8,140 +7,113 @@
     ],
     "properties": {
         "type": {
-            "id": "type",
             "type": "string",
             "default": "DeviceConfiguration",
             "pattern": "DeviceConfiguration"
         },
         "general": {
-            "id": "general",
             "type": "object",
             "title": "General",
             "additionalProperties": true,
             "properties": {
                 "hostname": {
-                    "id": "hostname",
                     "type": "string"
                 },
                 "maintainer": {
-                    "id": "maintainer",
                     "type": "string"
                 },
                 "description": {
-                    "id": "description",
                     "type": "string"
                 }
             }
         },
         "hardware": {
-            "id": "hardware",
             "type": "object",
             "title": "Hardware",
             "additionalProperties": true,
             "properties": {
                 "manufacturer": {
-                    "id": "manufacturer",
                     "type": "string"
                 },
                 "model": {
-                    "id": "model",
                     "type": "string"
                 },
                 "revision": {
-                    "id": "revision",
                     "type": "integer"
                 },
                 "cpu": {
-                    "id": "cpu",
                     "type": "string"
                 }
             }
         },
         "operating_system": {
-            "id": "operating_system",
             "type": "object",
             "title": "Operating System",
             "additionalProperties": true,
             "properties": {
                 "name": {
-                    "id": "name",
                     "type": "string"
                 },
                 "kernel": {
-                    "id": "kernel",
                     "type": "string"
                 },
                 "version": {
-                    "id": "version",
                     "type": "string"
                 },
                 "revision": {
-                    "id": "revision",
                     "type": "string"
                 },
                 "description": {
-                    "id": "description",
                     "type": "string"
                 }
             }
         },
         "resources": {
-            "id": "resources",
             "type": "object",
             "title": "Resources",
             "additionalProperties": true,
             "properties": {
                 "memory": {
-                    "id": "memory",
                     "type": "object",
                     "additionalProperties": true,
                     "properties": {
                         "total": {
-                            "id": "total",
                             "type": "integer"
                         }
                     }
                 },
                 "swap": {
-                    "id": "swap",
                     "type": "object",
                     "additionalProperties": true,
                     "properties": {
                         "total": {
-                            "id": "total",
                             "type": "integer"
                         }
                     }
                 },
                 "cpu": {
-                    "id": "cpu",
                     "type": "object",
                     "additionalProperties": true,
                     "properties": {
                         "frequency": {
-                            "id": "frequency",
                             "type": "integer"
                         }
                     }
                 },
                 "flash": {
-                    "id": "flash",
                     "type": "object",
                     "additionalProperties": true,
                     "properties": {
                         "total": {
-                            "id": "total",
                             "type": "integer"
                         }
                     }
                 },
                 "storage": {
-                    "id": "storage",
                     "type": "object",
                     "additionalProperties": true,
                     "properties": {
                         "total": {
-                            "id": "total",
                             "type": "integer"
                         }
                     }
@@ -149,7 +121,6 @@
             }
         },
         "radios": {
-            "id": "radios",
             "type": "array",
             "title": "Radios",
             "uniqueItems": true,
@@ -166,33 +137,26 @@
                 ],
                 "properties": {
                     "name": {
-                        "id": "name",
                         "type": "string"
                     },
                     "phy": {
-                        "id": "phy",
                         "type": "string"
                     },
                     "channel": {
-                        "id": "channel",
                         "type": "integer"
                     },
                     "channel_width": {
-                        "id": "channel_width",
                         "type": "integer"
                     },
                     "tx_power": {
-                        "id": "tx_power",
                         "type": "integer"
                     },
                     "country": {
-                        "id": "country",
                         "type": "string",
                         "minLength": 2,
                         "maxLength": 2
                     },
                     "disabled": {
-                        "id": "disabled",
                         "type": "boolean",
                         "default": false
                     }
@@ -200,7 +164,6 @@
             }
         },
         "interfaces": {
-            "id": "interfaces",
             "type": "array",
             "title": "Interfaces",
             "uniqueItems": true,
@@ -215,7 +178,6 @@
                 ],
                 "properties": {
                     "type": {
-                        "id": "type",
                         "type": "string",
                         "enum": [
                             "ethernet",
@@ -227,24 +189,19 @@
                         ]
                     },
                     "name": {
-                        "id": "name",
                         "type": "string"
                     },
                     "mac": {
-                        "id": "mac",
                         "type": "string"
                     },
                     "mtu": {
-                        "id": "mtu",
                         "type": "integer",
                         "default": 1500
                     },
                     "txqueuelen": {
-                        "id": "txqueuelen",
                         "type": "integer"
                     },
                     "autostart": {
-                        "id": "autostart",
                         "type": "boolean",
                         "default": true
                     },
@@ -253,7 +210,6 @@
                         "default": false
                     },
                     "addresses": {
-                        "id": "addresses",
                         "type": "array",
                         "title": "Addresses",
                         "uniqueItems": true,
@@ -264,19 +220,15 @@
                             "additionalProperties": true,
                             "properties": {
                                 "address": {
-                                    "id": "address",
                                     "type": "string"
                                 },
                                 "mask": {
-                                    "id": "mask",
                                     "type": "integer"
                                 },
                                 "gateway": {
-                                    "id": "gateway",
                                     "type": "string"
                                 },
                                 "family": {
-                                    "id": "family",
                                     "type": "string",
                                     "enum": [
                                         "ipv4",
@@ -284,7 +236,6 @@
                                     ]
                                 },
                                 "proto": {
-                                    "id": "proto",
                                     "type": "string",
                                     "enum": [
                                         "static",
@@ -295,7 +246,6 @@
                         }
                     },
                     "bridge_members": {
-                        "id": "bridge_members",
                         "type": "array",
                         "title": "Bridge Members",
                         "items": [
@@ -315,11 +265,9 @@
                         ],
                         "properties": {
                             "radio": {
-                                "id": "radio",
                                 "type": "string"
                             },
                             "mode": {
-                                "id": "mode",
                                 "type": "string",
                                 "enum": [
                                     "access_point",
@@ -331,37 +279,30 @@
                                 ]
                             },
                             "ssid": {
-                                "id": "ssid",
                                 "type": "string"
                             },
                             "bssid": {
-                                "id": "bssid",
                                 "type": "string"
                             },
                             "hidden": {
-                                "id": "bssid",
                                 "type": "boolean",
                                 "default": false
                             },
                             "ack_distance": {
-                                "id": "ack_distance",
                                 "type": "integer",
                                 "minimum": 1
                             },
                             "rts_threshold": {
-                                "id": "rts_threshold",
                                 "type": "integer",
                                 "minimum": 0,
                                 "maximum": 2346
                             },
                             "frag_threshold": {
-                                "id": "frag_threshold",
                                 "type": "integer",
                                 "minimum": 0,
                                 "maximum": 2346
                             },
                             "encryption": {
-                                "id": "encryption",
                                 "type": "object",
                                 "title": "Encryption",
                                 "required": [
@@ -370,7 +311,6 @@
                                 ],
                                 "properties": {
                                     "protocol": {
-                                        "id": "protocol",
                                         "type": "string",
                                         "enum": [
                                             "wep_open",
@@ -385,11 +325,9 @@
                                         ]
                                     },
                                     "ciphers": {
-                                        "id": "ciphers",
                                         "type": "array"
                                     },
                                     "key": {
-                                        "id": "key",
                                         "type": "string"
                                     },
                                     "disabled": {
@@ -404,7 +342,6 @@
             }
         },
         "routes": {
-            "id": "routes",
             "type": "array",
             "title": "Routes",
             "uniqueItems": true,
@@ -420,22 +357,18 @@
                 ],
                 "properties": {
                     "device": {
-                        "id": "device",
                         "type": "string"
                     },
                     "next": {
-                        "id": "next",
                         "type": "string"
                     },
                     "destination": {
-                        "id": "destination",
                         "type": "string"
                     }
                 }
             }
         },
         "dns_servers": {
-            "id": "dns_servers",
             "title": "DNS Servers",
             "type": "array",
             "uniqueItems": true,
@@ -445,7 +378,6 @@
             }
         },
         "dns_search": {
-            "id": "dns_search",
             "title": "DNS Search",
             "type": "array",
             "uniqueItems": true,

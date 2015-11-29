@@ -1,6 +1,5 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "/",
     "type": "object",
     "additionalProperties": true,
     "required": [
@@ -9,13 +8,11 @@
     ],
     "properties": {
         "type": {
-            "id": "type",
             "type": "string",
             "default": "NetworkCollection",
             "pattern": "NetworkCollection"
         },
         "collection": {
-            "id": "collection",
             "type": "array",
             "title": "NetJSON Objects",
             "uniqueItems": true,
@@ -29,7 +26,6 @@
                 ],
                 "properties": {
                     "type": {
-                        "id": "type",
                         "type": "string",
                         "enum": [
                             "NetworkRoutes",
