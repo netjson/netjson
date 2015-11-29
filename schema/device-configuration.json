@@ -2,14 +2,235 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "type": "object",
     "additionalProperties": true,
+    "definitions": {
+        "interface_settings": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": [
+                "name",
+                "type"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "maxLength": 15,
+                    "pattern": "^[^\\s]*$"
+                },
+                "mac": {
+                    "type": "string"
+                },
+                "mtu": {
+                    "type": "integer",
+                    "default": 1500
+                },
+                "txqueuelen": {
+                    "type": "integer"
+                },
+                "autostart": {
+                    "type": "boolean",
+                    "default": true
+                },
+                "disabled": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "addresses": {
+                    "type": "array",
+                    "title": "Addresses",
+                    "uniqueItems": true,
+                    "additionalItems": true,
+                    "items": {
+                        "type": "object",
+                        "title": "Address",
+                        "additionalProperties": true,
+                        "properties": {
+                            "address": {
+                                "type": "string"
+                            },
+                            "mask": {
+                                "type": "integer"
+                            },
+                            "gateway": {
+                                "type": "string"
+                            },
+                            "family": {
+                                "type": "string",
+                                "enum": [
+                                    "ipv4",
+                                    "ipv6"
+                                ]
+                            },
+                            "proto": {
+                                "type": "string",
+                                "enum": [
+                                    "static",
+                                    "dhcp"
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "network_interface": {
+            "title": "Network interface",
+            "allOf": [
+                {
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "enum": [
+                                "ethernet",
+                                "virtual",
+                                "loopback",
+                                "other"
+                            ]
+                        }
+                    }
+                },
+                {"$ref": "#/definitions/interface_settings"}
+            ]
+        },
+        "wireless_interface": {
+            "title": "Wireless interface",
+            "allOf": [
+                {
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "enum": ["wireless"],
+                            "default": "wireless"
+                        }
+                    }
+                },
+                {"$ref": "#/definitions/interface_settings"},
+                {
+                    "properties": {
+                        "wireless": {
+                            "type": "object",
+                            "title": "Wireless Interface",
+                            "additionalProperties": true,
+                            "required": [
+                                "radio",
+                                "mode",
+                                "ssid"
+                            ],
+                            "properties": {
+                                "radio": {
+                                    "type": "string"
+                                },
+                                "mode": {
+                                    "type": "string",
+                                    "enum": [
+                                        "access_point",
+                                        "station",
+                                        "adhoc",
+                                        "wds",
+                                        "monitor",
+                                        "802.11s"
+                                    ]
+                                },
+                                "ssid": {
+                                    "type": "string",
+                                    "maxLength": 32
+                                },
+                                "bssid": {
+                                    "type": "string"
+                                },
+                                "hidden": {
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "ack_distance": {
+                                    "type": "integer",
+                                    "minimum": 1
+                                },
+                                "rts_threshold": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 2346
+                                },
+                                "frag_threshold": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 2346
+                                },
+                                "encryption": {
+                                    "type": "object",
+                                    "title": "Encryption",
+                                    "required": [
+                                        "protocol",
+                                        "key"
+                                    ],
+                                    "properties": {
+                                        "protocol": {
+                                            "type": "string",
+                                            "enum": [
+                                                "wep_open",
+                                                "wep_shared",
+                                                "wpa_personal",
+                                                "wpa2_personal",
+                                                "wpa_personal_mixed",
+                                                "wpa_enterprise",
+                                                "wpa2_enterprise",
+                                                "wpa_enterprise_mixed",
+                                                "wps"
+                                            ]
+                                        },
+                                        "ciphers": {
+                                            "type": "array"
+                                        },
+                                        "key": {
+                                            "type": "string"
+                                        },
+                                        "disabled": {
+                                            "type": "boolean",
+                                            "default": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "bridge_interface": {
+            "title": "Bridge interface",
+            "required": [
+                "bridge_members"
+            ],
+            "allOf": [
+                {
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "enum": ["bridge"]
+                        }
+                    }
+                },
+                {"$ref": "#/definitions/interface_settings"},
+                {
+                    "properties": {
+                        "bridge_members": {
+                            "type": "array",
+                            "title": "Bridge Members",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
     "required": [
         "type"
     ],
     "properties": {
         "type": {
             "type": "string",
-            "default": "DeviceConfiguration",
-            "pattern": "DeviceConfiguration"
+            "enum": ["DeviceConfiguration"]
         },
         "general": {
             "type": "object",
@@ -117,177 +338,11 @@
             "uniqueItems": true,
             "additionalItems": true,
             "items": {
-                "type": "object",
-                "title": "Interface",
-                "additionalProperties": true,
-                "required": [
-                    "name",
-                    "type"
-                ],
-                "properties": {
-                    "type": {
-                        "type": "string",
-                        "enum": [
-                            "ethernet",
-                            "wireless",
-                            "bridge",
-                            "virtual",
-                            "loopback",
-                            "other"
-                        ]
-                    },
-                    "name": {
-                        "type": "string"
-                    },
-                    "mac": {
-                        "type": "string"
-                    },
-                    "mtu": {
-                        "type": "integer",
-                        "default": 1500
-                    },
-                    "txqueuelen": {
-                        "type": "integer"
-                    },
-                    "autostart": {
-                        "type": "boolean",
-                        "default": true
-                    },
-                    "disabled": {
-                        "type": "boolean",
-                        "default": false
-                    },
-                    "addresses": {
-                        "type": "array",
-                        "title": "Addresses",
-                        "uniqueItems": true,
-                        "additionalItems": true,
-                        "items": {
-                            "type": "object",
-                            "title": "Address",
-                            "additionalProperties": true,
-                            "properties": {
-                                "address": {
-                                    "type": "string"
-                                },
-                                "mask": {
-                                    "type": "integer"
-                                },
-                                "gateway": {
-                                    "type": "string"
-                                },
-                                "family": {
-                                    "type": "string",
-                                    "enum": [
-                                        "ipv4",
-                                        "ipv6"
-                                    ]
-                                },
-                                "proto": {
-                                    "type": "string",
-                                    "enum": [
-                                        "static",
-                                        "dhcp"
-                                    ]
-                                }
-                            }
-                        }
-                    },
-                    "bridge_members": {
-                        "type": "array",
-                        "title": "Bridge Members",
-                        "items": [
-                            {
-                                "type": "string"
-                            }
-                        ]
-                    },
-                    "wireless": {
-                        "type": "object",
-                        "title": "Wireless Interface",
-                        "additionalProperties": true,
-                        "required": [
-                            "radio",
-                            "mode",
-                            "ssid"
-                        ],
-                        "properties": {
-                            "radio": {
-                                "type": "string"
-                            },
-                            "mode": {
-                                "type": "string",
-                                "enum": [
-                                    "access_point",
-                                    "station",
-                                    "adhoc",
-                                    "wds",
-                                    "monitor",
-                                    "802.11s"
-                                ]
-                            },
-                            "ssid": {
-                                "type": "string",
-                                "maxLength": 32
-                            },
-                            "bssid": {
-                                "type": "string"
-                            },
-                            "hidden": {
-                                "type": "boolean",
-                                "default": false
-                            },
-                            "ack_distance": {
-                                "type": "integer",
-                                "minimum": 1
-                            },
-                            "rts_threshold": {
-                                "type": "integer",
-                                "minimum": 0,
-                                "maximum": 2346
-                            },
-                            "frag_threshold": {
-                                "type": "integer",
-                                "minimum": 0,
-                                "maximum": 2346
-                            },
-                            "encryption": {
-                                "type": "object",
-                                "title": "Encryption",
-                                "required": [
-                                    "protocol",
-                                    "key"
-                                ],
-                                "properties": {
-                                    "protocol": {
-                                        "type": "string",
-                                        "enum": [
-                                            "wep_open",
-                                            "wep_shared",
-                                            "wpa_personal",
-                                            "wpa2_personal",
-                                            "wpa_personal_mixed",
-                                            "wpa_enterprise",
-                                            "wpa2_enterprise",
-                                            "wpa_enterprise_mixed",
-                                            "wps"
-                                        ]
-                                    },
-                                    "ciphers": {
-                                        "type": "array"
-                                    },
-                                    "key": {
-                                        "type": "string"
-                                    },
-                                    "disabled": {
-                                        "type": "boolean",
-                                        "default": false
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+                "oneOf": [
+                    {"$ref": "#/definitions/network_interface"},
+                    {"$ref": "#/definitions/wireless_interface"},
+                    {"$ref": "#/definitions/bridge_interface"}
+                ]
             }
         },
         "routes": {
