@@ -72,16 +72,10 @@
                         "local_addresses": {
                             "id": "local_addresses",
                             "type": "array",
-                            "items": [
-                                {
-                                    "id": "0",
-                                    "type": "string"
-                                },
-                                {
-                                    "id": "1",
-                                    "type": "string"
-                                }
-                            ]
+			    "additionalItems": true,
+                            "items": {
+                                "type": "string"
+                            }
                         },
                         "properties": {
                             "id": "properties",
