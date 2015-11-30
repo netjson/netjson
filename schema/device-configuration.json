@@ -177,11 +177,11 @@
                                                 "wps"
                                             ]
                                         },
-                                        "ciphers": {
-                                            "type": "array"
-                                        },
                                         "key": {
                                             "type": "string"
+                                        },
+                                        "ciphers": {
+                                            "type": "array"
                                         },
                                         "disabled": {
                                             "type": "boolean",

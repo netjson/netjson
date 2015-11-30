@@ -595,8 +595,38 @@
                         <c>frag_threshold</c><c>integer</c><c>indicates the maximum frame size,
                         MUST be between 0 and 2346</c>
                         <c>encryption</c><c>object</c><c>encryption settings,
-                        if omitted MUST default to no encryption</c>
+                        if omitted MUST default to disabled encryption, see
+                        <xref target="encryption1">Encryption Object</xref></c>
                     </texttable>
+                    <section title="Encryption Object" anchor="encryption1">
+                        <t>
+                            The object contained in the
+                            <spanx style="em">"encryption"</spanx> member of
+                            a <xref target="wireless1">Wireless Object</xref>
+                            MUST define the following REQUIRED members:
+                        </t>
+                        <texttable align="left">
+                            <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                            <c>protocol</c><c>string</c><c>encryption protocol; the RECOMMENDED
+                            allowed values are: wep_open, wep_shared, wpa_personal, wpa2_personal,
+                            wpa_personal_mixed, wpa_enterprise, wpa2_enterprise,
+                            wpa_enterprise_mixed, wps</c>
+                            <c>key</c><c>string</c><c>encryption key</c>
+                        </texttable>
+                        <t>
+                            The object contained in the
+                            <spanx style="em">"encryption"</spanx> member of
+                            a <xref target="wireless1">Wireless Object</xref>
+                            MAY define the following OPTIONAL members:
+                        </t>
+                        <texttable align="left">
+                            <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
+                            <c>ciphers</c><c>array</c><c>array of strings representing security
+                            ciphers, eg: CCMP, TKIP</c>
+                            <c>disabled</c><c>boolean</c><c>whether to disable encryption,
+                            defaults to false</c>
+                        </texttable>
+                    </section>
                 </section>
             </section>
             <section title="Radio Objects" anchor="radios1">
@@ -1748,11 +1778,11 @@
                                                 "wps"
                                             ]
                                         },
-                                        "ciphers": {
-                                            "type": "array"
-                                        },
                                         "key": {
                                             "type": "string"
+                                        },
+                                        "ciphers": {
+                                            "type": "array"
                                         },
                                         "disabled": {
                                             "type": "boolean",
