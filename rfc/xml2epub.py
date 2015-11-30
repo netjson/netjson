@@ -8,6 +8,6 @@ params = {
 }
 
 response = requests.post(form_url, params)
-f = open('./rfc.epub', 'w')
+f = open('./netjson.epub', 'w')
 f.write(response.content)
 f.close()
