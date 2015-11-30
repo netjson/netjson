@@ -60,6 +60,7 @@
                         "local_addresses": {
                             "type": "array",
                             "additionalItems": true,
+                            "uniqueItems": true,
                             "items": {
                                 "type": "string"
                             }
