@@ -548,7 +548,7 @@
                     <c>bridge_members</c><c>array</c><c>valid only if "type" is "bridge".
                     Array of interface names (strings) representing the bridged interfaces</c>
                     <c>mac</c><c>string</c><c>mac address</c>
-                    <c>mtu</c><c>integer</c><c>value of the Maximum Transmission Unit setting</c>
+                    <c>mtu</c><c>integer</c><c>value of the Maximum Transmission Unit setting, defaults to 1500</c>
                     <c>txqueuelen</c><c>integer</c><c>value of the TX queue length setting</c>
                     <c>autostart</c><c>boolean</c><c>indicates whether the interface should be automatically started after reboot, defaults to true</c>
                     <c>disabled</c><c>boolean</c><c>indicates whether the interface is disabled, defaults to false</c>
