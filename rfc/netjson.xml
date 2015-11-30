@@ -533,7 +533,8 @@
                 </t>
                 <texttable align="left">
                     <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
-                    <c>name</c><c>string</c><c>name of the interface</c>
+                    <c>name</c><c>string</c><c>name of the interface, MUST NOT be longer
+                    than 15 characters, MUST accept all characters except whitespace</c>
                     <c>type</c><c>string</c><c>RECOMMENDED possible values for this field are: "ethernet", "wireless",
                     "bridge", "virtual", "loopback" or "other". Additional values MAY be allowed if needed.</c>
                 </texttable>
