@@ -43,15 +43,17 @@
                         "type": "object",
                         "title": "Address",
                         "additionalProperties": true,
+                        "required": [
+                            "proto",
+                            "family"
+                        ],
                         "properties": {
-                            "address": {
-                                "type": "string"
-                            },
-                            "mask": {
-                                "type": "integer"
-                            },
-                            "gateway": {
-                                "type": "string"
+                            "proto": {
+                                "type": "string",
+                                "enum": [
+                                    "static",
+                                    "dhcp"
+                                ]
                             },
                             "family": {
                                 "type": "string",
@@ -60,12 +62,14 @@
                                     "ipv6"
                                 ]
                             },
-                            "proto": {
-                                "type": "string",
-                                "enum": [
-                                    "static",
-                                    "dhcp"
-                                ]
+                            "address": {
+                                "type": "string"
+                            },
+                            "mask": {
+                                "type": "integer"
+                            },
+                            "gateway": {
+                                "type": "string"
                             }
                         }
                     }
