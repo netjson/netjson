@@ -545,13 +545,13 @@
                 </t>
                 <texttable align="left">
                     <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
-                    <c>bridge_members</c><c>array</c><c>valid only if "type" is "bridge".
-                    Array of interface names (strings) representing the bridged interfaces</c>
                     <c>mac</c><c>string</c><c>mac address</c>
                     <c>mtu</c><c>integer</c><c>value of the Maximum Transmission Unit setting, defaults to 1500</c>
                     <c>txqueuelen</c><c>integer</c><c>value of the TX queue length setting</c>
                     <c>autostart</c><c>boolean</c><c>indicates whether the interface should be automatically started after reboot, defaults to true</c>
                     <c>disabled</c><c>boolean</c><c>indicates whether the interface is disabled, defaults to false</c>
+                    <c>bridge_members</c><c>array</c><c>valid only if "type" is "bridge";
+                    array of interface names (strings) representing the bridged interfaces</c>
                     <c>addresses</c><c>array</c><c>a array of <xref target="addresses1">Address Objects</xref></c>
                     <c>wireless</c><c>object</c><c>wireless settings, valid only if "type" is "wireless";
                     see <xref target="wireless1">Wireless Object</xref>.</c>
@@ -1843,7 +1843,7 @@
                             "type": "array",
                             "title": "Bridge Members",
                             "items": {
-                                "type": "string"
+                                "$ref": "#/definitions/interface_settings/properties/name"
                             }
                         }
                     }
