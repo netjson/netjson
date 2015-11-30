@@ -1434,8 +1434,7 @@
     "properties": {
         "type": {
             "type": "string",
-            "default": "NetworkRoutes",
-            "pattern": "NetworkRoutes"
+            "enum": ["NetworkRoutes"]
         },
         "protocol": {
             "type": "string"
@@ -1517,8 +1516,7 @@
     "properties": {
         "type": {
             "type": "string",
-            "default": "NetworkGraph",
-            "pattern": "NetworkGraph"
+            "enum": ["NetworkGraph"]
         },
         "protocol": {
             "type": "string"
@@ -2042,8 +2040,7 @@
     "properties": {
         "type": {
             "type": "string",
-            "default": "DeviceMonitoring",
-            "pattern": "DeviceMonitoring"
+            "enum": ["DeviceMonitoring"]
         },
         "general": {
             "type": "object",
@@ -2320,8 +2317,7 @@
     "properties": {
         "type": {
             "type": "string",
-            "default": "NetworkCollection",
-            "pattern": "NetworkCollection"
+            "enum": ["NetworkCollection"]
         },
         "collection": {
             "type": "array",

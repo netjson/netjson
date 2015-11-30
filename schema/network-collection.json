@@ -9,8 +9,7 @@
     "properties": {
         "type": {
             "type": "string",
-            "default": "NetworkCollection",
-            "pattern": "NetworkCollection"
+            "enum": ["NetworkCollection"]
         },
         "collection": {
             "type": "array",

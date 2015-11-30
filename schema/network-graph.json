@@ -13,8 +13,7 @@
     "properties": {
         "type": {
             "type": "string",
-            "default": "NetworkGraph",
-            "pattern": "NetworkGraph"
+            "enum": ["NetworkGraph"]
         },
         "protocol": {
             "type": "string"

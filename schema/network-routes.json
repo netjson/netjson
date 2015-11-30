@@ -12,8 +12,7 @@
     "properties": {
         "type": {
             "type": "string",
-            "default": "NetworkRoutes",
-            "pattern": "NetworkRoutes"
+            "enum": ["NetworkRoutes"]
         },
         "protocol": {
             "type": "string"

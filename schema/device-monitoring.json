@@ -8,8 +8,7 @@
     "properties": {
         "type": {
             "type": "string",
-            "default": "DeviceMonitoring",
-            "pattern": "DeviceMonitoring"
+            "enum": ["DeviceMonitoring"]
         },
         "general": {
             "type": "object",
