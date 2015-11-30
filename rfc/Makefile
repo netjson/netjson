@@ -1,8 +1,7 @@
 all: netjson.xml
 	xml2rfc netjson.xml
-
-html: netjson.xml
-	xml2html netjson.xml
+	xml2rfc --html netjson.xml
+	python xml2epub.py
 
 clean:
-	rm -f netjson.txt
+	rm -f netjson.txt netjson.html netjson.epub
