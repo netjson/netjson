@@ -1843,6 +1843,7 @@
                             "type": "array",
                             "title": "Bridge Members",
                             "items": {
+                                "uniqueItems": true,
                                 "$ref": "#/definitions/interface_settings/properties/name"
                             }
                         }
