@@ -31,17 +31,11 @@
             "properties": {
                 "load": {
                     "type": "array",
-                    "items": [
-                        {
-                            "type": "number"
-                        },
-                        {
-                            "type": "number"
-                        },
-                        {
-                            "type": "number"
-                        }
-                    ]
+                    "items": {
+                        "type": "integer",
+                        "minItems": 3,
+                        "maxItems": 3
+                    }
                 },
                 "memory": {
                     "id": "memory",

@@ -185,7 +185,10 @@
                                             "type": "string"
                                         },
                                         "ciphers": {
-                                            "type": "array"
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
                                         },
                                         "disabled": {
                                             "type": "boolean",
