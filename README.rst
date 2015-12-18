@@ -103,7 +103,8 @@ Implementations
 * `netjsongraph.js <https://github.com/interop-dev/netjsongraph.js>`__ (visualization library based on d3.js)
 * `netdiff <https://github.com/ninuxorg/netdiff#netjson-output>`__ (network topoogy parser)
 * `netengine-utils <http://netengine.readthedocs.org/en/latest/topics/netengine-utils.html#ifconfig-netjson-option>`__ (utilities for parsing the output from ``ifconfig``, ``iwconfig``, ecc.)
-* `netjsonconfig <https://github.com/openwisp/netjsonconfig>`__ (converts NetJSON DeviceConfiguration objects to real router configurations)
+* `netjsonconfig <https://github.com/openwisp/netjsonconfig>`__ (converts NetJSON DeviceConfiguration objects to native router configurations)
+* `django-netjsonconfig <https://github.com/openwisp/django-netjsonconfig>`__ (reusable django app that provides a web interface to manage configurations)
 * `django-netjsongraph <https://github.com/interop-dev/django-netjsongraph>`__ (django implementation of NetJSON NetworkGraph)
 
 FAQs
