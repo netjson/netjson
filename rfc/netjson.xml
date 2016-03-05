@@ -277,9 +277,9 @@
             <texttable align="left">
                 <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
                 <c>type</c><c>string</c><c>MUST be <spanx style="em">"NetworkRoutes"</spanx></c>
-                <c>protocol</c><c>string</c><c>name of the routing protocol,
+                <c>protocol</c><c>string</c><c>name of the routing protocol implementation,
                 may be <spanx style="em">"static"</spanx> when representing static routes</c>
-                <c>version</c><c>string</c><c>version of the routing protocol,
+                <c>version</c><c>string</c><c>version of the routing protocol implementation,
                 may be <spanx style="em">null</spanx> when representing static routes</c>
                 <c>metric</c><c>string</c><c>name of main routing metric used
                 by the routing protocol to determine the best routes when sending
@@ -293,7 +293,7 @@
             <texttable align="left">
                 <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
                 <c>revision</c><c>string</c><c>string
-                indicating the revision from which the routing protocol
+                indicating the revision from which the routing protocol deamon
                 binary was built (eg: git hash, svn revision)</c>
                 <c>topology_id</c><c>string</c><c>arbitrary identifier of the topology</c>
                 <c>router_id</c><c>string</c><c>arbitrary identifier of the router
@@ -355,9 +355,9 @@
             <texttable align="left">
                 <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
                 <c>type</c><c>string</c><c>MUST be <spanx style="em">"NetworkGraph"</spanx></c>
-                <c>protocol</c><c>string</c><c>name of the routing protocol,
+                <c>protocol</c><c>string</c><c>name of the routing protocol implementation,
                 may be <spanx style="em">"static"</spanx> when representing static routes</c>
-                <c>version</c><c>string</c><c>version of the routing protocol,
+                <c>version</c><c>string</c><c>version of the routing protocol implementation,
                 may be <spanx style="em">null</spanx> when representing static routes</c>
                 <c>metric</c><c>string</c><c>name of main routing metric used
                 by the routing protocol to determine the best routes when sending
@@ -372,7 +372,7 @@
             <texttable align="left">
                 <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
                 <c>revision</c><c>string</c><c>string
-                indicating the revision from which the routing protocol
+                indicating the revision from which the routing protocol deamon
                 binary was built (eg: git hash, svn revision)</c>
                 <c>topology_id</c><c>string</c><c>arbitrary identifier of the topology</c>
                 <c>router_id</c><c>string</c><c>arbitrary identifier of the router
