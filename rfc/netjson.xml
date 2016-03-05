@@ -307,8 +307,7 @@
                     <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
                     <c>destination</c><c>string</c><c>the ip address, prefix or mac
                     address that will be matched to the destination of the traffic</c>
-                    <c>next</c><c>string</c><c>the ip address, prefix or mac
-                    address of the next hop</c>
+                    <c>next</c><c>string</c><c>the ip address or mac address of the next hop</c>
                     <c>device</c><c>string</c><c>the interface the traffic will be
                     going to, it may be omitted when representing static routes</c>
                     <c>cost</c><c>number</c><c>value of the routing metric indicating the
