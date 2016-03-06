@@ -661,7 +661,6 @@
                     <c>name</c><c>string</c><c>arbitrary name of the radio device</c>
                     <c>channel</c><c>integer</c><c>channel number</c>
                     <c>channel_width</c><c>integer</c><c>channel width in Hertz</c>
-                    <c>tx_power</c><c>integer</c><c>transmission power in dBm</c>
                 </texttable>
                 <t>
                     Each object contained in the
@@ -673,6 +672,7 @@
                     <c>phy</c><c>string</c><c>name of the physical device to which the radio object is related to,
                     optional because usually autodetected</c>
                     <c>country</c><c>string</c><c>two digit country code in ISO 3166-1 alpha-2 format, case insensitive</c>
+                    <c>tx_power</c><c>integer</c><c>transmission power in dBm</c>
                     <c>disabled</c><c>boolean</c><c>whether the radio should be disabled or not, defaults to false</c>
                 </texttable>
             </section>
@@ -1930,8 +1930,7 @@
                 "required": [
                     "name",
                     "channel",
-                    "channel_width",
-                    "tx_power"
+                    "channel_width"
                 ],
                 "properties": {
                     "name": {
