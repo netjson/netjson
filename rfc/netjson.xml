@@ -491,6 +491,7 @@
                     <c>hostname</c><c>string</c><c>hostname of the network device</c>
                     <c>maintainer</c><c>string</c><c>email address of the maintainer of the network device</c>
                     <c>description</c><c>string</c><c>free-form textual description of the network device</c>
+                    <c>ula_prefix</c><c>string</c><c>IPv6 Unique Local Address prefix applicable to every network interface</c>
                 </texttable>
             </section>
             <section title="Hardware Object" anchor="hardware1">
@@ -1075,7 +1076,8 @@
     "general": {
         "hostname": "DeviceNameExample",
         "maintainer": "email@example.org",
-        "description": "general info here"
+        "description": "general info here",
+        "ula_prefix": "fd8e:f40a:6701::/48"
     },
     "hardware": {
         "manufacturer": "Example inc.",
@@ -1873,6 +1875,9 @@
                     "type": "string"
                 },
                 "description": {
+                    "type": "string"
+                },
+                "ula_prefix": {
                     "type": "string"
                 }
             }

@@ -253,6 +253,9 @@
                 },
                 "description": {
                     "type": "string"
+                },
+                "ula_prefix": {
+                    "type": "string"
                 }
             }
         },
