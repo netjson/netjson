@@ -12,8 +12,11 @@ ga('send', 'pageview');
 </body>
 """
 
-f = open('./netjson.html', 'r+')
+path = './netjson.html'
+f = open(path, 'r')
 html = f.read()
 html = html.replace('</body>', ga)
-f.write(html)
+new = open(path, 'w')
+new.write(html)
 print('Added google analytics tracking code to HTML RFC')
+
