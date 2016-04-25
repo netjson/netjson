@@ -298,7 +298,7 @@ When processed with one of the existing implementations (`django-netjsongraph
 
 .. image:: ./_static/netjson-networkgraph.png
   :alt: node A, node B, node C
-  :target: https://github.com/interop-dev/django-netjsongraph
+  :target: ./implementations.html#django-netjsongraph
 
 NetworkGraph specification
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
