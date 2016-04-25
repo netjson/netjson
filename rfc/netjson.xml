@@ -232,7 +232,7 @@
                     </t>
                     <t>
                         Before adding any custom member, implementers SHOULD read the
-                        <xref target="netjson-registry">NetJSON registry section</xref>
+                        <eref target="http://netjson.org/docs/extensions.html">NetJSON extension registry</eref>
                         in order to find existing custom members to reuse or
                         to learn how to officially submit new custom members.
                     </t>
@@ -980,13 +980,6 @@
                         <organization>The CONFINE project team</organization>
                     </author>
                     <date year="2011"/>
-                </front>
-            </reference>
-            <reference anchor="netjson-registry" target="http://netjson.org/docs/extensions.html">
-                <front>
-                    <title>NetJSON Custom Members Registry</title>
-                    <author fullname="Federico Capoano" initials="F.C." surname="Capoano"/>
-                    <date year="2015"/>
                 </front>
             </reference>
         </references>
