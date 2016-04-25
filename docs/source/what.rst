@@ -27,6 +27,15 @@ NetJSON aims to create an ecosystem of interoperable software that will enable
 developers to write network-centric applications faster and better. You can find
 out more about the motivations and goals of NetJSON in :doc:`"Why NetJSON?"<why>`.
 
+Specification
+-------------
+
+We are putting effort into writing a readable and easy to understand `specification
+<http://netjson.org/rfc.html>`_, which is the official document explaining NetJSON.
+
+If you want to get a quick overview of what NetJSON can offer read on, but refer
+to the `NetJSON RFC <http://netjson.org/rfc.html>`_ for the full specification.
+
 DeviceConfiguration
 -------------------
 
