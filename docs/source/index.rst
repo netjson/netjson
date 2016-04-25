@@ -11,6 +11,7 @@ Contents:
    who
    faq
    implementations
+   extensions
    contributing
    get-in-touch
 

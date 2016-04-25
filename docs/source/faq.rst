@@ -52,7 +52,7 @@ Just be sure to read the :doc:`Contribution Guidelines <contributing>`.
 How can I register a NetJSON extension?
 ---------------------------------------
 
-See the :doc:`Extension Registry <extensions>` section.
+See the dedicated :doc:`Extension Registry <extensions>` page.
 
 How can I add an implementation to this website?
 ------------------------------------------------
