@@ -32,7 +32,7 @@ Instead of creating an ecosystem, we have been creating silos that hardly talk
 to each other.
 
 This is an attempt to invert this trend, following the successful example
-of the `GeoJSON`_ open standard.
+of the `GeoJSON`_ open standard in the GIS field.
 
 By defining common data structures we can allow developers to focus on their goals
 instead of having to struggle with the differences of each vendor, firmware,
@@ -94,8 +94,8 @@ KISS
 `KISS`_ means "keep it simple stupid", we adopted this principle to reflect the
 fact that we want to proceed one step at time, define priorities and use our resources wisely.
 
-Opening too many issues and working on too many fronts at the is a form of waste
-the leads nowhere.
+Opening too many issues and working on too many fronts at the same time is a form
+of waste which leads nowhere.
 
 Therefore, we want to stay focused and add complexity to the specification only if
 the motivations and goals of each change are clear and the need for a specific
