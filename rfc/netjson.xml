@@ -982,7 +982,7 @@
                     <date year="2011"/>
                 </front>
             </reference>
-            <reference anchor="netjson-registry" target="https://github.com/interop-dev/netjson/blob/master/registry.rst">
+            <reference anchor="netjson-registry" target="http://netjson.org/docs/extensions.html">
                 <front>
                     <title>NetJSON Custom Members Registry</title>
                     <author fullname="Federico Capoano" initials="F.C." surname="Capoano"/>
