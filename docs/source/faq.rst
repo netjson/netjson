@@ -43,7 +43,11 @@ and (possibly) easy way.
 Contributing: how to send proposals, improve or extend NetJSON?
 ---------------------------------------------------------------
 
-See the :doc:`Contributing <contributing>` section.
+NetJSON is a new format (born in the beginning of 2015), the specification does
+not yet take in consideration each and every common scenario found in wired and
+wireless networks, therefore **proposals to improve the specification are very welcome**.
+
+Just be sure to read the :doc:`Contribution Guidelines <contributing>`.
 
 How can I register a NetJSON extension?
 ---------------------------------------

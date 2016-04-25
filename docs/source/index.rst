@@ -11,6 +11,7 @@ Contents:
    who
    faq
    implementations
+   contributing
    get-in-touch
 
 Indices and tables

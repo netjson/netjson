@@ -67,4 +67,5 @@ Join the NetJSON initiative
 
 **We are open for feedback and new contributors**.
 
-If you want to help out, please :doc:`get in touch <get-in-touch>`.
+If you want to help out, please read :doc:`how to contribute <contributing>` and
+:doc:`get in touch <get-in-touch>` with us.

@@ -94,7 +94,8 @@ KISS
 `KISS`_ means "keep it simple stupid", we adopted this principle to reflect the
 fact that we want to proceed one step at time, define priorities and use our resources wisely.
 
-Opening too many issues and working on too many fronts at the same time is a form
+While we :doc:`welcome contributions and feedback with open arms <contributing>`, we also have to recognize
+that opening too many issues and working on too many fronts at the same time is a form
 of waste which leads nowhere.
 
 Therefore, we want to stay focused and add complexity to the specification only if
