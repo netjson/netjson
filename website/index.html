@@ -10,8 +10,9 @@
     <link rel="icon" type="image/png" href="icon/favicon-16x16.png" sizes="16x16">
     <style>
         body{ font: normal 14px/20px Arial, "Liberation Sans", sans-serif; }
-        h1{ font: italic normal 30px Georgia, serif; }
-        .menu{ font-size: 16px; margin: 40px 0; line-height: 25px }
+        h1,.elevator{ font: italic normal 30px Georgia, serif; }
+        .elevator{ font-size: 24px; line-height: 35px }
+        .menu{ font-size: 16px; margin: 20px 0; line-height: 25px }
         a{ font-weight: bold; color: #535353 }
         a:hover{ color: #000; text-decoration: none }
         p.menu a{
@@ -80,15 +81,24 @@
         <a href="./docs/get-in-touch.html" onclick="_sendga('get-in-touch')">Get in touch</a>
     </p>
     <div class="justify">
-        <p>
-            <em>NetJSON</em> is a data interchange format based on <a href="http://json.org/">JavaScript Object Notation (JSON)</a>
-            designed to describe the basic building blocks of layer2 and layer3 <strong>networks</strong>.
+        <p class="elevator center">
+            Developinging networking applications is way too hard,
+            much harder than we should allow it to be.
         </p>
         <p>
-            It defines several types of JSON objects and the manner in which they are combined
+            <em>NetJSON</em> is a data interchange format based on <a href="http://json.org/">JSON</a>
+            designed to ease the development of software networking tools.
+        </p>
+        <p>
+            NetJSON defines several types of JSON objects and the manner in which they are combined
             to represent a network: <strong>configuration of devices</strong>,
             <strong>monitoring data</strong>, <strong>network topology</strong>
             and <strong>routing information</strong>.
+        </p>
+        <p>
+            Our goal is to build an ecosystem of interoperable software tools that
+            are able to work with the basic building blocks of layer2 and layer3 <strong>networks</strong>,
+            enabling developers to build great networking applications faster.
         </p>
         <p>
             <a href="./docs/implementations.html#netjsongraph-js" onclick="_sendga('netjsongraph.js')">
