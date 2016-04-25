@@ -16,3 +16,10 @@ We prefer the mailing list to discuss but we also like to keep track of proposal
 
 You may also want to read the `interop-dev archives <https://lists.funkfeuer.at/pipermail/interop-dev/>`_
 to read past discussions.
+
+.. raw:: html
+
+    <p>
+        <iframe src="https://nodeshot.org/github-btn.html?user=interop-dev&amp;repo=netjson&amp;type=watch&amp;count=true&amp;size=large" frameborder="0" scrolling="0" width="140" height="33"></iframe>
+        <iframe src="https://nodeshot.org/github-btn.html?user=interop-dev&amp;repo=netjson&amp;type=fork&amp;count=true&amp;size=large" frameborder="0" scrolling="0" width="140" height="33"></iframe>
+    </p>
