@@ -15,9 +15,13 @@ Frequentedly Asked Questions
 Is this some kind of new SNMP?
 ------------------------------
 
-Not exactly. Think about NetJSON as a possible common language that libraries
-and applications
-can adopt in order to interoperate on different levels.
+Not exactly. SNMP is a protocol that aims to allow management and monitoring
+of a network, NetJSON is a format that aims to describe common data structures
+in networking tools, so different tools written in different languages can interoperate
+by exchanging text.
+
+Think about NetJSON as a possible common language that libraries and applications
+can adopt in order to talk, exchange their data structures and interoperate on different levels.
 
 NetJSON does not aim to define how the data is exchanged, it could be exposed
 via an HTTP API, it could be sent through UDP packets, it could be copied from
