@@ -71,6 +71,18 @@ Funding
 The initial work on the NetJSON RFC was supported financially with a grant from the
 `CONFINE EU project <https://confine-project.eu/>`_.
 
+2016 - current
+^^^^^^^^^^^^^^
+
+Currently the work on the NetJSON specification is being done by volunteers who care about
+achieving :doc:`its goals <why#goals-what-we-want-to-achieve-with-netjson>`.
+
+We are interested in financial contributions like donations, grants and open source funding programs;
+this would help to speed up important tasks like writing more NetJSON implementations and
+refining the specification.
+
+If you can help in this matter, please :doc:`get in touch <get-in-touch>` with us.
+
 Join the NetJSON initiative
 ---------------------------
 
