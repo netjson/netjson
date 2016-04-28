@@ -44,8 +44,8 @@ projects and collecting feedback from the interop-dev mailing list.
 L. Aaron Kaplan
 ^^^^^^^^^^^^^^^
 
-He contributed to get the work on the RFC started both with technical and financial
-support through the `CONFINE EU project <https://confine-project.eu/>`_.
+He contributed to get the work on the RFC started and helped to get funding from the
+`CONFINE EU project <https://confine-project.eu/>`_.
 
 Unix user since 1992, freebsd user since 1993, he studied maths & computer sciences
 in Vienna. He's founding member of the `Funkfeuer <https://www.funkfeuer.at/>`_ network
@@ -61,6 +61,15 @@ for the OLSRd2 routing daemon (also known as `OLSR.org Network Framework
 
 He currently helds the position of researcher at `Fraunhofer FKIE
 <https://www.fkie.fraunhofer.de/en.html>`_.
+
+Funding
+-------
+
+2015
+^^^^
+
+The initial work on the NetJSON RFC was supported financially with a grant from the
+`CONFINE EU project <https://confine-project.eu/>`_.
 
 Join the NetJSON initiative
 ---------------------------
