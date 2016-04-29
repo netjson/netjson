@@ -44,7 +44,8 @@ projects and collecting feedback from the interop-dev mailing list.
 L. Aaron Kaplan
 ^^^^^^^^^^^^^^^
 
-He contributed to get the work on the RFC started and helped to get funding from the
+He co-founded the interop-dev group to work on networking software interoperability issues
+and contributed to get the work on the NetJSON RFC started. He also helped to get funding from the
 `CONFINE EU project <https://confine-project.eu/>`_.
 
 Unix user since 1992, freebsd user since 1993, he studied maths & computer sciences
