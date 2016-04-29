@@ -60,8 +60,8 @@ in the `netjsoninfo plugin <http://www.olsr.org/mediawiki/index.php/NetJson_Info
 for the OLSRd2 routing daemon (also known as `OLSR.org Network Framework
 <http://www.olsr.org/mediawiki/index.php/OLSR.org_Network_Framework>`_).
 
-He currently helds the position of researcher at `Fraunhofer FKIE
-<https://www.fkie.fraunhofer.de/en.html>`_.
+He currently maintains the OLSRd2 routing deamon and helds the position of researcher at
+`Fraunhofer FKIE <https://www.fkie.fraunhofer.de/en.html>`_.
 
 Funding
 -------
