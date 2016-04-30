@@ -108,7 +108,6 @@ A simplified DeviceMonitoring example
         "type": "DeviceMonitoring",
         "general": {
             "hostname": "RouterA",
-            "local_time": 1414305354,
             "uptime": 3501937
         },
         "interfaces": [
