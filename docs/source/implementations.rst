@@ -63,7 +63,7 @@ This plugin implements the following NetJSON types:
 OLSRd1 netjson plugin
 ^^^^^^^^^^^^^^^^^^^^^
 
-As of 15th of April, a `netjson plugin is available in the master branch
+As of 15th of April 2016, a `netjson plugin is available in the master branch
 <https://lists.olsr.org/pipermail/olsr-users/2016-April/006844.html>`_ of the
 git repository of the OLSRd1 routing daemon.
 
@@ -72,6 +72,20 @@ This plugin implements the following NetJSON types:
 * ``NetworkRoutes``
 * ``NetworkGraph``
 * ``NetworkCollection``
+
+PopRouting (Prince)
+^^^^^^^^^^^^^^^^^^^
+
+Prince is an open source implementation of the `PopRouting Algorithm
+<http://ieeexplore.ieee.org/document/7524407/?reload=true>`_.
+It has been developed as a `Google Summer of Code Project
+<https://blog.freifunk.net/2016/implementing-poprouting-final-evaluation>`_
+in collaboration with `Freifunk <https://freifunk.net/>`_ and the
+`University of Trento <http://www.unitn.it/en>`_.
+
+It fetches topology data in ``NetworkGraph`` format from the routing deamon, calculates the
+betweenness centrality for every node of the network and pushes back the optimized timer's value.
+Currently (as of December 2016) it only supports OLSRd2 (aka OONF).
 
 Network Topology Visualizers
 ----------------------------
