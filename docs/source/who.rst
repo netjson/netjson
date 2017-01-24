@@ -8,8 +8,8 @@ Who is behind NetJSON?
 .. raw:: html
 
     <p>
-        <iframe src="https://nodeshot.org/github-btn.html?user=interop-dev&amp;repo=netjson&amp;type=watch&amp;count=true&amp;size=large" frameborder="0" scrolling="0" width="140" height="33"></iframe>
-        <iframe src="https://nodeshot.org/github-btn.html?user=interop-dev&amp;repo=netjson&amp;type=fork&amp;count=true&amp;size=large" frameborder="0" scrolling="0" width="140" height="33"></iframe>
+        <iframe src="https://nodeshot.org/github-btn.html?user=netjson&amp;repo=netjson&amp;type=watch&amp;count=true&amp;size=large" frameborder="0" scrolling="0" width="140" height="33"></iframe>
+        <iframe src="https://nodeshot.org/github-btn.html?user=netjson&amp;repo=netjson&amp;type=fork&amp;count=true&amp;size=large" frameborder="0" scrolling="0" width="140" height="33"></iframe>
     </p>
 
 NetJSON is a bottom up initiative which is the product of discussion happened on

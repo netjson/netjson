@@ -8,8 +8,8 @@ Implementations
 .. raw:: html
 
     <p>
-        <iframe src="https://nodeshot.org/github-btn.html?user=interop-dev&amp;repo=netjson&amp;type=watch&amp;count=true&amp;size=large" frameborder="0" scrolling="0" width="140" height="33"></iframe>
-        <iframe src="https://nodeshot.org/github-btn.html?user=interop-dev&amp;repo=netjson&amp;type=fork&amp;count=true&amp;size=large" frameborder="0" scrolling="0" width="140" height="33"></iframe>
+        <iframe src="https://nodeshot.org/github-btn.html?user=netjson&amp;repo=netjson&amp;type=watch&amp;count=true&amp;size=large" frameborder="0" scrolling="0" width="140" height="33"></iframe>
+        <iframe src="https://nodeshot.org/github-btn.html?user=netjson&amp;repo=netjson&amp;type=fork&amp;count=true&amp;size=large" frameborder="0" scrolling="0" width="140" height="33"></iframe>
     </p>
 
 Configuration Management
@@ -93,10 +93,10 @@ Network Topology Visualizers
 netjsongraph.js
 ^^^^^^^^^^^^^^^
 
-.. image:: https://raw.githubusercontent.com/interop-dev/netjsongraph.js/master/docs/netjsongraph-default.png
-  :target: https://github.com/interop-dev/netjsongraph.js
+.. image:: https://raw.githubusercontent.com/netjson/netjsongraph.js/master/docs/netjsongraph-default.png
+  :target: https://github.com/netjson/netjsongraph.js
 
-`netjsongraph.js <https://github.com/interop-dev/netjsongraph.js>`_ is a javascript
+`netjsongraph.js <https://github.com/netjson/netjsongraph.js>`_ is a javascript
 library based on the popular d3.js visualization framework which can be used to
 visualize NetJSON ``NetworkGraph`` objects.
 
@@ -109,7 +109,7 @@ BGP aspath-graph
 
 `aspath-graph <https://github.com/coxley/aspath_graph>`_ is a python library that
 converts BGP ASPATHs and converts them to NetJSON ``NetworkGraph`` so they can
-be viewed with `netjsongraph.js <https://github.com/interop-dev/netjsongraph.js>`_.
+be viewed with `netjsongraph.js <https://github.com/netjson/netjsongraph.js>`_.
 
 Network Topology Monitoring
 ---------------------------
@@ -117,11 +117,11 @@ Network Topology Monitoring
 django-netjsongraph
 ^^^^^^^^^^^^^^^^^^^
 
-.. image:: https://raw.githubusercontent.com/interop-dev/django-netjsongraph/master/docs/images/visualizer.png
+.. image:: https://raw.githubusercontent.com/netjson/django-netjsongraph/master/docs/images/visualizer.png
   :alt: link up, link down
-  :target: https://github.com/interop-dev/django-netjsongraph
+  :target: https://github.com/netjson/django-netjsongraph
 
-`django-netjsongraph <https://github.com/interop-dev/django-netjsongraph>`_ is a
+`django-netjsongraph <https://github.com/netjson/django-netjsongraph>`_ is a
 reusable `django <https://www.djangoproject.com/>`_ app for collecting and visualizing network topology. The app is able
 to store network topology, detect and show links that are failing.
 
