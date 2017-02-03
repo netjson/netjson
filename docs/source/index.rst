@@ -14,6 +14,7 @@ Contents:
    extensions
    contributing
    get-in-touch
+   gsoc-2017
 
 Indices and tables
 ==================

@@ -1,0 +1,38 @@
+Google Summer of Code Ideas (2017)
+==================================
+
+.. contents:: **Table of Contents**:
+   :backlinks: none
+   :depth: 3
+
+.. raw:: html
+
+    <p>
+        <iframe src="https://nodeshot.org/github-btn.html?user=netjson&amp;repo=netjson&amp;type=watch&amp;count=true&amp;size=large" frameborder="0" scrolling="0" width="140" height="33"></iframe>
+        <iframe src="https://nodeshot.org/github-btn.html?user=netjson&amp;repo=netjson&amp;type=fork&amp;count=true&amp;size=large" frameborder="0" scrolling="0" width="140" height="33"></iframe>
+    </p>
+
+We are currently working on the list of ideas.
+
+Netjsongraph.js: canvas and geographic data
+-------------------------------------------
+
+`netjsongraph.js <https://github.com/netjson/netjsongraph.js>`_ is a javascript library based on d3 that allows visualization of NetJSON NetworkGraph objects. The library uses SVG for visualization, which can be quite slow when many elements are shown, therefore we would like to try switching to canvas. We also need an optional mode in which the network is displayed on a map.
+
+**Measurable outcomes**:
+
+- Rewrite the visualizer to use canvas
+- Add an optional map mode
+- Modernize javascript code organization: you may want to use some modern JS tool for building the library, you may rewrite the code in ES6, up to you
+- Update documentation and examples in README
+
+Implement NetJSON DeviceMonitoring in ubus (OpenWRT/LEDE)
+---------------------------------------------------------
+
+Implement NetJSON DeviceMonitoring output in `ubus <https://wiki.openwrt.org/doc/techref/ubus>`_ (OpenWRT/LEDE).
+
+**Measurable outcomes**:
+
+- Implement a way to get a NetJSON DeviceMonitoring object via ubus
+- Document the compilation/install process and the usage of the module on the README
+
