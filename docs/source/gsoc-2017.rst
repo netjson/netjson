@@ -125,8 +125,6 @@ implementing it on other systems will help to speed up the standardization proce
     - dns search domains
     - static routes
     - files
-    - The general test coverage of the library must be kept higher than 95%
-    - The backend need to be documented in the documentation files contained in the netjsonconfig repo
 - The general test coverage of the library must be kept higher than 95%
 - The backend must be to be documented inside the `python-sphinx <http://www.sphinx-doc.org/>`_ docs dir
   contained in the *netjsonconfig* repo
