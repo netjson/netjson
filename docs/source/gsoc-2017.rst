@@ -16,6 +16,15 @@ Google Summer of Code Ideas (2017)
         <iframe src="https://nodeshot.org/github-btn.html?user=netjson&amp;repo=netjson&amp;type=fork&amp;count=true&amp;size=large" frameborder="0" scrolling="0" width="140" height="33"></iframe>
     </p>
 
+Statement added on 28th of February 2017
+----------------------------------------
+
+We haven't been accepted to the GSoC 2017 but you can still apply to a few accepted organizations which are including
+many of our ideas in their proposals. See:
+
+- `Freifunk GSoC 2017 Ideas <https://wiki.freifunk.net/Ideas>`_
+- `OpenWISP GSoC 2017 Ideas <http://openwisp.org/gsoc/ideas-2017.html>`_
+
 Netjsongraph.js: canvas and geographic data
 -------------------------------------------
 
