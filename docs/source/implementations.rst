@@ -15,6 +15,21 @@ Implementations
 Configuration Management
 ------------------------
 
+OpenWISP 2 controller
+^^^^^^^^^^^^^^^^^^^^^
+
+.. raw:: html
+
+    <p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/MY097Y2cPQ0?list=PLPueLZei9c8_DEYgC5StOcR5bCAcQVfR8" frameborder="0" allowfullscreen></iframe>
+    </p>
+
+`OpenWISP 2 <https://github.com/openwisp/ansible-openwisp2>`_ is a promising open-source `wifi controller
+<http://openwisp.org/whatis.html>`_ and configuration manager for embedded devices and routers running
+OpenWRT / LEDE.
+
+A demonstration of its usage can be seen above.
+
 django-netjsonconfig
 ^^^^^^^^^^^^^^^^^^^^
 
