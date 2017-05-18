@@ -58,7 +58,7 @@ the lowest common denominator of:
 We are currently busy working to write :doc:`implementations <implementations>`
 for the following kind of programs:
 
-* Firwmares and linux modules
+* Firmwares and linux modules
 * Routing protocols
 * Configuration management tools
 * Monitoring agents
