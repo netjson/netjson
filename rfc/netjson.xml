@@ -647,7 +647,7 @@
                         <texttable align="left">
                             <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
                             <c>cipher</c><c>string</c><c>string representing security
-                            ciphers; the RECOMMENDED allowed values are: auto, ccmp, tkip, tkip+ccmp</c>
+                            ciphers; the RECOMMENDED allowed values are: auto, ccmp, tkip and tkip+ccmp</c>
                             <c>disabled</c><c>boolean</c><c>whether to disable encryption,
                             SHOULD default to false</c>
                         </texttable>

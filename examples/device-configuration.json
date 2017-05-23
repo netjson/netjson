@@ -147,10 +147,7 @@
             "type": "wireless",
             "wireless": {
                 "encryption": {
-                    "ciphers": [
-                        "tkip",
-                        "ccmp"
-                    ],
+                    "cipher": "tkip+ccmp",
                     "key": "passphrase012345",
                     "protocol": "wpa_personal_mixed"
                 },
