@@ -397,7 +397,7 @@
                     representing additional addresses (mac/ip) which can be
                     used to communicate with the node</c>
                     <c>properties</c><c>object</c><c>object which MAY contain
-                    any arbitrary member; These aribtrary members SHOULD be visualized by
+                    any arbitrary member; these arbitrary members SHOULD be visualized by
                     user interface software</c>
                 </texttable>
             </section>
@@ -425,7 +425,7 @@
                     <spanx style="em">cost</spanx> member;</c>
                     <c>properties</c><c>object</c><c>object which MAY contain
                     any arbitrary member;
-                    These aribtrary members SHOULD be visualized by
+                    these arbitrary members SHOULD be visualized by
                     user interface software</c>
                 </texttable>
             </section>
