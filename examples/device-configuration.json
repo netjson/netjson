@@ -9,7 +9,7 @@
     "hardware": {
         "model": "Example model",
         "manufacturer": "Example inc.",
-        "revision": 1,
+        "version": 1,
         "cpu": "Atheros AR2317"
     },
     "operating_system": {

@@ -267,7 +267,7 @@
                 "model": {
                     "type": "string"
                 },
-                "revision": {
+                "version": {
                     "type": "integer"
                 },
                 "cpu": {
