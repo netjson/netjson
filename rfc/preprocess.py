@@ -5,7 +5,8 @@ text = ''
 with open('netjson.xml', 'r') as xml:
     text = xml.read()
 
-includes = ['../examples/{0}'.format(f) for f in  os.listdir('../examples')]
+includes = ['../examples/{0}'.format(f) for f in  os.listdir('../examples/')]
+includes += ['../schema/{0}'.format(f) for f in  os.listdir('../schema/')]
 
 for include in includes:
     with open(include, 'r') as include_file:
