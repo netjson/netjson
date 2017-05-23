@@ -61,6 +61,6 @@ See the dedicated :doc:`Extension Registry <extensions>` page.
 How can I add an implementation to this website?
 ------------------------------------------------
 
-Just `edit the implementations page on github <https://github.com/interop-dev/netjson/edit/master/docs/source/implementations.rst>`_,
+Just `edit the implementations page on github <https://github.com/netjson/netjson/edit/master/docs/source/implementations.rst>`_,
 add your implementation with a good description (images are welcome if relevant)
 and send a pull request.
