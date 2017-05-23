@@ -308,11 +308,15 @@
                 "additionalProperties": true,
                 "required": [
                     "name",
+                    "protocol",
                     "channel",
                     "channel_width"
                 ],
                 "properties": {
                     "name": {
+                        "type": "string"
+                    },
+                    "protocol": {
                         "type": "string"
                     },
                     "phy": {
