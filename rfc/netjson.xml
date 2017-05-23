@@ -45,7 +45,7 @@
     <front>
         <title abbrev="NetJSON">NetJSON: data interchange format for networks</title>
         <author fullname="Federico Capoano" initials="F.C." surname="Capoano">
-            <organization>Ninux.org</organization>
+            <organization>Cineca</organization>
             <address>
                 <postal>
                     <street>Via Silvio Pellico 29</street>
@@ -55,8 +55,8 @@
                     <country>Italy</country>
                 </postal>
                 <phone>+39 366 4253802</phone>
-                <email>nemesis@ninux.org</email>
-                <uri>http://www.ninux.org/</uri>
+                <email>f.capoano@cineca.it</email>
+                <uri>https://www.cineca.it/en</uri>
             </address>
         </author>
         <author fullname="L. Aaron Kaplan" initials="L.A." surname="Kaplan">
