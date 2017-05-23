@@ -184,11 +184,8 @@
                                         "key": {
                                             "type": "string"
                                         },
-                                        "ciphers": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "string"
-                                            }
+                                        "cipher": {
+                                            "type": "string"
                                         },
                                         "disabled": {
                                             "type": "boolean",

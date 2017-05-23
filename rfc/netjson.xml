@@ -643,10 +643,10 @@
                         </t>
                         <texttable align="left">
                             <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
-                            <c>ciphers</c><c>array</c><c>array of strings representing security
-                            ciphers, eg: CCMP, TKIP</c>
+                            <c>cipher</c><c>string</c><c>string representing security
+                            ciphers; the RECOMMENDED allowed values are: auto, ccmp, tkip, tkip+ccmp</c>
                             <c>disabled</c><c>boolean</c><c>whether to disable encryption,
-                            defaults to false</c>
+                            SHOULD default to false</c>
                         </texttable>
                     </section>
                 </section>
@@ -1427,11 +1427,8 @@
                                         "key": {
                                             "type": "string"
                                         },
-                                        "ciphers": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "string"
-                                            }
+                                        "cipher": {
+                                            "type": "string"
                                         },
                                         "disabled": {
                                             "type": "boolean",
