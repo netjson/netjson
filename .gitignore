@@ -4,6 +4,7 @@
 ._*
 rfc/*.html
 rfc/*.txt
+rfc/*-preprocessed.xml
 docs/build
 /website/google9397fb98b447b1f2.html
 /website/json-editor/

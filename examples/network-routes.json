@@ -1,17 +1,16 @@
 {
     "type": "NetworkRoutes",
-    "protocol": "PROTOCOL-NAME",
-    "version": "PROTOCOL-VERSION",
-    "revision": "PROTOCOL-REVISION",
-    "metric": "PROTOCOL-METRIC",
-    "router_id": "ROUTER-ID",
+    "protocol": "olsrv2",
+    "version": "0.8.2",
+    "revision": "v0.8.2-6-ge2e3acc",
+    "metric": "ff_dat_metric",
+    "router_id": "192.168.0.101",
     "routes": [
         {
-            "destination": "ID",
-            "source": "ID",
-            "next" : "ID",
-            "device": "DEVICE",
-            "cost": 1
+            "destination": "192.168.0.102",
+            "next": "169.254.1.102",
+            "cost": 4292352,
+            "device": "eth1"
         }
     ]
 }
