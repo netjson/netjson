@@ -489,6 +489,9 @@
                 <texttable align="left">
                     <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
                     <c>hostname</c><c>string</c><c>hostname of the network device</c>
+                    <c>timezone</c><c>string</c><c>system timezone; the value of this member MUST be
+                    one of the values present in the <eref target="https://www.iana.org/time-zones">
+                    Time Zone Database</eref> maintained by IANA</c>
                     <c>maintainer</c><c>string</c><c>email address of the maintainer of the network device</c>
                     <c>description</c><c>string</c><c>free-form textual description of the network device</c>
                     <c>ula_prefix</c><c>string</c><c>IPv6 Unique Local Address prefix applicable to every network interface</c>

@@ -245,6 +245,9 @@
                 "hostname": {
                     "type": "string"
                 },
+                "timezone": {
+                    "type": "string"
+                },
                 "maintainer": {
                     "type": "string"
                 },
