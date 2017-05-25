@@ -121,13 +121,15 @@ in the field, for example, the use of ``frag_threshold`` to refer to the
 Readability counts
 ^^^^^^^^^^^^^^^^^^
 
-Readability of the `specification (RFC) <http://netjson.org/rfc.html>`_ is really important to us.
+Readability of the `NetJSON specification <http://netjson.org/rfc.html>`_ is
+really important to us.
 
-We want the RFC to be the main reference document for all kind of developers,
+We want it to be the main reference document for all kind of developers,
 therefore it has to be readable and easy to understand.
 
-If you think a specific part of the `NetJSON RFC <http://netjson.org/rfc.html>`_ is not clear,
-not specific enough or particularly hard to read, please :doc:`let us know <get-in-touch>`.
+If you think a specific part of the `NetJSON Specification <http://netjson.org/rfc.html>`_
+is not clear, not specific enough or particularly hard to read, please
+:doc:`let us know <get-in-touch>`.
 
 .. _KISS: http://en.wikipedia.org/wiki/KISS_principle
 .. _Principle of least astonishment: http://en.wikipedia.org/wiki/Principle_of_least_astonishment

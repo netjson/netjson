@@ -44,9 +44,9 @@ projects and collecting feedback from the interop-dev mailing list.
 L. Aaron Kaplan
 ^^^^^^^^^^^^^^^
 
-He co-founded the interop-dev group to work on networking software interoperability issues
-and contributed to get the work on the NetJSON RFC started. He also helped to get funding from the
-`CONFINE EU project <https://confine-project.eu/>`_.
+He co-founded the interop-dev group to work on networking software interoperability
+issues and contributed to get the work on the NetJSON specification started.
+He also helped to get funding from the `CONFINE EU project <https://confine-project.eu/>`_.
 
 Unix user since 1992, freebsd user since 1993, he studied maths & computer sciences
 in Vienna. He's founding member of the `Funkfeuer <https://www.funkfeuer.at/>`_ network
@@ -69,7 +69,7 @@ Funding
 2015
 ^^^^
 
-The initial work on the NetJSON RFC was supported financially with a grant from the
+The initial work on the NetJSON specification was supported financially with a grant from the
 `CONFINE EU project <https://confine-project.eu/>`_.
 
 2016 - current

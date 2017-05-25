@@ -34,7 +34,8 @@ We are putting effort into writing a readable and easy to understand `specificat
 <http://netjson.org/rfc.html>`_, which is the official document explaining NetJSON.
 
 If you want to get a quick overview of what NetJSON can offer read on, but refer
-to the `NetJSON RFC <http://netjson.org/rfc.html>`_ for the full specification.
+to the `NetJSON Draft Specification <http://netjson.org/rfc.html>`_ for more
+detailed information.
 
 DeviceConfiguration
 -------------------
@@ -90,7 +91,7 @@ DeviceConfiguration specification
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 For a full specification, please refer to the `relevant DeviceConfiguration
-section in the NetJSON RFC <http://netjson.org/rfc.html#rfc.section.5>`_.
+section in the NetJSON Specification <http://netjson.org/rfc.html#rfc.section.5>`_.
 
 DeviceMonitoring
 ----------------
@@ -181,7 +182,7 @@ DeviceMonitoring specification
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 For a full specification, please refer to the `relevant DeviceMonitoring
-section in the NetJSON RFC <http://netjson.org/rfc.html#rfc.section.6>`_.
+section in the NetJSON Specification <http://netjson.org/rfc.html#rfc.section.6>`_.
 
 NetworkRoutes
 -------------
@@ -221,7 +222,7 @@ NetworkRoutes specification
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 For a full specification, please refer to the `relevant NetworkRoutes section
-in the NetJSON RFC <http://netjson.org/rfc.html#rfc.section.3>`_.
+in the NetJSON Specification <http://netjson.org/rfc.html#rfc.section.3>`_.
 
 NetworkGraph
 ------------
@@ -303,7 +304,7 @@ NetworkGraph specification
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 For a full specification, please refer to the `relevant NetworkGraph section
-in the NetJSON RFC <http://netjson.org/rfc.html#rfc.section.4>`_.
+in the NetJSON Specification <http://netjson.org/rfc.html#rfc.section.4>`_.
 
 NetworkCollection
 -----------------
@@ -369,4 +370,4 @@ NetworkCollection specification
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 For a full specification, please refer to the `relevant NetworkCollection section
-in the NetJSON RFC <http://netjson.org/rfc.html#rfc.section.5>`_.
+in the NetJSON Specification <http://netjson.org/rfc.html#rfc.section.5>`_.
