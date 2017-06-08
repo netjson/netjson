@@ -91,7 +91,8 @@ This plugin implements the following NetJSON types:
 PopRouting (Prince)
 ^^^^^^^^^^^^^^^^^^^
 
-Prince is an open source implementation of the `PopRouting Algorithm
+`Prince <https://github.com/AdvancedNetworkingSystems/poprouting>`_ is an
+open source implementation of the `PopRouting Algorithm
 <http://ieeexplore.ieee.org/document/7524407/?reload=true>`_.
 It has been developed as a `Google Summer of Code Project
 <https://blog.freifunk.net/2016/implementing-poprouting-final-evaluation>`_
