@@ -6,8 +6,8 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   why
    what
+   why
    who
    faq
    implementations
