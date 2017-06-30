@@ -664,7 +664,7 @@
                     <ttcol>key name</ttcol><ttcol>JSON type</ttcol><ttcol>description</ttcol>
                     <c>name</c><c>string</c><c>arbitrary name of the radio device</c>
                     <c>protocol</c><c>string</c><c>wireless protocol used, the
-                    RECOMMENDED allowed values are: 802.11ac, 802.11n, 802.11b, 802.11g, 802.11n</c>
+                    RECOMMENDED allowed values are: 802.11ac, 802.11n, 802.11b, 802.11g, 802.11a</c>
                     <c>channel</c><c>integer</c><c>channel number</c>
                     <c>channel_width</c><c>integer</c><c>channel width in Hertz</c>
                 </texttable>
