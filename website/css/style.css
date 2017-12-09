@@ -312,7 +312,7 @@ a {
 
 @media screen and (max-width: 50em) {
   .menu--adsila .menu__item {
-    margin: 0 0 2em;
+    margin: 0 0 1em;
   }
   .menu--adsila .menu__item-label {
     display: block;
@@ -331,7 +331,7 @@ a {
     width: 300px;
   }
   .code {
-    max-height: 100vh; 
+    max-height: 100vh;
     max-width: 100vw;
   }
   .logo {
