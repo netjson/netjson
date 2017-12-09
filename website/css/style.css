@@ -17,18 +17,19 @@ canvas {
   pointer-events: none;
   font-weight: 700;
   position: absolute;
-  top: 40%;
+  top: 33%;
   left: 0;
   right: 0;
   text-align: center;
 }
+.canvas-text-secondary br{ display: none }
 .canvas-text-secondary {
-  font-size: 2.5em;
+  font-size: 2.1em;
   color: white;
   pointer-events: none;
   font-weight: 700;
   position: absolute;
-  top: 55%;
+  top: 54%;
   left: 0;
   right: 0;
   text-align: center;
@@ -343,4 +344,36 @@ a {
   .fp-controlArrow.fp-next {
     border-width: 30px 0 30px 25px;
   }
+}
+
+@media only screen and (max-width: 450px) {
+  .canvas-text { top: 32% }
+  .canvas-text-secondary{
+    top: 50%;
+    font-size: 1.8em;
+    line-height: 1.3em !important;
+  }
+  .canvas-text-secondary br{ display: inline }
+  .logo {
+    width: 80%;
+  }
+  #fp-nav ul li .fp-tooltip{ display: none }
+  #fp-nav{ top: 11% }
+}
+
+#fp-nav{
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  border-radius: 10px;
+}
+
+#fp-nav ul li .fp-tooltip{
+  background-color: rgba(0, 0, 0, 0.50);
+  padding: 3px 6px;
+  border-radius: 3px;
+  font-size: 12px;
+  right: 25px;
+}
+
+#fp-nav ul li a.active span{
+  background-color: #fff;
 }
