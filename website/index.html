@@ -8,128 +8,112 @@
     <link rel="icon" type="image/png" href="icon/android-chrome-192x192.png" sizes="192x192">
     <link rel="icon" type="image/png" href="icon/favicon-96x96.png" sizes="96x96">
     <link rel="icon" type="image/png" href="icon/favicon-16x16.png" sizes="16x16">
-    <style>
-        body{ font: normal 14px/20px Arial, "Liberation Sans", sans-serif; }
-        h1,.elevator{ font: italic normal 30px Georgia, serif; }
-        .elevator{ font-size: 24px; line-height: 35px }
-        .menu{ font-size: 16px; margin: 20px 0; line-height: 25px }
-        a{ font-weight: bold; color: #535353 }
-        a:hover{ color: #000; text-decoration: none }
-        p.menu a{
-            display: block;
-            margin: 0 auto 10px;
-            padding: 5px 0;
-            width: 50%;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 3px
-        }
-        p.menu a:hover,
-        p.menu a:focus,
-        p.menu a:active{ background-color: rgba(0, 0, 0, 1) }
-        #logo { max-width:420px; margin: 15px 5px 5px }
-        .center{ text-align: center }
-        .justify{ text-align: justify }
-        .content{ width: 600px; margin: 0 auto; box-sizing: border-box; }
-        .content img{ width: 100% }
-        @media screen and (max-width: 600px) {
-            .content{ width: 100%; padding: 0 10px }
-            #logo{ width: 80% }
-            p.menu a{ width: 60% }
-        }
-        @media screen and (max-width: 450px) {
-            p.menu a{ width: 80% }
-        }
-        pre {
-            width: 100%;
-            padding: 15px 20px;
-            box-sizing: border-box;
-            overflow-x: auto;
-            background-color: #f9f9f9;
-            border: 1px dashed #b4b4b4;
-            color: #363636;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/jquery.fullpage.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
     <script>
         var _sendga = function (value) {
             ga('send', 'event', 'link', value);
         };
     </script>
 </head>
-<body class="center content">
-    <p>
-        <img src="./netjson-logo.svg"
-             alt="netjson"
-             id="logo">
-    </p>
-    <h1>
-        <strong>NetJSON</strong><br>
-        data interchange format for networks
-    </h1>
-    <p style="margin-bottom:0">
-        <iframe src="https://nodeshot.org/github-btn.html?user=netjson&amp;repo=netjson&amp;type=watch&amp;count=true&amp;size=large" frameborder="0" scrolling="0" width="140" height="33"></iframe>
-        <iframe src="https://nodeshot.org/github-btn.html?user=netjson&amp;repo=netjson&amp;type=fork&amp;count=true&amp;size=large" frameborder="0" scrolling="0" width="140" height="33"></iframe>
-    </p>
-    <p class="menu">
-        <a href="http://netjson.org/rfc.html">Specification (HTML)</a>
-        <a href="http://netjson.org/rfc.epub" onclick="_sendga('ePub')">Specification (ePub)</a>
-        <a href="./docs/what.html" onclick="_sendga('what')">What is NetJSON?</a>
-        <a href="./docs/why.html" onclick="_sendga('why')">Why NetJSON?</a>
-        <a href="./docs/faq.html" onclick="_sendga('faq')">FAQs</a>
-        <a href="./docs/implementations.html" onclick="_sendga('implementations')">Implementations</a>
-        <a href="./docs/get-in-touch.html" onclick="_sendga('get-in-touch')">Get in touch</a>
-    </p>
-    <div class="justify">
-        <p class="elevator center">
-            Developing networking applications is way too hard,
-            much harder than we should allow it to be.
-        </p>
-        <p>
-            <em>NetJSON</em> is a data interchange format based on <a href="http://json.org/">JSON</a>
-            designed to ease the development of software tools for computer networks.
-        </p>
-        <p>
-            NetJSON defines several types of JSON objects and the manner in which they are combined
-            to represent a network: <strong>configuration of devices</strong>,
-            <strong>monitoring data</strong>, <strong>network topology</strong>
-            and <strong>routing information</strong>.
-        </p>
-        <p>
-            Our goal is to build an ecosystem of interoperable software tools that
-            are able to work with the basic building blocks of layer2 and layer3 <strong>networks</strong>,
-            enabling developers to build great networking applications faster.
-        </p>
-        <p>
-            <a href="./docs/implementations.html#netjsongraph-js" onclick="_sendga('netjsongraph.js')">
-                <img src="https://raw.githubusercontent.com/netjson/netjsongraph.js/master/docs/netjsongraph-default.png"
-                     alt="">
-            </a>
-        </p>
-<pre>{
+<body>
+    <div id="fullpage">
+        <div class="section">
+            <div class="fixed-ham"><a href="#fourth">&#9776; MENU</a></div>
+            <div class="canvas-text"><img src="netjson-white.svg" alt="NetJSON" class="logo"></div>
+            <div class="canvas-text-secondary">Data Interchange Format for Networks</div>
+            <canvas id=c></canvas>
+        </div>
+        <div class="back section">
+            <div class="fixed-ham"><a href="#fourth">&#9776; MENU</a></div>
+            <div class="container">
+                <h2>Developing networking applications is way too hard, much harder than we should allow it to be.</h2>
+                <p>NetJSON is a data interchange format based on JSON designed to ease the development of software tools for computer networks.</p>
+
+                <p>NetJSON defines several types of JSON objects and the manner in which they are combined to represent a network: configuration of devices, monitoring data, network topology and routing information.</p>
+
+                <p>Our goal is to build an ecosystem of interoperable software tools that are able to work with the basic building blocks of layer2 and layer3 networks, enabling developers to build great networking applications faster.</p>
+            </div>
+        </div>
+        <div class="c section">
+            <div class="fixed-ham"><a href="#fourth">&#9776;</a></div> 
+            <div class="slide">
+                <div class="code" id="scroll">
+                    <h2 class="white">Router Configuration</h2>
+                    <pre>
+                        <code>
+{
+    "type": "DeviceConfiguration",
+    "general": {
+        "hostname": "RouterA"
+    },
+    "interfaces": [
+        {
+            "name": "lo0",
+            "type": "ethernet",
+            "addresses": [
+                {
+                    "address": "127.0.0.1",
+                    "mask": 8,
+                    "proto": "static",
+                    "family": "ipv4"
+                }
+            ]
+        },
+        {
+            "name": "eth0",
+            "type": "ethernet",
+            "addresses": [
+                {
+                    "address": "192.168.1.1",
+                    "mask": 24,
+                    "proto": "static",
+                    "family": "ipv4"
+                }
+            ]
+        }
+    ]
+}
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="code" id="scroll">
+                    <h2 class="white">Network Graph</h2>
+                    <pre>
+                        <code>
+{
     "type": "NetworkGraph",
     "protocol": "olsr",
     "version": "0.6.6",
     "revision": "5031a799fcbe17f61d57e387bc3806de",
     "metric": "etx",
     "router_id": "172.16.40.24",
+    "label": "Test Network",
     "nodes": [
         {
             "id": "172.16.40.24",
-            "label": "node-A",
-            "local_addresses": [
-                "10.0.0.1",
-                "10.0.0.2"
-            ],
+            "label": "node A",
             "properties": {
                 "hostname": "node1.my.net"
             }
         },
         {
             "id": "172.16.40.60",
-            "label": "node-B",
+            "label": "node B",
             "properties": {
                 "hostname": "node2.my.net"
+            }
+        },
+        {
+            "id": "172.16.41.1",
+            "label": "node C",
+            "properties": {
+                "hostname": "node3.my.net"
             }
         }
     ],
@@ -137,16 +121,220 @@
         {
             "source": "172.16.40.24",
             "target": "172.16.40.60",
-            "cost": 1.000,
-            "cost_text": "1020  bit/s",
-            "properties": {
-                "lq": 1.000,
-                "nlq": 0.497
+            "cost": 1.000
+        },
+        {
+            "source": "172.16.40.24",
+            "target": "172.16.41.1",
+            "cost": 1.000
+        },
+        {
+            "source": "172.16.40.60",
+            "target": "172.16.41.1",
+            "cost": 1.000
+        }
+    ]
+}
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="code" id="scroll">
+                    <h2 class="white">Device Monitoring</h2>
+                    <pre>
+                        <code>
+{
+    "type": "DeviceMonitoring",
+    "general": {
+        "hostname": "RouterA",
+        "uptime": 3501937
+    },
+    "interfaces": [
+        {
+            "name": "lo0",
+            "uptime": 1404305354,
+            "statistics": {
+               "collisions": 0,
+               "rx_frame_errors": 0,
+               "tx_compressed": 0,
+               "multicast": 0,
+               "rx_length_errors": 0,
+               "tx_dropped": 0,
+               "rx_bytes": 9287737,
+               "rx_missed_errors": 0,
+               "tx_errors": 0,
+               "rx_compressed": 0,
+               "rx_over_errors": 0,
+               "tx_fifo_errors": 0,
+               "rx_crc_errors": 0,
+               "rx_packets": 57624,
+               "tx_heartbeat_errors": 0,
+               "rx_dropped": 0,
+               "tx_aborted_errors": 0,
+               "tx_packets": 57624,
+               "rx_errors": 0,
+               "tx_bytes": 9287737,
+               "tx_window_errors": 0,
+               "rx_fifo_errors": 0,
+               "tx_carrier_errors": 0
+            }
+        },
+        {
+            "name": "eth0",
+            "uptime": 1294305354,
+            "statistics": {
+                "collisions": 0,
+                "rx_frame_errors": 0,
+                "tx_compressed": 0,
+                "multicast": 0,
+                "rx_length_errors": 0,
+                "tx_dropped": 0,
+                "rx_bytes": 3542783708,
+                "rx_missed_errors": 0,
+                "tx_errors": 0,
+                "rx_compressed": 0,
+                "rx_over_errors": 0,
+                "tx_fifo_errors": 0,
+                "rx_crc_errors": 0,
+                "rx_packets": 35118502,
+                "tx_heartbeat_errors": 0,
+                "rx_dropped": 14,
+                "tx_aborted_errors": 0,
+                "tx_packets": 11761973,
+                "rx_errors": 0,
+                "tx_bytes": 2952333765,
+                "tx_window_errors": 0,
+                "rx_fifo_errors": 0,
+                "tx_carrier_errors": 0
             }
         }
     ]
-}</pre>
+}
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="code" id="scroll">
+                    <h2 class="white">Network Routes</h2>
+                    <pre>
+                        <code>
+{
+    "type": "NetworkRoutes",
+    "protocol": "olsrv2",
+    "version": "0.8.2",
+    "revision": "v0.8.2-6-ge2e3acc",
+    "metric": "ff_dat_metric",
+    "router_id": "192.168.0.101",
+    "routes": [
+        {
+            "destination": "192.168.0.102",
+            "next": "169.254.1.102",
+            "cost": 4292352,
+            "device": "eth1"
+        }
+    ]
+}
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="code" id="scroll">
+                    <h2 class="white">Network Collection</h2>
+                    <pre>
+                        <code>
+{
+    "type": "NetworkCollection",
+    "collection": [
+        {
+            "type": "DeviceConfiguration",
+            "general": {
+                "hostname": "RouterA"
+            },
+            "interfaces": [
+                {
+                    "name": "eth0",
+                    "type": "ethernet",
+                    "addresses": [
+                        {
+                            "address": "192.168.1.1",
+                            "mask": 24,
+                            "proto": "static",
+                            "family": "ipv4"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "DeviceConfiguration",
+            "general": {
+                "hostname": "RouterB"
+            },
+            "interfaces": [
+                {
+                    "name": "eth0",
+                    "type": "ethernet",
+                    "addresses": [
+                        {
+                            "address": "192.168.1.2",
+                            "mask": 24,
+                            "proto": "static",
+                            "family": "ipv4"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="color section" id="menu">
+            <div class="list">
+                <nav class="menu menu--adsila">
+                    <a class="menu__item" href="http://netjson.org/rfc.html">
+                        <span class="menu__item-name">Specification (HTML)</span>
+                        <span class="menu__item-label">Read Specification online</span>
+                    </a>
+                    <a class="menu__item" href="http://netjson.org/rfc.epub" onclick="_sendga('ePub')">
+                        <span class="menu__item-name">Specification (ePub)</span>
+                        <span class="menu__item-label">Download ebook for Specification</span>
+                    </a>
+                    <a class="menu__item" href="./docs/what.html" onclick="_sendga('what')">
+                        <span class="menu__item-name">What is NetJSON?</span>
+                        <span class="menu__item-label">Get acquainted with NetJSON</span>
+                    </a>
+                    <a class="menu__item" href="./docs/why.html" onclick="_sendga('why')">
+                        <span class="menu__item-name">Why NetJSON?</span>
+                        <span class="menu__item-label">Read our mission statement</span>
+                    </a>
+                    <a class="menu__item" href="./docs/faq.html" onclick="_sendga('faq')">
+                        <span class="menu__item-name">FAQs</span>
+                        <span class="menu__item-label">Frequently Asked Questions</span>
+                    </a>
+                    <a class="menu__item" href="./docs/implementations.html" onclick="_sendga('implementations')">
+                        <span class="menu__item-name">Implementations</span>
+                        <span class="menu__item-label">Learn to use NetJSON</span>
+                    </a>
+                    <a class="menu__item" href="./docs/get-in-touch.html" onclick="_sendga('get-in-touch')">
+                        <span class="menu__item-name">Contact</span>
+                        <span class="menu__item-label">Get in touch and find us</span>
+                    </a>
+                </nav>
+            </div>
+        </div>
     </div>
+    
+    <script src="./js/jquery-3.2.1.min.js"></script>
+    <script src="./js/jquery.fullpage.min.js"></script>
+    <script src="./js/particles.min.js"></script>
+    <script src="./js/script.js"></script>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
