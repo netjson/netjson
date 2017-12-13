@@ -1,0 +1,62 @@
+a:visited {
+    color: #1b5072;
+}
+
+.wy-side-nav-search>a, .wy-side-nav-search .wy-dropdown>a:visited, .wy-nav-top a {
+    color: #f0f0f0;
+}
+
+.wy-side-nav-search, .wy-nav-top {
+    background-color: #333333;
+}
+
+.wy-nav-side {
+    background-color: #1168B4;
+}
+
+.wy-menu-vertical a {
+    color: #fefefe;
+    border: none;
+}
+
+.wy-menu-vertical a:hover {
+    background-color: #1972c1;
+}
+
+.wy-menu-vertical a:active {
+    background-color: #2980b9;
+}
+
+.wy-menu-vertical li.current{
+    background-color: #2b8ed0;
+}
+
+.wy-menu-vertical li.on a, .wy-menu-vertical li.current>a {
+    background-color: #0e5491;
+    border: none;
+}
+
+.wy-menu-vertical li.current a {
+    color: #ffffff;
+    border: none;
+}
+
+.wy-menu-vertical li.current a:hover {
+    background-color: #339ee6;
+}
+
+.wy-menu-vertical li.toctree-l2.current>a {
+    background-color: #166db8;
+}
+
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3>a {
+    background-color: #5ca8db;
+}
+
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3>a:hover {
+    background-color: #69bcf3;
+}
+
+.wy-side-nav-search input[type=text] {
+    border-color: #9fa4a8;
+}
