@@ -173,13 +173,13 @@
             "title": "Interfaces",
             "uniqueItems": true,
             "additionalItems": true,
-            "required": [
-                "name"
-            ],
             "items": {
                 "type": "object",
                 "title": "Interface",
                 "additionalProperties": true,
+                "required": [
+                    "name"
+                ],
                 "properties": {
                     "name": {
                         "type": "string"
