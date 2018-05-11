@@ -116,6 +116,15 @@ netjsongraph.js
 library based on the popular d3.js visualization framework which can be used to
 visualize NetJSON ``NetworkGraph`` objects.
 
+MeshNetSimulator
+^^^^^^^^^^^^^^^
+
+.. image:: https://raw.githubusercontent.com/mwarning/MeshnetSimulator/master/docs/screenshot.png
+  :target: https://github.com/mwarning/MeshNetSimulator
+
+`MeshNetSimulator <https://github.com/mwarning/MeshNetSimulator>`_ is a simulator for sketching mesh routing algorithms.
+Supported is the import and export of mesh network topologies via the NetJSON format. The MeshNetSimulator also serves as an editor to change loaded networks and create new network structures.
+
 BGP aspath-graph
 ^^^^^^^^^^^^^^^^
 
