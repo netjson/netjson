@@ -8,8 +8,8 @@ Why NetJSON?
 .. raw:: html
 
     <p>
-        <iframe src="https://nodeshot.org/github-btn.html?user=netjson&amp;repo=netjson&amp;type=watch&amp;count=true&amp;size=large" frameborder="0" scrolling="0" width="140" height="33"></iframe>
-        <iframe src="https://nodeshot.org/github-btn.html?user=netjson&amp;repo=netjson&amp;type=fork&amp;count=true&amp;size=large" frameborder="0" scrolling="0" width="140" height="33"></iframe>
+        <iframe src="http://openwisp.io/github-btn.html?user=netjson&amp;repo=netjson&amp;type=watch&amp;count=true&amp;size=large" frameborder="0" scrolling="0" width="140" height="33"></iframe>
+        <iframe src="http://openwisp.io/github-btn.html?user=netjson&amp;repo=netjson&amp;type=fork&amp;count=true&amp;size=large" frameborder="0" scrolling="0" width="140" height="33"></iframe>
     </p>
 
 Motivations: why we started NetJSON
