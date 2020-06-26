@@ -292,8 +292,8 @@ A simplified NetworkGraph example
 
 This example shows a small network of 3 nodes which are connected in full mesh.
 
-When processed with one of the existing implementations (`django-netjsongraph
-<https://github.com/interop-dev/django-netjsongraph>`_), the previous
+When processed with one of the existing implementations (`openwisp-network-topology
+<https://github.com/openwisp/openwisp-network-topology/>`_), the previous
 ``NetworkGraph`` object results in the following image:
 
 .. image:: ./_static/netjson-networkgraph.png

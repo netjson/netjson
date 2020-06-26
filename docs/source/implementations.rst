@@ -139,18 +139,27 @@ be viewed with `netjsongraph.js <https://github.com/netjson/netjsongraph.js>`_.
 Network Topology Monitoring
 ---------------------------
 
-django-netjsongraph
-^^^^^^^^^^^^^^^^^^^
+openwisp-network-topology
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: https://raw.githubusercontent.com/netjson/django-netjsongraph/master/docs/images/visualizer.png
-  :alt: link up, link down
-  :target: https://github.com/netjson/django-netjsongraph
+.. image:: https://raw.githubusercontent.com/openwisp/openwisp-network-topology/master/docs/demo_network_topology.gif
+  :alt: OpenWISP Network Topology
+  :target: https://github.com/openwisp/openwisp-network-topology
 
-`django-netjsongraph <https://github.com/netjson/django-netjsongraph>`_ is a
-reusable `django <https://www.djangoproject.com/>`_ app for collecting and visualizing network topology. The app is able
-to store network topology, detect and show links that are failing.
+`OpenWISP Network Topology <https://github.com/openwisp/openwisp-network-topology>`_
+is the module of the OpenWISP designed to collect, store and visualize network topology data.
 
-It can be used as a stand alone web app or integrated in larger django projects.
+Prominent features of this module are:
+
+- Show information about links and nodes, allowing to add custom properties to nodes and links.
+- Allows collecting information by receiving data via an HTTP API or by fetching the data from a URL.
+- It allows to receive information from multiple nodes to avoid single points of failures and to
+  know if the network was split in multiple parts.
+- It allows to visualize previous states of the network: from days to weeks or even years.
+- Detects and shows links that are failing.
+- Show the last time a link changed its status (eg: down since 3 days)
+- It can be extended to implement custom network topology monitoring solutions
+  eg: it can be programmed to perform actions when the status of the network changes
 
 This implementation has an HTTP API that is able to produce ``NetworkGraph`` and
 ``NetworkCollection`` objects, as well as consuming and storing incoming ``NetworkGraph``
