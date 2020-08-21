@@ -181,6 +181,40 @@ It is able to produce and consume the ``NetworkGraph`` NetJSON type.
 Device Monitoring
 -----------------
 
+openwisp-monitoring
+^^^^^^^^^^^^^^^^^^^
+
+.. image:: https://drive.google.com/uc?export=view&id=1GuB5HsyiZejBzXKZJnM8QJCUJt1Z5IkJ
+  :align: center
+  :alt: OpenWISP Monitoring
+  :target: https://github.com/openwisp/openwisp-monitoring
+
+`OpenWISP Monitoring <https://github.com/openwisp/openwisp-monitoring>`_
+is the module of the OpenWISP designed to collect, store and visualize network topology data.
+
+Prominent features of this module are:
+
+- Collects and displays device status information like uptime, RAM status, CPU load averages,
+  Interface properties and addresses, WiFi interface status and associated clients,
+  Neighbors information, DHCP Leases, Disk/Flash status
+- Collection of monitoring information in a timeseries database.
+- Monitoring charts for uptime, packet loss, round trip time (latency), associated wifi clients, interface traffic,
+  RAM usage, CPU load, flash/disk usage
+- Charts can be viewed at resolutions of 1 day, 3 days, a week, a month and a year
+- Configurable alerts
+- CSV Export of monitoring data
+- Possibility to configure additional `Metrics <https://github.com/openwisp/openwisp-monitoring/blob/master/README.rst#openwisp_monitoring_metrics>`_ and `Charts <https://github.com/openwisp/openwisp-monitoring/blob/master/README.rst#openwisp_monitoring_charts>`_
+- Extensible active check system: it's possible to write additional checks that
+  are run periodically using python classes
+- API to retrieve the chart metrics and status information of each device. You can read more about it in `OpenWISP Monitoring docs <https://github.com/openwisp/openwisp-monitoring/tree/master#rest-api>`_.
+
+.. image:: https://raw.githubusercontent.com/netjson/netjson/master/docs/source/_static/lua-monitoring.png
+  :alt: Device Monitoring data in NetJSON format
+  :target: https://github.com/openwisp/lua-monitoring
+
+`Lua Monitoring <https://github.com/openwisp/lua-monitoring>`_ contains the scripts used to
+collect data in **NetJSON** format from OpenWRT and pass the same to the monitoring module.
+
 netengine-utils
 ^^^^^^^^^^^^^^^
 
