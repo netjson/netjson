@@ -33,10 +33,7 @@ He started thinking about a common JSON format for networks after a period of in
 development work with other open standards like `GeoJSON <http://geojson.org/>`_
 and `Open311 <http://www.open311.org/>`_ between 2012 and 2014.
 
-He currently helds the position of developer in R&D at `CINECA <http://www.cineca.it/en>`_
-in Rome, he is core contributor of the `OpenWISP <http://openwisp.org/>`_ project
-and he actively contributes to `Ninux.org <http://ninux.org/>`_, an Italian
-community network.
+He currently works full time on the `OpenWISP <https://openwisp.org>`_ project.
 
 He wrote most of the specification while writing implementations for his software
 projects and collecting feedback from the interop-dev mailing list.
