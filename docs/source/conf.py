@@ -28,7 +28,9 @@ import os
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = []
+extensions = [
+    'notfound.extension'
+]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['./_templates']
@@ -46,7 +48,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'NetJSON'
-copyright = u'2016, Federico Capoano'
+copyright = u'2016-2021, Federico Capoano'
 author = u'Federico Capoano'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -352,3 +354,12 @@ epub_exclude_files = ['search.html']
 
 # If false, no index is generated.
 #epub_use_index = True
+
+notfound_urls_prefix = '/docs/'
+notfound_context = {
+    'title': 'Page not found',
+    'body': (
+        '<h1>Page not found</h1>\n\nTry to start from the index or '
+        'perform a search for what you were looking for.'
+    ),
+}
