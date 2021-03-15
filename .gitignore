@@ -9,4 +9,6 @@ docs/build
 /website/google9397fb98b447b1f2.html
 /website/json-editor/
 /website/rfc.html
+/website/rfc.xml
 *.epub
+/website/docs/
