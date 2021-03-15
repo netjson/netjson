@@ -32,7 +32,7 @@ proposal will be taken seriosuly. Read on to find out more.
 1. Read the specification
 -------------------------
 
-Read the `NetJSON specification <http://netjson.org/rfc.html>`_ carefully.
+Read the `NetJSON specification <https://netjson.org/rfc.html>`_ carefully.
 
 Ensure that you know at least the following things:
 

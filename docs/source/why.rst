@@ -121,13 +121,13 @@ in the field, for example, the use of ``frag_threshold`` to refer to the
 Readability counts
 ^^^^^^^^^^^^^^^^^^
 
-Readability of the `NetJSON specification <http://netjson.org/rfc.html>`_ is
+Readability of the `NetJSON specification <https://netjson.org/rfc.html>`_ is
 really important to us.
 
 We want it to be the main reference document for all kind of developers,
 therefore it has to be readable and easy to understand.
 
-If you think a specific part of the `NetJSON Specification <http://netjson.org/rfc.html>`_
+If you think a specific part of the `NetJSON Specification <https://netjson.org/rfc.html>`_
 is not clear, not specific enough or particularly hard to read, please
 :doc:`let us know <get-in-touch>`.
 

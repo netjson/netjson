@@ -29,7 +29,7 @@ Netjsongraph.js: canvas and geographic data
 -------------------------------------------
 
 `netjsongraph.js <https://github.com/netjson/netjsongraph.js>`_ is a javascript library based on d3
-that allows visualization of `NetJSON NetworkGraph <http://netjson.org/docs/what.html#networkgraph>`_ objects. The library uses SVG for visualization,
+that allows visualization of `NetJSON NetworkGraph <https://netjson.org/docs/what.html#networkgraph>`_ objects. The library uses SVG for visualization,
 which can be quite slow when many elements are shown, therefore we would like to try switching to canvas.
 
 We also need an optional mode in which the network is displayed on a map.
@@ -47,7 +47,7 @@ Implement NetJSON DeviceMonitoring in ubus (OpenWRT/LEDE)
 
 Implement NetJSON DeviceMonitoring output in `ubus <https://wiki.openwrt.org/doc/techref/ubus>`_ (OpenWRT/LEDE).
 
-We need a way to retrieve a `NetJSON DeviceMonitoring <http://netjson.org/docs/what.html#devicemonitoring>`_
+We need a way to retrieve a `NetJSON DeviceMonitoring <https://netjson.org/docs/what.html#devicemonitoring>`_
 object directly from the command line interface.
 
 A good way to implement this would be to do it via ubus, like `nodewatcher-agent ubus API
@@ -55,7 +55,7 @@ A good way to implement this would be to do it via ubus, like `nodewatcher-agent
 
 **Measurable outcomes**:
 
-- Implement a way to retrieve a `NetJSON DeviceMonitoring <http://netjson.org/docs/what.html#devicemonitoring>`_ object via ubus
+- Implement a way to retrieve a `NetJSON DeviceMonitoring <https://netjson.org/docs/what.html#devicemonitoring>`_ object via ubus
 - Document the compilation/install process and the usage of the module on the README
 
 Convert netengine output to NetJSON DeviceMonitoring
@@ -65,11 +65,11 @@ Convert netengine output to NetJSON DeviceMonitoring
 from network devices. It was developed prior to NetJSON and it has helped us understanding that we
 needed a common format like NetJSON.
 
-We want to change the library so it can return `NetJSON DeviceMonitoring <http://netjson.org/docs/what.html#devicemonitoring>`_ output.
+We want to change the library so it can return `NetJSON DeviceMonitoring <https://netjson.org/docs/what.html#devicemonitoring>`_ output.
 
 **Measurable outcomes:**
 
-- Change the JSON output to match `NetJSON DeviceMonitoring <http://netjson.org/docs/what.html#devicemonitoring>`_
+- Change the JSON output to match `NetJSON DeviceMonitoring <https://netjson.org/docs/what.html#devicemonitoring>`_
 - Implement mocking in tests
 - Add compatibility for OpenWRT Chaos Calmer, Designated Driver and LEDE
 - Add compatibility for AirOS 7
@@ -84,12 +84,12 @@ deamon widely deployed in mesh networks.
 It ships a tool called ``batadv-viz`` that returns different output formats that can be used
 to visualze the network.
 
-We want to add `NetJSON NetworkGraph <http://netjson.org/docs/what.html#networkgraph>`_ output to
+We want to add `NetJSON NetworkGraph <https://netjson.org/docs/what.html#networkgraph>`_ output to
 ``batadv-viz``.
 
 **Measurable outcomes:**
 
-- Implement `NetJSON NetworkGraph <http://netjson.org/docs/what.html#networkgraph>`_ output in ``batadv-viz``
+- Implement `NetJSON NetworkGraph <https://netjson.org/docs/what.html#networkgraph>`_ output in ``batadv-viz``
 - Follow the development conventions used in ``batadv-viz``
 
 Ansible plugin for netjsonconfig
@@ -104,13 +104,13 @@ and allows using its two most interesting features, that is templates and contex
 It should be possible to define configuration templates, assign them to specific playbooks and define
 specific configurations for hosts.
 
-The configuration format format used by netjsonconfig is `NetJSON DeviceConfiguration <http://netjson.org/docs/what.html#deviceconfiguration>`_, but a *YAML*
+The configuration format format used by netjsonconfig is `NetJSON DeviceConfiguration <https://netjson.org/docs/what.html#deviceconfiguration>`_, but a *YAML*
 conversion of *NetJSON* would be good as well. Support for both would be preferred.
 
 **Measurable outcomes:**
 
 - Implement an ansible module that integrates netjsonconfig in ansible and allows using
-  `NetJSON DeviceConfiguration <http://netjson.org/docs/what.html#deviceconfiguration>`_ (or its *YAML* equivalent) to configure OpenWRT devices
+  `NetJSON DeviceConfiguration <https://netjson.org/docs/what.html#deviceconfiguration>`_ (or its *YAML* equivalent) to configure OpenWRT devices
 - Achieve a test coverage higher than 80%
 - Provide documentation using `python-sphinx <http://www.sphinx-doc.org/>`_
 
@@ -119,7 +119,7 @@ Raspbian backend for netjsonconfig
 
 Implement a `Raspbian <https://www.raspbian.org/>`_ backend in `netjsonconfig <netjsonconfig.openwisp.org>`_.
 
-`NetJSON DeviceConfiguration <http://netjson.org/docs/what.html#deviceconfiguration>`_ has been implemented only on `OpenWRT <http://openwrt.org>`_:
+`NetJSON DeviceConfiguration <https://netjson.org/docs/what.html#deviceconfiguration>`_ has been implemented only on `OpenWRT <http://openwrt.org>`_:
 implementing it on other systems will help to speed up the standardization process.
 
 **Measurable outcomes:**
@@ -143,7 +143,7 @@ PfSense backend for netjsonconfig
 
 Implement a `PfSense <https://pfsense.org/>`_ backend in `netjsonconfig <netjsonconfig.openwisp.org>`_.
 
-`NetJSON DeviceConfiguration <http://netjson.org/docs/what.html#deviceconfiguration>`_ has been
+`NetJSON DeviceConfiguration <https://netjson.org/docs/what.html#deviceconfiguration>`_ has been
 implemented only on `OpenWRT <http://openwrt.org>`_: implementing it on other systems will help to
 speed up the standardization process.
 
@@ -162,7 +162,7 @@ AirOS backend for netjsonconfig
 
 Implement an `AirOS backend <https://www.ubnt.com/airmax/airos7/>`_ in `netjsonconfig <netjsonconfig.openwisp.org>`_.
 
-`NetJSON DeviceConfiguration <http://netjson.org/docs/what.html#deviceconfiguration>`_ has been
+`NetJSON DeviceConfiguration <https://netjson.org/docs/what.html#deviceconfiguration>`_ has been
 implemented only on `OpenWRT <http://openwrt.org>`_: implementing it on other systems will
 help to speed up the standardization process.
 
@@ -181,7 +181,7 @@ netjsonconfig backward conversion
 
 As of today, `netjsonconfig <netjsonconfig.openwisp.org>`_ is only able to generate a native router
 configuration (eg: `OpenWRT <http://openwrt.org>`_) from a
-`NetJSON DeviceConfiguration <http://netjson.org/docs/what.html#deviceconfiguration>`_ object and not vice versa.
+`NetJSON DeviceConfiguration <https://netjson.org/docs/what.html#deviceconfiguration>`_ object and not vice versa.
 
 We want to add the backward conversion process into the library.
 
@@ -190,7 +190,7 @@ This project will require a thoughtful design, probably involving some serializa
 Measurable outcomes:
 
 - Backward ``generate()`` pocess: a configuration archive must be converted to
-  `NetJSON DeviceConfiguration <http://netjson.org/docs/what.html#deviceconfiguration>`_ through the available backends
+  `NetJSON DeviceConfiguration <https://netjson.org/docs/what.html#deviceconfiguration>`_ through the available backends
 - Backward ``render()`` process: a configuration string (eg: uci export in OpenWRT) must be converted to NetJSON
 - The general test coverage of the library must be kept higher than 95%
 - The feature must be documented in the documentation files contained in the netjsonconfig repo

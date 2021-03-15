@@ -1,1 +1,1 @@
-This page has moved, see `NetJSON Extension Registry <http://netjson.org/docs/extensions.html>`_.
+This page has moved, see `NetJSON Extension Registry <https://netjson.org/docs/extensions.html>`_.

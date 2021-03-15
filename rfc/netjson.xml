@@ -232,7 +232,7 @@
                     </t>
                     <t>
                         Before adding any custom member, implementers SHOULD read the
-                        <eref target="http://netjson.org/docs/extensions.html">NetJSON extension registry</eref>
+                        <eref target="https://netjson.org/docs/extensions.html">NetJSON extension registry</eref>
                         in order to find existing custom members to reuse or
                         to learn how to officially submit new custom members.
                     </t>
