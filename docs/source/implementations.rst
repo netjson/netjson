@@ -15,39 +15,16 @@ Implementations
 Configuration Management
 ------------------------
 
-OpenWISP 2 controller
-^^^^^^^^^^^^^^^^^^^^^
+OpenWISP Controller
+^^^^^^^^^^^^^^^^^^^
 
-.. raw:: html
+.. image:: https://raw.githubusercontent.com/openwisp/openwisp-controller/docs/docs/controller_demo.gif
+   :target: https://github.com/openwisp/openwisp-controller/tree/docs/docs/controller_demo.gif
+   :alt: OpenWISP Controller
 
-    <p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/MY097Y2cPQ0?list=PLPueLZei9c8_DEYgC5StOcR5bCAcQVfR8" frameborder="0" allowfullscreen></iframe>
-    </p>
-
-`OpenWISP 2 <https://github.com/openwisp/ansible-openwisp2>`_ is a promising open-source `wifi controller
+`OpenWISP Controller <https://github.com/openwisp/openwisp-controller>`_ is an open-source `wifi controller
 <http://openwisp.org/whatis.html>`_ and configuration manager for embedded devices and routers running
-OpenWRT / LEDE.
-
-A demonstration of its usage can be seen above.
-
-django-netjsonconfig
-^^^^^^^^^^^^^^^^^^^^
-
-.. image:: https://raw.githubusercontent.com/openwisp/django-netjsonconfig/master/docs/images/adhoc-interface.png
-  :alt: interface2, wireless interface, adhoc, ssid, bssid
-  :target: https://github.com/openwisp/django-netjsonconfig
-
-`django-netjsonconfig <https://github.com/openwisp/django-netjsonconfig>`_ is
-configuration manager for embedded devices, implemented as a reusable django-app
-which can be used as a standalone web app or integrated in a larger project using
-the popular `django web framework <https://www.djangoproject.com/>`_.
-
-The app makes use of the `netjsonconfig <https://github.com/openwisp/netjsonconfig>`_
-library behind the scenes and allows administrators to use its features through an easy
-to use web interface.
-
-The NetJSON ``DeviceConfiguration`` objects can also be edited in directly
-using raw JSON by entering *"advanced mode"*.
+OpenWRT.
 
 netjsonconfig
 ^^^^^^^^^^^^^
@@ -139,10 +116,10 @@ be viewed with `netjsongraph.js <https://github.com/netjson/netjsongraph.js>`_.
 Network Topology Monitoring
 ---------------------------
 
-openwisp-network-topology
+OpenWISP Network Topology
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: https://raw.githubusercontent.com/openwisp/openwisp-network-topology/master/docs/demo_network_topology.gif
+.. image:: https://raw.githubusercontent.com/openwisp/openwisp-network-topology/docs/docs/demo_network_topology.gif
   :alt: OpenWISP Network Topology
   :target: https://github.com/openwisp/openwisp-network-topology
 
@@ -181,10 +158,10 @@ It is able to produce and consume the ``NetworkGraph`` NetJSON type.
 Device Monitoring
 -----------------
 
-openwisp-monitoring
+OpenWISP Monitoring
 ^^^^^^^^^^^^^^^^^^^
 
-.. image:: https://drive.google.com/uc?export=view&id=1GuB5HsyiZejBzXKZJnM8QJCUJt1Z5IkJ
+.. image:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/monitoring-demo.gif
   :align: center
   :alt: OpenWISP Monitoring
   :target: https://github.com/openwisp/openwisp-monitoring
@@ -208,12 +185,21 @@ Prominent features of this module are:
   are run periodically using python classes
 - API to retrieve the chart metrics and status information of each device. You can read more about it in `OpenWISP Monitoring docs <https://github.com/openwisp/openwisp-monitoring/tree/master#rest-api>`_.
 
+OpenWrt netjson-monitoring Package
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The `OpenWrt OpenWISP Monitoring package <https://github.com/openwisp/openwrt-openwisp-monitoring>`_
+provides an OpenWrt package named
+``netjson-monitoring`` which provides a command line utility which returns
+NetJSON DeviceMonitoring information.
+
+E.g.::
+
+    netjson-monitoring --dump "*"
+
 .. image:: https://raw.githubusercontent.com/netjson/netjson/master/docs/source/_static/lua-monitoring.png
   :alt: Device Monitoring data in NetJSON format
-  :target: https://github.com/openwisp/lua-monitoring
-
-`Lua Monitoring <https://github.com/openwisp/lua-monitoring>`_ contains the scripts used to
-collect data in **NetJSON** format from OpenWRT and pass the same to the monitoring module.
+  :target: https://github.com/openwisp/openwrt-openwisp-monitoring
 
 netengine-utils
 ^^^^^^^^^^^^^^^
