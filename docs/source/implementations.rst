@@ -86,7 +86,7 @@ Network Topology Visualizers
 netjsongraph.js
 ^^^^^^^^^^^^^^^
 
-.. image:: https://raw.githubusercontent.com/netjson/netjsongraph.js/master/docs/netjsongraph-default.png
+.. image:: https://openwisp.io/docs/_images/netjsongraph-default.png
   :target: https://github.com/netjson/netjsongraph.js
 
 `netjsongraph.js <https://github.com/netjson/netjsongraph.js>`_ is a javascript
