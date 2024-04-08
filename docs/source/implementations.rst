@@ -86,12 +86,11 @@ Network Topology Visualizers
 netjsongraph.js
 ^^^^^^^^^^^^^^^
 
-.. image:: https://openwisp.io/docs/_images/netjsongraph-default.png
+.. image:: https://github.com/openwisp/netjsongraph.js/blob/master/docs/graph.png?raw=true
   :target: https://github.com/netjson/netjsongraph.js
 
 `netjsongraph.js <https://github.com/netjson/netjsongraph.js>`_ is a javascript
-library based on the popular d3.js visualization framework which can be used to
-visualize NetJSON ``NetworkGraph`` objects.
+library that can be used to generate visualizations for NetJSON ``NetworkGraph`` objects.
 
 MeshNetSimulator
 ^^^^^^^^^^^^^^^^
