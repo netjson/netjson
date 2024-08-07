@@ -2,50 +2,47 @@ What is NetJSON?
 ================
 
 .. contents:: **Table of Contents**:
-   :backlinks: none
-   :depth: 3
+    :backlinks: none
+    :depth: 3
 
-.. raw:: html
+NetJSON is a data interchange format based on JavaScript Object Notation
+(JSON) designed to describe the basic building blocks of layer2 and layer3
+networks.
 
-    <p>
-        <iframe src="http://openwisp.io/github-btn.html?user=netjson&amp;repo=netjson&amp;type=watch&amp;count=true&amp;size=large" frameborder="0" scrolling="0" width="140" height="33"></iframe>
-        <iframe src="http://openwisp.io/github-btn.html?user=netjson&amp;repo=netjson&amp;type=fork&amp;count=true&amp;size=large" frameborder="0" scrolling="0" width="140" height="33"></iframe>
-    </p>
+It defines several types of JSON objects and the manner in which they are
+combined to represent a network:
 
-NetJSON is a data interchange format based on JavaScript Object Notation (JSON)
-designed to describe the basic building blocks of layer2 and layer3 networks.
+- network configuration of devices
+- monitoring data
+- routing information
+- network topology
 
-It defines several types of JSON objects and the manner in which they are combined
-to represent a network:
-
-* network configuration of devices
-* monitoring data
-* routing information
-* network topology
-
-NetJSON aims to create an ecosystem of interoperable software that will enable
-developers to write network-centric applications faster and better. You can find
-out more about the motivations and goals of NetJSON in :doc:`"Why NetJSON?"<why>`.
+NetJSON aims to create an ecosystem of interoperable software that will
+enable developers to write network-centric applications faster and better.
+You can find out more about the motivations and goals of NetJSON in
+:doc:`"Why NetJSON?"<why>`.
 
 Specification
 -------------
 
-We are putting effort into writing a readable and easy to understand `specification
-<https://netjson.org/rfc.html>`_, which is the official document explaining NetJSON.
+We are putting effort into writing a readable and easy to understand
+`specification <https://netjson.org/rfc.html>`_, which is the official
+document explaining NetJSON.
 
-If you want to get a quick overview of what NetJSON can offer read on, but refer
-to the `NetJSON Draft Specification <https://netjson.org/rfc.html>`_ for more
-detailed information.
+If you want to get a quick overview of what NetJSON can offer read on, but
+refer to the `NetJSON Draft Specification <https://netjson.org/rfc.html>`_
+for more detailed information.
 
 DeviceConfiguration
 -------------------
 
-The ``DeviceConfiguration`` object aims to describe the network configuration
-of a device like a router, a wireless point to point device, a server,
-a raspberry pi or whatever is able to send packets through a computer network.
+The ``DeviceConfiguration`` object aims to describe the network
+configuration of a device like a router, a wireless point to point device,
+a server, a raspberry pi or whatever is able to send packets through a
+computer network.
 
 A simplified DeviceConfiguration example
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: javascript
 
@@ -82,26 +79,27 @@ A simplified DeviceConfiguration example
         ]
     }
 
-The previous example describes a device named ``RouterA`` which has two interfaces:
-the typical loopback interface and an ethernet interface named ``eth0`` which has
-a statically assigned ip address ``192.168.1.1`` and a network mask of ``24``
-bits (CIDR notation).
+The previous example describes a device named ``RouterA`` which has two
+interfaces: the typical loopback interface and an ethernet interface named
+``eth0`` which has a statically assigned ip address ``192.168.1.1`` and a
+network mask of ``24`` bits (CIDR notation).
 
 DeviceConfiguration specification
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For a full specification, please refer to the `relevant DeviceConfiguration
-section in the NetJSON Specification <https://netjson.org/rfc.html#rfc.section.5>`_.
+section in the NetJSON Specification
+<https://netjson.org/rfc.html#rfc.section.5>`_.
 
 DeviceMonitoring
 ----------------
 
-The ``DeviceMonitoring`` object aims to describe the status of a network device,
-like its uptime, its rx/tx packet count, cpu usage and any other bit of information
-that is useful for network monitoring purposes.
+The ``DeviceMonitoring`` object aims to describe the status of a network
+device, like its uptime, its rx/tx packet count, cpu usage and any other
+bit of information that is useful for network monitoring purposes.
 
 A simplified DeviceMonitoring example
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: javascript
 
@@ -173,27 +171,28 @@ A simplified DeviceMonitoring example
         ]
     }
 
-This example refers to the same router shown in the `DeviceConfiguration example
-<#a-simplified-deviceconfiguration-example>`_ shown earlier, but this time the
-JSON object contains basic network traffic statistics of the interfcaes of
-``RouterA``: ``lo0`` and ``eth0``.
+This example refers to the same router shown in the `DeviceConfiguration
+example <#a-simplified-deviceconfiguration-example>`_ shown earlier, but
+this time the JSON object contains basic network traffic statistics of the
+interfcaes of ``RouterA``: ``lo0`` and ``eth0``.
 
 DeviceMonitoring specification
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For a full specification, please refer to the `relevant DeviceMonitoring
-section in the NetJSON Specification <https://netjson.org/rfc.html#rfc.section.6>`_.
+section in the NetJSON Specification
+<https://netjson.org/rfc.html#rfc.section.6>`_.
 
 NetworkRoutes
 -------------
 
-The ``NetworkRoutes`` object aims to describe a list of routes that are installed
-in a routing table.
+The ``NetworkRoutes`` object aims to describe a list of routes that are
+installed in a routing table.
 
 ``NetworkRoutes`` allows to represent either dynamic or statifc routes.
 
 A simplified NetworkRoutes example
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: javascript
 
@@ -214,29 +213,31 @@ A simplified NetworkRoutes example
         ]
     }
 
-This example shows a list of routes installed in a router.
-The network in this example is very small because the routing table contains only one route.
-In this example the routes are managed by the `olsrd2 routing deamon <http://www.olsr.org/mediawiki/index.php/OLSR.org_Network_Framework>`_.
+This example shows a list of routes installed in a router. The network in
+this example is very small because the routing table contains only one
+route. In this example the routes are managed by the `olsrd2 routing deamon
+<http://www.olsr.org/mediawiki/index.php/OLSR.org_Network_Framework>`_.
 
 NetworkRoutes specification
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For a full specification, please refer to the `relevant NetworkRoutes section
-in the NetJSON Specification <https://netjson.org/rfc.html#rfc.section.3>`_.
+For a full specification, please refer to the `relevant NetworkRoutes
+section in the NetJSON Specification
+<https://netjson.org/rfc.html#rfc.section.3>`_.
 
 NetworkGraph
 ------------
 
-The ``NetworkGraph`` object aims to describe the topology of a network and it's
-comprised of a list of nodes and a list of links between nodes.
+The ``NetworkGraph`` object aims to describe the topology of a network and
+it's comprised of a list of nodes and a list of links between nodes.
 
-It's main goal is to allow to visualize and monitor links between nodes in a network
-(eg: understanding when a link fails), but implementations for distance vector routing
-protocols are allowed to return a partial view of the network which can be used by a
-collector to build the full graph.
+It's main goal is to allow to visualize and monitor links between nodes in
+a network (eg: understanding when a link fails), but implementations for
+distance vector routing protocols are allowed to return a partial view of
+the network which can be used by a collector to build the full graph.
 
 A simplified NetworkGraph example
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: javascript
 
@@ -290,30 +291,34 @@ A simplified NetworkGraph example
         ]
     }
 
-This example shows a small network of 3 nodes which are connected in full mesh.
+This example shows a small `mesh network
+<https://openwisp.io/docs/dev/tutorials/mesh.html>`_ of 3 nodes which are
+connected in full mesh.
 
-When processed with one of the existing implementations (`openwisp-network-topology
-<https://github.com/openwisp/openwisp-network-topology/>`_), the previous
+When processed with one of the existing implementations
+(`openwisp-network-topology
+<https://openwisp.io/docs/dev/network-topology/>`_), the previous
 ``NetworkGraph`` object results in the following image:
 
 .. image:: ./_static/netjson-networkgraph.png
-  :alt: node A, node B, node C
-  :target: ./implementations.html#django-netjsongraph
+    :alt: node A, node B, node C
+    :target: ./implementations.html#django-netjsongraph
 
 NetworkGraph specification
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For a full specification, please refer to the `relevant NetworkGraph section
-in the NetJSON Specification <https://netjson.org/rfc.html#rfc.section.4>`_.
+For a full specification, please refer to the `relevant NetworkGraph
+section in the NetJSON Specification
+<https://netjson.org/rfc.html#rfc.section.4>`_.
 
 NetworkCollection
 -----------------
 
-The ``NetworkCollection`` object is a wrapper that can be used to list several
-NetJSON objects in a single JSON object.
+The ``NetworkCollection`` object is a wrapper that can be used to list
+several NetJSON objects in a single JSON object.
 
 A simplified NetworkCollection example
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: javascript
 
@@ -363,11 +368,12 @@ A simplified NetworkCollection example
         ]
     }
 
-In this two ``DeviceConfiguration`` objects are grouped in a single ``NetworkCollection``
-object that acts as a list of configurations.
+In this two ``DeviceConfiguration`` objects are grouped in a single
+``NetworkCollection`` object that acts as a list of configurations.
 
 NetworkCollection specification
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For a full specification, please refer to the `relevant NetworkCollection section
-in the NetJSON Specification <https://netjson.org/rfc.html#rfc.section.5>`_.
+For a full specification, please refer to the `relevant NetworkCollection
+section in the NetJSON Specification
+<https://netjson.org/rfc.html#rfc.section.5>`_.

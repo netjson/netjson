@@ -2,25 +2,19 @@ Google Summer of Code Ideas (2017)
 ==================================
 
 .. image:: ./_static/gsoc.png
-  :alt: Google Summer of Code
-  :target: https://developers.google.com/open-source/gsoc/
+    :alt: Google Summer of Code
+    :target: https://developers.google.com/open-source/gsoc/
 
 .. contents:: **Table of Contents**:
-   :backlinks: none
-   :depth: 3
-
-.. raw:: html
-
-    <p>
-        <iframe src="http://openwisp.io/github-btn.html?user=netjson&amp;repo=netjson&amp;type=watch&amp;count=true&amp;size=large" frameborder="0" scrolling="0" width="140" height="33"></iframe>
-        <iframe src="http://openwisp.io/github-btn.html?user=netjson&amp;repo=netjson&amp;type=fork&amp;count=true&amp;size=large" frameborder="0" scrolling="0" width="140" height="33"></iframe>
-    </p>
+    :backlinks: none
+    :depth: 3
 
 Statement added on 28th of February 2017
 ----------------------------------------
 
-We haven't been accepted to the GSoC 2017 but you can still apply to a few accepted organizations which are including
-many of our ideas in their proposals. See:
+We haven't been accepted to the GSoC 2017 but you can still apply to a few
+accepted organizations which are including many of our ideas in their
+proposals. See:
 
 - `Freifunk GSoC 2017 Ideas <https://wiki.freifunk.net/Ideas>`_
 - `OpenWISP GSoC 2017 Ideas <http://openwisp.org/gsoc/ideas-2017.html>`_
@@ -28,9 +22,11 @@ many of our ideas in their proposals. See:
 Netjsongraph.js: canvas and geographic data
 -------------------------------------------
 
-`netjsongraph.js <https://github.com/netjson/netjsongraph.js>`_ is a javascript library based on d3
-that allows visualization of `NetJSON NetworkGraph <https://netjson.org/docs/what.html#networkgraph>`_ objects. The library uses SVG for visualization,
-which can be quite slow when many elements are shown, therefore we would like to try switching to canvas.
+`netjsongraph.js <https://github.com/netjson/netjsongraph.js>`_ is a
+javascript library based on d3 that allows visualization of `NetJSON
+NetworkGraph <https://netjson.org/docs/what.html#networkgraph>`_ objects.
+The library uses SVG for visualization, which can be quite slow when many
+elements are shown, therefore we would like to try switching to canvas.
 
 We also need an optional mode in which the network is displayed on a map.
 
@@ -38,38 +34,47 @@ We also need an optional mode in which the network is displayed on a map.
 
 - Rewrite the visualizer to use canvas
 - Add an optional map mode
-- Modernize javascript code organization: you may want to use some modern JS tool for building the
-  library, you may rewrite the code in ES6, up to you
+- Modernize javascript code organization: you may want to use some modern
+  JS tool for building the library, you may rewrite the code in ES6, up to
+  you
 - Update documentation and examples in README
 
 Implement NetJSON DeviceMonitoring in ubus (OpenWRT/LEDE)
 ---------------------------------------------------------
 
-Implement NetJSON DeviceMonitoring output in `ubus <https://wiki.openwrt.org/doc/techref/ubus>`_ (OpenWRT/LEDE).
+Implement NetJSON DeviceMonitoring output in `ubus
+<https://wiki.openwrt.org/doc/techref/ubus>`_ (OpenWRT/LEDE).
 
-We need a way to retrieve a `NetJSON DeviceMonitoring <https://netjson.org/docs/what.html#devicemonitoring>`_
-object directly from the command line interface.
+We need a way to retrieve a `NetJSON DeviceMonitoring
+<https://netjson.org/docs/what.html#devicemonitoring>`_ object directly
+from the command line interface.
 
-A good way to implement this would be to do it via ubus, like `nodewatcher-agent ubus API
+A good way to implement this would be to do it via ubus, like
+`nodewatcher-agent ubus API
 <https://github.com/wlanslovenija/nodewatcher-agent#ubus-api>`_.
 
 **Measurable outcomes**:
 
-- Implement a way to retrieve a `NetJSON DeviceMonitoring <https://netjson.org/docs/what.html#devicemonitoring>`_ object via ubus
-- Document the compilation/install process and the usage of the module on the README
+- Implement a way to retrieve a `NetJSON DeviceMonitoring
+  <https://netjson.org/docs/what.html#devicemonitoring>`_ object via ubus
+- Document the compilation/install process and the usage of the module on
+  the README
 
 Convert netengine output to NetJSON DeviceMonitoring
------------------------------------------------------
+----------------------------------------------------
 
-`netengine <https://github.com/ninuxorg/netengine>`_ is an abstraction layer for extracting information
-from network devices. It was developed prior to NetJSON and it has helped us understanding that we
-needed a common format like NetJSON.
+`netengine <https://github.com/ninuxorg/netengine>`_ is an abstraction
+layer for extracting information from network devices. It was developed
+prior to NetJSON and it has helped us understanding that we needed a common
+format like NetJSON.
 
-We want to change the library so it can return `NetJSON DeviceMonitoring <https://netjson.org/docs/what.html#devicemonitoring>`_ output.
+We want to change the library so it can return `NetJSON DeviceMonitoring
+<https://netjson.org/docs/what.html#devicemonitoring>`_ output.
 
 **Measurable outcomes:**
 
-- Change the JSON output to match `NetJSON DeviceMonitoring <https://netjson.org/docs/what.html#devicemonitoring>`_
+- Change the JSON output to match `NetJSON DeviceMonitoring
+  <https://netjson.org/docs/what.html#devicemonitoring>`_
 - Implement mocking in tests
 - Add compatibility for OpenWRT Chaos Calmer, Designated Driver and LEDE
 - Add compatibility for AirOS 7
@@ -78,119 +83,154 @@ We want to change the library so it can return `NetJSON DeviceMonitoring <https:
 Implement NetJSON NetworkGraph output in B.A.T.M.A.N. Advanced
 --------------------------------------------------------------
 
-`B.A.T.M.A.N. Advanced <https://www.open-mesh.org/projects/batman-adv/wiki>`_ is a layer2 routing
-deamon widely deployed in mesh networks.
+`B.A.T.M.A.N. Advanced
+<https://www.open-mesh.org/projects/batman-adv/wiki>`_ is a layer2 routing
+deamon widely deployed in `mesh networks
+<https://openwisp.io/docs/dev/tutorials/mesh.html>`_.
 
-It ships a tool called ``batadv-viz`` that returns different output formats that can be used
-to visualze the network.
+It ships a tool called ``batadv-viz`` that returns different output formats
+that can be used to visualze the network.
 
-We want to add `NetJSON NetworkGraph <https://netjson.org/docs/what.html#networkgraph>`_ output to
+We want to add `NetJSON NetworkGraph
+<https://netjson.org/docs/what.html#networkgraph>`_ output to
 ``batadv-viz``.
 
 **Measurable outcomes:**
 
-- Implement `NetJSON NetworkGraph <https://netjson.org/docs/what.html#networkgraph>`_ output in ``batadv-viz``
+- Implement `NetJSON NetworkGraph
+  <https://netjson.org/docs/what.html#networkgraph>`_ output in
+  ``batadv-viz``
 - Follow the development conventions used in ``batadv-viz``
 
 Ansible plugin for netjsonconfig
 --------------------------------
 
-`Ansible <https://github.com/ansible/ansible>`_ is an IT automation tool that has been recently
-gaining popularity also in the `OpenWRT <http://openwrt.org>`_ world.
+`Ansible <https://github.com/ansible/ansible>`_ is an IT automation tool
+that has been recently gaining popularity also in the `OpenWRT
+<http://openwrt.org>`_ world.
 
-We want to implement an ansible plugin that integrates `netjsonconfig <netjsonconfig.openwisp.org>`_
-and allows using its two most interesting features, that is templates and context, in ansible.
+We want to implement an ansible plugin that integrates `netjsonconfig
+<netjsonconfig.openwisp.org>`_ and allows using its two most interesting
+features, that is templates and context, in ansible.
 
-It should be possible to define configuration templates, assign them to specific playbooks and define
-specific configurations for hosts.
+It should be possible to define configuration templates, assign them to
+specific playbooks and define specific configurations for hosts.
 
-The configuration format format used by netjsonconfig is `NetJSON DeviceConfiguration <https://netjson.org/docs/what.html#deviceconfiguration>`_, but a *YAML*
-conversion of *NetJSON* would be good as well. Support for both would be preferred.
+The configuration format format used by netjsonconfig is `NetJSON
+DeviceConfiguration
+<https://netjson.org/docs/what.html#deviceconfiguration>`_, but a *YAML*
+conversion of *NetJSON* would be good as well. Support for both would be
+preferred.
 
 **Measurable outcomes:**
 
-- Implement an ansible module that integrates netjsonconfig in ansible and allows using
-  `NetJSON DeviceConfiguration <https://netjson.org/docs/what.html#deviceconfiguration>`_ (or its *YAML* equivalent) to configure OpenWRT devices
+- Implement an ansible module that integrates netjsonconfig in ansible and
+  allows using `NetJSON DeviceConfiguration
+  <https://netjson.org/docs/what.html#deviceconfiguration>`_ (or its *YAML*
+  equivalent) to configure OpenWRT devices
 - Achieve a test coverage higher than 80%
 - Provide documentation using `python-sphinx <http://www.sphinx-doc.org/>`_
 
 Raspbian backend for netjsonconfig
 ----------------------------------
 
-Implement a `Raspbian <https://www.raspbian.org/>`_ backend in `netjsonconfig <netjsonconfig.openwisp.org>`_.
+Implement a `Raspbian <https://www.raspbian.org/>`_ backend in
+`netjsonconfig <netjsonconfig.openwisp.org>`_.
 
-`NetJSON DeviceConfiguration <https://netjson.org/docs/what.html#deviceconfiguration>`_ has been implemented only on `OpenWRT <http://openwrt.org>`_:
-implementing it on other systems will help to speed up the standardization process.
+`NetJSON DeviceConfiguration
+<https://netjson.org/docs/what.html#deviceconfiguration>`_ has been
+implemented only on `OpenWRT <http://openwrt.org>`_: implementing it on
+other systems will help to speed up the standardization process.
 
 **Measurable outcomes:**
 
-- The ``Raspbian`` backend must generate a configuration archive compatible with Raspbian Jessie
+- The ``Raspbian`` backend must generate a configuration archive compatible
+  with Raspbian Jessie
 - The ``Raspbian`` backend schema must cover at least the following features:
-    - general (eg: hostname)
-    - ntp settings
-    - network interface settings
-    - wireless setttings
-    - dns servers
-    - dns search domains
-    - static routes
-    - files
+      - general (eg: hostname)
+      - ntp settings
+      - network interface settings
+      - wireless setttings
+      - dns servers
+      - dns search domains
+      - static routes
+      - files
 - The general test coverage of the library must be kept higher than 95%
-- The backend must be to be documented inside the `python-sphinx <http://www.sphinx-doc.org/>`_ docs dir
-  contained in the *netjsonconfig* repo
+- The backend must be to be documented inside the `python-sphinx
+  <http://www.sphinx-doc.org/>`_ docs dir contained in the *netjsonconfig*
+  repo
 
 PfSense backend for netjsonconfig
 ---------------------------------
 
-Implement a `PfSense <https://pfsense.org/>`_ backend in `netjsonconfig <netjsonconfig.openwisp.org>`_.
+Implement a `PfSense <https://pfsense.org/>`_ backend in `netjsonconfig
+<netjsonconfig.openwisp.org>`_.
 
-`NetJSON DeviceConfiguration <https://netjson.org/docs/what.html#deviceconfiguration>`_ has been
-implemented only on `OpenWRT <http://openwrt.org>`_: implementing it on other systems will help to
-speed up the standardization process.
+`NetJSON DeviceConfiguration
+<https://netjson.org/docs/what.html#deviceconfiguration>`_ has been
+implemented only on `OpenWRT <http://openwrt.org>`_: implementing it on
+other systems will help to speed up the standardization process.
 
 **Measurable outcomes:**
 
-- The ``PfSense`` backend must generate a configuration archive compatible with PfSense 2.2.x
-- The ``PfSense`` backend must generate a configuration archive compatible with PfSense 2.3.x
-- The ``PfSense`` backend schema must cover at least 75% of the features offered by the PfSense
-  web interface, with particular attention to interfaces, wireless settings, vlans, firewall rules and VPNs
+- The ``PfSense`` backend must generate a configuration archive compatible
+  with PfSense 2.2.x
+- The ``PfSense`` backend must generate a configuration archive compatible
+  with PfSense 2.3.x
+- The ``PfSense`` backend schema must cover at least 75% of the features
+  offered by the PfSense web interface, with particular attention to
+  interfaces, wireless settings, vlans, firewall rules and VPNs
 - The general test coverage of the library must be kept higher than 95%
-- The backend must be to be documented inside the `python-sphinx <http://www.sphinx-doc.org/>`_ docs dir
-  contained in the *netjsonconfig* repo
+- The backend must be to be documented inside the `python-sphinx
+  <http://www.sphinx-doc.org/>`_ docs dir contained in the *netjsonconfig*
+  repo
 
 AirOS backend for netjsonconfig
 -------------------------------
 
-Implement an `AirOS backend <https://www.ubnt.com/airmax/airos7/>`_ in `netjsonconfig <netjsonconfig.openwisp.org>`_.
+Implement an `AirOS backend <https://www.ubnt.com/airmax/airos7/>`_ in
+`netjsonconfig <netjsonconfig.openwisp.org>`_.
 
-`NetJSON DeviceConfiguration <https://netjson.org/docs/what.html#deviceconfiguration>`_ has been
-implemented only on `OpenWRT <http://openwrt.org>`_: implementing it on other systems will
-help to speed up the standardization process.
+`NetJSON DeviceConfiguration
+<https://netjson.org/docs/what.html#deviceconfiguration>`_ has been
+implemented only on `OpenWRT <http://openwrt.org>`_: implementing it on
+other systems will help to speed up the standardization process.
 
 **Measurable outcomes:**
 
-- The ``AirOs`` backend must generate a configuration archive compatible with AirOS 6.x and AirOS 7.x,
-  two separate classes can be created if preferred
-- The ``AirOs`` backend schema must cover at least 75% of the configuration features
-  offered by *AirOS* web interface, with particular attention to interfaces, wireless settings and vlans
+- The ``AirOs`` backend must generate a configuration archive compatible
+  with AirOS 6.x and AirOS 7.x, two separate classes can be created if
+  preferred
+- The ``AirOs`` backend schema must cover at least 75% of the configuration
+  features offered by *AirOS* web interface, with particular attention to
+  interfaces, wireless settings and vlans
 - The general test coverage of the library must be kept higher than 95%
-- Both backends must be documented inside the `python-sphinx <http://www.sphinx-doc.org/>`_ docs dir
-  contained in the *netjsonconfig* repo
+- Both backends must be documented inside the `python-sphinx
+  <http://www.sphinx-doc.org/>`_ docs dir contained in the *netjsonconfig*
+  repo
 
 netjsonconfig backward conversion
 ---------------------------------
 
-As of today, `netjsonconfig <netjsonconfig.openwisp.org>`_ is only able to generate a native router
-configuration (eg: `OpenWRT <http://openwrt.org>`_) from a
-`NetJSON DeviceConfiguration <https://netjson.org/docs/what.html#deviceconfiguration>`_ object and not vice versa.
+As of today, `netjsonconfig <netjsonconfig.openwisp.org>`_ is only able to
+generate a native router configuration (eg: `OpenWRT
+<http://openwrt.org>`_) from a `NetJSON DeviceConfiguration
+<https://netjson.org/docs/what.html#deviceconfiguration>`_ object and not
+vice versa.
 
 We want to add the backward conversion process into the library.
 
-This project will require a thoughtful design, probably involving some serialization and deserialization mechanism.
+This project will require a thoughtful design, probably involving some
+serialization and deserialization mechanism.
 
 Measurable outcomes:
 
-- Backward ``generate()`` pocess: a configuration archive must be converted to
-  `NetJSON DeviceConfiguration <https://netjson.org/docs/what.html#deviceconfiguration>`_ through the available backends
-- Backward ``render()`` process: a configuration string (eg: uci export in OpenWRT) must be converted to NetJSON
+- Backward ``generate()`` pocess: a configuration archive must be converted
+  to `NetJSON DeviceConfiguration
+  <https://netjson.org/docs/what.html#deviceconfiguration>`_ through the
+  available backends
+- Backward ``render()`` process: a configuration string (eg: uci export in
+  OpenWRT) must be converted to NetJSON
 - The general test coverage of the library must be kept higher than 95%
-- The feature must be documented in the documentation files contained in the netjsonconfig repo
+- The feature must be documented in the documentation files contained in
+  the netjsonconfig repo
