@@ -15,7 +15,7 @@ OpenWISP Controller
     :target: https://github.com/openwisp/openwisp-controller/tree/docs/docs/controller_demo.gif
     :alt: OpenWISP Controller
 
-`OpenWISP Controller <https://openwisp.io/docs/dev/controller/index.html>`_
+`OpenWISP Controller <https://openwisp.io/docs/stable/controller/index.html>`_
 is an open-source `wifi controller <http://openwisp.org/whatis.html>`_ and
 configuration manager for embedded devices and routers running OpenWrt.
 
@@ -123,10 +123,10 @@ OpenWISP Network Topology
 
 .. image:: https://raw.githubusercontent.com/openwisp/openwisp-network-topology/docs/docs/demo_network_topology.gif
     :alt: OpenWISP Network Topology
-    :target: https://openwisp.io/docs/dev/network-topology/
+    :target: https://openwisp.io/docs/stable/network-topology/
 
 `OpenWISP Network Topology
-<https://openwisp.io/docs/dev/network-topology/>`_ is the module of the
+<https://openwisp.io/docs/stable/network-topology/>`_ is the module of the
 OpenWISP designed to collect, store and visualize network topology data.
 
 Prominent features of this module are:
@@ -174,9 +174,9 @@ OpenWISP Monitoring
 .. image:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/monitoring-demo.gif
     :align: center
     :alt: OpenWISP Monitoring
-    :target: https://openwisp.io/docs/dev/monitoring/index.html
+    :target: https://openwisp.io/docs/stable/monitoring/index.html
 
-`OpenWISP Monitoring <https://openwisp.io/docs/dev/monitoring/index.html>`_ is
+`OpenWISP Monitoring <https://openwisp.io/docs/stable/monitoring/index.html>`_ is
 the module of the OpenWISP designed to collect, store and visualize network
 topology data.
 
@@ -195,19 +195,19 @@ Prominent features of this module are:
 - Configurable alerts
 - CSV Export of monitoring data
 - Possibility to configure additional `Metrics
-  <https://openwisp.io/docs/dev/monitoring/user/metrics.html>`_ and `Charts
-  <https://openwisp.io/docs/dev/monitoring/user/metrics.html>`_
+  <https://openwisp.io/docs/stable/monitoring/user/metrics.html>`_ and `Charts
+  <https://openwisp.io/docs/stable/monitoring/user/metrics.html>`_
 - Extensible active check system: it's possible to write additional checks
   that are run periodically using python classes
 - API to retrieve the chart metrics and status information of each device.
   You can read more about it in `OpenWISP Monitoring docs
-  <https://openwisp.io/docs/dev/monitoring/user/rest-api.html>`_.
+  <https://openwisp.io/docs/stable/monitoring/user/rest-api.html>`_.
 
 OpenWrt netjson-monitoring Package
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The `OpenWrt OpenWISP Monitoring package
-<https://openwisp.io/docs/dev/openwrt-monitoring-agent/index.html>`_
+<https://openwisp.io/docs/stable/openwrt-monitoring-agent/index.html>`_
 provides an OpenWrt package named ``netjson-monitoring`` which provides a
 command line utility which returns NetJSON DeviceMonitoring information.
 
@@ -219,7 +219,7 @@ E.g.:
 
 .. image:: https://raw.githubusercontent.com/netjson/netjson/master/docs/source/_static/lua-monitoring.png
     :alt: Device Monitoring data in NetJSON format
-    :target: https://openwisp.io/docs/dev/openwrt-monitoring-agent/index.html
+    :target: https://openwisp.io/docs/stable/openwrt-monitoring-agent/index.html
 
 netengine-utils
 ~~~~~~~~~~~~~~~

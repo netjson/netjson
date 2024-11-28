@@ -86,7 +86,7 @@ Implement NetJSON NetworkGraph output in B.A.T.M.A.N. Advanced
 `B.A.T.M.A.N. Advanced
 <https://www.open-mesh.org/projects/batman-adv/wiki>`_ is a layer2 routing
 deamon widely deployed in `mesh networks
-<https://openwisp.io/docs/dev/tutorials/mesh.html>`_.
+<https://openwisp.io/docs/stable/tutorials/mesh.html>`_.
 
 It ships a tool called ``batadv-viz`` that returns different output formats
 that can be used to visualze the network.
